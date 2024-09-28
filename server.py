@@ -36,8 +36,9 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/")
-def read_index():
-    return FileResponse('form.html')
+def read_index(request: Request):
+    return templates.TemplateResponse(
+        request=request, name="form.html")
 
 @app.post("/generate")
 def final(
