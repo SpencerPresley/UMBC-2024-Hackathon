@@ -9,6 +9,7 @@ from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory="templates")
 
+
 class FormSettings(BaseModel):
     title: str
     course: str
@@ -26,7 +27,7 @@ class QAPair(BaseModel):
     answer: str
     type: str
 
-    choices: List[str] = None #Holds Choices in a multiple Choice question
+    choices: List[str] = ['T', 'F'] #Holds Choices in a multiple Choice question
     
 class GeneratedTest(BaseModel):
     questions:List[QAPair]
@@ -34,6 +35,13 @@ class GeneratedTest(BaseModel):
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+#Used for converting Multiple Choice Numbers to Letters
+def toLetter(num):
+    return chr(num + 64)
+
+templates.env.filters['toLetter'] = toLetter
 
 @app.get("/")
 def read_index(request: Request):
