@@ -2,8 +2,11 @@ from typing import Annotated
 from typing import List
 
 from starlette.responses import FileResponse
-from fastapi import FastAPI, UploadFile, Form, File
+from fastapi import FastAPI, UploadFile, Form, Request
 from pydantic import BaseModel
+from fastapi.templating import Jinja2Templates
+
+templates = Jinja2Templates(directory="templates")
 
 class FormSettings(BaseModel):
     title: str
@@ -25,13 +28,11 @@ def read_index():
 
 @app.post("/generate")
 def final(
-    data: Annotated[FormSettings, Form()]
+    data: Annotated[FormSettings, Form()],request: Request
     
 ):
     print("hi")
-    # get have form values
-    # mess with files
-    # llm stuff
-    # finshed test/answer key
-
-    return FileResponse('finshed_test.html')
+    
+    return templates.TemplateResponse(
+        request=request, name="finshed_test.html", context={"Title": data.title,"Class":data.course,"Professor":data.professor}
+    )
