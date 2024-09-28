@@ -58,3 +58,26 @@ input {
     left: 0;
     transition: transform 0.4s ease;
   }
+
+
+  .button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.question-container{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    background-color: #0000ff;
+    border: #0000ff solid 2px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 98px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 350px;
+}
