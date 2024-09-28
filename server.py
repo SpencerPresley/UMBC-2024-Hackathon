@@ -19,6 +19,7 @@ class FormSettings(BaseModel):
     number_of_TF_questions: int
     number_of_written_questions: int
     school_type: str
+    level: str
     difficulty: str
     testing_philosophy: str
     subject_material:List[UploadFile]
