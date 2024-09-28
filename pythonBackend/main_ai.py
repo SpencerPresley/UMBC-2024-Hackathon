@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader, \
     UnstructuredPowerPointLoader, WebBaseLoader
 from PIL import Image
@@ -93,3 +94,6 @@ def load_website(link):
     )
     logging.info("WebBaseLoader initiated with web_path: {link}")
     
+=======
+from langchain_community.document_loaders import PyPDFLoader
+>>>>>>> Stashed changes
