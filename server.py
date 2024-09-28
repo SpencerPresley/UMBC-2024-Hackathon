@@ -4,6 +4,7 @@ from typing import List
 from starlette.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form, Request
 from pydantic import BaseModel
+from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
 templates = Jinja2Templates(directory="templates")
@@ -22,6 +23,8 @@ class FormSettings(BaseModel):
 
 app = FastAPI()
 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 @app.get("/")
 def read_index():
     return FileResponse('form.html')
@@ -34,5 +37,6 @@ def final(
     print("hi")
     
     return templates.TemplateResponse(
+        
         request=request, name="finshed_test.html", context={"Title": data.title,"Class":data.course,"Professor":data.professor}
     )

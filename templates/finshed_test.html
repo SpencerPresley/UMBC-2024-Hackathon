@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="finished_test.css">
+    <link rel="stylesheet" href="{{ url_for('static', path='finished_test.css') }}">
 </head>
 <header>
+ 
         <input type="text" name="titleBox" value= "{{ Title }}" class="h1">
         <input type="text" name="classBox" value= "{{ Class }}" class="h3">
         <input type="text" name="classBox" value= "{{ Professor }}" class="h3">
