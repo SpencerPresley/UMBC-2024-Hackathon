@@ -13,22 +13,41 @@
 </header>
 <body>
     <br>
+
     {%- for question in Test.questions %}
 
-    <input type="text" name="titleBox" value= "{{ question.question }}" class="h2">
+        <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
 
-    {% if question.type == 'written' %}
-    <input type="text" name="titleBox" value= "{{ question.answer }}" class="h4">
-    {% endif %}
-    
-    {% if question.type == 'multiple' %}
+        {% if question.type == 'written' %}
+            <input type="text" name="titleBox" value= "{{ question.answer }}" class="h4">
+        {% endif %}
+        
+        {% if question.type == 'multiple' %}
 
-        {% for choice in (question.choices)%}
-            <input type="text" name="titleBox" value= " {{loop.index}}: {{ choice }}" class="h4">
-        {% endfor %}
+            {% for choice in (question.choices)%}
+                {% if choice == question.answer %}
+                <input type="text" name="titleBox" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4" style="color: #0000ff";>
+                {% else %}
+                <input type="text"  value= " {{loop.index | toLetter}}: {{ choice }}" class="h4">
+                {% endif %}    
+            {% endfor %}
 
-    {% endif %}
-    <br>
+        {% endif %}
+
+        {% if question.type == 'TF' %}
+
+
+                {% if question.answer == 'T' %}
+                <input type="text" name="titleBox" value= "A: True" class="h4" style="color: #0000ff" ;>
+                <input type="text" name="titleBox" value= "B: False" class="h4">
+                {% else %}
+                <input type="text"  value= "A: True" class="h4">
+                <input type="text"  value= " B: False" class="h4" style="color: #0000ff" ;>
+                {% endif %}   
+            {% endif %} 
+        <br id="{{loop.index}}">
     {% endfor %}
+
+    <button > Download Test</button>
 </body>
 </html>
