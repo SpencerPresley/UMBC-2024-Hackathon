@@ -1,0 +1,24 @@
+input {
+    border: none;
+   
+    width: 100%;
+    outline: none;
+}
+
+.h1{
+    font-size: 2.5em; 
+    font-weight: bold;
+}
+
+.h3{
+    font-size: 1em; 
+    font-weight: bold;
+}
+
+.h4{
+    font-size: .7em; 
+}
+
+.h5{
+    font-size: .3em;
+}
