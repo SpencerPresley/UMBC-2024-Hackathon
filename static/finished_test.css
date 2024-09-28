@@ -12,6 +12,7 @@ input {
 
 .h2{
     font-size: 1.3em; 
+    margin-top: 10px;
 }
 
 .h3{
@@ -25,4 +26,11 @@ input {
 
 .h5{
     font-size: .3em;
+}
+
+@media print {
+    /* Hide elements you don't want to print */
+    .noPrint {
+        visibility: hidden;
+    }
 }
