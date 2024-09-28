@@ -1,0 +1,2 @@
+title='test' course='Theory of Computation' professor='Dr. Tu' number_of_mcq_questions=6 number_of_TF_questions=4 number_of_written_questions=2 school_type='15' difficulty='hard' testing_philosophy='Test hard' subject_material=[UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'}))]
+None

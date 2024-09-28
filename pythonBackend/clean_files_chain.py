@@ -2,7 +2,6 @@ import json
 import os
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
-from ..server import FormSettings, GeneratedTest
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
@@ -14,12 +13,11 @@ from pydantic import BaseModel
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
-from custom_prompts import (
+from .custom_prompts import (
     clean_files_system_prompt,
     clean_files_human_prompt,
     clean_files_json_format,
 )
-
 
 class CleanedFile(BaseModel):
     cleaned_content: str
@@ -34,9 +32,12 @@ llm = ChatOpenAI(
 
 parser = JsonOutputParser(pydantic_object=CleanedFile)
 
-def run(formData:FormSettings, key: str = None)->GeneratedTest:
-    for uploaded_file in FormSettings.subject_material:
+def run(formData, file_path: str = None, key: str = None):
+    from server import FormSettings, GeneratedTest
+    for uploaded_file in formData.subject_material:
         print(uploaded_file.file.name)
+        
+    input("Press Enter to continue 1...")
     loader = PyPDFLoader(
         file_path=file_path,
         extract_images=True,
@@ -108,3 +109,4 @@ if __name__ == "__main__":
     current_directory = os.path.dirname(os.path.abspath(__file__))
     pdf_file_path = os.path.join(current_directory, "files", "ExampleFileForDev.pdf")
     run(pdf_file_path, "content")
+    
