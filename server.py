@@ -1,6 +1,8 @@
 from typing import Annotated
 from typing import List
-#from pythonBackend import run
+import logging
+
+from pythonBackend import run
 
 from starlette.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form, Request
@@ -8,8 +10,10 @@ from pydantic import BaseModel
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-templates = Jinja2Templates(directory="templates")
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
 
+templates = Jinja2Templates(directory="templates")
 
 class FormSettings(BaseModel):
     title: str
@@ -37,6 +41,7 @@ class GeneratedTest(BaseModel):
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+logger.info("Static files mounted")
 
 
 #Used for converting Multiple Choice Numbers to Letters
@@ -44,9 +49,11 @@ def toLetter(num):
     return chr(num + 64)
 
 templates.env.filters['toLetter'] = toLetter
+logger.info("toLetter filter added to Jinja2 environment")
 
 @app.get("/")
 def read_index(request: Request):
+    logger.info("GET request received for index page")
     return templates.TemplateResponse(
         request=request, name="form.html")
 
@@ -55,8 +62,16 @@ def final(
     data: Annotated[FormSettings, Form()],request: Request
     
 ):
-    print(data)
-    test = run(data)
+    logger.info("POST request received for /generate")
+    logger.info(f"Form data: {data}")
+    try:
+        test = run(data)
+        logger.info("Test generated successfully")
+    except Exception as e:
+        logger.error(f"Error generating test: {e}")
+        return templates.TemplateResponse(
+            request=request, name="error.html", context={"error": str(e)}
+        )
 
     fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"]), QAPair(question="What is 2+2?", answer="T", type="TF")] )
 

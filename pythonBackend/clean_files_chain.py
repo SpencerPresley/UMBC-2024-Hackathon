@@ -3,6 +3,10 @@ import os
 from dotenv import load_dotenv
 import logging
 
+from PIL import Image
+import pytesseract
+import re
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
@@ -10,7 +14,7 @@ logging.basicConfig(
     filemode='w'
 )
 
-from langchain_community.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
@@ -22,11 +26,8 @@ from pydantic import BaseModel
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
-from .custom_prompts import (
-    clean_files_system_prompt,
-    clean_files_human_prompt,
-    clean_files_json_format,
-)
+from .custom_prompts import clean_files_system_prompt, clean_files_human_prompt, clean_files_json_format
+
 
 class CleanedFile(BaseModel):
     cleaned_content: str
@@ -45,15 +46,19 @@ def run(formData, file_path: str = None, key: str = None):
     from server import FormSettings, GeneratedTest
     
     # Access form data fields
-    title = formData.title
-    course = formData.course
-    professor = formData.professor
-    number_of_mcq_questions = formData.number_of_mcq_questions
-    number_of_TF_questions = formData.number_of_TF_questions
-    number_of_written_questions = formData.number_of_written_questions
-    school_type = formData.school_type
-    difficulty = formData.difficulty
-    testing_philosophy = formData.testing_philosophy
+    try:
+        title = formData.title
+        course = formData.course
+        professor = formData.professor
+        number_of_mcq_questions = formData.number_of_mcq_questions
+        number_of_TF_questions = formData.number_of_TF_questions
+        number_of_written_questions = formData.number_of_written_questions
+        school_type = formData.school_type
+        difficulty = formData.difficulty
+        testing_philosophy = formData.testing_philosophy
+    except Exception as e:
+        logging.error(f"Error accessing form data: {e}")
+        return
     
     logging.info("Form data accessed")
     logging.info("Form Title: " + title)
@@ -66,28 +71,25 @@ def run(formData, file_path: str = None, key: str = None):
     logging.info("Form Difficulty: " + difficulty)
     logging.info("Form Testing Philosophy: " + testing_philosophy)
     logging.info("Moving to files...")
-        
-    for uploaded_file in formData.subject_material:
-        print(uploaded_file.file.name)
-        
-    input("Press Enter to continue 1...")
-    loader = PyPDFLoader(
-        file_path=file_path,
-        extract_images=True,
-    )
-    docs = load_data(loader)
-    full_response = ""
-    for i, doc in enumerate(docs):
-        print(f"Document {i+1} of {len(docs)}")
-        full_response += clean_files_chain(doc)
-    write_response_to_file(full_response, "cleaned_content.json")
+    try:    
+        for uploaded_file in formData.subject_material:
+            logging.info("File name: " + uploaded_file.file.name)
+            loader = get_loader(uploaded_file.file.name)
+            docs = load_data(loader)
+            full_response = ""
+            for i, doc in enumerate(docs):
+                logging.info(f"Document {i+1} ({uploaded_file.file.name}) of {len(docs)}")
+                full_response += clean_files_chain(doc)
+            write_response_to_file(full_response, "cleaned_content.json")
+            logging.info("Cleaned content written to file")
+    except Exception as e:
+        logging.error(f"Error loading data: {e}")
+        return
     
 def load_data(loader):
     raw_docs = loader.load_and_split()
-    print(raw_docs)
-    input("Press Enter to continue 1...")
+    logging.info("Docs loaded using .load_and_split()")
     docs = [doc.page_content for doc in raw_docs]
-    input("Press Enter to continue 2...")
     return docs
 
 def clean_files_chain(doc: str, key: str = None):
@@ -137,6 +139,29 @@ def get_clean_files_chain(llm, prompt, system_prompt, human_prompt):
 def write_response_to_file(response, file_path: str):
     with open(file_path, "w") as f:
         json.dump(response, f, indent=4)
+        
+def get_loader(file_path: str):
+    if file_path.endswith('.pdf'):
+        logging.info("Loader set for type .pdf")
+        return PyPDFLoader(file_path=file_path, extract_images=True)
+    elif file_path.endswith('.txt'):
+        logging.info("Loader set for type .txt")
+        return TextLoader(file_path=file_path)
+    elif file_path.endswith('.docx') or file_path.endswith('.doc'):
+        logging.info("Loader set for type .docx or .doc")
+        return Docx2txtLoader(file_path=file_path)
+    elif file_path.endswith('.pptx'):
+        logging.info("Loader set for type .pptx")
+        return UnstructuredPowerPointLoader(file_path=file_path)
+    elif file_path.endswith('.png', '.jpeg', '.jpg'):
+        img = Image.open(file_path).convert("L")
+        text = pytesseract.image_to_string(img, lang="eng")
+        logging.info("Loader set for type .png, .jpeg, or .jpg")
+        logging.info("Text: " + text)
+        return text
+    else:
+        raise ValueError("Invalid file type")
+        
         
 if __name__ == "__main__":
     current_directory = os.path.dirname(os.path.abspath(__file__))

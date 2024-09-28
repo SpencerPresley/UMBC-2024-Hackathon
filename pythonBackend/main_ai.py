@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader, \
     UnstructuredPowerPointLoader, WebBaseLoader
 from PIL import Image
@@ -69,7 +68,7 @@ dict_data["data"] = doc_str
 logging.info("Doc string inserted into dictionary.")
 with open("data.json", "w") as f:
     json.dump(dict_data, f, indent=4)
-    logging.info("Dictionary dumped to json: {f}")
+    logging.info(f"Dictionary dumped to json: {f}")
 
 pages = []
 metadata = []
@@ -86,14 +85,10 @@ content_dict["metadata"] = metadata
 logging.info("Pages and metadata inserted into dictionary.")
 with open("content.json", "w") as f:
     json.dump(content_dict, f, indent=4)
-    logging.info("Content dictionary dumped to json file: {f}")
+    logging.info(f"Content dictionary dumped to json file: {f}")
 
 def load_website(link):
     loader = WebBaseLoader(
         web_path=link
     )
-    logging.info("WebBaseLoader initiated with web_path: {link}")
-    
-=======
-from langchain_community.document_loaders import PyPDFLoader
->>>>>>> Stashed changes
+    logging.info(f"WebBaseLoader initiated with web_path: {link}")

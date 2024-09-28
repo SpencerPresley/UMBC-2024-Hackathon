@@ -1,0 +1,3 @@
+2024-09-28 19:22:03,677 - INFO - Static files mounted
+2024-09-28 19:22:03,678 - INFO - toLetter filter added to Jinja2 environment
+2024-09-28 19:22:04,104 - INFO - GET request received for index page
