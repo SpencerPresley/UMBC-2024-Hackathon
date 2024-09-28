@@ -1,4 +1,5 @@
 fastapi[standard]
 langchain-community
 pypdf2
+python-multipart
 rapidocr-onnxruntime

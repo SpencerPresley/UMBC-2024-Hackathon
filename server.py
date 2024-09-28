@@ -1,5 +1,6 @@
+from typing import Annotated
 from starlette.responses import FileResponse
-from fastapi import FastAPI, UploadFile
+from fastapi import FastAPI, UploadFile, Form
 from pydantic import BaseModel
 from enum import Enum
 
@@ -17,7 +18,8 @@ class Difficulty(Enum):
     Hard = 3
     VeryHard = 4
 
-class SettingsInfo(BaseModel):
+
+class FormSettings(BaseModel):
     title: str
     course: str
     professor: str
@@ -32,11 +34,14 @@ class SettingsInfo(BaseModel):
 app = FastAPI()
 
 @app.get("/")
-async def read_index():
+def read_index():
     return FileResponse('form.html')
 
-@app.get("/final")
-async def final():
+@app.get("/generate")
+def final(
+    data: FormSettings = Form(...),
+    
+):
     # get have form values
     # mess with files
     # llm stuff
