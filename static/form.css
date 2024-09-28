@@ -1,9 +1,16 @@
 form{
     border: black solid 2px;
-    margin: 20px;
+    margin: 15px;
     padding:10px;
     background-color: rgb(232, 229, 229);
     box-shadow: 6px 6px #0000ff51;
+
+}
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 40px;
 }
 
 input,option,select,button{
@@ -11,6 +18,13 @@ input,option,select,button{
     padding: 10px;
     border-radius: 5px;
     margin: 3px;
+    margin-right: 10px;
+}
+
+select{
+
+    height: 34px;
+
 }
 
 
@@ -27,9 +41,38 @@ button{
     border: #0000ff solid 2px;
     padding: 5px;
     border-radius: 5px;
-    margin: 3px;
+    margin-top: 98px;
     color: white;
     font-size: 20px;
     cursor: pointer;
+    width: 350px;
 }
 
+.question-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 400px;
+    border: #0000ff solid 1px;
+    padding: 10px;
+}
+
+h2{
+    margin-top: 50px;
+}
+
+.submit-button-container{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 10px;
+    margin-right: 180px;
+}
+
+#Philosophy>input{
+    width: 350px;
+}
+
+#Material>input{
+    width: 350px;
+    height: 13px;
+}

@@ -4,3 +4,10 @@ pypdf2
 python-multipart
 rapidocr-onnxruntime
 Jinja2
+python-multipart
+langchain-openai
+langchain-core
+pytesseract
+unstructured
+python-pptx
+docx2txt
