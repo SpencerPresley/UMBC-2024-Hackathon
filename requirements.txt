@@ -3,3 +3,4 @@ langchain-community
 pypdf2
 python-multipart
 rapidocr-onnxruntime
+Jinja2

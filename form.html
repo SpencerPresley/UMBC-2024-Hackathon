@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Test Form</h1>
-    <form action="">
+    <form action="/generate" method="POST" enctype="multipart/form-data">
         <div>
             <label for="">Test Title</label>
             <input type="text" class="titleInput" name="title">
@@ -67,7 +67,7 @@
         </div>
         <div>
             <label for="fileUpload">Choose documents to upload:</label>
-            <input type="file" id="fileUpload" name="subject_material[]" multiple>
+            <input type="file" id="fileUpload" name="subject_material" multiple>
         </div>
 
         <button type="submitButton">Submit</button>
