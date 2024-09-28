@@ -3,6 +3,7 @@ form{
     margin: 20px;
     padding:10px;
     background-color: rgb(232, 229, 229);
+    box-shadow: 6px 6px #0000ff51;
 }
 
 input,option,select,button{
