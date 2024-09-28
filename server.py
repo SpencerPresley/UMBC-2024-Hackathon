@@ -24,6 +24,9 @@ class FormSettings(BaseModel):
 class QAPair(BaseModel):
     question:str
     answer: str
+    type: str
+
+    choices: List[str] = None #Holds Choices in a multiple Choice question
     
 class GeneratedTest(BaseModel):
     questions:List[QAPair]
@@ -44,7 +47,7 @@ def final(
     # give ai code the FormSettings object and get back a GeneratedTest to create the edit form
     print("hi")
 
-    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4"),QAPair(question="What is 1+2?",answer="3")])
+    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"])])
 
     return templates.TemplateResponse(
         request=request, name="finshed_test.html", context={"Settings": data,"Test":fake_response}
