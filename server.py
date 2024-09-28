@@ -41,6 +41,8 @@ def final(
     # give ai code the FormSettings object and get back a GeneratedTest to create the edit form
     print("hi")
 
+    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4"),QAPair(question="What is 1+2?",answer="3")])
+
     return templates.TemplateResponse(
-        request=request, name="finshed_test.html", context={"Title": data.title,"Class":data.course,"Professor":data.professor}
+        request=request, name="finshed_test.html", context={"Settings": data,"Test":fake_response}
     )

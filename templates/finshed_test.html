@@ -7,13 +7,14 @@
     <link rel="stylesheet" href="finished_test.css">
 </head>
 <header>
-        <input type="text" name="titleBox" value= "{{ Title }}" class="h1">
-        <input type="text" name="classBox" value= "{{ Class }}" class="h3">
-        <input type="text" name="classBox" value= "{{ Professor }}" class="h3">
+        <input type="text" name="titleBox" value= "{{ Settings.title }}" class="h1">
+        <input type="text" name="classBox" value= "{{ Settings.course }}" class="h3">
+        <input type="text" name="classBox" value= "{{ Settings.professor }}" class="h3">
 </header>
 <body>
-    <li>
-        <!-- <input type="text" name="classBox" value= "{{ question }}" class="h4"> -->
-    </li>
+    {%- for question in Test.questions %}
+    <h2>{{question.question}}</h2>
+    <p>{{question.answer}}</p>
+    {% endfor %}
 </body>
 </html>
