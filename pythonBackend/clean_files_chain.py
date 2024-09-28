@@ -1,6 +1,15 @@
 import json
 import os
 from dotenv import load_dotenv
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='chains.log',
+    filemode='w'
+)
+
 from langchain_community.document_loaders import PyPDFLoader
 
 from langchain_openai import ChatOpenAI
@@ -34,6 +43,30 @@ parser = JsonOutputParser(pydantic_object=CleanedFile)
 
 def run(formData, file_path: str = None, key: str = None):
     from server import FormSettings, GeneratedTest
+    
+    # Access form data fields
+    title = formData.title
+    course = formData.course
+    professor = formData.professor
+    number_of_mcq_questions = formData.number_of_mcq_questions
+    number_of_TF_questions = formData.number_of_TF_questions
+    number_of_written_questions = formData.number_of_written_questions
+    school_type = formData.school_type
+    difficulty = formData.difficulty
+    testing_philosophy = formData.testing_philosophy
+    
+    logging.info("Form data accessed")
+    logging.info("Form Title: " + title)
+    logging.info("Form Course: " + course)
+    logging.info("Form Professor: " + professor)
+    logging.info("Form Number of MCQ Questions: " + number_of_mcq_questions)
+    logging.info("Form Number of TF Questions: " + number_of_TF_questions)
+    logging.info("Form Number of Written Questions: " + number_of_written_questions)
+    logging.info("Form School Type: " + school_type)
+    logging.info("Form Difficulty: " + difficulty)
+    logging.info("Form Testing Philosophy: " + testing_philosophy)
+    logging.info("Moving to files...")
+        
     for uploaded_file in formData.subject_material:
         print(uploaded_file.file.name)
         

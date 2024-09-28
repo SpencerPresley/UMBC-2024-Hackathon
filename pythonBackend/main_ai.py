@@ -47,11 +47,9 @@ elif doc_file_path.endswith('.png', '.jpeg', '.jpg'):
     img = Image.open(doc_file_path).convert("L")  # Open and convert image to grayscale
     text = pytesseract.image_to_string(img, lang="eng")  # Convert image to text
     logging.info("Loader set for type .png, .jpeg, or .jpg")
-
-    
     
 else:
-    pass  # Indicate invalid filetype
+    raise ValueError("Invalid file type")
 
 
 docs = []
