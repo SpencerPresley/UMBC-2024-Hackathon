@@ -4,3 +4,6 @@ pypdf2
 python-multipart
 rapidocr-onnxruntime
 Jinja2
+python-multipart
+langchain-openai
+langchain-core
