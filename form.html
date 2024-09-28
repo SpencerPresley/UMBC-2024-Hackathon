@@ -1,3 +1,7 @@
+
+
+testing_philosophy: str
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,35 +14,40 @@
     <form action="" method="POST">
         <div>
             <label for="">Test Title</label>
-            <input type="text" class="titleInput">
+            <input type="text" class="titleInput" name="title">
         </div>
         <div>
             <label for="">Class Name</label>
-            <input type="text" class="classInput">
+            <input type="text" class="classInput" name="course">
         </div>
         <div>
             <label for="">Professor</label>
-            <input type="text" class="professorInput">
+            <input type="text" class="professorInput" name="professor">
         </div>
 
         <div>
             <label for="">Number of Written Response</label>
-            <input type="number" class="writtenInput">
+            <input type="number" class="writtenInput" name="number_of_mcq_questions">
         </div>
 
         <div>
             <label for="">Number of Multiple Choice</label>
-            <input type="number" class="multipleInput">
+            <input type="number" class="multipleInput" name="number_of_written_questions">
         </div>
 
         <div>
             <label for="">Number of True or False</label>
-            <input type="number" class="tfInput">
+            <input type="number" class="tfInput" name="number_of_TF_questions">
         </div>
 
         <div>
             <label for="">Grade Level</label>
-            <input type="number" class="schoolInput">
+            <input type="number" class="schoolInput" name="school_type">
+        </div>
+
+        <div>
+            <label for="">Testing Philosophy</label>
+            <input type="text" class="testingg" name="testing_philosophy">
         </div>
 
         <div>
@@ -61,7 +70,7 @@
         </div>
         <div>
             <label for="fileUpload">Choose documents to upload:</label>
-            <input type="file" id="fileUpload" name="fileUpload[]" multiple>
+            <input type="file" id="fileUpload" name="subject_material[]" multiple>
         </div>
 
         <button type="submitButton">Submit</button>
