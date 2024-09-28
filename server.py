@@ -20,6 +20,13 @@ class FormSettings(BaseModel):
     testing_philosophy: str
     subject_material:List[UploadFile]
 
+class QAPair(BaseModel):
+    question:str
+    answer: str
+    
+class GeneratedTest(BaseModel):
+    questions:List[QAPair]
+
 app = FastAPI()
 
 @app.get("/")
@@ -31,8 +38,9 @@ def final(
     data: Annotated[FormSettings, Form()],request: Request
     
 ):
+    # give ai code the FormSettings object and get back a GeneratedTest to create the edit form
     print("hi")
-    
+
     return templates.TemplateResponse(
         request=request, name="finshed_test.html", context={"Title": data.title,"Class":data.course,"Professor":data.professor}
     )
