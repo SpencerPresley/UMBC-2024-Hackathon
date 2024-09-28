@@ -46,8 +46,7 @@ def final(
     data: Annotated[FormSettings, Form()],request: Request
     
 ):
-    # give ai code the FormSettings object and get back a GeneratedTest to create the edit form
-    print("hi")
+    # test = run(data)
 
     fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"])])
 
