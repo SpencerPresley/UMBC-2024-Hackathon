@@ -61,19 +61,19 @@ def run(formData, file_path: str = None, key: str = None):
         return
     
     logging.info("Form data accessed")
-    logging.info("Form Title: " + title)
-    logging.info("Form Course: " + course)
-    logging.info("Form Professor: " + professor)
-    logging.info("Form Number of MCQ Questions: " + number_of_mcq_questions)
-    logging.info("Form Number of TF Questions: " + number_of_TF_questions)
-    logging.info("Form Number of Written Questions: " + number_of_written_questions)
-    logging.info("Form School Type: " + school_type)
-    logging.info("Form Difficulty: " + difficulty)
-    logging.info("Form Testing Philosophy: " + testing_philosophy)
+    logging.info(f"Form Title: {title}")
+    logging.info(f"Form Course: {course}")
+    logging.info(f"Form Professor: {professor}")
+    logging.info(f"Form Number of MCQ Questions: {number_of_mcq_questions}")
+    logging.info(f"Form Number of TF Questions: {number_of_TF_questions}")
+    logging.info(f"Form Number of Written Questions: {number_of_written_questions}")
+    logging.info(f"Form School Type: {school_type}")
+    logging.info(f"Form Difficulty: {difficulty}")
+    logging.info(f"Form Testing Philosophy: {testing_philosophy}")
     logging.info("Moving to files...")
     try:    
         for uploaded_file in formData.subject_material:
-            logging.info("File name: " + uploaded_file.file.name)
+            logging.info(f"File name: {uploaded_file.file.name}")
             loader = get_loader(uploaded_file.file.name)
             docs = load_data(loader)
             full_response = ""
@@ -157,7 +157,7 @@ def get_loader(file_path: str):
         img = Image.open(file_path).convert("L")
         text = pytesseract.image_to_string(img, lang="eng")
         logging.info("Loader set for type .png, .jpeg, or .jpg")
-        logging.info("Text: " + text)
+        logging.info(f"Text: {text}")
         return text
     else:
         raise ValueError("Invalid file type")

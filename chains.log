@@ -1,3 +1,19 @@
-2024-09-28 19:22:03,677 - INFO - Static files mounted
-2024-09-28 19:22:03,678 - INFO - toLetter filter added to Jinja2 environment
-2024-09-28 19:22:04,104 - INFO - GET request received for index page
+2024-09-28 19:25:44,710 - INFO - Static files mounted
+2024-09-28 19:25:44,711 - INFO - toLetter filter added to Jinja2 environment
+2024-09-28 19:25:45,132 - INFO - GET request received for index page
+2024-09-28 19:26:25,763 - INFO - POST request received for /generate
+2024-09-28 19:26:25,763 - INFO - Form data: title='midterm 2' course='theory of computation ' professor='dr. Junye tu ' number_of_mcq_questions=10 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='medium' testing_philosophy='make it hard' subject_material=[UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 19:26:25,763 - INFO - Form data accessed
+2024-09-28 19:26:25,763 - INFO - Form Title: midterm 2
+2024-09-28 19:26:25,763 - INFO - Form Course: theory of computation 
+2024-09-28 19:26:25,763 - INFO - Form Professor: dr. Junye tu 
+2024-09-28 19:26:25,763 - INFO - Form Number of MCQ Questions: 10
+2024-09-28 19:26:25,763 - INFO - Form Number of TF Questions: 5
+2024-09-28 19:26:25,763 - INFO - Form Number of Written Questions: 5
+2024-09-28 19:26:25,764 - INFO - Form School Type: Undergraduate
+2024-09-28 19:26:25,764 - INFO - Form Difficulty: medium
+2024-09-28 19:26:25,764 - INFO - Form Testing Philosophy: make it hard
+2024-09-28 19:26:25,764 - INFO - Moving to files...
+2024-09-28 19:26:25,764 - INFO - File name: None
+2024-09-28 19:26:25,764 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
+2024-09-28 19:26:25,764 - INFO - Test generated successfully
