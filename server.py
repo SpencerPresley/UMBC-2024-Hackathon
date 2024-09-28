@@ -2,7 +2,7 @@ from typing import Annotated
 from typing import List
 import logging
 
-from pythonBackend import run
+from .pythonBackend import run
 
 from starlette.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form, Request

@@ -43,7 +43,7 @@ llm = ChatOpenAI(
 parser = JsonOutputParser(pydantic_object=CleanedFile)
 
 def run(formData, file_path: str = None, key: str = None):
-    from server import FormSettings, GeneratedTest
+    from ..server import FormSettings, GeneratedTest
     
     # Access form data fields
     try:
