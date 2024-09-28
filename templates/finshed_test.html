@@ -12,9 +12,23 @@
         <input type="text" name="classBox" value= "{{ Settings.professor }}" class="h3">
 </header>
 <body>
+    <br>
     {%- for question in Test.questions %}
-    <h2>{{question.question}}</h2>
-    <p>{{question.answer}}</p>
+
+    <input type="text" name="titleBox" value= "{{ question.question }}" class="h2">
+
+    {% if question.type == 'written' %}
+    <input type="text" name="titleBox" value= "{{ question.answer }}" class="h4">
+    {% endif %}
+    
+    {% if question.type == 'multiple' %}
+
+        {% for choice in (question.choices)%}
+            <input type="text" name="titleBox" value= " {{loop.index}}: {{ choice }}" class="h4">
+        {% endfor %}
+
+    {% endif %}
+    <br>
     {% endfor %}
 </body>
 </html>
