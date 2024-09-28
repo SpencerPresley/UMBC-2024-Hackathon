@@ -2,6 +2,7 @@ import json
 import os
 from dotenv import load_dotenv
 from langchain_community.document_loaders import PyPDFLoader
+from ..server import FormSettings, GeneratedTest
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
@@ -33,7 +34,9 @@ llm = ChatOpenAI(
 
 parser = JsonOutputParser(pydantic_object=CleanedFile)
 
-def run(file_path: str, key: str):
+def run(formData:FormSettings, key: str = None)->GeneratedTest:
+    for uploaded_file in FormSettings.subject_material:
+        print(uploaded_file.file.name)
     loader = PyPDFLoader(
         file_path=file_path,
         extract_images=True,

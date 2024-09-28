@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='form.css') }}">
 </head>
 <body>
-    <h1>Test Form</h1>
+    <h1>TestifAI</h1>
     <form action="/generate" method="POST" enctype="multipart/form-data">
         <div>
             <label for="">Test Title</label>
@@ -67,7 +68,7 @@
         </div>
         <div>
             <label for="fileUpload">Choose documents to upload:</label>
-            <input type="file" id="fileUpload" name="subject_material" multiple>
+            <input type="file" id="fileUpload" name="subject_material" accept=".pdf,.docx,.pptx,.txt" multiple>
         </div>
 
         <button type="submitButton">Submit</button>
