@@ -33,7 +33,7 @@ llm = ChatOpenAI(
 
 parser = JsonOutputParser(pydantic_object=CleanedFile)
 
-def run(file_path: str, key: str):
+def run(file_path: str, key: str = None):
     loader = PyPDFLoader(
         file_path=file_path,
         extract_images=True,
