@@ -12,43 +12,49 @@
 <body>
     <div id="test">
         <input type="text" name="titleBox" value= "{{ Settings.title }}" class="h1">
+        <input type="text" name="classBox" value= "Name: __________________" class="h3">
         <input type="text" name="classBox" value= "{{ Settings.course }}" class="h3">
         <input type="text" name="classBox" value= "{{ Settings.professor }}" class="h3">
         <br>
-        {%- for question in Test.questions %}
 
-            <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
+            {%- for question in Test.questions %}
+                        <!-- <div class="question-container"> -->
 
-            {% if question.type == 'written' %}
-                <input type="text" name="titleBox" value= "{{ question.answer }}" class="h4">
-            {% endif %}
-            
-            {% if question.type == 'multiple' %}
+                <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
 
-                {% for choice in (question.choices)%}
-                    {% if choice == question.answer %}
-                    <input type="text" name="titleBox" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4" style="color: #0000ff";>
-                    {% else %}
-                    <input type="text"  value= " {{loop.index | toLetter}}: {{ choice }}" class="h4">
-                    {% endif %}    
-                {% endfor %}
+                {% if question.type == 'written' %}
+                    <input type="text" name="titleBox" value= "{{ question.answer }}" class="h4">
+                {% endif %}
+                
+                {% if question.type == 'multiple' %}
 
-            {% endif %}
+                    {% for choice in (question.choices)%}
+                        {% if choice == question.answer %}
+                        <input type="text" name="titleBox" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4" style="color: #0000ff";>
+                        {% else %}
+                        <input type="text"  value= " {{loop.index | toLetter}}: {{ choice }}" class="h4">
+                        {% endif %}    
+                    {% endfor %}
 
-            {% if question.type == 'TF' %}
+                {% endif %}
+
+                {% if question.type == 'TF' %}
 
 
-                    {% if question.answer == 'T' %}
-                    <input type="text" name="titleBox" value= "A: True" class="h4" style="color: #0000ff" ;>
-                    <input type="text" name="titleBox" value= "B: False" class="h4">
-                    {% else %}
-                    <input type="text"  value= "A: True" class="h4">
-                    <input type="text"  value= " B: False" class="h4" style="color: #0000ff" ;>
-                    {% endif %}   
-                {% endif %} 
-            <br id="{{loop.index}}">
-        {% endfor %}
+                        {% if question.answer == 'T' %}
+                        <input type="text" name="titleBox" value= "A: True" class="h4" style="color: #0000ff" ;>
+                        <input type="text" name="titleBox" value= "B: False" class="h4">
+                        {% else %}
+                        <input type="text"  value= "A: True" class="h4">
+                        <input type="text"  value= " B: False" class="h4" style="color: #0000ff" ;>
+                        {% endif %}   
+                    {% endif %} 
+                <br id="{{loop.index}}">
+            {% endfor %}
+        <!-- </div> -->
     </div>
-    <button id="DownloadButton" class="noPrint"> Download Test</button>
+    <div class="button-container">
+        <button id="DownloadButton" class="noPrint"> Download Test</button>
+    </div>
 </body>
 </html>

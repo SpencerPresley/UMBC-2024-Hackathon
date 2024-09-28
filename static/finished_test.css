@@ -8,20 +8,25 @@ input {
 .h1{
     font-size: 2.5em; 
     font-weight: bold;
+    text-align: center;
 }
 
 .h2{
     font-size: 1.3em; 
-    margin-top: 10px;
+    margin-top: 25px;
+    margin-left: 400px;
 }
 
 .h3{
     font-size: 1em; 
     font-weight: bold;
+    margin-left: 20px;
 }
 
 .h4{
     font-size: 1em; 
+    margin-left: 450px;
+    margin-top: 8px;
 }
 
 .h5{
@@ -33,4 +38,26 @@ input {
     .noPrint {
         visibility: hidden;
     }
+}
+
+button{
+    background-color: #0000ff;
+    border: #0000ff solid 2px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 98px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    width: 350px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+}
+
+.question-container{
+    display: flex;
+    justify-content: center;
 }
