@@ -10,70 +10,73 @@
 <body>
     <h1>TestifAI</h1>
     <form action="/generate" method="POST" enctype="multipart/form-data">
-        <div>
-            <label for="">Test Title</label>
-            <input type="text" class="titleInput" name="title">
-        </div>
-        <div>
-            <label for="">Class Name</label>
-            <input type="text" class="classInput" name="course">
-        </div>
-        <div>
-            <label for="">Professor</label>
-            <input type="text" class="professorInput" name="professor">
+        <div class="grid-container">
+            <div id="testInfo">
+                <h2>Test Information</h2>
+                <div class="question-grid">
+                    <label for="">Test Title</label>
+                    <input type="text" class="titleInput" name="title">
+
+                    <label for="">Class Name</label>
+                    <input type="text" class="classInput" name="course">
+
+                    <label for="">Professor</label>
+                    <input type="text" class="professorInput" name="professor">
+                </div>
+            </div>
+    
+            <div id="questionMakeup">
+                <h2>Question Type Makeup</h2>
+                <div class="question-grid">
+                    <label for=""># Short Answer</label>
+                    <input type="number" class="writtenInput" name="number_of_mcq_questions">
+
+                    <label for=""># Multiple Choice</label>
+                    <input type="number" class="multipleInput" name="number_of_written_questions">
+
+                    <label for=""># True or False</label>
+                    <input type="number" class="tfInput" name="number_of_TF_questions">
+                </div>
+            </div>
+            
+            <div id="testAudience">
+                <h2>Test Audience</h2>
+                <div class="question-grid">
+                    <label for="">Grade Level</label>
+                    <input type="number" class="schoolInput" name="school_type">
+
+                    <label for="">School Type</label>
+                    <select id="difficulty" name="difficulty">
+                        <option value="Secondary">Secondary</option>
+                        <option value="College">College</option>
+                        <option value="Graduate">Graduate</option>
+                    </select>
+
+                    <label for="">Difficulty</label>
+                    <select id="difficulty" name="difficulty">
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                        <option value="Extreme">Extreme</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="Philosophy">
+                <h2>Testing Philosophy</h2>
+                <input type="text" class="testing" name="testing_philosophy">
+            </div>
+    
+            <div id="Material">
+                <h2>Test Material</h2>
+                <input type="file" id="fileUpload" name="subject_material" accept=".pdf,.docx,.pptx,.txt" multiple>
+            </div>
+            <div class="submit-button-container">
+                <button type="submitButton">Submit</button>
+            </div>
         </div>
 
-        <div>
-            <label for="">Number of Written Response</label>
-            <input type="number" class="writtenInput" name="number_of_mcq_questions">
-        </div>
-
-        <div>
-            <label for="">Number of Multiple Choice</label>
-            <input type="number" class="multipleInput" name="number_of_written_questions">
-        </div>
-
-        <div>
-            <label for="">Number of True or False</label>
-            <input type="number" class="tfInput" name="number_of_TF_questions">
-        </div>
-
-        <div>
-            <label for="">Grade Level</label>
-            <input type="number" class="schoolInput" name="school_type">
-        </div>
-
-        <div>
-            <label for="">Testing Philosophy</label>
-            <input type="text" class="testing" name="testing_philosophy">
-        </div>
-
-        <div>
-            <label for="">School Type</label>
-            <select id="difficulty" name="difficulty">
-                <option value="Secondary">Secondary</option>
-                <option value="College">College</option>
-                <option value="Graduate">Graduate</option>
-            </select>
-        </div>
-
-        <div>
-            <label for="">Difficulty</label>
-            <select id="difficulty" name="difficulty">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-                <option value="Extreme">Extreme</option>
-            </select>
-        </div>
-        <div>
-            <label for="fileUpload">Choose documents to upload:</label>
-            <input type="file" id="fileUpload" name="subject_material" accept=".pdf,.docx,.pptx,.txt" multiple>
-        </div>
-
-        <button type="submitButton">Submit</button>
-
-
+ 
     </form>
 </body>
 </html>
