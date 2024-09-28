@@ -8,12 +8,12 @@ import json
 import logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(messages)s',
+    format='%(asctime)s - %(levelname)s - %(message)s',
     filename='logs.log',
     filemode='w'
 )
 
-file_name = "Example2.pptx"
+file_name = "Example2.txt"
 current_directory = os.path.dirname(os.path.abspath(__file__))
 doc_file_path = os.path.join(current_directory, "files", file_name)
 logging.info(f'File: {file_name} loaded at path: {doc_file_path}')
