@@ -6,16 +6,66 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>TestMake AI</h1>
-    <form action="POST">
+    <h1>Test Form</h1>
+    <form action="" method="POST">
         <div>
             <label for="">Test Title</label>
-            <input type="text">
+            <input type="text" class="titleInput">
         </div>
         <div>
-            <label for="">Class Name Title</label>
-            <input type="text">
+            <label for="">Class Name</label>
+            <input type="text" class="classInput">
         </div>
+        <div>
+            <label for="">Professor</label>
+            <input type="text" class="professorInput">
+        </div>
+
+        <div>
+            <label for="">Number of Written Response</label>
+            <input type="number" class="writtenInput">
+        </div>
+
+        <div>
+            <label for="">Number of Multiple Choice</label>
+            <input type="number" class="multipleInput">
+        </div>
+
+        <div>
+            <label for="">Number of True or False</label>
+            <input type="number" class="tfInput">
+        </div>
+
+        <div>
+            <label for="">Grade Level</label>
+            <input type="number" class="schoolInput">
+        </div>
+
+        <div>
+            <label for="">School Type</label>
+            <select id="difficulty" name="difficulty">
+                <option value="Secondary">Secondary</option>
+                <option value="College">College</option>
+                <option value="Graduate">Graduate</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="">Difficulty</label>
+            <select id="difficulty" name="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+                <option value="Extreme">Extreme</option>
+            </select>
+        </div>
+        <div>
+            <label for="fileUpload">Choose documents to upload:</label>
+            <input type="file" id="fileUpload" name="fileUpload[]" multiple>
+        </div>
+
+        <button type="submitButton">Submit</button>
+
 
     </form>
 </body>
