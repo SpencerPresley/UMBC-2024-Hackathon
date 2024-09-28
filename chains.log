@@ -114,3 +114,35 @@
 2024-09-28 19:50:59,193 - INFO - File name: 21
 2024-09-28 19:50:59,193 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
 2024-09-28 19:50:59,193 - INFO - Test generated successfully
+2024-09-28 19:54:20,503 - INFO - POST request received for /generate
+2024-09-28 19:54:20,504 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 19:54:20,504 - INFO - Form data accessed
+2024-09-28 19:54:20,504 - INFO - Form Title: 1
+2024-09-28 19:54:20,504 - INFO - Form Course: 1
+2024-09-28 19:54:20,504 - INFO - Form Professor: 1
+2024-09-28 19:54:20,504 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 19:54:20,504 - INFO - Form Number of TF Questions: 1
+2024-09-28 19:54:20,504 - INFO - Form Number of Written Questions: 111
+2024-09-28 19:54:20,504 - INFO - Form School Type: Undergraduate
+2024-09-28 19:54:20,504 - INFO - Form Difficulty: easy
+2024-09-28 19:54:20,505 - INFO - Form Testing Philosophy: 1
+2024-09-28 19:54:20,505 - INFO - Moving to files...
+2024-09-28 19:54:20,505 - INFO - File name: 21
+2024-09-28 19:54:20,505 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
+2024-09-28 19:54:20,505 - INFO - Test generated successfully
+2024-09-28 19:54:56,509 - INFO - POST request received for /generate
+2024-09-28 19:54:56,509 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 19:54:56,509 - INFO - Form data accessed
+2024-09-28 19:54:56,509 - INFO - Form Title: 1
+2024-09-28 19:54:56,509 - INFO - Form Course: 1
+2024-09-28 19:54:56,509 - INFO - Form Professor: 1
+2024-09-28 19:54:56,509 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 19:54:56,509 - INFO - Form Number of TF Questions: 1
+2024-09-28 19:54:56,510 - INFO - Form Number of Written Questions: 111
+2024-09-28 19:54:56,510 - INFO - Form School Type: Undergraduate
+2024-09-28 19:54:56,510 - INFO - Form Difficulty: easy
+2024-09-28 19:54:56,510 - INFO - Form Testing Philosophy: 1
+2024-09-28 19:54:56,510 - INFO - Moving to files...
+2024-09-28 19:54:56,510 - INFO - File name: 21
+2024-09-28 19:54:56,510 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
+2024-09-28 19:54:56,510 - INFO - Test generated successfully
