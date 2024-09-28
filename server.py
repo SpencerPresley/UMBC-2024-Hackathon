@@ -3,7 +3,19 @@ from typing import List
 
 from starlette.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form, File
+from pydantic import BaseModel
 
+class FormSettings(BaseModel):
+    title: str
+    course: str
+    professor: str
+    number_of_mcq_questions: int
+    number_of_TF_questions: int
+    number_of_written_questions: int
+    school_type: str
+    difficulty: str
+    testing_philosophy: str
+    subject_material:List[UploadFile]
 
 app = FastAPI()
 
@@ -13,16 +25,7 @@ def read_index():
 
 @app.post("/generate")
 def final(
-    title: str = Form(...),
-    course: str = Form(...),
-    professor: str = Form(...),
-    number_of_mcq_questions: int = Form(...),
-    number_of_written_questions: int = Form(...),
-    number_of_TF_questions: int = Form(...),
-    school_type: str = Form(...),
-    testing_philosophy: str = Form(...),
-    difficulty: str = Form(...),
-    subject_material: list[UploadFile] = File(...)
+    data: Annotated[FormSettings, Form()]
     
 ):
     print("hi")
