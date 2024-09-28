@@ -15,13 +15,13 @@
                 <h2>Test Information</h2>
                 <div class="question-grid">
                     <label for="">Test Title</label>
-                    <input type="text" class="titleInput" name="title">
+                    <input type="text" class="titleInput" name="title" required>
 
                     <label for="">Class Name</label>
-                    <input type="text" class="classInput" name="course">
+                    <input type="text" class="classInput" name="course" required>
 
                     <label for="">Professor</label>
-                    <input type="text" class="professorInput" name="professor">
+                    <input type="text" class="professorInput" name="professor" required>
                 </div>
             </div>
     
@@ -29,26 +29,32 @@
                 <h2>Question Type Makeup</h2>
                 <div class="question-grid">
                     <label for=""># Short Answer</label>
-                    <input type="number" class="writtenInput" name="number_of_mcq_questions">
+                    <input type="number" class="writtenInput" name="number_of_mcq_questions" required>
 
                     <label for=""># Multiple Choice</label>
-                    <input type="number" class="multipleInput" name="number_of_written_questions">
+                    <input type="number" class="multipleInput" name="number_of_written_questions" required>
 
                     <label for=""># True or False</label>
-                    <input type="number" class="tfInput" name="number_of_TF_questions">
+                    <input type="number" class="tfInput" name="number_of_TF_questions" required>
                 </div>
             </div>
             
             <div id="testAudience">
                 <h2>Test Audience</h2>
                 <div class="question-grid">
-                    <label for="">Grade Level</label>
-                    <input type="number" class="schoolInput" name="school_type">
+                    <label for="">Course Level</label>
+                    <select id="level" name="level">
+                        <option value="Remedial">Remedial</option>
+                        <option value="Normal" selected>Normal</option>
+                        <option value="Honors">Honors</option>
+                    </select>
 
                     <label for="">School Type</label>
                     <select id="difficulty" name="difficulty">
-                        <option value="Secondary">Secondary</option>
-                        <option value="College">College</option>
+                        <option value="Elementary">Elementary</option>
+                        <option value="Middle">Middle</option>
+                        <option value="High">High</option>
+                        <option value="Undergraduate" selected>Undergraduate</option>
                         <option value="Graduate">Graduate</option>
                     </select>
 
@@ -56,7 +62,7 @@
                     <select id="difficulty" name="difficulty">
                         <option value="easy">Easy</option>
                         <option value="medium">Medium</option>
-                        <option value="hard">Hard</option>
+                        <option value="hard selected">Hard</option>
                         <option value="Extreme">Extreme</option>
                     </select>
                 </div>
@@ -64,12 +70,12 @@
             
             <div id="Philosophy">
                 <h2>Testing Philosophy</h2>
-                <input type="text" class="testing" name="testing_philosophy">
+                <input type="text" class="testing" name="testing_philosophy" required>
             </div>
     
             <div id="Material">
                 <h2>Test Material</h2>
-                <input type="file" id="fileUpload" name="subject_material" accept=".pdf,.docx,.pptx,.txt" multiple>
+                <input type="file" id="fileUpload" name="subject_material" accept=".pdf,.docx,.pptx,.txt" multiple required>
             </div>
             <div class="submit-button-container">
                 <button type="submitButton">Submit</button>
