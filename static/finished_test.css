@@ -43,7 +43,7 @@ input {
 .toggle_bar {
     width: 50px;
     height: 25px;
-    background-color: #494949;
+    background-color: #adadad;
     border-radius: 12.5px;
     position: relative;
     cursor: pointer;
@@ -51,7 +51,7 @@ input {
   .toggle_button {
     width: 25px;
     height: 25px;
-    background-color: rgb(0, 140, 255);
+    background-color: #0000ff;
     border-radius: 50%;
     position: absolute;
     top: 0;

@@ -1,356 +1,130 @@
-2024-09-28 19:36:15,136 - INFO - Static files mounted
-2024-09-28 19:36:15,136 - INFO - toLetter filter added to Jinja2 environment
-2024-09-28 19:36:30,344 - INFO - GET request received for index page
-2024-09-28 19:36:42,639 - INFO - POST request received for /generate
-2024-09-28 19:36:42,639 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:36:42,640 - INFO - Form data accessed
-2024-09-28 19:36:42,640 - INFO - Form Title: 1
-2024-09-28 19:36:42,640 - INFO - Form Course: 1
-2024-09-28 19:36:42,640 - INFO - Form Professor: 1
-2024-09-28 19:36:42,640 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:36:42,640 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:36:42,640 - INFO - Form Number of Written Questions: 1
-2024-09-28 19:36:42,640 - INFO - Form School Type: Undergraduate
-2024-09-28 19:36:42,640 - INFO - Form Difficulty: easy
-2024-09-28 19:36:42,640 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:36:42,640 - INFO - Moving to files...
-2024-09-28 19:36:42,640 - INFO - File name: None
-2024-09-28 19:36:42,641 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
-2024-09-28 19:36:42,641 - INFO - Test generated successfully
-2024-09-28 19:42:01,806 - INFO - POST request received for /generate
-2024-09-28 19:42:01,807 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:42:01,807 - INFO - Form data accessed
-2024-09-28 19:42:01,807 - INFO - Form Title: 1
-2024-09-28 19:42:01,807 - INFO - Form Course: 1
-2024-09-28 19:42:01,807 - INFO - Form Professor: 1
-2024-09-28 19:42:01,807 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:42:01,807 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:42:01,807 - INFO - Form Number of Written Questions: 1
-2024-09-28 19:42:01,807 - INFO - Form School Type: Undergraduate
-2024-09-28 19:42:01,808 - INFO - Form Difficulty: easy
-2024-09-28 19:42:01,808 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:42:01,808 - INFO - Moving to files...
-2024-09-28 19:42:01,808 - INFO - File name: None
-2024-09-28 19:42:01,808 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
-2024-09-28 19:42:01,808 - INFO - Test generated successfully
-2024-09-28 19:47:03,154 - INFO - GET request received for index page
-2024-09-28 19:47:06,362 - INFO - POST request received for /generate
-2024-09-28 19:47:06,363 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:47:06,363 - INFO - Form data accessed
-2024-09-28 19:47:06,363 - INFO - Form Title: 1
-2024-09-28 19:47:06,363 - INFO - Form Course: 1
-2024-09-28 19:47:06,363 - INFO - Form Professor: 1
-2024-09-28 19:47:06,363 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:47:06,363 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:47:06,363 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:47:06,363 - INFO - Form School Type: Undergraduate
-2024-09-28 19:47:06,363 - INFO - Form Difficulty: easy
-2024-09-28 19:47:06,363 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:47:06,363 - INFO - Moving to files...
-2024-09-28 19:47:06,363 - INFO - File name: 20
-2024-09-28 19:47:06,363 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:47:06,363 - INFO - Test generated successfully
-2024-09-28 19:47:28,626 - INFO - POST request received for /generate
-2024-09-28 19:47:28,626 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:47:28,626 - INFO - Form data accessed
-2024-09-28 19:47:28,626 - INFO - Form Title: 1
-2024-09-28 19:47:28,626 - INFO - Form Course: 1
-2024-09-28 19:47:28,626 - INFO - Form Professor: 1
-2024-09-28 19:47:28,626 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:47:28,627 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:47:28,627 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:47:28,627 - INFO - Form School Type: Undergraduate
-2024-09-28 19:47:28,627 - INFO - Form Difficulty: easy
-2024-09-28 19:47:28,627 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:47:28,627 - INFO - Moving to files...
-2024-09-28 19:47:28,627 - INFO - File name: 21
-2024-09-28 19:47:28,627 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:47:28,627 - INFO - Test generated successfully
-2024-09-28 19:47:38,838 - INFO - POST request received for /generate
-2024-09-28 19:47:38,839 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:47:38,839 - INFO - Form data accessed
-2024-09-28 19:47:38,839 - INFO - Form Title: 1
-2024-09-28 19:47:38,839 - INFO - Form Course: 1
-2024-09-28 19:47:38,839 - INFO - Form Professor: 1
-2024-09-28 19:47:38,839 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:47:38,839 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:47:38,839 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:47:38,839 - INFO - Form School Type: Undergraduate
-2024-09-28 19:47:38,839 - INFO - Form Difficulty: easy
-2024-09-28 19:47:38,839 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:47:38,839 - INFO - Moving to files...
-2024-09-28 19:47:38,839 - INFO - File name: 21
-2024-09-28 19:47:38,840 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:47:38,840 - INFO - Test generated successfully
-2024-09-28 19:47:53,480 - INFO - POST request received for /generate
-2024-09-28 19:47:53,480 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:47:53,480 - INFO - Form data accessed
-2024-09-28 19:47:53,480 - INFO - Form Title: 1
-2024-09-28 19:47:53,480 - INFO - Form Course: 1
-2024-09-28 19:47:53,480 - INFO - Form Professor: 1
-2024-09-28 19:47:53,480 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:47:53,480 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:47:53,480 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:47:53,480 - INFO - Form School Type: Undergraduate
-2024-09-28 19:47:53,480 - INFO - Form Difficulty: easy
-2024-09-28 19:47:53,480 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:47:53,480 - INFO - Moving to files...
-2024-09-28 19:47:53,480 - INFO - File name: 21
-2024-09-28 19:47:53,480 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:47:53,480 - INFO - Test generated successfully
-2024-09-28 19:50:59,192 - INFO - POST request received for /generate
-2024-09-28 19:50:59,192 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:50:59,192 - INFO - Form data accessed
-2024-09-28 19:50:59,192 - INFO - Form Title: 1
-2024-09-28 19:50:59,192 - INFO - Form Course: 1
-2024-09-28 19:50:59,192 - INFO - Form Professor: 1
-2024-09-28 19:50:59,193 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:50:59,193 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:50:59,193 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:50:59,193 - INFO - Form School Type: Undergraduate
-2024-09-28 19:50:59,193 - INFO - Form Difficulty: easy
-2024-09-28 19:50:59,193 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:50:59,193 - INFO - Moving to files...
-2024-09-28 19:50:59,193 - INFO - File name: 21
-2024-09-28 19:50:59,193 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:50:59,193 - INFO - Test generated successfully
-2024-09-28 19:54:20,503 - INFO - POST request received for /generate
-2024-09-28 19:54:20,504 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:54:20,504 - INFO - Form data accessed
-2024-09-28 19:54:20,504 - INFO - Form Title: 1
-2024-09-28 19:54:20,504 - INFO - Form Course: 1
-2024-09-28 19:54:20,504 - INFO - Form Professor: 1
-2024-09-28 19:54:20,504 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:54:20,504 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:54:20,504 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:54:20,504 - INFO - Form School Type: Undergraduate
-2024-09-28 19:54:20,504 - INFO - Form Difficulty: easy
-2024-09-28 19:54:20,505 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:54:20,505 - INFO - Moving to files...
-2024-09-28 19:54:20,505 - INFO - File name: 21
-2024-09-28 19:54:20,505 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:54:20,505 - INFO - Test generated successfully
-2024-09-28 19:54:56,509 - INFO - POST request received for /generate
-2024-09-28 19:54:56,509 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:54:56,509 - INFO - Form data accessed
-2024-09-28 19:54:56,509 - INFO - Form Title: 1
-2024-09-28 19:54:56,509 - INFO - Form Course: 1
-2024-09-28 19:54:56,509 - INFO - Form Professor: 1
-2024-09-28 19:54:56,509 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:54:56,509 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:54:56,510 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:54:56,510 - INFO - Form School Type: Undergraduate
-2024-09-28 19:54:56,510 - INFO - Form Difficulty: easy
-2024-09-28 19:54:56,510 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:54:56,510 - INFO - Moving to files...
-2024-09-28 19:54:56,510 - INFO - File name: 21
-2024-09-28 19:54:56,510 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:54:56,510 - INFO - Test generated successfully
-2024-09-28 19:57:29,920 - INFO - POST request received for /generate
-2024-09-28 19:57:29,920 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:57:29,920 - INFO - Form data accessed
-2024-09-28 19:57:29,920 - INFO - Form Title: 1
-2024-09-28 19:57:29,920 - INFO - Form Course: 1
-2024-09-28 19:57:29,920 - INFO - Form Professor: 1
-2024-09-28 19:57:29,920 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:57:29,920 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:57:29,920 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:57:29,920 - INFO - Form School Type: Undergraduate
-2024-09-28 19:57:29,921 - INFO - Form Difficulty: easy
-2024-09-28 19:57:29,921 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:57:29,921 - INFO - Moving to files...
-2024-09-28 19:57:29,921 - INFO - File name: 21
-2024-09-28 19:57:29,921 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:57:29,921 - INFO - Test generated successfully
-2024-09-28 19:58:16,331 - INFO - POST request received for /generate
-2024-09-28 19:58:16,331 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 19:58:16,331 - INFO - Form data accessed
-2024-09-28 19:58:16,331 - INFO - Form Title: 1
-2024-09-28 19:58:16,331 - INFO - Form Course: 1
-2024-09-28 19:58:16,331 - INFO - Form Professor: 1
-2024-09-28 19:58:16,331 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 19:58:16,331 - INFO - Form Number of TF Questions: 1
-2024-09-28 19:58:16,331 - INFO - Form Number of Written Questions: 111
-2024-09-28 19:58:16,331 - INFO - Form School Type: Undergraduate
-2024-09-28 19:58:16,331 - INFO - Form Difficulty: easy
-2024-09-28 19:58:16,331 - INFO - Form Testing Philosophy: 1
-2024-09-28 19:58:16,331 - INFO - Moving to files...
-2024-09-28 19:58:16,331 - INFO - File name: 21
-2024-09-28 19:58:16,331 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 19:58:16,332 - INFO - Test generated successfully
-2024-09-28 20:00:53,784 - INFO - POST request received for /generate
-2024-09-28 20:00:53,785 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:00:53,785 - INFO - Form data accessed
-2024-09-28 20:00:53,785 - INFO - Form Title: 1
-2024-09-28 20:00:53,785 - INFO - Form Course: 1
-2024-09-28 20:00:53,785 - INFO - Form Professor: 1
-2024-09-28 20:00:53,785 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:00:53,785 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:00:53,785 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:00:53,785 - INFO - Form School Type: Undergraduate
-2024-09-28 20:00:53,785 - INFO - Form Difficulty: easy
-2024-09-28 20:00:53,785 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:00:53,785 - INFO - Moving to files...
-2024-09-28 20:00:53,785 - INFO - File name: 21
-2024-09-28 20:00:53,785 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:00:53,785 - INFO - Test generated successfully
-2024-09-28 20:08:12,747 - INFO - POST request received for /generate
-2024-09-28 20:08:12,747 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:08:12,747 - INFO - Form data accessed
-2024-09-28 20:08:12,747 - INFO - Form Title: 1
-2024-09-28 20:08:12,747 - INFO - Form Course: 1
-2024-09-28 20:08:12,747 - INFO - Form Professor: 1
-2024-09-28 20:08:12,747 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:08:12,747 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:08:12,747 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:08:12,747 - INFO - Form School Type: Undergraduate
-2024-09-28 20:08:12,747 - INFO - Form Difficulty: easy
-2024-09-28 20:08:12,747 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:08:12,747 - INFO - Moving to files...
-2024-09-28 20:08:12,747 - INFO - File name: 21
-2024-09-28 20:08:12,747 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:08:12,747 - INFO - Test generated successfully
-2024-09-28 20:08:44,871 - INFO - POST request received for /generate
-2024-09-28 20:08:44,871 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:08:44,871 - INFO - Form data accessed
-2024-09-28 20:08:44,871 - INFO - Form Title: 1
-2024-09-28 20:08:44,871 - INFO - Form Course: 1
-2024-09-28 20:08:44,871 - INFO - Form Professor: 1
-2024-09-28 20:08:44,871 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:08:44,871 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:08:44,871 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:08:44,871 - INFO - Form School Type: Undergraduate
-2024-09-28 20:08:44,871 - INFO - Form Difficulty: easy
-2024-09-28 20:08:44,871 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:08:44,871 - INFO - Moving to files...
-2024-09-28 20:08:44,871 - INFO - File name: 21
-2024-09-28 20:08:44,871 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:08:44,871 - INFO - Test generated successfully
-2024-09-28 20:09:13,668 - INFO - POST request received for /generate
-2024-09-28 20:09:13,668 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:09:13,668 - INFO - Form data accessed
-2024-09-28 20:09:13,668 - INFO - Form Title: 1
-2024-09-28 20:09:13,668 - INFO - Form Course: 1
-2024-09-28 20:09:13,668 - INFO - Form Professor: 1
-2024-09-28 20:09:13,669 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:09:13,669 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:09:13,669 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:09:13,669 - INFO - Form School Type: Undergraduate
-2024-09-28 20:09:13,669 - INFO - Form Difficulty: easy
-2024-09-28 20:09:13,669 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:09:13,669 - INFO - Moving to files...
-2024-09-28 20:09:13,669 - INFO - File name: 21
-2024-09-28 20:09:13,669 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:09:13,669 - INFO - Test generated successfully
-2024-09-28 20:09:34,024 - INFO - POST request received for /generate
-2024-09-28 20:09:34,024 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:09:34,024 - INFO - Form data accessed
-2024-09-28 20:09:34,024 - INFO - Form Title: 1
-2024-09-28 20:09:34,024 - INFO - Form Course: 1
-2024-09-28 20:09:34,024 - INFO - Form Professor: 1
-2024-09-28 20:09:34,024 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:09:34,024 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:09:34,024 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:09:34,024 - INFO - Form School Type: Undergraduate
-2024-09-28 20:09:34,024 - INFO - Form Difficulty: easy
-2024-09-28 20:09:34,024 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:09:34,024 - INFO - Moving to files...
-2024-09-28 20:09:34,024 - INFO - File name: 21
-2024-09-28 20:09:34,024 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:09:34,024 - INFO - Test generated successfully
-2024-09-28 20:09:50,379 - INFO - POST request received for /generate
-2024-09-28 20:09:50,379 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:09:50,380 - INFO - Form data accessed
-2024-09-28 20:09:50,380 - INFO - Form Title: 1
-2024-09-28 20:09:50,380 - INFO - Form Course: 1
-2024-09-28 20:09:50,380 - INFO - Form Professor: 1
-2024-09-28 20:09:50,380 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:09:50,380 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:09:50,380 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:09:50,380 - INFO - Form School Type: Undergraduate
-2024-09-28 20:09:50,380 - INFO - Form Difficulty: easy
-2024-09-28 20:09:50,380 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:09:50,380 - INFO - Moving to files...
-2024-09-28 20:09:50,380 - INFO - File name: 21
-2024-09-28 20:09:50,380 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:09:50,380 - INFO - Test generated successfully
-2024-09-28 20:10:02,056 - INFO - POST request received for /generate
-2024-09-28 20:10:02,056 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:10:02,056 - INFO - Form data accessed
-2024-09-28 20:10:02,056 - INFO - Form Title: 1
-2024-09-28 20:10:02,056 - INFO - Form Course: 1
-2024-09-28 20:10:02,056 - INFO - Form Professor: 1
-2024-09-28 20:10:02,056 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:10:02,056 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:10:02,056 - INFO - Form Number of Written Questions: 111
-2024-09-28 20:10:02,056 - INFO - Form School Type: Undergraduate
-2024-09-28 20:10:02,057 - INFO - Form Difficulty: easy
-2024-09-28 20:10:02,057 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:10:02,057 - INFO - Moving to files...
-2024-09-28 20:10:02,057 - INFO - File name: 21
-2024-09-28 20:10:02,057 - ERROR - Error loading data: 'int' object has no attribute 'endswith'
-2024-09-28 20:10:02,057 - INFO - Test generated successfully
-2024-09-28 20:11:25,886 - INFO - POST request received for /generate
-2024-09-28 20:11:25,886 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:11:25,887 - INFO - Form data accessed
-2024-09-28 20:11:25,887 - INFO - Form Title: 1
-2024-09-28 20:11:25,887 - INFO - Form Course: 1
-2024-09-28 20:11:25,887 - INFO - Form Professor: 1
-2024-09-28 20:11:25,887 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:11:25,887 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:11:25,887 - INFO - Form Number of Written Questions: 1
-2024-09-28 20:11:25,887 - INFO - Form School Type: Undergraduate
-2024-09-28 20:11:25,887 - INFO - Form Difficulty: easy
-2024-09-28 20:11:25,887 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:11:25,887 - INFO - Moving to files...
-2024-09-28 20:11:25,888 - INFO - File name: None
-2024-09-28 20:11:25,888 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
-2024-09-28 20:11:25,888 - INFO - Test generated successfully
-2024-09-28 20:11:48,359 - INFO - POST request received for /generate
-2024-09-28 20:11:48,359 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:11:48,359 - INFO - Form data accessed
-2024-09-28 20:11:48,359 - INFO - Form Title: 1
-2024-09-28 20:11:48,359 - INFO - Form Course: 1
-2024-09-28 20:11:48,359 - INFO - Form Professor: 1
-2024-09-28 20:11:48,359 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:11:48,359 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:11:48,359 - INFO - Form Number of Written Questions: 1
-2024-09-28 20:11:48,359 - INFO - Form School Type: Undergraduate
-2024-09-28 20:11:48,359 - INFO - Form Difficulty: easy
-2024-09-28 20:11:48,360 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:11:48,360 - INFO - Moving to files...
-2024-09-28 20:11:48,360 - INFO - File name: None
-2024-09-28 20:11:48,360 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
-2024-09-28 20:11:48,360 - INFO - Test generated successfully
-2024-09-28 20:12:08,655 - INFO - POST request received for /generate
-2024-09-28 20:12:08,655 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:12:08,655 - INFO - Form data accessed
-2024-09-28 20:12:08,655 - INFO - Form Title: 1
-2024-09-28 20:12:08,655 - INFO - Form Course: 1
-2024-09-28 20:12:08,655 - INFO - Form Professor: 1
-2024-09-28 20:12:08,655 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:12:08,655 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:12:08,655 - INFO - Form Number of Written Questions: 1
-2024-09-28 20:12:08,655 - INFO - Form School Type: Undergraduate
-2024-09-28 20:12:08,655 - INFO - Form Difficulty: easy
-2024-09-28 20:12:08,655 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:12:08,655 - INFO - Moving to files...
-2024-09-28 20:12:08,655 - INFO - File name: None
-2024-09-28 20:12:08,655 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
-2024-09-28 20:12:08,655 - INFO - Test generated successfully
-2024-09-28 20:12:12,414 - INFO - POST request received for /generate
-2024-09-28 20:12:12,415 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-28 20:12:12,415 - INFO - Form data accessed
-2024-09-28 20:12:12,415 - INFO - Form Title: 1
-2024-09-28 20:12:12,415 - INFO - Form Course: 1
-2024-09-28 20:12:12,415 - INFO - Form Professor: 1
-2024-09-28 20:12:12,415 - INFO - Form Number of MCQ Questions: 1
-2024-09-28 20:12:12,415 - INFO - Form Number of TF Questions: 1
-2024-09-28 20:12:12,415 - INFO - Form Number of Written Questions: 1
-2024-09-28 20:12:12,415 - INFO - Form School Type: Undergraduate
-2024-09-28 20:12:12,415 - INFO - Form Difficulty: easy
-2024-09-28 20:12:12,415 - INFO - Form Testing Philosophy: 1
-2024-09-28 20:12:12,415 - INFO - Moving to files...
-2024-09-28 20:12:12,416 - INFO - File name: None
-2024-09-28 20:12:12,416 - ERROR - Error loading data: 'NoneType' object has no attribute 'endswith'
-2024-09-28 20:12:12,416 - INFO - Test generated successfully
+2024-09-28 20:13:33,027 - INFO - Static files mounted
+2024-09-28 20:13:33,027 - INFO - toLetter filter added to Jinja2 environment
+2024-09-28 20:13:57,863 - INFO - POST request received for /generate
+2024-09-28 20:13:57,864 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:13:57,864 - INFO - Form data accessed
+2024-09-28 20:13:57,864 - INFO - Form Title: 1
+2024-09-28 20:13:57,864 - INFO - Form Course: 1
+2024-09-28 20:13:57,864 - INFO - Form Professor: 1
+2024-09-28 20:13:57,864 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:13:57,864 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:13:57,864 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:13:57,864 - INFO - Form School Type: Undergraduate
+2024-09-28 20:13:57,865 - INFO - Form Difficulty: easy
+2024-09-28 20:13:57,865 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:13:57,865 - INFO - Moving to files...
+2024-09-28 20:13:57,865 - INFO - Processing file: Document.pdf
+2024-09-28 20:13:57,865 - INFO - File extension: .pdf
+2024-09-28 20:13:57,865 - INFO - Processing PDF file: Document.pdf
+2024-09-28 20:13:57,927 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 20:14:00,114 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:14:00,132 - INFO - Cleaned content written to file
+2024-09-28 20:14:00,132 - INFO - Test generated successfully
+2024-09-28 20:14:03,160 - INFO - POST request received for /generate
+2024-09-28 20:14:03,160 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:14:03,161 - INFO - Form data accessed
+2024-09-28 20:14:03,161 - INFO - Form Title: 1
+2024-09-28 20:14:03,161 - INFO - Form Course: 1
+2024-09-28 20:14:03,161 - INFO - Form Professor: 1
+2024-09-28 20:14:03,161 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:14:03,161 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:14:03,161 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:14:03,161 - INFO - Form School Type: Undergraduate
+2024-09-28 20:14:03,161 - INFO - Form Difficulty: easy
+2024-09-28 20:14:03,161 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:14:03,161 - INFO - Moving to files...
+2024-09-28 20:14:03,161 - INFO - Processing file: Document.pdf
+2024-09-28 20:14:03,161 - INFO - File extension: .pdf
+2024-09-28 20:14:03,162 - INFO - Processing PDF file: Document.pdf
+2024-09-28 20:14:03,169 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 20:14:10,345 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:14:10,350 - INFO - Cleaned content written to file
+2024-09-28 20:14:10,350 - INFO - Test generated successfully
+2024-09-28 20:14:21,027 - INFO - POST request received for /generate
+2024-09-28 20:14:21,027 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:14:21,027 - INFO - Form data accessed
+2024-09-28 20:14:21,027 - INFO - Form Title: 1
+2024-09-28 20:14:21,027 - INFO - Form Course: 1
+2024-09-28 20:14:21,028 - INFO - Form Professor: 1
+2024-09-28 20:14:21,028 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:14:21,028 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:14:21,028 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:14:21,028 - INFO - Form School Type: Undergraduate
+2024-09-28 20:14:21,028 - INFO - Form Difficulty: easy
+2024-09-28 20:14:21,028 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:14:21,028 - INFO - Moving to files...
+2024-09-28 20:14:21,028 - INFO - Processing file: Document.pdf
+2024-09-28 20:14:21,028 - INFO - File extension: .pdf
+2024-09-28 20:14:21,028 - INFO - Processing PDF file: Document.pdf
+2024-09-28 20:14:21,033 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 20:14:23,143 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:14:23,146 - INFO - Cleaned content written to file
+2024-09-28 20:14:23,146 - INFO - Test generated successfully
+2024-09-28 20:19:56,303 - INFO - POST request received for /generate
+2024-09-28 20:19:56,303 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:19:56,303 - INFO - Form data accessed
+2024-09-28 20:19:56,303 - INFO - Form Title: 1
+2024-09-28 20:19:56,303 - INFO - Form Course: 1
+2024-09-28 20:19:56,303 - INFO - Form Professor: 1
+2024-09-28 20:19:56,303 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:19:56,303 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:19:56,303 - INFO - Form Number of Written Questions: 111
+2024-09-28 20:19:56,303 - INFO - Form School Type: Undergraduate
+2024-09-28 20:19:56,303 - INFO - Form Difficulty: easy
+2024-09-28 20:19:56,303 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:19:56,303 - INFO - Moving to files...
+2024-09-28 20:19:56,303 - INFO - Processing file: Sep18thVer.pdf
+2024-09-28 20:19:56,305 - INFO - File extension: .pdf
+2024-09-28 20:19:56,305 - INFO - Processing PDF file: Sep18thVer.pdf
+2024-09-28 20:20:07,059 - INFO - POST request received for /generate
+2024-09-28 20:20:07,059 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:20:07,059 - INFO - Form data accessed
+2024-09-28 20:20:07,059 - INFO - Form Title: 1
+2024-09-28 20:20:07,059 - INFO - Form Course: 1
+2024-09-28 20:20:07,059 - INFO - Form Professor: 1
+2024-09-28 20:20:07,059 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:20:07,059 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:20:07,060 - INFO - Form Number of Written Questions: 111
+2024-09-28 20:20:07,060 - INFO - Form School Type: Undergraduate
+2024-09-28 20:20:07,060 - INFO - Form Difficulty: easy
+2024-09-28 20:20:07,060 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:20:07,060 - INFO - Moving to files...
+2024-09-28 20:20:07,060 - INFO - Processing file: Sep18thVer.pdf
+2024-09-28 20:20:07,061 - INFO - File extension: .pdf
+2024-09-28 20:20:07,061 - INFO - Processing PDF file: Sep18thVer.pdf
+2024-09-28 20:20:36,063 - INFO - GET request received for index page
+2024-09-28 20:20:47,191 - INFO - GET request received for index page
+2024-09-28 20:20:51,154 - INFO - POST request received for /generate
+2024-09-28 20:20:51,154 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:20:51,155 - INFO - Form data accessed
+2024-09-28 20:20:51,155 - INFO - Form Title: 1
+2024-09-28 20:20:51,155 - INFO - Form Course: 1
+2024-09-28 20:20:51,155 - INFO - Form Professor: 1
+2024-09-28 20:20:51,155 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:20:51,155 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:20:51,155 - INFO - Form Number of Written Questions: 111
+2024-09-28 20:20:51,155 - INFO - Form School Type: Undergraduate
+2024-09-28 20:20:51,155 - INFO - Form Difficulty: easy
+2024-09-28 20:20:51,155 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:20:51,155 - INFO - Moving to files...
+2024-09-28 20:20:51,155 - INFO - Processing file: Sep18thVer.pdf
+2024-09-28 20:20:51,156 - INFO - File extension: .pdf
+2024-09-28 20:20:51,156 - INFO - Processing PDF file: Sep18thVer.pdf
+2024-09-28 20:20:55,933 - INFO - GET request received for index page
+2024-09-28 20:21:24,780 - INFO - GET request received for index page
+2024-09-28 20:21:31,775 - INFO - POST request received for /generate
+2024-09-28 20:21:31,776 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=111 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Sep18thVer.pdf', size=1151489, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Sep18thVer.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:21:31,776 - INFO - Form data accessed
+2024-09-28 20:21:31,776 - INFO - Form Title: 1
+2024-09-28 20:21:31,776 - INFO - Form Course: 1
+2024-09-28 20:21:31,776 - INFO - Form Professor: 1
+2024-09-28 20:21:31,776 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:21:31,776 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:21:31,777 - INFO - Form Number of Written Questions: 111
+2024-09-28 20:21:31,777 - INFO - Form School Type: Undergraduate
+2024-09-28 20:21:31,777 - INFO - Form Difficulty: easy
+2024-09-28 20:21:31,777 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:21:31,777 - INFO - Moving to files...
+2024-09-28 20:21:31,777 - INFO - Processing file: Sep18thVer.pdf
+2024-09-28 20:21:31,784 - INFO - File extension: .pdf
+2024-09-28 20:21:31,784 - INFO - Processing PDF file: Sep18thVer.pdf

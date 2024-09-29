@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const test = document.getElementById('test');
 	const toggle_button = document.getElementById('toggle_button')
 	const toggle_bar = document.getElementById('boundToggle')
+	//const choiceAnswer = document.getElementById('choiceAnswer')
 	console.log(test);
 	console.log(downloadButton)
 
@@ -53,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Toggle the position of the button
 		if (toggle_button.style.transform === "translateX(0px)") {
 			toggle_button.style.transform = "translateX(25px)";
+			choiceAnswer.style.color = "#ffffff"
 		} 
 		else {
 			toggle_button.style.transform = "translateX(0px)";
