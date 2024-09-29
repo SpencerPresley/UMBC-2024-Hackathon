@@ -56,7 +56,7 @@ def question_generate_chain(*,
                             difficulty, 
                             testing_philosophy,
                             ):
-    question_generation_json_format = get_json_format()
+    question_generation_json_format, json_structure = get_json_format()
     question_generation_system_prompt, question_generation_human_prompt = get_templates()
     system_prompt = SystemMessagePromptTemplate.from_template(question_generation_system_prompt.template)
     human_prompt = HumanMessagePromptTemplate.from_template(question_generation_human_prompt.template)
@@ -66,6 +66,8 @@ def question_generate_chain(*,
             human_prompt,
         ]
     )
+    
+    total_number_of_questions = number_of_mcq_questions + number_of_TF_questions + number_of_written_questions
     chain = get_question_generate_chain(
         clean_response=clean_response,
         llm=llm,
@@ -79,7 +81,9 @@ def question_generate_chain(*,
         difficulty=difficulty,
         testing_philosophy=testing_philosophy,
         prompt=prompt,
+        total_number_of_questions=total_number_of_questions,
         question_generation_json_format=question_generation_json_format,
+        json_structure=json_structure,
         question_generation_system_prompt=question_generation_system_prompt,
         question_generation_human_prompt=question_generation_human_prompt
     )
@@ -95,6 +99,8 @@ def question_generate_chain(*,
             "testing_philosophy": testing_philosophy,
             "course": course,
             "title": title,
+            "total_number_of_questions": total_number_of_questions,
+            "json_structure": json_structure
         }
     )
     # print(pydantic_return_object)
@@ -104,7 +110,8 @@ def question_generate_chain(*,
 def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
                             number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
                             school_type, difficulty, testing_philosophy, prompt,
-                            question_generation_json_format, question_generation_system_prompt, question_generation_human_prompt
+                            question_generation_json_format, question_generation_system_prompt, question_generation_human_prompt,
+                            total_number_of_questions, json_structure
                             ):
     parser = PydanticOutputParser(pydantic_object=GeneratedTest)
     chain = (
@@ -118,10 +125,13 @@ def get_question_generate_chain(*, clean_response: str, llm, title, course, prof
                 school_type=x["school_type"],
                 testing_philosophy=x["testing_philosophy"],
                 course=x["course"],
-                title=x["title"]
+                title=x["title"],
+                total_number_of_questions=x["total_number_of_questions"],
+                json_structure=x["json_structure"]
             ),
             question_generation_human_prompt = lambda x: question_generation_human_prompt.format(
-                document=x["document"]
+                document=x["document"],
+                total_number_of_questions=x["total_number_of_questions"]
             )
         )
         | prompt
@@ -133,40 +143,48 @@ def get_question_generate_chain(*, clean_response: str, llm, title, course, prof
 def get_templates():
     question_generation_system_prompt = PromptTemplate(
     template="""
-    You are an AI assistant tasked with generating reading comprehension questions based on the given input document. Your goal is to help the user assess and deepen their understanding of the material in an educational context.
+    You are a teacher/professor's assistant tasked with generating them test questions and answers based on the provided document.
     
-    You should utilize all educational content from the provided document, prioritizing the most emphasized and important concepts. 
+    You are assisting the teacher/professor in their {course} course. Analyze this course and determine the key concepts and topics that are important to the course.
     
-    - Course Name: {course}
-    The test is to be titled: {title}
-    You do not need to do anything witht the course name or the title, they are provided for your information.
+    This course is for the following level of education: {school_type}
+    The teacher wishes the test to be at the following difficulty: {difficulty}
+    This is the teacher's testing philosophy: {testing_philosophy}
     
-    This test is for the following level of education: {school_type}
+    For this test, you are to generate this many questions:
+    {total_number_of_questions}
     
-    Requested test settings by the professor:
-    - The difficulty level: {difficulty}
-    - Testing Philosophy: {testing_philosophy}
+    Out of the {total_number_of_questions}, they are to be split up as follows:
+    {number_of_mcq_questions} out of the {total_number_of_questions} question are to be multiple choice questions.
+    {number_of_TF_questions} out of the {total_number_of_questions} question are to be true/false questions.
+    {number_of_written_questions} out of the {total_number_of_questions} question are to be written questions.
+    Ensure you follow this EXACT breakdown. Do not deviate from it. Do not generate more than the number of questions asked. Do not generate less than the number of questions asked.
     
-    You will be generating {number_of_mcq_questions} multiple choice questions, {number_of_TF_questions} true/false questions, and {number_of_written_questions} written questions.
+    For multiple choice questions, you are to provide four choices, one of which is correct.
+    For true/false questions, you are to provide two choices, one of which is correct.
+    For written questions, you are to provide no choices.
     
-    You are to provide your answer in the following format:
+    You should carefully read the document step by step and use it and only it to generate the questions, do not use any other information you already have or from any other sources. ONLY USE THE PROVIDED DOCUMENT.
+    
+    You are to provide your answer in the following JSON format:
+    {json_structure}
+    
+    Here are examples for what the JSON format should look like:
     {QAPair_json_format}
-    If the question type is multiple choice, populate choices with three incorrect solution and one correct solution in a random order. If the question type is True/False, leave choices as T, F. If the question type is a written question, leave choices blank.
+    
+    Only provide the JSON, no other information. Adhere to this JSON format EXACTLY. Always adhere to this JSON format.
     
     You are to use the following names for types:
     If multiple choice: "multiple_choice"
     if true/false: "TF"
     if written: "written"
-    
-    So the full list of types is:
-    - multiple_choice
-    - TF
-    - written
-    
-    And as a reminder these go in as the value for the q_type key.
-    
-    If you include anything but the question, type, answer, and and choices within the json, you have failed.
-    IMPORTANT: If you include anything but the question, type, answer, and and choices within the json, you have failed.
+        
+    IMPORTANT: Always attempt to provide your answer in the JSON format. If you do not provide your answer in the JSON format, you have failed.
+    IMPORTANT: Always generate the EXACT number of questions asked. Do not generate more, do not generate less.
+    IMPORTANT: Always generate the exact amount of multiple choice questions asked. Do not generate more, do not generate less.
+    IMPORTANT: Always generate the exact amount of true/false questions asked. Do not generate more, do not generate less.
+    IMPORTANT: Always generate the exact amount of written questions asked. Do not generate more, do not generate less.
+    IMPORTANT: Carefully read the document and use it to generate the questions. Do not use any other information you already have or from any other sources. ONLY USE THE PROVIDED DOCUMENT.
     """
     )
 
@@ -212,7 +230,41 @@ def get_json_format():
         ]
     }
     """
-    return QAPair_json_format
+    
+    json_structure = """
+    {
+        "questions": [
+            {
+                "question": "The full text of the question",
+                "q_type": "The type of question: multiple_choice, TF, or written",
+                "answer": "The correct answer to the question",
+                "choices": [
+                    "For multiple_choice: First choice",
+                    "For multiple_choice: Second choice",
+                    "For multiple_choice: Third choice",
+                    "For multiple_choice: Fourth choice"
+                ]
+            },
+            {
+                "question": "The full text of a true/false question",
+                "q_type": "TF",
+                "answer": "The correct answer: True or False",
+                "choices": [
+                    "Always True",
+                    "Always False"
+                ]
+            },
+            {
+                "question": "The full text of a written question",
+                "q_type": "written",
+                "answer": "The expected answer or key points for the written question",
+                "choices": []
+            }
+        ]
+    }
+    """
+    
+    return QAPair_json_format, json_structure
 
 
     
