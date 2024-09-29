@@ -31,6 +31,8 @@ from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
 from .custom_prompts import clean_files_system_prompt, clean_files_human_prompt, clean_files_json_format
 
+from .question_generation_prompt import question_generate_chain
+
 
 class CleanedFile(BaseModel):
     cleaned_content: str
@@ -38,7 +40,7 @@ class CleanedFile(BaseModel):
 load_dotenv()
 llm = ChatOpenAI(
     model="gpt-4o-mini",
-    temperature=0.6,
+    temperature=0.7,
     api_key=os.getenv("OPENAI_API_KEY"),
 )
 
@@ -85,6 +87,14 @@ def run(formData, file_path: str = None, key: str = None):
                 full_response += clean_files_chain(doc)
             write_response_to_file(full_response, "cleaned_content.json")
             logging.info("Cleaned content written to file")
+            pydantic_test = question_generate_chain(
+                clean_response=full_response, llm=llm, title=title, course=course, professor=professor,
+                number_of_mcq_questions=number_of_mcq_questions, number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions,
+                school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy
+            )
+            print(pydantic_test)
+            return pydantic_test
+        
     except Exception as e:
         logging.error(f"Error processing file: {uploaded_file.filename}")
         logging.error(f"Error loading data: {e}")

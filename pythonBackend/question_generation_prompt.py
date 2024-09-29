@@ -32,19 +32,30 @@ class QAPair(BaseModel):
     question:str
     answer: str
     type: str
-    choices: List[str] = ['T', 'F']  # Holds Choices in a multiple Choice question
+    choices: List[str] = ['T', 'F'] #Holds Choices in a multiple Choice question
     
+class GeneratedTest(BaseModel):
+    questions:List[QAPair]
 
+# llm = ChatOpenAI(
+#     model="gpt-4o-mini",
+#     temperature=0.6,
+#     api_key=os.getenv("OPENAI_API_KEY"),
+# ) 
 
-llm = ChatOpenAI(
-    model="gpt-4o-mini",
-    temperature=0.6,
-    api_key=os.getenv("OPENAI_API_KEY"),
-) 
-
-def question_generate_chain(clean_response: str, llm, title, course, professor
-                            number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
-                            school_type, difficulty, testing_philosophy):
+def question_generate_chain(*, 
+                            clean_response: str, 
+                            llm, 
+                            title, 
+                            course, 
+                            professor,
+                            number_of_mcq_questions, 
+                            number_of_TF_questions, 
+                            number_of_written_questions,
+                            school_type, 
+                            difficulty, 
+                            testing_philosophy,
+                            ):
     question_generation_json_format = get_json_format()
     question_generation_system_prompt, question_generation_human_prompt = get_templates()
     system_prompt = SystemMessagePromptTemplate.from_template(question_generation_system_prompt.template)
@@ -68,30 +79,46 @@ def question_generate_chain(clean_response: str, llm, title, course, professor
         difficulty=difficulty,
         testing_philosophy=testing_philosophy,
         prompt=prompt,
-        question_generation_json_format=question_generation_json_format
+        question_generation_json_format=question_generation_json_format,
+        question_generation_system_prompt=question_generation_system_prompt,
+        question_generation_human_prompt=question_generation_human_prompt
     )
-    pydantic_return_object = chain.invoke(clean_response)
+    pydantic_return_object = chain.invoke(
+        {
+            "QAPair_json_format": question_generation_json_format,
+            "document": clean_response,
+            "number_of_mcq_questions": number_of_mcq_questions,
+            "number_of_TF_questions": number_of_TF_questions,
+            "number_of_written_questions": number_of_written_questions,
+            "school_type": school_type,
+            "difficulty": difficulty,
+            "testing_philosophy": testing_philosophy,
+            "course": course,
+            "title": title,
+        }
+    )
+    print(pydantic_return_object)
+    input("Press Enter to continue...")
     return pydantic_return_object    
     
-def get_question_generate_chain(*, clean_response: str, llm, title, course, professor
+def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
                             number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
                             school_type, difficulty, testing_philosophy, prompt,
-                            question_generation_json_format
+                            question_generation_json_format, question_generation_system_prompt, question_generation_human_prompt
                             ):
-    parser = PydanticOutputParser(pydantic_object=QAPair)
+    parser = PydanticOutputParser(pydantic_object=GeneratedTest)
     chain = (
         RunnablePassthrough.assign(
             question_generation_system_prompt = lambda x: question_generation_system_prompt.format(
-                QAPair_json_format=x["question_generation_json_format"],
+                QAPair_json_format=x["QAPair_json_format"],
                 number_of_mcq_questions=x["number_of_mcq_questions"],
                 number_of_TF_questions=x["number_of_TF_questions"],
                 number_of_written_questions=x["number_of_written_questions"],
-                type=x["type"],
-                choices=x["choices"]
                 difficulty=x["difficulty"],
-                school_type=x["school_type"]
-                testing_philosophy=x["testing_philosophy"]
-                course=x["course"]
+                school_type=x["school_type"],
+                testing_philosophy=x["testing_philosophy"],
+                course=x["course"],
+                title=x["title"]
             ),
             question_generation_human_prompt = lambda x: question_generation_human_prompt.format(
                 document=x["document"]
@@ -111,19 +138,36 @@ def get_templates():
     You should utilize all educational content from the provided document, prioritizing the most emphasized and important concepts. 
     
     - Course Name: {course}
+    The test is to be titled: {title}
+    You do not need to do anything witht the course name or the title, they are provided for your information.
     
-    Requested test settings:
+    This test is for the following level of education: {school_type}
+    
+    Requested test settings by the professor:
     - The difficulty level: {difficulty}
-    - The school level: {school_type}
     - Testing Philosophy: {testing_philosophy}
     
     You will be generating {number_of_mcq_questions} multiple choice questions, {number_of_TF_questions} true/false questions, and {number_of_written_questions} written questions.
     
     You are to provide your answer in the following format:
     {QAPair_json_format}
-    If {type} is multiple choice, populate {choices} with three incorrect solution and one correct solution in a random order. If {type} is True/False, leave {choices} as T, F. If {type} is a written question, leave {choices} blank.
+    If the question type is multiple choice, populate choices with three incorrect solution and one correct solution in a random order. If the question type is True/False, leave choices as T, F. If the question type is a written question, leave choices blank.
+    
+    You are to use the following names for types:
+    If multiple choice: "multiple_choice"
+    if true/false: "TF"
+    if written: "written"
+    
+    So the full list of types is:
+    - multiple_choice
+    - TF
+    - written
+    
+    An example for each:
+    
     
     If you include anything but the question, type, answer, and and choices within the json, you have failed.
+    IMPORTANT: If you include anything but the question, type, answer, and and choices within the json, you have failed.
     """
     )
 
@@ -139,15 +183,34 @@ def get_templates():
 def get_json_format():
     QAPair_json_format = """
     {
-        questions: [
+        "questions": [
             {
-                "question": <string: a question>
-                "type": <question type, i.e., multiple choice, written, true/false,
-                "answer": <string: the answer to the question>
-                "choices": <choices: if true false ['T', 'F'], if multiple choice then ['a', 'b', 'c', etc.,]>
+                "question": "What is the capital of France?",
+                "type": "multiple_choice",
+                "answer": "Paris",
+                "choices": [
+                    "London",
+                    "Berlin",
+                    "Paris",
+                    "Madrid"
                 ]
+            },
+            {
+                "question": "The Earth is flat.",
+                "type": "TF",
+                "answer": "False",
+                "choices": [
+                    "True",
+                    "False"
+                ]
+            },
+            {
+                "question": "Explain the process of photosynthesis in plants.",
+                "type": "written",
+                "answer": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce oxygen and energy in the form of sugar.",
+                "choices": []
             }
-        ] 
+        ]
     }
     """
     return QAPair_json_format
