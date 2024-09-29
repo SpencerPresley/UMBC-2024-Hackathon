@@ -105,4 +105,15 @@ textarea{
     font-size: 16px;
 }
 
+.logo{
+    width: 25% !important;
+    height: auto;
+}
 
+.loading{
+    position: fixed;
+    margin-top: 8%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: none;
+}
