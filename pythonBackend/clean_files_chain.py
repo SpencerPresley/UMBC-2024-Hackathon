@@ -76,15 +76,9 @@ def run(formData, file_path: str = None, key: str = None):
     logging.info("Moving to files...")
     try:    
         for uploaded_file in formData.subject_material:
-<<<<<<< Updated upstream
             logging.info(f"Processing file: {uploaded_file.filename}")
             loader = get_loader(uploaded_file)
             docs = loader.load()
-=======
-            logging.info(f"File name: {uploaded_file.filename}")
-            loader = get_loader(uploaded_file.filename)
-            docs = load_data(loader)
->>>>>>> Stashed changes
             full_response = ""
             for i, doc in enumerate(docs):
                 logging.info(f"Document {i+1} ({uploaded_file.filename}) of {len(docs)}")
