@@ -1,3 +1,4 @@
+import json
 import os
 from dotenv import load_dotenv
 import logging
@@ -11,6 +12,8 @@ logging.basicConfig(
     filemode='w'
 )
 
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader
+
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
     PromptTemplate,
@@ -20,7 +23,7 @@ from langchain_core.prompts import (
 )
 from pydantic import BaseModel
 from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import PydanticOutputParser
+from langchain_core.output_parsers import JsonOutputParser, StrOutputParser, PydanticOutputParser
 
 class QAPair(BaseModel):
     question:str
