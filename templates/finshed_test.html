@@ -10,6 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 <script src="{{ url_for('static', path='finished_test.js') }}"></script>
 <body>
+    <p class="edit-notice">Click a question to edit</p>
+
     <div id="test">
         <input type="text" name="titleBox" value= "{{ Settings.title }}" class="h1">
         <input type="text" name="classBox" value= "Name: __________________" class="h3">
@@ -56,7 +58,6 @@
         <button id="DownloadButton" class="noPrint"> Download Test</button>
     </div>
 
-    
     <div class="toggle_bar" id="boundToggle">
         <div class="toggle_button" id="toggle_button"> </div>
     </div>
