@@ -2,9 +2,9 @@ from typing import Annotated
 from typing import List
 import logging
 
-from .pythonBackend import run
+# from .pythonBackend import run
 # for spencer
-# from pythonBackend import run
+from pythonBackend import run
 from starlette.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form, Request
 from pydantic import BaseModel
@@ -33,7 +33,6 @@ class QAPair(BaseModel):
     question:str
     answer: str
     type: str
-
     choices: List[str] = ['T', 'F'] #Holds Choices in a multiple Choice question
     
 class GeneratedTest(BaseModel):
@@ -74,7 +73,7 @@ def final(
             request=request, name="error.html", context={"error": str(e)}
         )
 
-    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"]), QAPair(question="What is 2+2?", answer="T", type="TF")] )
+    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"]), QAPair(question="Does 2+2=4?", answer="T", type="TF")] )
 
     return templates.TemplateResponse(
         request=request, name="finshed_test.html", context={"Settings": data,"Test":fake_response}

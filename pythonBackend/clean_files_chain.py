@@ -3,7 +3,8 @@ import os
 from dotenv import load_dotenv
 import logging
 import tempfile
-
+import sys
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from PIL import Image
 import pytesseract
 import re
@@ -44,8 +45,9 @@ llm = ChatOpenAI(
 parser = JsonOutputParser(pydantic_object=CleanedFile)
 
 def run(formData, file_path: str = None, key: str = None):
-    from ..server import FormSettings, GeneratedTest
-    
+    # from ..server import FormSettings, GeneratedTest
+    # for spencer
+    from server import FormSettings, GeneratedTest
     # Access form data fields
     try:
         title = formData.title
@@ -141,8 +143,6 @@ def get_clean_files_chain(llm, prompt, system_prompt, human_prompt):
 def write_response_to_file(response, file_path: str):
     with open(file_path, "w") as f:
         json.dump(response, f, indent=4)
-        
-
 
 def get_loader(uploaded_file):  
     with tempfile.NamedTemporaryFile(delete=False) as temp_file:
