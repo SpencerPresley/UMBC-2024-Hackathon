@@ -23,7 +23,7 @@ input,option,select,button{
 
 select{
 
-    height: 34px;
+    height: 40px;
 
 }
 
@@ -41,11 +41,11 @@ button{
     border: #0000ff solid 2px;
     padding: 5px;
     border-radius: 5px;
-    margin-top: 98px;
+    margin-top: 85px;
     color: white;
     font-size: 20px;
     cursor: pointer;
-    width: 350px;
+    width: 400px;
 }
 
 .question-grid{
@@ -62,10 +62,10 @@ h2{
 
 .submit-button-container{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: end;
-    margin-bottom: 10px;
-    margin-right: 75px;
+    margin-bottom: 55px;
+    margin-right: 79px;
 }
 
 #Philosophy>input{
@@ -80,11 +80,29 @@ h2{
 #Material>div>input{
     width: 350px;
     height: 13px;
+    font-size: 16px;
+}
+
+#testInfo>.question-grid>input{
+    margin: 5px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+#questionMakeup>.question-grid>input{
+    margin: 5px;
+    padding: 8px;
+    font-size: 16px;
+    max-width: 150px;
 }
 
 .web-links{
     display: flex;
     justify-content: center;
+}
+
+textarea{
+    font-size: 16px;
 }
 
 
