@@ -17,7 +17,7 @@ logging.basicConfig(
     filemode='w'
 )
 
-from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader, PyMuPDFLoader
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
