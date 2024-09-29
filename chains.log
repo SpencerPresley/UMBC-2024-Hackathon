@@ -1,131 +1,864 @@
-<<<<<<< HEAD
-2024-09-29 07:45:30,270 - INFO - Static files mounted
-2024-09-29 07:45:30,270 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 07:45:30,502 - INFO - GET request received for index page
-2024-09-29 07:45:31,925 - INFO - GET request received for index page
-2024-09-29 07:47:21,391 - INFO - GET request received for index page
-2024-09-29 07:47:31,287 - INFO - GET request received for index page
-2024-09-29 07:47:39,194 - INFO - GET request received for index page
-=======
-2024-09-29 06:53:59,304 - INFO - Static files mounted
-2024-09-29 06:53:59,304 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 06:54:03,540 - INFO - GET request received for index page
-2024-09-29 06:54:38,941 - INFO - POST request received for /generate
-2024-09-29 06:54:38,942 - INFO - Form data: title='midterm 1' course='cosc362: theory of computation' professor='dr. tu' number_of_mcq_questions=10 number_of_TF_questions=10 number_of_written_questions=10 school_type='Undergraduate' level='Normal' difficulty='Extreme' testing_philosophy='My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.' url_1='' url_2='' subject_material=[UploadFile(filename='3a.pdf', size=195115, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="3a.pdf"', 'content-type': 'application/pdf'})), UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'})), UploadFile(filename='4b.pdf', size=116591, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4b.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-29 06:54:38,942 - INFO - Form data accessed
-2024-09-29 06:54:38,942 - INFO - Form Title: midterm 1
-2024-09-29 06:54:38,942 - INFO - Form Course: cosc362: theory of computation
-2024-09-29 06:54:38,942 - INFO - Form Professor: dr. tu
-2024-09-29 06:54:38,942 - INFO - Form Number of MCQ Questions: 10
-2024-09-29 06:54:38,942 - INFO - Form Number of TF Questions: 10
-2024-09-29 06:54:38,942 - INFO - Form Number of Written Questions: 10
-2024-09-29 06:54:38,942 - INFO - Form School Type: Undergraduate
-2024-09-29 06:54:38,942 - INFO - Form Difficulty: Extreme
-2024-09-29 06:54:38,942 - INFO - Form Testing Philosophy: My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.
-2024-09-29 06:54:38,942 - INFO - Moving to files...
-2024-09-29 06:54:38,942 - INFO - Processing file: 3a.pdf
-2024-09-29 06:54:38,944 - INFO - File extension: .pdf
-2024-09-29 06:54:38,944 - INFO - Processing PDF file: 3a.pdf
-2024-09-29 06:54:39,115 - INFO - Processing file: 4a.pdf
-2024-09-29 06:54:39,116 - INFO - File extension: .pdf
-2024-09-29 06:54:39,116 - INFO - Processing PDF file: 4a.pdf
-2024-09-29 06:54:39,116 - INFO - Processing file: 4b.pdf
-2024-09-29 06:54:39,117 - INFO - File extension: .pdf
-2024-09-29 06:54:39,117 - INFO - Processing PDF file: 4b.pdf
-2024-09-29 06:54:39,311 - INFO - Document 1 (4a.pdf) of 10
-2024-09-29 06:54:39,331 - INFO - Document 1 (4b.pdf) of 17
-2024-09-29 06:54:39,346 - INFO - Document 1 (3a.pdf) of 19
-2024-09-29 06:54:40,135 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:40,149 - INFO - Document 2 (4a.pdf) of 10
-2024-09-29 06:54:40,254 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:40,306 - INFO - Document 2 (3a.pdf) of 19
-2024-09-29 06:54:40,514 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:40,664 - INFO - Document 2 (4b.pdf) of 17
-2024-09-29 06:54:41,092 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:41,094 - INFO - Document 3 (4a.pdf) of 10
-2024-09-29 06:54:41,685 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:41,691 - INFO - Document 3 (3a.pdf) of 19
-2024-09-29 06:54:42,340 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:42,342 - INFO - Document 4 (4a.pdf) of 10
-2024-09-29 06:54:43,209 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:43,211 - INFO - Document 4 (3a.pdf) of 19
-2024-09-29 06:54:43,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:43,536 - INFO - Document 5 (4a.pdf) of 10
-2024-09-29 06:54:43,704 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:43,707 - INFO - Document 3 (4b.pdf) of 17
-2024-09-29 06:54:43,982 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:43,989 - INFO - Document 5 (3a.pdf) of 19
-2024-09-29 06:54:44,823 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:44,826 - INFO - Document 6 (4a.pdf) of 10
-2024-09-29 06:54:45,230 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:45,236 - INFO - Document 6 (3a.pdf) of 19
-2024-09-29 06:54:45,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:45,387 - INFO - Document 4 (4b.pdf) of 17
-2024-09-29 06:54:46,027 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:46,031 - INFO - Document 7 (3a.pdf) of 19
-2024-09-29 06:54:46,095 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:46,099 - INFO - Document 7 (4a.pdf) of 10
-2024-09-29 06:54:47,051 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:47,057 - INFO - Document 5 (4b.pdf) of 17
-2024-09-29 06:54:48,146 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:48,155 - INFO - Document 6 (4b.pdf) of 17
-2024-09-29 06:54:48,395 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:48,402 - INFO - Document 8 (4a.pdf) of 10
-2024-09-29 06:54:48,406 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:48,412 - INFO - Document 8 (3a.pdf) of 19
-2024-09-29 06:54:49,475 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:49,480 - INFO - Document 9 (3a.pdf) of 19
-2024-09-29 06:54:50,014 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:50,018 - INFO - Document 7 (4b.pdf) of 17
-2024-09-29 06:54:50,245 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:50,251 - INFO - Document 9 (4a.pdf) of 10
-2024-09-29 06:54:51,354 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:51,360 - INFO - Document 10 (4a.pdf) of 10
-2024-09-29 06:54:51,639 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:51,646 - INFO - Document 8 (4b.pdf) of 17
-2024-09-29 06:54:52,147 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:52,153 - INFO - Document 10 (3a.pdf) of 19
-2024-09-29 06:54:52,583 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:52,784 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:52,788 - INFO - Document 9 (4b.pdf) of 17
-2024-09-29 06:54:53,709 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:53,715 - INFO - Document 11 (3a.pdf) of 19
-2024-09-29 06:54:54,257 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:54,260 - INFO - Document 10 (4b.pdf) of 17
-2024-09-29 06:54:55,032 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:55,037 - INFO - Document 12 (3a.pdf) of 19
-2024-09-29 06:54:55,970 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:55,976 - INFO - Document 13 (3a.pdf) of 19
-2024-09-29 06:54:56,590 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:56,593 - INFO - Document 11 (4b.pdf) of 17
-2024-09-29 06:54:56,927 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:56,933 - INFO - Document 14 (3a.pdf) of 19
-2024-09-29 06:54:57,943 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:57,949 - INFO - Document 15 (3a.pdf) of 19
-2024-09-29 06:54:58,171 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:58,177 - INFO - Document 12 (4b.pdf) of 17
-2024-09-29 06:54:58,919 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:58,923 - INFO - Document 16 (3a.pdf) of 19
-2024-09-29 06:54:59,068 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:54:59,073 - INFO - Document 13 (4b.pdf) of 17
-2024-09-29 06:55:00,790 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:00,796 - INFO - Document 17 (3a.pdf) of 19
-2024-09-29 06:55:01,026 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:01,029 - INFO - Document 14 (4b.pdf) of 17
-2024-09-29 06:55:01,841 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:01,844 - INFO - Document 18 (3a.pdf) of 19
-2024-09-29 06:55:02,758 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:02,762 - INFO - Document 19 (3a.pdf) of 19
-2024-09-29 06:55:02,936 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:02,941 - INFO - Document 15 (4b.pdf) of 17
-2024-09-29 06:55:03,968 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:03,970 - INFO - Document 16 (4b.pdf) of 17
-2024-09-29 06:55:04,636 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:05,198 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:05,204 - INFO - Document 17 (4b.pdf) of 17
-2024-09-29 06:55:06,268 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:06,277 - INFO - Cleaned content written to file
-2024-09-29 06:55:06,278 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
-2024-09-29 06:55:28,640 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 06:55:28,775 - INFO - Test generated successfully
->>>>>>> c3cf610e6baa3c7ba23b874f2290f67fb76d2f4d
+2024-09-29 08:09:31,318 - INFO - Static files mounted
+2024-09-29 08:09:31,318 - INFO - toLetter filter2024-09-29 08:09:31,489 - INF2024-09-29 08:09:33,270 - INFO - GET request received for index page
+2024-09-29 08:10:46,465 - INFO - GET request received for index page
+2024-09-29 08:10:47,433 - INFO - GET request received for index page
+2024-09-29 08:11:08,961 - INFO - GET request received for index page
+2024-09-29 08:13:00,282 - INFO - GET request received for index page
+2024-09-29 08:13:16,636 - INFO - GET request received for index page
+2024-09-29 08:13:32,810 - INFO - GET request received for index page
+2024-09-29 08:14:07,632 - INFO - POST request received for /generate
+2024-09-29 08:14:07,633 - INFO - Form data: title='1' course='11' professor='1' number_of_mcq_questions=2 number_of_TF_questions=2 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' url_1='' url_2='' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-29 08:14:07,640 - INFO - Static files mounted
+2024-09-29 08:14:07,640 - INFO - toLetter filter added to Jinja2 environment
+2024-09-29 08:14:07,641 - INFO - Form data accessed
+2024-09-29 08:14:07,641 - INFO - Form Title: 1
+2024-09-29 08:14:07,642 - INFO - Form Course: 11
+2024-09-29 08:14:07,642 - INFO - Form Professor: 1
+2024-09-29 08:14:07,642 - INFO - Form Number of MCQ Questions: 2
+2024-09-29 08:14:07,642 - INFO - Form Number of TF Questions: 2
+2024-09-29 08:14:07,642 - INFO - Form Number of Written Questions: 1
+2024-09-29 08:14:07,642 - INFO - Form School Type: Undergraduate
+2024-09-29 08:14:07,642 - INFO - Form Difficulty: easy
+2024-09-29 08:14:07,642 - INFO - Form Testing Philosophy: 1
+2024-09-29 08:14:07,642 - INFO - Moving to files...
+2024-09-29 08:14:07,642 - INFO - Processing file: Document.pdf
+2024-09-29 08:14:07,643 - INFO - File extension: .pdf
+2024-09-29 08:14:07,643 - INFO - Processing PDF file: Document.pdf
+2024-09-29 08:14:07,644 - ERROR - Error processing files: name 'PyMuPDFLoader' is not defined
+2024-09-29 08:14:07,644 - ERROR - File 1: Document.pdf
+2024-09-29 08:14:07,644 - INFO - Test generated successfully
+8:09:46,586 - INFO - 1 change detected
+2024-09-29 08:09:46,937 - INFO - 1 change detected
+2024-09-29 08:09:47,289 - INFO - 1 change detected
+2024-09-29 08:09:47,640 - INFO - 1 change detected
+2024-09-29 08:09:47,991 - INFO - 1 change detected
+2024-09-29 08:09:48,342 - INFO - 1 change detected
+2024-09-29 08:09:48,693 - INFO - 1 change detected
+2024-09-29 08:09:49,044 - INFO - 1 change detected
+2024-09-29 08:09:49,395 - INFO - 1 change detected
+2024-09-29 08:09:49,746 - INFO - 1 change detected
+2024-09-29 08:09:50,097 - INFO - 1 change detected
+2024-09-29 08:09:50,448 - INFO - 1 change detected
+2024-09-29 08:09:50,799 - INFO - 1 change detected
+2024-09-29 08:09:51,150 - INFO - 1 change detected
+2024-09-29 08:09:51,501 - INFO - 1 change detected
+2024-09-29 08:09:51,852 - INFO - 1 change detected
+2024-09-29 08:09:52,203 - INFO - 1 change detected
+2024-09-29 08:09:52,554 - INFO - 1 change detected
+2024-09-29 08:09:52,905 - INFO - 1 change detected
+2024-09-29 08:09:53,256 - INFO - 1 change detected
+2024-09-29 08:09:53,607 - INFO - 1 change detected
+2024-09-29 08:09:53,958 - INFO - 1 change detected
+2024-09-29 08:09:54,309 - INFO - 1 change detected
+2024-09-29 08:09:54,660 - INFO - 1 change detected
+2024-09-29 08:09:55,011 - INFO - 1 change detected
+2024-09-29 08:09:55,363 - INFO - 1 change detected
+2024-09-29 08:09:55,714 - INFO - 1 change detected
+2024-09-29 08:09:56,065 - INFO - 1 change detected
+2024-09-29 08:09:56,416 - INFO - 1 change detected
+2024-09-29 08:09:56,767 - INFO - 1 change detected
+2024-09-29 08:09:57,118 - INFO - 1 change detected
+2024-09-29 08:09:57,470 - INFO - 1 change detected
+2024-09-29 08:09:57,821 - INFO - 1 change detected
+2024-09-29 08:09:58,172 - INFO - 1 change detected
+2024-09-29 08:09:58,524 - INFO - 1 change detected
+2024-09-29 08:09:58,875 - INFO - 1 change detected
+2024-09-29 08:09:59,226 - INFO - 1 change detected
+2024-09-29 08:09:59,577 - INFO - 1 change detected
+2024-09-29 08:09:59,928 - INFO - 1 change detected
+2024-09-29 08:10:00,279 - INFO - 1 change detected
+2024-09-29 08:10:00,631 - INFO - 1 change detected
+2024-09-29 08:10:00,982 - INFO - 1 change detected
+2024-09-29 08:10:01,333 - INFO - 1 change detected
+2024-09-29 08:10:01,684 - INFO - 1 change detected
+2024-09-29 08:10:02,035 - INFO - 1 change detected
+2024-09-29 08:10:02,387 - INFO - 1 change detected
+2024-09-29 08:10:02,738 - INFO - 1 change detected
+2024-09-29 08:10:03,089 - INFO - 1 change detected
+2024-09-29 08:10:03,440 - INFO - 1 change detected
+2024-09-29 08:10:03,792 - INFO - 1 change detected
+2024-09-29 08:10:04,143 - INFO - 1 change detected
+2024-09-29 08:10:04,494 - INFO - 1 change detected
+2024-09-29 08:10:04,845 - INFO - 1 change detected
+2024-09-29 08:10:05,196 - INFO - 1 change detected
+2024-09-29 08:10:05,547 - INFO - 1 change detected
+2024-09-29 08:10:05,899 - INFO - 1 change detected
+2024-09-29 08:10:06,249 - INFO - 1 change detected
+2024-09-29 08:10:06,600 - INFO - 1 change detected
+2024-09-29 08:10:06,951 - INFO - 1 change detected
+2024-09-29 08:10:07,302 - INFO - 1 change detected
+2024-09-29 08:10:07,653 - INFO - 1 change detected
+2024-09-29 08:10:08,004 - INFO - 1 change detected
+2024-09-29 08:10:08,354 - INFO - 1 change detected
+2024-09-29 08:10:08,705 - INFO - 1 change detected
+2024-09-29 08:10:09,056 - INFO - 1 change detected
+2024-09-29 08:10:09,407 - INFO - 1 change detected
+2024-09-29 08:10:09,758 - INFO - 1 change detected
+2024-09-29 08:10:10,109 - INFO - 1 change detected
+2024-09-29 08:10:10,461 - INFO - 1 change detected
+2024-09-29 08:10:10,812 - INFO - 1 change detected
+2024-09-29 08:10:11,163 - INFO - 1 change detected
+2024-09-29 08:10:11,515 - INFO - 1 change detected
+2024-09-29 08:10:11,866 - INFO - 1 change detected
+2024-09-29 08:10:12,217 - INFO - 1 change detected
+2024-09-29 08:10:12,568 - INFO - 1 change detected
+2024-09-29 08:10:12,918 - INFO - 1 change detected
+2024-09-29 08:10:13,269 - INFO - 1 change detected
+2024-09-29 08:10:13,620 - INFO - 1 change detected
+2024-09-29 08:10:13,971 - INFO - 1 change detected
+2024-09-29 08:10:14,323 - INFO - 1 change detected
+2024-09-29 08:10:14,674 - INFO - 1 change detected
+2024-09-29 08:10:15,025 - INFO - 1 change detected
+2024-09-29 08:10:15,376 - INFO - 1 change detected
+2024-09-29 08:10:15,727 - INFO - 1 change detected
+2024-09-29 08:10:16,078 - INFO - 1 change detected
+2024-09-29 08:10:16,429 - INFO - 1 change detected
+2024-09-29 08:10:16,779 - INFO - 1 change detected
+2024-09-29 08:10:17,131 - INFO - 1 change detected
+2024-09-29 08:10:17,482 - INFO - 1 change detected
+2024-09-29 08:10:17,832 - INFO - 1 change detected
+2024-09-29 08:10:18,184 - INFO - 1 change detected
+2024-09-29 08:10:18,535 - INFO - 1 change detected
+2024-09-29 08:10:18,886 - INFO - 1 change detected
+2024-09-29 08:10:19,237 - INFO - 1 change detected
+2024-09-29 08:10:19,589 - INFO - 1 change detected
+2024-09-29 08:10:19,940 - INFO - 1 change detected
+2024-09-29 08:10:20,291 - INFO - 1 change detected
+2024-09-29 08:10:20,642 - INFO - 1 change detected
+2024-09-29 08:10:20,993 - INFO - 1 change detected
+2024-09-29 08:10:21,344 - INFO - 1 change detected
+2024-09-29 08:10:21,695 - INFO - 1 change detected
+2024-09-29 08:10:22,046 - INFO - 1 change detected
+2024-09-29 08:10:22,397 - INFO - 1 change detected
+2024-09-29 08:10:22,748 - INFO - 1 change detected
+2024-09-29 08:10:23,099 - INFO - 1 change detected
+2024-09-29 08:10:23,450 - INFO - 1 change detected
+2024-09-29 08:10:23,801 - INFO - 1 change detected
+2024-09-29 08:10:24,152 - INFO - 1 change detected
+2024-09-29 08:10:24,503 - INFO - 1 change detected
+2024-09-29 08:10:24,854 - INFO - 1 change detected
+2024-09-29 08:10:25,205 - INFO - 1 change detected
+2024-09-29 08:10:25,556 - INFO - 1 change detected
+2024-09-29 08:10:25,907 - INFO - 1 change detected
+2024-09-29 08:10:26,257 - INFO - 1 change detected
+2024-09-29 08:10:26,608 - INFO - 1 change detected
+2024-09-29 08:10:26,959 - INFO - 1 change detected
+2024-09-29 08:10:27,310 - INFO - 1 change detected
+2024-09-29 08:10:27,661 - INFO - 1 change detected
+2024-09-29 08:10:28,012 - INFO - 1 change detected
+2024-09-29 08:10:28,363 - INFO - 1 change detected
+2024-09-29 08:10:28,714 - INFO - 1 change detected
+2024-09-29 08:10:29,065 - INFO - 1 change detected
+2024-09-29 08:10:29,416 - INFO - 1 change detected
+2024-09-29 08:10:29,767 - INFO - 1 change detected
+2024-09-29 08:10:30,119 - INFO - 1 change detected
+2024-09-29 08:10:30,470 - INFO - 1 change detected
+2024-09-29 08:10:30,821 - INFO - 1 change detected
+2024-09-29 08:10:31,172 - INFO - 1 change detected
+2024-09-29 08:10:31,524 - INFO - 1 change detected
+2024-09-29 08:10:31,875 - INFO - 1 change detected
+2024-09-29 08:10:32,227 - INFO - 1 change detected
+2024-09-29 08:10:32,578 - INFO - 1 change detected
+2024-09-29 08:10:32,929 - INFO - 1 change detected
+2024-09-29 08:10:33,280 - INFO - 1 change detected
+2024-09-29 08:10:33,631 - INFO - 1 change detected
+2024-09-29 08:10:33,982 - INFO - 1 change detected
+2024-09-29 08:10:34,333 - INFO - 1 change detected
+2024-09-29 08:10:34,684 - INFO - 1 change detected
+2024-09-29 08:10:35,035 - INFO - 1 change detected
+2024-09-29 08:10:35,387 - INFO - 1 change detected
+2024-09-29 08:10:35,738 - INFO - 1 change detected
+2024-09-29 08:10:36,089 - INFO - 1 change detected
+2024-09-29 08:10:36,440 - INFO - 1 change detected
+2024-09-29 08:10:36,791 - INFO - 1 change detected
+2024-09-29 08:10:37,142 - INFO - 1 change detected
+2024-09-29 08:10:37,494 - INFO - 1 change detected
+2024-09-29 08:10:37,845 - INFO - 1 change detected
+2024-09-29 08:10:38,196 - INFO - 1 change detected
+2024-09-29 08:10:38,547 - INFO - 1 change detected
+2024-09-29 08:10:38,898 - INFO - 1 change detected
+2024-09-29 08:10:39,249 - INFO - 1 change detected
+2024-09-29 08:10:39,601 - INFO - 1 change detected
+2024-09-29 08:10:39,952 - INFO - 1 change detected
+2024-09-29 08:10:40,303 - INFO - 1 change detected
+2024-09-29 08:10:40,654 - INFO - 1 change detected
+2024-09-29 08:10:41,006 - INFO - 1 change detected
+2024-09-29 08:10:41,357 - INFO - 1 change detected
+2024-09-29 08:10:41,708 - INFO - 1 change detected
+2024-09-29 08:10:42,059 - INFO - 1 change detected
+2024-09-29 08:10:42,410 - INFO - 1 change detected
+2024-09-29 08:10:42,762 - INFO - 1 change detected
+2024-09-29 08:10:43,114 - INFO - 1 change detected
+2024-09-29 08:10:43,465 - INFO - 1 change detected
+2024-09-29 08:10:43,816 - INFO - 1 change detected
+2024-09-29 08:10:44,167 - INFO - 1 change detected
+2024-09-29 08:10:44,518 - INFO - 2 changes detected
+2024-09-29 08:10:44,869 - INFO - 1 change detected
+2024-09-29 08:10:45,220 - INFO - 1 change detected
+2024-09-29 08:10:45,571 - INFO - 1 change detected
+2024-09-29 08:10:45,922 - INFO - 1 change detected
+2024-09-29 08:10:46,274 - INFO - 1 change detected
+2024-09-29 08:10:46,625 - INFO - 1 change detected
+2024-09-29 08:10:46,976 - INFO - 1 change detected
+2024-09-29 08:10:47,327 - INFO - 1 change detected
+2024-09-29 08:10:47,678 - INFO - 1 change detected
+2024-09-29 08:10:48,029 - INFO - 1 change detected
+2024-09-29 08:10:48,381 - INFO - 1 change detected
+2024-09-29 08:10:48,732 - INFO - 1 change detected
+2024-09-29 08:10:49,083 - INFO - 1 change detected
+2024-09-29 08:10:49,434 - INFO - 1 change detected
+2024-09-29 08:10:49,785 - INFO - 1 change detected
+2024-09-29 08:10:50,136 - INFO - 1 change detected
+2024-09-29 08:10:50,486 - INFO - 1 change detected
+2024-09-29 08:10:50,837 - INFO - 1 change detected
+2024-09-29 08:10:51,188 - INFO - 1 change detected
+2024-09-29 08:10:51,539 - INFO - 1 change detected
+2024-09-29 08:10:51,890 - INFO - 1 change detected
+2024-09-29 08:10:52,241 - INFO - 1 change detected
+2024-09-29 08:10:52,592 - INFO - 1 change detected
+2024-09-29 08:10:52,943 - INFO - 1 change detected
+2024-09-29 08:10:53,294 - INFO - 1 change detected
+2024-09-29 08:10:53,645 - INFO - 1 change detected
+2024-09-29 08:10:53,996 - INFO - 1 change detected
+2024-09-29 08:10:54,347 - INFO - 1 change detected
+2024-09-29 08:10:54,698 - INFO - 1 change detected
+2024-09-29 08:10:55,049 - INFO - 1 change detected
+2024-09-29 08:10:55,401 - INFO - 1 change detected
+2024-09-29 08:10:55,751 - INFO - 1 change detected
+2024-09-29 08:10:56,103 - INFO - 1 change detected
+2024-09-29 08:10:56,454 - INFO - 1 change detected
+2024-09-29 08:10:56,805 - INFO - 1 change detected
+2024-09-29 08:10:57,156 - INFO - 1 change detected
+2024-09-29 08:10:57,507 - INFO - 1 change detected
+2024-09-29 08:10:57,858 - INFO - 1 change detected
+2024-09-29 08:10:58,208 - INFO - 1 change detected
+2024-09-29 08:10:58,560 - INFO - 1 change detected
+2024-09-29 08:10:58,911 - INFO - 1 change detected
+2024-09-29 08:10:59,262 - INFO - 1 change detected
+2024-09-29 08:10:59,613 - INFO - 2 changes detected
+2024-09-29 08:10:59,964 - INFO - 1 change detected
+2024-09-29 08:11:00,315 - INFO - 1 change detected
+2024-09-29 08:11:00,666 - INFO - 1 change detected
+2024-09-29 08:11:01,017 - INFO - 1 change detected
+2024-09-29 08:11:01,368 - INFO - 1 change detected
+2024-09-29 08:11:01,719 - INFO - 1 change detected
+2024-09-29 08:11:02,070 - INFO - 1 change detected
+2024-09-29 08:11:02,421 - INFO - 1 change detected
+2024-09-29 08:11:02,772 - INFO - 1 change detected
+2024-09-29 08:11:03,123 - INFO - 1 change detected
+2024-09-29 08:11:03,475 - INFO - 1 change detected
+2024-09-29 08:11:03,826 - INFO - 1 change detected
+2024-09-29 08:11:04,177 - INFO - 1 change detected
+2024-09-29 08:11:04,528 - INFO - 1 change detected
+2024-09-29 08:11:04,879 - INFO - 1 change detected
+2024-09-29 08:11:05,230 - INFO - 1 change detected
+2024-09-29 08:11:05,582 - INFO - 1 change detected
+2024-09-29 08:11:05,933 - INFO - 1 change detected
+2024-09-29 08:11:06,284 - INFO - 1 change detected
+2024-09-29 08:11:06,634 - INFO - 1 change detected
+2024-09-29 08:11:06,985 - INFO - 2 changes detected
+2024-09-29 08:11:07,336 - INFO - 1 change detected
+2024-09-29 08:11:07,687 - INFO - 1 change detected
+2024-09-29 08:11:08,038 - INFO - 1 change detected
+2024-09-29 08:11:08,390 - INFO - 1 change detected
+2024-09-29 08:11:08,741 - INFO - 1 change detected
+2024-09-29 08:11:09,093 - INFO - 1 change detected
+2024-09-29 08:11:09,444 - INFO - 1 change detected
+2024-09-29 08:11:09,795 - INFO - 1 change detected
+2024-09-29 08:11:10,146 - INFO - 1 change detected
+2024-09-29 08:11:10,498 - INFO - 1 change detected
+2024-09-29 08:11:10,849 - INFO - 1 change detected
+2024-09-29 08:11:11,200 - INFO - 1 change detected
+2024-09-29 08:11:11,552 - INFO - 1 change detected
+2024-09-29 08:11:11,903 - INFO - 1 change detected
+2024-09-29 08:11:12,254 - INFO - 1 change detected
+2024-09-29 08:11:12,606 - INFO - 1 change detected
+2024-09-29 08:11:12,957 - INFO - 1 change detected
+2024-09-29 08:11:13,307 - INFO - 1 change detected
+2024-09-29 08:11:13,658 - INFO - 1 change detected
+2024-09-29 08:11:14,009 - INFO - 1 change detected
+2024-09-29 08:11:14,360 - INFO - 1 change detected
+2024-09-29 08:11:14,711 - INFO - 1 change detected
+2024-09-29 08:11:15,062 - INFO - 1 change detected
+2024-09-29 08:11:15,414 - INFO - 1 change detected
+2024-09-29 08:11:15,765 - INFO - 1 change detected
+2024-09-29 08:11:16,116 - INFO - 1 change detected
+2024-09-29 08:11:16,467 - INFO - 1 change detected
+2024-09-29 08:11:16,818 - INFO - 1 change detected
+2024-09-29 08:11:17,169 - INFO - 1 change detected
+2024-09-29 08:11:17,520 - INFO - 1 change detected
+2024-09-29 08:11:17,871 - INFO - 1 change detected
+2024-09-29 08:11:18,222 - INFO - 1 change detected
+2024-09-29 08:11:18,573 - INFO - 1 change detected
+2024-09-29 08:11:18,924 - INFO - 1 change detected
+2024-09-29 08:11:19,275 - INFO - 1 change detected
+2024-09-29 08:11:19,626 - INFO - 1 change detected
+2024-09-29 08:11:19,977 - INFO - 1 change detected
+2024-09-29 08:11:20,328 - INFO - 1 change detected
+2024-09-29 08:11:20,678 - INFO - 1 change detected
+2024-09-29 08:11:21,029 - INFO - 1 change detected
+2024-09-29 08:11:21,380 - INFO - 1 change detected
+2024-09-29 08:11:21,731 - INFO - 1 change detected
+2024-09-29 08:11:22,082 - INFO - 1 change detected
+2024-09-29 08:11:22,433 - INFO - 1 change detected
+2024-09-29 08:11:22,784 - INFO - 1 change detected
+2024-09-29 08:11:23,135 - INFO - 1 change detected
+2024-09-29 08:11:23,486 - INFO - 1 change detected
+2024-09-29 08:11:23,838 - INFO - 1 change detected
+2024-09-29 08:11:24,189 - INFO - 1 change detected
+2024-09-29 08:11:24,540 - INFO - 1 change detected
+2024-09-29 08:11:24,891 - INFO - 1 change detected
+2024-09-29 08:11:25,243 - INFO - 1 change detected
+2024-09-29 08:11:25,594 - INFO - 1 change detected
+2024-09-29 08:11:25,945 - INFO - 1 change detected
+2024-09-29 08:11:26,296 - INFO - 1 change detected
+2024-09-29 08:11:26,647 - INFO - 1 change detected
+2024-09-29 08:11:26,998 - INFO - 1 change detected
+2024-09-29 08:11:27,349 - INFO - 1 change detected
+2024-09-29 08:11:27,700 - INFO - 1 change detected
+2024-09-29 08:11:28,051 - INFO - 1 change detected
+2024-09-29 08:11:28,402 - INFO - 1 change detected
+2024-09-29 08:11:28,754 - INFO - 1 change detected
+2024-09-29 08:11:29,105 - INFO - 1 change detected
+2024-09-29 08:11:29,456 - INFO - 1 change detected
+2024-09-29 08:11:29,807 - INFO - 1 change detected
+2024-09-29 08:11:30,159 - INFO - 1 change detected
+2024-09-29 08:11:30,510 - INFO - 1 change detected
+2024-09-29 08:11:30,861 - INFO - 1 change detected
+2024-09-29 08:11:31,212 - INFO - 1 change detected
+2024-09-29 08:11:31,563 - INFO - 1 change detected
+2024-09-29 08:11:31,914 - INFO - 1 change detected
+2024-09-29 08:11:32,265 - INFO - 1 change detected
+2024-09-29 08:11:32,616 - INFO - 1 change detected
+2024-09-29 08:11:32,967 - INFO - 1 change detected
+2024-09-29 08:11:33,318 - INFO - 1 change detected
+2024-09-29 08:11:33,669 - INFO - 1 change detected
+2024-09-29 08:11:34,021 - INFO - 1 change detected
+2024-09-29 08:11:34,372 - INFO - 1 change detected
+2024-09-29 08:11:34,723 - INFO - 1 change detected
+2024-09-29 08:11:35,074 - INFO - 1 change detected
+2024-09-29 08:11:35,426 - INFO - 1 change detected
+2024-09-29 08:11:35,777 - INFO - 1 change detected
+2024-09-29 08:11:36,128 - INFO - 1 change detected
+2024-09-29 08:11:36,479 - INFO - 1 change detected
+2024-09-29 08:11:36,831 - INFO - 1 change detected
+2024-09-29 08:11:37,182 - INFO - 1 change detected
+2024-09-29 08:11:37,533 - INFO - 1 change detected
+2024-09-29 08:11:37,885 - INFO - 1 change detected
+2024-09-29 08:11:38,236 - INFO - 1 change detected
+2024-09-29 08:11:38,587 - INFO - 1 change detected
+2024-09-29 08:11:38,938 - INFO - 1 change detected
+2024-09-29 08:11:39,289 - INFO - 1 change detected
+2024-09-29 08:11:39,640 - INFO - 1 change detected
+2024-09-29 08:11:39,991 - INFO - 1 change detected
+2024-09-29 08:11:40,342 - INFO - 1 change detected
+2024-09-29 08:11:40,693 - INFO - 1 change detected
+2024-09-29 08:11:41,045 - INFO - 1 change detected
+2024-09-29 08:11:41,396 - INFO - 1 change detected
+2024-09-29 08:11:41,747 - INFO - 1 change detected
+2024-09-29 08:11:42,098 - INFO - 1 change detected
+2024-09-29 08:11:42,449 - INFO - 1 change detected
+2024-09-29 08:11:42,801 - INFO - 1 change detected
+2024-09-29 08:11:43,152 - INFO - 1 change detected
+2024-09-29 08:11:43,504 - INFO - 1 change detected
+2024-09-29 08:11:43,855 - INFO - 1 change detected
+2024-09-29 08:11:44,206 - INFO - 1 change detected
+2024-09-29 08:11:44,558 - INFO - 1 change detected
+2024-09-29 08:11:44,909 - INFO - 1 change detected
+2024-09-29 08:11:45,260 - INFO - 1 change detected
+2024-09-29 08:11:45,612 - INFO - 1 change detected
+2024-09-29 08:11:45,962 - INFO - 1 change detected
+2024-09-29 08:11:46,313 - INFO - 1 change detected
+2024-09-29 08:11:46,665 - INFO - 1 change detected
+2024-09-29 08:11:47,016 - INFO - 1 change detected
+2024-09-29 08:11:47,367 - INFO - 1 change detected
+2024-09-29 08:11:47,718 - INFO - 1 change detected
+2024-09-29 08:11:48,070 - INFO - 1 change detected
+2024-09-29 08:11:48,421 - INFO - 1 change detected
+2024-09-29 08:11:48,773 - INFO - 1 change detected
+2024-09-29 08:11:49,124 - INFO - 1 change detected
+2024-09-29 08:11:49,475 - INFO - 1 change detected
+2024-09-29 08:11:49,826 - INFO - 1 change detected
+2024-09-29 08:11:50,177 - INFO - 1 change detected
+2024-09-29 08:11:50,528 - INFO - 1 change detected
+2024-09-29 08:11:50,879 - INFO - 1 change detected
+2024-09-29 08:11:51,231 - INFO - 1 change detected
+2024-09-29 08:11:51,582 - INFO - 1 change detected
+2024-09-29 08:11:51,933 - INFO - 1 change detected
+2024-09-29 08:11:52,284 - INFO - 1 change detected
+2024-09-29 08:11:52,636 - INFO - 1 change detected
+2024-09-29 08:11:52,987 - INFO - 1 change detected
+2024-09-29 08:11:53,338 - INFO - 1 change detected
+2024-09-29 08:11:53,688 - INFO - 1 change detected
+2024-09-29 08:11:54,039 - INFO - 1 change detected
+2024-09-29 08:11:54,390 - INFO - 1 change detected
+2024-09-29 08:11:54,741 - INFO - 1 change detected
+2024-09-29 08:11:55,092 - INFO - 1 change detected
+2024-09-29 08:11:55,443 - INFO - 1 change detected
+2024-09-29 08:11:55,794 - INFO - 1 change detected
+2024-09-29 08:11:56,145 - INFO - 1 change detected
+2024-09-29 08:11:56,496 - INFO - 1 change detected
+2024-09-29 08:11:56,847 - INFO - 1 change detected
+2024-09-29 08:11:57,198 - INFO - 1 change detected
+2024-09-29 08:11:57,549 - INFO - 1 change detected
+2024-09-29 08:11:57,899 - INFO - 1 change detected
+2024-09-29 08:11:58,250 - INFO - 1 change detected
+2024-09-29 08:11:58,601 - INFO - 1 change detected
+2024-09-29 08:11:58,952 - INFO - 1 change detected
+2024-09-29 08:11:59,303 - INFO - 1 change detected
+2024-09-29 08:11:59,654 - INFO - 1 change detected
+2024-09-29 08:12:00,004 - INFO - 1 change detected
+2024-09-29 08:12:00,355 - INFO - 1 change detected
+2024-09-29 08:12:00,706 - INFO - 1 change detected
+2024-09-29 08:12:01,057 - INFO - 1 change detected
+2024-09-29 08:12:01,408 - INFO - 1 change detected
+2024-09-29 08:12:01,760 - INFO - 1 change detected
+2024-09-29 08:12:02,111 - INFO - 1 change detected
+2024-09-29 08:12:02,462 - INFO - 1 change detected
+2024-09-29 08:12:02,813 - INFO - 1 change detected
+2024-09-29 08:12:03,164 - INFO - 1 change detected
+2024-09-29 08:12:03,516 - INFO - 1 change detected
+2024-09-29 08:12:03,867 - INFO - 1 change detected
+2024-09-29 08:12:04,218 - INFO - 1 change detected
+2024-09-29 08:12:04,569 - INFO - 1 change detected
+2024-09-29 08:12:04,920 - INFO - 1 change detected
+2024-09-29 08:12:05,272 - INFO - 1 change detected
+2024-09-29 08:12:05,623 - INFO - 1 change detected
+2024-09-29 08:12:05,974 - INFO - 1 change detected
+2024-09-29 08:12:06,325 - INFO - 1 change detected
+2024-09-29 08:12:06,676 - INFO - 1 change detected
+2024-09-29 08:12:07,026 - INFO - 1 change detected
+2024-09-29 08:12:07,377 - INFO - 1 change detected
+2024-09-29 08:12:07,728 - INFO - 1 change detected
+2024-09-29 08:12:08,078 - INFO - 1 change detected
+2024-09-29 08:12:08,429 - INFO - 1 change detected
+2024-09-29 08:12:08,780 - INFO - 1 change detected
+2024-09-29 08:12:09,130 - INFO - 1 change detected
+2024-09-29 08:12:09,481 - INFO - 1 change detected
+2024-09-29 08:12:09,832 - INFO - 1 change detected
+2024-09-29 08:12:10,182 - INFO - 1 change detected
+2024-09-29 08:12:10,534 - INFO - 1 change detected
+2024-09-29 08:12:10,884 - INFO - 1 change detected
+2024-09-29 08:12:11,236 - INFO - 1 change detected
+2024-09-29 08:12:11,587 - INFO - 1 change detected
+2024-09-29 08:12:11,938 - INFO - 1 change detected
+2024-09-29 08:12:12,289 - INFO - 1 change detected
+2024-09-29 08:12:12,640 - INFO - 1 change detected
+2024-09-29 08:12:12,990 - INFO - 1 change detected
+2024-09-29 08:12:13,341 - INFO - 1 change detected
+2024-09-29 08:12:13,692 - INFO - 1 change detected
+2024-09-29 08:12:14,042 - INFO - 1 change detected
+2024-09-29 08:12:14,393 - INFO - 1 change detected
+2024-09-29 08:12:14,744 - INFO - 1 change detected
+2024-09-29 08:12:15,096 - INFO - 1 change detected
+2024-09-29 08:12:15,447 - INFO - 1 change detected
+2024-09-29 08:12:15,798 - INFO - 1 change detected
+2024-09-29 08:12:16,149 - INFO - 1 change detected
+2024-09-29 08:12:16,500 - INFO - 1 change detected
+2024-09-29 08:12:16,851 - INFO - 1 change detected
+2024-09-29 08:12:17,202 - INFO - 1 change detected
+2024-09-29 08:12:17,553 - INFO - 1 change detected
+2024-09-29 08:12:17,904 - INFO - 1 change detected
+2024-09-29 08:12:18,255 - INFO - 1 change detected
+2024-09-29 08:12:18,606 - INFO - 1 change detected
+2024-09-29 08:12:18,957 - INFO - 1 change detected
+2024-09-29 08:12:19,308 - INFO - 1 change detected
+2024-09-29 08:12:19,660 - INFO - 1 change detected
+2024-09-29 08:12:20,011 - INFO - 1 change detected
+2024-09-29 08:12:20,362 - INFO - 1 change detected
+2024-09-29 08:12:20,714 - INFO - 1 change detected
+2024-09-29 08:12:21,065 - INFO - 1 change detected
+2024-09-29 08:12:21,416 - INFO - 1 change detected
+2024-09-29 08:12:21,767 - INFO - 1 change detected
+2024-09-29 08:12:22,118 - INFO - 1 change detected
+2024-09-29 08:12:22,469 - INFO - 1 change detected
+2024-09-29 08:12:22,821 - INFO - 1 change detected
+2024-09-29 08:12:23,172 - INFO - 1 change detected
+2024-09-29 08:12:23,524 - INFO - 1 change detected
+2024-09-29 08:12:23,875 - INFO - 1 change detected
+2024-09-29 08:12:24,226 - INFO - 1 change detected
+2024-09-29 08:12:24,577 - INFO - 1 change detected
+2024-09-29 08:12:24,928 - INFO - 1 change detected
+2024-09-29 08:12:25,279 - INFO - 1 change detected
+2024-09-29 08:12:25,630 - INFO - 1 change detected
+2024-09-29 08:12:25,981 - INFO - 1 change detected
+2024-09-29 08:12:26,333 - INFO - 1 change detected
+2024-09-29 08:12:26,684 - INFO - 1 change detected
+2024-09-29 08:12:27,035 - INFO - 1 change detected
+2024-09-29 08:12:27,387 - INFO - 1 change detected
+2024-09-29 08:12:27,738 - INFO - 1 change detected
+2024-09-29 08:12:28,089 - INFO - 1 change detected
+2024-09-29 08:12:28,440 - INFO - 1 change detected
+2024-09-29 08:12:28,791 - INFO - 1 change detected
+2024-09-29 08:12:29,142 - INFO - 1 change detected
+2024-09-29 08:12:29,493 - INFO - 1 change detected
+2024-09-29 08:12:29,845 - INFO - 1 change detected
+2024-09-29 08:12:30,196 - INFO - 1 change detected
+2024-09-29 08:12:30,547 - INFO - 1 change detected
+2024-09-29 08:12:30,899 - INFO - 1 change detected
+2024-09-29 08:12:31,250 - INFO - 1 change detected
+2024-09-29 08:12:31,601 - INFO - 1 change detected
+2024-09-29 08:12:31,952 - INFO - 1 change detected
+2024-09-29 08:12:32,303 - INFO - 1 change detected
+2024-09-29 08:12:32,654 - INFO - 1 change detected
+2024-09-29 08:12:33,005 - INFO - 1 change detected
+2024-09-29 08:12:33,356 - INFO - 1 change detected
+2024-09-29 08:12:33,708 - INFO - 1 change detected
+2024-09-29 08:12:34,059 - INFO - 1 change detected
+2024-09-29 08:12:34,410 - INFO - 1 change detected
+2024-09-29 08:12:34,761 - INFO - 1 change detected
+2024-09-29 08:12:35,113 - INFO - 1 change detected
+2024-09-29 08:12:35,464 - INFO - 1 change detected
+2024-09-29 08:12:35,815 - INFO - 1 change detected
+2024-09-29 08:12:36,166 - INFO - 1 change detected
+2024-09-29 08:12:36,517 - INFO - 1 change detected
+2024-09-29 08:12:36,868 - INFO - 1 change detected
+2024-09-29 08:12:37,219 - INFO - 1 change detected
+2024-09-29 08:12:37,570 - INFO - 1 change detected
+2024-09-29 08:12:37,921 - INFO - 1 change detected
+2024-09-29 08:12:38,273 - INFO - 1 change detected
+2024-09-29 08:12:38,624 - INFO - 1 change detected
+2024-09-29 08:12:38,975 - INFO - 1 change detected
+2024-09-29 08:12:39,327 - INFO - 1 change detected
+2024-09-29 08:12:39,678 - INFO - 1 change detected
+2024-09-29 08:12:40,029 - INFO - 1 change detected
+2024-09-29 08:12:40,380 - INFO - 1 change detected
+2024-09-29 08:12:40,732 - INFO - 1 change detected
+2024-09-29 08:12:41,083 - INFO - 1 change detected
+2024-09-29 08:12:41,434 - INFO - 1 change detected
+2024-09-29 08:12:41,785 - INFO - 1 change detected
+2024-09-29 08:12:42,137 - INFO - 1 change detected
+2024-09-29 08:12:42,488 - INFO - 1 change detected
+2024-09-29 08:12:42,840 - INFO - 1 change detected
+2024-09-29 08:12:43,191 - INFO - 1 change detected
+2024-09-29 08:12:43,542 - INFO - 1 change detected
+2024-09-29 08:12:43,893 - INFO - 1 change detected
+2024-09-29 08:12:44,245 - INFO - 1 change detected
+2024-09-29 08:12:44,596 - INFO - 1 change detected
+2024-09-29 08:12:44,947 - INFO - 1 change detected
+2024-09-29 08:12:45,297 - INFO - 1 change detected
+2024-09-29 08:12:45,648 - INFO - 1 change detected
+2024-09-29 08:12:45,999 - INFO - 1 change detected
+2024-09-29 08:12:46,350 - INFO - 1 change detected
+2024-09-29 08:12:46,701 - INFO - 1 change detected
+2024-09-29 08:12:47,052 - INFO - 1 change detected
+2024-09-29 08:12:47,403 - INFO - 1 change detected
+2024-09-29 08:12:47,754 - INFO - 1 change detected
+2024-09-29 08:12:48,106 - INFO - 1 change detected
+2024-09-29 08:12:48,457 - INFO - 1 change detected
+2024-09-29 08:12:48,809 - INFO - 1 change detected
+2024-09-29 08:12:49,160 - INFO - 1 change detected
+2024-09-29 08:12:49,511 - INFO - 1 change detected
+2024-09-29 08:12:49,862 - INFO - 1 change detected
+2024-09-29 08:12:50,213 - INFO - 1 change detected
+2024-09-29 08:12:50,564 - INFO - 1 change detected
+2024-09-29 08:12:50,915 - INFO - 1 change detected
+2024-09-29 08:12:51,266 - INFO - 1 change detected
+2024-09-29 08:12:51,618 - INFO - 1 change detected
+2024-09-29 08:12:51,969 - INFO - 1 change detected
+2024-09-29 08:12:52,320 - INFO - 1 change detected
+2024-09-29 08:12:52,671 - INFO - 1 change detected
+2024-09-29 08:12:53,022 - INFO - 1 change detected
+2024-09-29 08:12:53,374 - INFO - 1 change detected
+2024-09-29 08:12:53,725 - INFO - 1 change detected
+2024-09-29 08:12:54,076 - INFO - 1 change detected
+2024-09-29 08:12:54,427 - INFO - 1 change detected
+2024-09-29 08:12:54,779 - INFO - 1 change detected
+2024-09-29 08:12:55,130 - INFO - 1 change detected
+2024-09-29 08:12:55,481 - INFO - 1 change detected
+2024-09-29 08:12:55,832 - INFO - 1 change detected
+2024-09-29 08:12:56,183 - INFO - 1 change detected
+2024-09-29 08:12:56,534 - INFO - 2 changes detected
+2024-09-29 08:12:56,885 - INFO - 1 change detected
+2024-09-29 08:12:57,236 - INFO - 1 change detected
+2024-09-29 08:12:57,587 - INFO - 1 change detected
+2024-09-29 08:12:57,938 - INFO - 1 change detected
+2024-09-29 08:12:58,289 - INFO - 1 change detected
+2024-09-29 08:12:58,640 - INFO - 1 change detected
+2024-09-29 08:12:58,991 - INFO - 1 change detected
+2024-09-29 08:12:59,343 - INFO - 1 change detected
+2024-09-29 08:12:59,694 - INFO - 1 change detected
+2024-09-29 08:13:00,045 - INFO - 1 change detected
+2024-09-29 08:13:00,396 - INFO - 1 change detected
+2024-09-29 08:13:00,747 - INFO - 1 change detected
+2024-09-29 08:13:01,098 - INFO - 1 change detected
+2024-09-29 08:13:01,449 - INFO - 1 change detected
+2024-09-29 08:13:01,801 - INFO - 1 change detected
+2024-09-29 08:13:02,152 - INFO - 1 change detected
+2024-09-29 08:13:02,503 - INFO - 1 change detected
+2024-09-29 08:13:02,854 - INFO - 1 change detected
+2024-09-29 08:13:03,205 - INFO - 1 change detected
+2024-09-29 08:13:03,556 - INFO - 1 change detected
+2024-09-29 08:13:03,907 - INFO - 1 change detected
+2024-09-29 08:13:04,258 - INFO - 1 change detected
+2024-09-29 08:13:04,609 - INFO - 1 change detected
+2024-09-29 08:13:04,960 - INFO - 1 change detected
+2024-09-29 08:13:05,312 - INFO - 1 change detected
+2024-09-29 08:13:05,663 - INFO - 1 change detected
+2024-09-29 08:13:06,014 - INFO - 1 change detected
+2024-09-29 08:13:06,365 - INFO - 1 change detected
+2024-09-29 08:13:06,716 - INFO - 1 change detected
+2024-09-29 08:13:07,067 - INFO - 1 change detected
+2024-09-29 08:13:07,418 - INFO - 1 change detected
+2024-09-29 08:13:07,769 - INFO - 1 change detected
+2024-09-29 08:13:08,120 - INFO - 1 change detected
+2024-09-29 08:13:08,471 - INFO - 1 change detected
+2024-09-29 08:13:08,822 - INFO - 1 change detected
+2024-09-29 08:13:09,173 - INFO - 1 change detected
+2024-09-29 08:13:09,524 - INFO - 1 change detected
+2024-09-29 08:13:09,875 - INFO - 1 change detected
+2024-09-29 08:13:10,226 - INFO - 1 change detected
+2024-09-29 08:13:10,578 - INFO - 1 change detected
+2024-09-29 08:13:10,929 - INFO - 1 change detected
+2024-09-29 08:13:11,280 - INFO - 1 change detected
+2024-09-29 08:13:11,631 - INFO - 1 change detected
+2024-09-29 08:13:11,982 - INFO - 1 change detected
+2024-09-29 08:13:12,334 - INFO - 1 change detected
+2024-09-29 08:13:12,685 - INFO - 1 change detected
+2024-09-29 08:13:13,036 - INFO - 1 change detected
+2024-09-29 08:13:13,387 - INFO - 1 change detected
+2024-09-29 08:13:13,737 - INFO - 1 change detected
+2024-09-29 08:13:14,088 - INFO - 1 change detected
+2024-09-29 08:13:14,439 - INFO - 1 change detected
+2024-09-29 08:13:14,790 - INFO - 1 change detected
+2024-09-29 08:13:15,141 - INFO - 2 changes detected
+2024-09-29 08:13:15,492 - INFO - 1 change detected
+2024-09-29 08:13:15,843 - INFO - 1 change detected
+2024-09-29 08:13:16,194 - INFO - 1 change detected
+2024-09-29 08:13:16,545 - INFO - 1 change detected
+2024-09-29 08:13:16,896 - INFO - 1 change detected
+2024-09-29 08:13:17,246 - INFO - 1 change detected
+2024-09-29 08:13:17,597 - INFO - 1 change detected
+2024-09-29 08:13:17,948 - INFO - 1 change detected
+2024-09-29 08:13:18,299 - INFO - 1 change detected
+2024-09-29 08:13:18,650 - INFO - 1 change detected
+2024-09-29 08:13:19,001 - INFO - 1 change detected
+2024-09-29 08:13:19,352 - INFO - 1 change detected
+2024-09-29 08:13:19,703 - INFO - 1 change detected
+2024-09-29 08:13:20,054 - INFO - 1 change detected
+2024-09-29 08:13:20,405 - INFO - 1 change detected
+2024-09-29 08:13:20,756 - INFO - 1 change detected
+2024-09-29 08:13:21,107 - INFO - 1 change detected
+2024-09-29 08:13:21,458 - INFO - 1 change detected
+2024-09-29 08:13:21,809 - INFO - 1 change detected
+2024-09-29 08:13:22,160 - INFO - 1 change detected
+2024-09-29 08:13:22,512 - INFO - 1 change detected
+2024-09-29 08:13:22,863 - INFO - 1 change detected
+2024-09-29 08:13:23,214 - INFO - 1 change detected
+2024-09-29 08:13:23,566 - INFO - 1 change detected
+2024-09-29 08:13:23,917 - INFO - 1 change detected
+2024-09-29 08:13:24,268 - INFO - 1 change detected
+2024-09-29 08:13:24,619 - INFO - 1 change detected
+2024-09-29 08:13:24,971 - INFO - 1 change detected
+2024-09-29 08:13:25,322 - INFO - 1 change detected
+2024-09-29 08:13:25,673 - INFO - 1 change detected
+2024-09-29 08:13:26,024 - INFO - 1 change detected
+2024-09-29 08:13:26,376 - INFO - 1 change detected
+2024-09-29 08:13:26,727 - INFO - 1 change detected
+2024-09-29 08:13:27,078 - INFO - 1 change detected
+2024-09-29 08:13:27,430 - INFO - 1 change detected
+2024-09-29 08:13:27,781 - INFO - 1 change detected
+2024-09-29 08:13:28,132 - INFO - 1 change detected
+2024-09-29 08:13:28,483 - INFO - 1 change detected
+2024-09-29 08:13:28,834 - INFO - 1 change detected
+2024-09-29 08:13:29,186 - INFO - 1 change detected
+2024-09-29 08:13:29,537 - INFO - 1 change detected
+2024-09-29 08:13:29,888 - INFO - 1 change detected
+2024-09-29 08:13:30,239 - INFO - 2 changes detected
+2024-09-29 08:13:30,590 - INFO - 1 change detected
+2024-09-29 08:13:30,941 - INFO - 1 change detected
+2024-09-29 08:13:31,292 - INFO - 1 change detected
+2024-09-29 08:13:31,643 - INFO - 1 change detected
+2024-09-29 08:13:31,994 - INFO - 1 change detected
+2024-09-29 08:13:32,345 - INFO - 1 change detected
+2024-09-29 08:13:32,696 - INFO - 1 change detected
+2024-09-29 08:13:33,047 - INFO - 1 change detected
+2024-09-29 08:13:33,399 - INFO - 1 change detected
+2024-09-29 08:13:33,750 - INFO - 1 change detected
+2024-09-29 08:13:34,101 - INFO - 1 change detected
+2024-09-29 08:13:34,452 - INFO - 1 change detected
+2024-09-29 08:13:34,803 - INFO - 1 change detected
+2024-09-29 08:13:35,154 - INFO - 1 change detected
+2024-09-29 08:13:35,505 - INFO - 1 change detected
+2024-09-29 08:13:35,856 - INFO - 1 change detected
+2024-09-29 08:13:36,207 - INFO - 1 change detected
+2024-09-29 08:13:36,558 - INFO - 1 change detected
+2024-09-29 08:13:36,909 - INFO - 1 change detected
+2024-09-29 08:13:37,260 - INFO - 1 change detected
+2024-09-29 08:13:37,612 - INFO - 1 change detected
+2024-09-29 08:13:37,963 - INFO - 1 change detected
+2024-09-29 08:13:38,315 - INFO - 1 change detected
+2024-09-29 08:13:38,666 - INFO - 1 change detected
+2024-09-29 08:13:39,018 - INFO - 1 change detected
+2024-09-29 08:13:39,369 - INFO - 1 change detected
+2024-09-29 08:13:39,720 - INFO - 1 change detected
+2024-09-29 08:13:40,071 - INFO - 1 change detected
+2024-09-29 08:13:40,422 - INFO - 1 change detected
+2024-09-29 08:13:40,773 - INFO - 1 change detected
+2024-09-29 08:13:41,124 - INFO - 1 change detected
+2024-09-29 08:13:41,475 - INFO - 1 change detected
+2024-09-29 08:13:41,826 - INFO - 1 change detected
+2024-09-29 08:13:42,177 - INFO - 1 change detected
+2024-09-29 08:13:42,528 - INFO - 1 change detected
+2024-09-29 08:13:42,879 - INFO - 1 change detected
+2024-09-29 08:13:43,231 - INFO - 1 change detected
+2024-09-29 08:13:43,582 - INFO - 1 change detected
+2024-09-29 08:13:43,933 - INFO - 1 change detected
+2024-09-29 08:13:44,284 - INFO - 2 changes detected
+2024-09-29 08:13:44,635 - INFO - 1 change detected
+2024-09-29 08:13:44,986 - INFO - 1 change detected
+2024-09-29 08:13:45,336 - INFO - 1 change detected
+2024-09-29 08:13:45,687 - INFO - 1 change detected
+2024-09-29 08:13:46,038 - INFO - 1 change detected
+2024-09-29 08:13:46,389 - INFO - 1 change detected
+2024-09-29 08:13:46,740 - INFO - 1 change detected
+2024-09-29 08:13:47,091 - INFO - 1 change detected
+2024-09-29 08:13:47,442 - INFO - 1 change detected
+2024-09-29 08:13:47,794 - INFO - 1 change detected
+2024-09-29 08:13:48,145 - INFO - 1 change detected
+2024-09-29 08:13:48,496 - INFO - 1 change detected
+2024-09-29 08:13:48,847 - INFO - 1 change detected
+2024-09-29 08:13:49,198 - INFO - 1 change detected
+2024-09-29 08:13:49,549 - INFO - 1 change detected
+2024-09-29 08:13:49,901 - INFO - 1 change detected
+2024-09-29 08:13:50,252 - INFO - 1 change detected
+2024-09-29 08:13:50,603 - INFO - 1 change detected
+2024-09-29 08:13:50,954 - INFO - 1 change detected
+2024-09-29 08:13:51,305 - INFO - 1 change detected
+2024-09-29 08:13:51,656 - INFO - 1 change detected
+2024-09-29 08:13:52,008 - INFO - 1 change detected
+2024-09-29 08:13:52,359 - INFO - 1 change detected
+2024-09-29 08:13:52,710 - INFO - 1 change detected
+2024-09-29 08:13:53,061 - INFO - 1 change detected
+2024-09-29 08:13:53,412 - INFO - 1 change detected
+2024-09-29 08:13:53,763 - INFO - 1 change detected
+2024-09-29 08:13:54,114 - INFO - 1 change detected
+2024-09-29 08:13:54,465 - INFO - 1 change detected
+2024-09-29 08:13:54,816 - INFO - 1 change detected
+2024-09-29 08:13:55,167 - INFO - 1 change detected
+2024-09-29 08:13:55,518 - INFO - 1 change detected
+2024-09-29 08:13:55,869 - INFO - 1 change detected
+2024-09-29 08:13:56,220 - INFO - 1 change detected
+2024-09-29 08:13:56,571 - INFO - 1 change detected
+2024-09-29 08:13:56,923 - INFO - 1 change detected
+2024-09-29 08:13:57,274 - INFO - 1 change detected
+2024-09-29 08:13:57,625 - INFO - 1 change detected
+2024-09-29 08:13:57,976 - INFO - 1 change detected
+2024-09-29 08:13:58,328 - INFO - 1 change detected
+2024-09-29 08:13:58,679 - INFO - 1 change detected
+2024-09-29 08:13:59,030 - INFO - 1 change detected
+2024-09-29 08:13:59,382 - INFO - 1 change detected
+2024-09-29 08:13:59,733 - INFO - 1 change detected
+2024-09-29 08:14:00,084 - INFO - 1 change detected
+2024-09-29 08:14:00,435 - INFO - 1 change detected
+2024-09-29 08:14:00,786 - INFO - 1 change detected
+2024-09-29 08:14:01,137 - INFO - 1 change detected
+2024-09-29 08:14:01,489 - INFO - 1 change detected
+2024-09-29 08:14:01,840 - INFO - 1 change detected
+2024-09-29 08:14:02,191 - INFO - 1 change detected
+2024-09-29 08:14:02,541 - INFO - 1 change detected
+2024-09-29 08:14:02,893 - INFO - 1 change detected
+2024-09-29 08:14:03,244 - INFO - 1 change detected
+2024-09-29 08:14:03,596 - INFO - 1 change detected
+2024-09-29 08:14:03,947 - INFO - 1 change detected
+2024-09-29 08:14:04,298 - INFO - 1 change detected
+2024-09-29 08:14:04,650 - INFO - 1 change detected
+2024-09-29 08:14:05,001 - INFO - 1 change detected
+2024-09-29 08:14:05,352 - INFO - 1 change detected
+2024-09-29 08:14:05,703 - INFO - 1 change detected
+2024-09-29 08:14:06,055 - INFO - 1 change detected
+2024-09-29 08:14:06,406 - INFO - 1 change detected
+2024-09-29 08:14:06,757 - INFO - 1 change detected
+2024-09-29 08:14:07,108 - INFO - 1 change detected
+2024-09-29 08:14:07,460 - INFO - 1 change detected
+2024-09-29 08:14:07,811 - INFO - 1 change detected
+2024-09-29 08:14:08,162 - INFO - 1 change detected
+2024-09-29 08:14:08,513 - INFO - 1 change detected
+2024-09-29 08:14:08,864 - INFO - 1 change detected
+2024-09-29 08:14:09,215 - INFO - 1 change detected
+2024-09-29 08:14:09,567 - INFO - 1 change detected
+2024-09-29 08:14:09,918 - INFO - 1 change detected
+2024-09-29 08:14:10,269 - INFO - 1 change detected
+2024-09-29 08:14:10,620 - INFO - 1 change detected
+2024-09-29 08:14:10,971 - INFO - 1 change detected
+2024-09-29 08:14:11,322 - INFO - 1 change detected
+2024-09-29 08:14:11,674 - INFO - 1 change detected
+2024-09-29 08:14:12,025 - INFO - 1 change detected
+2024-09-29 08:14:12,376 - INFO - 1 change detected
+2024-09-29 08:14:12,727 - INFO - 1 change detected
+2024-09-29 08:14:13,078 - INFO - 1 change detected
+2024-09-29 08:14:13,429 - INFO - 1 change detected
+2024-09-29 08:14:13,780 - INFO - 1 change detected
+2024-09-29 08:14:14,131 - INFO - 1 change detected
+2024-09-29 08:14:14,482 - INFO - 1 change detected
+2024-09-29 08:14:14,833 - INFO - 1 change detected
+2024-09-29 08:14:15,184 - INFO - 1 change detected
+2024-09-29 08:14:15,535 - INFO - 1 change detected
+2024-09-29 08:14:15,886 - INFO - 1 change detected
+2024-09-29 08:14:16,237 - INFO - 1 change detected
+2024-09-29 08:14:16,588 - INFO - 1 change detected
+2024-09-29 08:14:16,939 - INFO - 1 change detected
+2024-09-29 08:14:17,291 - INFO - 1 change detected
+2024-09-29 08:14:17,642 - INFO - 1 change detected
+2024-09-29 08:14:17,992 - INFO - 1 change detected
+2024-09-29 08:14:18,344 - INFO - 1 change detected
+2024-09-29 08:14:18,695 - INFO - 1 change detected
+2024-09-29 08:14:19,046 - INFO - 1 change detected
+2024-09-29 08:14:19,397 - INFO - 1 change detected
+2024-09-29 08:14:19,748 - INFO - 1 change detected
+2024-09-29 08:14:20,099 - INFO - 1 change detected
+2024-09-29 08:14:20,450 - INFO - 1 change detected
+2024-09-29 08:14:20,801 - INFO - 1 change detected
+2024-09-29 08:14:21,152 - INFO - 1 change detected
+2024-09-29 08:14:21,503 - INFO - 1 change detected
+2024-09-29 08:14:21,854 - INFO - 1 change detected
+2024-09-29 08:14:22,206 - INFO - 1 change detected
+2024-09-29 08:14:22,557 - INFO - 1 change detected
+2024-09-29 08:14:22,908 - INFO - 1 change detected
+2024-09-29 08:14:23,259 - INFO - 1 change detected
+2024-09-29 08:14:23,610 - INFO - 1 change detected
+2024-09-29 08:14:23,962 - INFO - 1 change detected
+2024-09-29 08:14:24,313 - INFO - 1 change detected
+2024-09-29 08:14:24,664 - INFO - 1 change detected
+2024-09-29 08:14:25,015 - INFO - 1 change detected
+2024-09-29 08:14:25,366 - INFO - 1 change detected
+2024-09-29 08:14:25,717 - INFO - 1 change detected
+2024-09-29 08:14:26,068 - INFO - 1 change detected
+2024-09-29 08:14:26,419 - INFO - 1 change detected
+2024-09-29 08:14:26,770 - INFO - 1 change detected
+2024-09-29 08:14:27,121 - INFO - 1 change detected
+2024-09-29 08:14:27,472 - INFO - 1 change detected
+2024-09-29 08:14:27,824 - INFO - 1 change detected
+2024-09-29 08:14:28,175 - INFO - 1 change detected
+2024-09-29 08:14:28,526 - INFO - 1 change detected
+2024-09-29 08:14:28,877 - INFO - 1 change detected
+2024-09-29 08:14:29,228 - INFO - 1 change detected
+2024-09-29 08:14:29,579 - INFO - 1 change detected
+2024-09-29 08:14:29,930 - INFO - 1 change detected
+2024-09-29 08:14:30,281 - INFO - 1 change detected
+2024-09-29 08:14:30,632 - INFO - 1 change detected
+2024-09-29 08:14:30,983 - INFO - 1 change detected
+2024-09-29 08:14:31,334 - INFO - 1 change detected
+2024-09-29 08:14:31,685 - INFO - 1 change detected
+2024-09-29 08:14:32,036 - INFO - 1 change detected
+2024-09-29 08:14:32,388 - INFO - 1 change detected
+2024-09-29 08:14:32,739 - INFO - 1 change detected
+2024-09-29 08:14:33,090 - INFO - 1 change detected
+2024-09-29 08:14:33,441 - INFO - 1 change detected
+2024-09-29 08:14:33,792 - INFO - 1 change detected
+2024-09-29 08:14:34,143 - INFO - 1 change detected
+2024-09-29 08:14:34,494 - INFO - 1 change detected
+2024-09-29 08:14:34,845 - INFO - 1 change detected
+2024-09-29 08:14:35,196 - INFO - 1 change detected
+2024-09-29 08:14:35,547 - INFO - 1 change detected
+2024-09-29 08:14:35,898 - INFO - 1 change detected
+2024-09-29 08:14:36,250 - INFO - 1 change detected
+2024-09-29 08:14:36,601 - INFO - 1 change detected
+2024-09-29 08:14:36,952 - INFO - 1 change detected
+2024-09-29 08:14:37,303 - INFO - 1 change detected
+2024-09-29 08:14:37,654 - INFO - 1 change detected
+2024-09-29 08:14:38,005 - INFO - 1 change detected
+2024-09-29 08:14:38,356 - INFO - 1 change detected
+2024-09-29 08:14:38,708 - INFO - 1 change detected
+2024-09-29 08:14:39,059 - INFO - 1 change detected
+2024-09-29 08:14:39,410 - INFO - 1 change detected

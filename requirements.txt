@@ -11,4 +11,6 @@ unstructured
 python-pptx
 docx2txt
 easyocr
-torch torchvision torchaudio
+torch 
+torchvision 
+torchaudio
