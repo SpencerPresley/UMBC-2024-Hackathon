@@ -68,3 +68,19 @@ question_generation_system_prompt = PromptTemplate(
     If you include anything but the question, type, answer, and and choices within the json, you have failed.
 """
 )
+
+question_generation_human_prompt = PromptTemplate(
+    template = """
+    Document:
+    {document}
+"""
+)
+
+def question_generate_chain(doc: str, key: str = None):
+    prompt = ChatPromptTemplate.from_messages(
+        [
+            question_generation_system_prompt,
+            question_generation_human_prompt,
+        ]
+    )
+    
