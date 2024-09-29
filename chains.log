@@ -1,2 +1,46 @@
+<<<<<<< Updated upstream
 2024-09-28 20:43:49,238 - INFO - Static files mounted
 2024-09-28 20:43:49,239 - INFO - toLetter filter added to Jinja2 environment
+=======
+2024-09-28 20:48:27,200 - INFO - Static files mounted
+2024-09-28 20:48:27,200 - INFO - toLetter filter added to Jinja2 environment
+2024-09-28 20:48:27,598 - INFO - GET request received for index page
+2024-09-28 20:48:38,333 - INFO - POST request received for /generate
+2024-09-28 20:48:38,333 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='ffff' subject_material=[UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:48:38,333 - INFO - Form data accessed
+2024-09-28 20:48:38,333 - INFO - Form Title: f
+2024-09-28 20:48:38,333 - INFO - Form Course: f
+2024-09-28 20:48:38,333 - INFO - Form Professor: f
+2024-09-28 20:48:38,333 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 20:48:38,333 - INFO - Form Number of TF Questions: 5
+2024-09-28 20:48:38,333 - INFO - Form Number of Written Questions: 5
+2024-09-28 20:48:38,333 - INFO - Form School Type: Undergraduate
+2024-09-28 20:48:38,333 - INFO - Form Difficulty: easy
+2024-09-28 20:48:38,334 - INFO - Form Testing Philosophy: ffff
+2024-09-28 20:48:38,334 - INFO - Moving to files...
+2024-09-28 20:48:38,334 - INFO - Processing file: 4a.pdf
+2024-09-28 20:48:38,335 - INFO - File extension: .pdf
+2024-09-28 20:48:38,335 - INFO - Processing PDF file: 4a.pdf
+2024-09-28 20:48:39,064 - INFO - Document 1 (4a.pdf) of 10
+2024-09-28 20:48:39,729 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:39,747 - INFO - Document 2 (4a.pdf) of 10
+2024-09-28 20:48:40,617 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:40,624 - INFO - Document 3 (4a.pdf) of 10
+2024-09-28 20:48:41,511 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:41,514 - INFO - Document 4 (4a.pdf) of 10
+2024-09-28 20:48:42,765 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:42,769 - INFO - Document 5 (4a.pdf) of 10
+2024-09-28 20:48:43,921 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:43,925 - INFO - Document 6 (4a.pdf) of 10
+2024-09-28 20:48:44,760 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:44,764 - INFO - Document 7 (4a.pdf) of 10
+2024-09-28 20:48:47,490 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:47,494 - INFO - Document 8 (4a.pdf) of 10
+2024-09-28 20:48:49,207 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:49,210 - INFO - Document 9 (4a.pdf) of 10
+2024-09-28 20:48:50,350 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:50,354 - INFO - Document 10 (4a.pdf) of 10
+2024-09-28 20:48:51,318 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:48:51,323 - INFO - Cleaned content written to file
+2024-09-28 20:48:51,324 - INFO - Test generated successfully
+>>>>>>> Stashed changes

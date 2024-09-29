@@ -2,9 +2,9 @@ from typing import Annotated
 from typing import List
 import logging
 
-from .pythonBackend import run
+# from .pythonBackend import run
 # for spencer
-# from pythonBackend import run
+from pythonBackend import run
 from starlette.responses import FileResponse
 from fastapi import FastAPI, UploadFile, Form, Request
 from pydantic import BaseModel
@@ -33,7 +33,6 @@ class QAPair(BaseModel):
     question:str
     answer: str
     type: str
-
     choices: List[str] = ['T', 'F'] #Holds Choices in a multiple Choice question
     
 class GeneratedTest(BaseModel):
