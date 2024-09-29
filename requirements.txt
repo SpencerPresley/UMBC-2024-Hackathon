@@ -14,3 +14,5 @@ easyocr
 torch 
 torchvision 
 torchaudio
+aiofiles
+PyMuPDF
