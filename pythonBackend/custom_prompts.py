@@ -14,7 +14,7 @@ clean_files_system_prompt = PromptTemplate(
     You are to provide you answer in the following json format:
     {clean_files_json_format}
     
-    IMPORTANT: You are to only output the json format, do not include any other text or comments. If you do answer in the json format you have failed.
+    IMPORTANT: You are to only output the json format, do not include any other text or comments. If you do not answer in the json format you have failed.
 """
 )
 
