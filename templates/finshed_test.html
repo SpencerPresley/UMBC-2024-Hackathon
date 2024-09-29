@@ -24,8 +24,10 @@
                 <textarea type="text" name="titleBox" rows="3" cols="45" class="h2">{{loop.index}}. {{ question.question }}</textarea>
 
                 {% if question.q_type == 'written' %}
+                    <div>
                     <textarea type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" rows="3" cols="45" name="titleBox" >{{ question.answer }}</textarea>
-                    <input type="text" id="" class="h4 noAnswer" name="titleBox" value= "">
+                    <textarea type="text" id="" class="h4 noAnswer" rows="3" cols="45" name="titleBox" value= ""></textarea>
+                    </div>
                 {% endif %}
                 
                 {% if question.q_type == 'multiple_choice' %}
@@ -48,7 +50,7 @@
                         <input type="text" id="choiceAnswer" class= "choiceAnswer h4 " name="titleBox" value= "B: False" class="h4">
                         {% else %}
                         <input type="text"  id="choiceAnswer" class= "choiceAnswer h4"  value= "A: True" class="h4">
-                        <input type="text"  id="choiceAnswer" class= "choiceAnswer h4 correctAnswer" value= " B: False" class="h4" style="color: #0000ff" ;>
+                        <input type="text"  id="choiceAnswer" class= "choiceAnswer h4 correctAnswer" value= "B: False" class="h4" style="color: #0000ff" ;>
                         {% endif %}   
                     {% endif %} 
                 <br id="{{loop.index}}">
@@ -58,11 +60,11 @@
         <a href="/" class="noPrint"> <Button>Back to Settings</Button></a>
 
         <div class="toggle">
-            <label class="toggle_label"> Key </label>
+            <label class="toggle_label noPrint"> Key </label>
             <div class="toggle_bar" id="boundToggle">
             <div class="toggle_button" id="toggle_button"> </div>
             </div>
-            <label class="toggle_label"> Test </label>
+            <label class="toggle_label noPrint"> Test </label>
         </div>
         <button id="DownloadButton" class="noPrint"> Download Test</button>
         
