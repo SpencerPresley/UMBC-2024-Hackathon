@@ -24,10 +24,11 @@
                 <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
 
                 {% if question.type == 'written' %}
-                    <input type="text" id="writtenAnswer" class="writtenAnswer h4" name="titleBox" value= "{{ question.answer }}">
+                    <input type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" name="titleBox" value= "{{ question.answer }}">
+                    <input type="text" id="" class="h4 noAnswer" name="titleBox" value= "">
                 {% endif %}
                 
-                {% if question.type == 'multiple' %}
+                {% if question.type == 'multiple_choice' %}
 
                     {% for choice in (question.choices)%}
                         {% if choice == question.answer %}
@@ -42,7 +43,7 @@
                 {% if question.type == 'TF' %}
 
 
-                        {% if question.answer == 'T' %}
+                        {% if question.answer == 'True' %}
                         <input type="text" id="choiceAnswer" class= "choiceAnswer h4 correctAnswer" name="titleBox" value= "A: True" class="h4" style="color: #0000ff" ;>
                         <input type="text" id="choiceAnswer" class= "choiceAnswer h4 " name="titleBox" value= "B: False" class="h4">
                         {% else %}
@@ -55,11 +56,19 @@
     </div>
     <div class="button-container">
         <a href="/" class="noPrint"> <Button>Back to Settings</Button></a>
-        <button id="DownloadButton" class="noPrint"> Download Test</button>
-    </div>
 
-    <div class="toggle_bar" id="boundToggle">
-        <div class="toggle_button" id="toggle_button"> </div>
+        <div class="toggle">
+            <label class="toggle_label"> Key </label>
+            <div class="toggle_bar" id="boundToggle">
+            <div class="toggle_button" id="toggle_button"> </div>
+            </div>
+            <label class="toggle_label"> Test </label>
+        </div>
+        <button id="DownloadButton" class="noPrint"> Download Test</button>
+        
+        
+            
     </div>
+    
 </body>
 </html>

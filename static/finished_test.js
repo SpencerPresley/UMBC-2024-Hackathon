@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	const toggle_bar = document.getElementById('boundToggle')
 	const choiceAnswer = document.querySelectorAll('.choiceAnswer')
 	const writtenAnswer = document.querySelectorAll('.writtenAnswer')
+	const noAnswer = document.querySelectorAll('noAnswer')
+
 	console.log(test);
 	console.log(downloadButton)
 
@@ -57,9 +59,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Toggle the position of the button
 		if (toggle_button.style.transform === "translateX(0px)") {
 			toggle_button.style.transform = "translateX(25px)";
-			console.log("Written Answer: ",writtenAnswer)
 			for(let i = 0; i < writtenAnswer.length; i++){
 				writtenAnswer[i].style.display = 'none'
+				noAnswer[i].style.display = ''
 			}
 			for(let i = 0; i < choiceAnswer.length; i++){
 				choiceAnswer[i].style.color = '#000000'
@@ -70,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			toggle_button.style.transform = "translateX(0px)";
 			for(let i = 0; i < writtenAnswer.length; i++){
 				writtenAnswer[i].style.display = ''
+				noAnswer[i].style.display = 'none'
 			}
 			for(let i = 0; i < choiceAnswer.length; i++){
 				choiceAnswer[i].style.color = ''

@@ -40,6 +40,14 @@ input {
     }
 }
 
+
+.toggle {
+    /*
+    margin-left: 10px;
+    margin-right: 10px;*/
+    margin-top: 98px;
+    display: flex;
+  }
 .toggle_bar {
     width: 50px;
     height: 25px;
@@ -78,7 +86,7 @@ button{
     color: white;
     font-size: 20px;
     cursor: pointer;
-    width: 350px;
+    width: 250px;
     margin-left: 3px;
     margin-right: 3px;
 }
@@ -90,6 +98,11 @@ a{
 .edit-notice{
     color: gray;
 }
+
+.toggle_label {
+    margin: 3px 7px;
+    font-size: 17px;
+  }
 
 .correctAnswer{
     color: #0000ff

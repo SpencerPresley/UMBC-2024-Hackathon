@@ -1,7 +1,9 @@
 from typing import Annotated
 from typing import List
 import logging
+import sys
 
+sys.path.append('.')
 # from .pythonBackend import run
 # for spencer
 from pythonBackend import run
@@ -65,7 +67,7 @@ def final(
     logger.info("POST request received for /generate")
     logger.info(f"Form data: {data}")
     try:
-        test = run(data)
+        #test = run(data)
         logger.info("Test generated successfully")
     except Exception as e:
         logger.error(f"Error generating test: {e}")
