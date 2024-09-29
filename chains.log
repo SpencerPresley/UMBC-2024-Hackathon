@@ -1,64 +1,7 @@
-2024-09-29 01:00:12,260 - INFO - Static files mounted
-2024-09-29 01:00:12,260 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 01:24:48,102 - INFO - Static files mounted
-2024-09-29 01:24:48,102 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 01:24:49,117 - INFO - GET request received for index page
-2024-09-29 01:25:30,017 - INFO - POST request received for /generate
-2024-09-29 01:25:30,017 - INFO - Form data: title='Midterm 2' course='COSC362: Theory of Computation' professor='Dr. Tu' number_of_mcq_questions=1 number_of_TF_questions=2 number_of_written_questions=4 school_type='Undergraduate' level='Normal' difficulty='hard selected' testing_philosophy='My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.' url_1='' url_2='' subject_material=[UploadFile(filename='6a.pdf', size=123964, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="6a.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-29 01:25:30,018 - INFO - Form data accessed
-2024-09-29 01:25:30,018 - INFO - Form Title: Midterm 2
-2024-09-29 01:25:30,018 - INFO - Form Course: COSC362: Theory of Computation
-2024-09-29 01:25:30,018 - INFO - Form Professor: Dr. Tu
-2024-09-29 01:25:30,018 - INFO - Form Number of MCQ Questions: 1
-2024-09-29 01:25:30,018 - INFO - Form Number of TF Questions: 2
-2024-09-29 01:25:30,018 - INFO - Form Number of Written Questions: 4
-2024-09-29 01:25:30,018 - INFO - Form School Type: Undergraduate
-2024-09-29 01:25:30,018 - INFO - Form Difficulty: hard selected
-2024-09-29 01:25:30,018 - INFO - Form Testing Philosophy: My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.
-2024-09-29 01:25:30,018 - INFO - Moving to files...
-2024-09-29 01:25:30,018 - INFO - Processing file: 6a.pdf
-2024-09-29 01:25:30,019 - INFO - File extension: .pdf
-2024-09-29 01:25:30,019 - INFO - Processing PDF file: 6a.pdf
-2024-09-29 01:25:30,642 - INFO - Document 1 (6a.pdf) of 20
-2024-09-29 01:25:31,462 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:31,481 - INFO - Document 2 (6a.pdf) of 20
-2024-09-29 01:25:32,895 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:32,899 - INFO - Document 3 (6a.pdf) of 20
-2024-09-29 01:25:34,181 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:34,184 - INFO - Document 4 (6a.pdf) of 20
-2024-09-29 01:25:36,048 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:36,051 - INFO - Document 5 (6a.pdf) of 20
-2024-09-29 01:25:37,726 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:37,730 - INFO - Document 6 (6a.pdf) of 20
-2024-09-29 01:25:40,760 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:40,764 - INFO - Document 7 (6a.pdf) of 20
-2024-09-29 01:25:42,330 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:42,333 - INFO - Document 8 (6a.pdf) of 20
-2024-09-29 01:25:44,013 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:44,017 - INFO - Document 9 (6a.pdf) of 20
-2024-09-29 01:25:45,115 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:45,118 - INFO - Document 10 (6a.pdf) of 20
-2024-09-29 01:25:46,424 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:46,429 - INFO - Document 11 (6a.pdf) of 20
-2024-09-29 01:25:47,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:47,390 - INFO - Document 12 (6a.pdf) of 20
-2024-09-29 01:25:48,786 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:48,787 - INFO - Document 13 (6a.pdf) of 20
-2024-09-29 01:25:51,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:51,771 - INFO - Document 14 (6a.pdf) of 20
-2024-09-29 01:25:52,985 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:52,989 - INFO - Document 15 (6a.pdf) of 20
-2024-09-29 01:25:55,014 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:55,018 - INFO - Document 16 (6a.pdf) of 20
-2024-09-29 01:25:58,061 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:58,065 - INFO - Document 17 (6a.pdf) of 20
-2024-09-29 01:26:00,490 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:00,495 - INFO - Document 18 (6a.pdf) of 20
-2024-09-29 01:26:01,884 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:01,886 - INFO - Document 19 (6a.pdf) of 20
-2024-09-29 01:26:04,042 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:04,046 - INFO - Document 20 (6a.pdf) of 20
-2024-09-29 01:26:05,302 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:05,308 - INFO - Cleaned content written to file
-2024-09-29 01:26:12,414 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:12,423 - INFO - Test generated successfully
+2024-09-29 07:45:30,270 - INFO - Static files mounted
+2024-09-29 07:45:30,270 - INFO - toLetter filter added to Jinja2 environment
+2024-09-29 07:45:30,502 - INFO - GET request received for index page
+2024-09-29 07:45:31,925 - INFO - GET request received for index page
+2024-09-29 07:47:21,391 - INFO - GET request received for index page
+2024-09-29 07:47:31,287 - INFO - GET request received for index page
+2024-09-29 07:47:39,194 - INFO - GET request received for index page

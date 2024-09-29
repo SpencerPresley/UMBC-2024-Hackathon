@@ -105,4 +105,7 @@ textarea{
     font-size: 16px;
 }
 
-
+.logo{
+    width: 25% !important;
+    height: auto;
+}
