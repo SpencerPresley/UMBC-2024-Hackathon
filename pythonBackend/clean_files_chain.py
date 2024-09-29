@@ -5,8 +5,6 @@ import logging
 import tempfile
 import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from PIL import Image
-import pytesseract
 import asyncio
 import aiofiles
 
@@ -27,8 +25,8 @@ from langchain_core.prompts import (
     SystemMessagePromptTemplate,
 )
 from pydantic import BaseModel
-from langchain_core.runnables import RunnablePassthrough, RunnableParallel
-from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
+from langchain_core.runnables import RunnablePassthrough
+from langchain_core.output_parsers import JsonOutputParser
 
 from .custom_prompts import clean_files_system_prompt, clean_files_human_prompt, clean_files_json_format
 
@@ -258,13 +256,6 @@ async def get_loader(uploaded_file):
     elif file_extension == '.pptx':
         logging.info(f"Processing PPTX file: {uploaded_file.filename}")
         return UnstructuredPowerPointLoader(temp_file_path)
-    elif file_extension in ['.png', '.jpeg', '.jpg']:
-        logging.info(f"Processing image file: {uploaded_file.filename}")
-        img = Image.open(temp_file_path).convert("L")
-        text = pytesseract.image_to_string(img, lang="eng")
-        logging.info(f"Loader set for type .{file_extension}")
-        logging.info(f"Text: {text}")
-        return TextLoader(text.encode())
     else:
         raise ValueError(f"Unsupported file type: {file_extension}")
         

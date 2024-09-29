@@ -1,12 +1,8 @@
-import json
 import os
 from dotenv import load_dotenv
 import logging
 from typing import List
-
-from PIL import Image
-import pytesseract
-import re
+load_dotenv()
 
 logging.basicConfig(
     level=logging.INFO,
@@ -14,8 +10,6 @@ logging.basicConfig(
     filename='chains.log',
     filemode='w'
 )
-
-from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
@@ -26,7 +20,7 @@ from langchain_core.prompts import (
 )
 from pydantic import BaseModel
 from langchain_core.runnables import RunnablePassthrough
-from langchain_core.output_parsers import JsonOutputParser, StrOutputParser, PydanticOutputParser
+from langchain_core.output_parsers import PydanticOutputParser
 
 class QAPair(BaseModel):
     question:str
