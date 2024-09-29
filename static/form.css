@@ -110,10 +110,11 @@ textarea{
     height: auto;
 }
 
-.loading{
+#loading{
     position: fixed;
     margin-top: 8%;
     left: 50%;
-    transform: translate(-50%, 0%);
-    display: none;
+    transform: translate(-50%, -0%) ;
+    z-index: 1000; 
+    display: flex;
 }

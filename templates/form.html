@@ -10,10 +10,11 @@
 </head>
 <body>
     <!--<h1>TestifAI</h1>-->
-    <center><img src="{{ url_for('static', path='Loading.gif') }}" class="loading"/></center>
+    <center><img src="{{ url_for('static', path='Loading.gif') }}" id="loading"/></center>
     <center><img src="{{ url_for('static', path='logo.png') }}" class="logo"></center>
+    <script src="{{ url_for('static', path='form.js') }}"></script>
     
-    <form action="/generate" method="POST" enctype="multipart/form-data">
+    <form id='form' action="/generate" method="POST" enctype="multipart/form-data">
         <div class="grid-container">
             <div id="testInfo">
                 <h2>Test Information</h2>
