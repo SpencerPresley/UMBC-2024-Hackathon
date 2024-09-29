@@ -198,6 +198,98 @@ def get_templates():
     
     return question_generation_system_prompt, question_generation_human_prompt
 
+async def judge_chain(*, test_str: str, course, professor,
+                            number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
+                            school_type, difficulty, testing_philosophy
+                            ):
+    total_number_of_questions = number_of_mcq_questions + number_of_TF_questions + number_of_written_questions
+    QAPair_json_format, json_structure = get_json_format()
+    llm = ChatOpenAI(
+        model="chatgpt-4o-latest",
+        temperature=0.7,
+        api_key=os.getenv("OPENAI_API_KEY"),
+    )
+    
+    hm_template = PromptTemplate(
+        template="""
+        ## All Tests:
+        {test_str}
+        """
+    )
+    sm_template = PromptTemplate(
+        template="""
+        You are an AI assistant who's job is to look over several tests and pick out the best questions.
+        
+        The tests are provided in the following json format from a previous AI assistant:
+        {json_structure}.
+        
+        You are also to follow this JSON structure when outputting the best questions.
+        
+        Here is an example of what the JSON structure should look like:
+        {QAPair_json_format}
+        
+        You are to pick out a total of **{total_number_of_questions}** questions.
+        
+        Out of the **{total_number_of_questions}** questions, **{number_of_mcq_questions}** are to be multiple choice questions.
+        Out of the **{total_number_of_questions}** questions, **{number_of_TF_questions}** are to be true/false questions.
+        Out of the **{total_number_of_questions}** questions, **{number_of_written_questions}** are to be written questions.
+        
+        You are not to deviate from the number of questions asked. You are not to deviate from the number of multiple choice questions asked. You are not to deviate from the number of true/false questions asked. You are not to deviate from the number of written questions asked.
+        
+        Ensure the questions you pick are not repeated or near repeated. Meaning don't pick out questions that are very similar to each other. Remember this is a collection of tests, and you are a judge who is looking for the abolute best questions.
+        
+        Here is more information about the course to help you pick the best questions:
+        This course is the following type of course: **{course}**.
+        This course is of the following level of education: **{school_type}**.
+        This course is to be tested at the following difficulty: **{difficulty}**.
+        This course follows the following testing philosophy: **{testing_philosophy}**.
+        
+        IMPORTANT: Ensure you follow this JSON format EXACTLY
+        IMPORTANT: Always attempt to output your response in the JSON format provided, if you do not provide your response in the JSON format, you have failed.
+        IMPORTANT: Carefully read the document and use it to pick the best questions. Do not use any other information you already have or from any other sources. ONLY USE THE PROVIDED DOCUMENT.
+        IMPORTANT: REMEMBER, you are a JUDGE and you are looking for the absolute best questions.
+        IMPORTANT: REMEMBER, do not pick out questions that are very similar to each other or repeated questions.
+        """
+    )
+    
+    system_prompt = SystemMessagePromptTemplate.from_template(sm_template.template)
+    human_prompt = HumanMessagePromptTemplate.from_template(hm_template.template)
+    parser = PydanticOutputParser(pydantic_object=GeneratedTest)
+    messages = [
+        system_prompt,
+            human_prompt,
+    ]
+    prompt = ChatPromptTemplate.from_messages(messages)
+    chain = RunnablePassthrough.assign(
+        hm_template = lambda x: hm_template.format(test_str=x["test_str"]),
+        sm_template = lambda x: sm_template.format(
+            json_structure=x["json_structure"],
+            QAPair_json_format=x["QAPair_json_format"],
+            total_number_of_questions=x["total_number_of_questions"],
+            number_of_mcq_questions=x["number_of_mcq_questions"],
+            number_of_TF_questions=x["number_of_TF_questions"],
+            number_of_written_questions=x["number_of_written_questions"],
+            course=x["course"],
+            school_type=x["school_type"],
+            difficulty=x["difficulty"],
+            testing_philosophy=x["testing_philosophy"]
+        )
+    ) | prompt | llm | parser
+    chain_result = chain.invoke({
+        "test_str": test_str,
+        "json_structure": json_structure,
+        "QAPair_json_format": QAPair_json_format,
+        "total_number_of_questions": total_number_of_questions,
+        "number_of_mcq_questions": number_of_mcq_questions,
+        "number_of_TF_questions": number_of_TF_questions,
+        "number_of_written_questions": number_of_written_questions,
+        "course": course,
+        "school_type": school_type,
+        "difficulty": difficulty,
+        "testing_philosophy": testing_philosophy
+    })
+    return chain_result
+
 def get_json_format():
     QAPair_json_format = """
     {
@@ -266,6 +358,11 @@ def get_json_format():
     """
     
     return QAPair_json_format, json_structure
+
+
+
+    
+    
 
 
     

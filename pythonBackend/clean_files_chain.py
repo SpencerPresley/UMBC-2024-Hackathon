@@ -31,8 +31,13 @@ from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
 from .custom_prompts import clean_files_system_prompt, clean_files_human_prompt, clean_files_json_format
 
-from .question_generation_prompt import question_generate_chain
+from .question_generation_prompt import question_generate_chain, judge_chain
 
+from langchain_community.document_loaders import OnlinePDFLoader
+
+class ParserStyle(BaseModel):
+    title: str
+    content: str
 
 class CleanedFile(BaseModel):
     cleaned_content: str
@@ -61,6 +66,8 @@ async def run(formData, file_path: str = None, key: str = None):
         school_type = formData.school_type
         difficulty = formData.difficulty
         testing_philosophy = formData.testing_philosophy
+        url_1 = formData.url_1 if formData.url_1 else None
+        url_2 = formData.url_2 if formData.url_2 else None
     except Exception as e:
         logging.error(f"Error accessing form data: {e}")
         return
@@ -77,27 +84,58 @@ async def run(formData, file_path: str = None, key: str = None):
     logging.info(f"Form Testing Philosophy: {testing_philosophy}")
     logging.info("Moving to files...")
     try:  
+
         tasks = []
+        page_tasks = []
+        pages = []
         for uploaded_file in formData.subject_material:
             logging.info(f"Processing file: {uploaded_file.filename}")
             loader = await get_loader(uploaded_file)
             # docs = loader.l
             tasks.append(process_file(loader, uploaded_file.filename))
+            page_tasks.append(process_file_2(loader, uploaded_file.filename))
             # full_response = ""
             # for i, doc in enumerate(docs):
             #     logging.info(f"Document {i+1} ({uploaded_file.filename}) of {len(docs)}")
             #     full_response += clean_files_chain(doc)
-                
+        
+             
         results = await asyncio.gather(*tasks)
+        pages_nested = await asyncio.gather(*page_tasks)
+        pages.extend([page.page_content for sublist in pages_nested for page in sublist])
         full_response = "".join(results)
             
         await write_response_to_file(full_response, "cleaned_content.json")
         logging.info("Cleaned content written to file")
-        pydantic_test = await question_generate_chain(
-            clean_response=full_response, llm=llm, title=title, course=course, professor=professor,
-            number_of_mcq_questions=number_of_mcq_questions, number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions,
-            school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy
-        )
+        pydantic_test = None
+        if url_1 or url_2:
+            url_list = []
+            if url_1:
+                url_list.append(url_1)
+            if url_2:
+                url_list.append(url_2)
+            for url in url_list:    
+                loader_2 = OnlinePDFLoader(
+                    url,
+                )
+                pages.append(loader_2.load_and_split())
+                test_list = []
+                for page in pages:
+                    test_list.append(await question_generate_chain(
+                        clean_response=page, llm=llm, title=title, course=course, professor=professor,
+                        number_of_mcq_questions=number_of_mcq_questions, number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions,
+                        school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy,
+                    ))
+                test_str = "FIRST TEST\n\n" + "".join(f"{test}\n\nNEXT TEST\n\n" for test in test_list) + "END OF TESTS"
+
+                result = await judge_chain(test_str=test_str, course=course, professor=professor, number_of_mcq_questions=number_of_mcq_questions,   number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions, school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy)
+                pydantic_test = result
+        else:
+            pydantic_test = await question_generate_chain(
+                clean_response=full_response, llm=llm, title=title, course=course, professor=professor,
+                number_of_mcq_questions=number_of_mcq_questions, number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions,
+                school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy
+            )
         print(pydantic_test)
         return pydantic_test
     
@@ -115,11 +153,14 @@ async def process_file(loader, filename):
         full_response += await clean_files_chain(doc)
     return full_response
 
-# def load_data(loader):
-#     raw_docs = loader.load_and_split()
-#     logging.info("Docs loaded using .load_and_split()")
-#     docs = [doc.page_content for doc in raw_docs]
-#     return docs
+async def process_file_2(loader, filename):
+    os.environ["OCR_AGENT"] = "tesseract"
+    os.environ['USER_AGENT'] = "LangChainScript/1.0 (Python/3.9; Research)"
+    loader = OnlinePDFLoader(
+        'http://faculty.salisbury.edu/~sxpark/cosc450_1.pdf',
+    )
+    pages = await loader.aload()
+    return pages
 
 async def clean_files_chain(doc: str, key: str = None):
     print(f"Document: {doc}")
