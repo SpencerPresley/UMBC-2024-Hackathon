@@ -10,7 +10,9 @@
 </head>
 <body>
     <!--<h1>TestifAI</h1>-->
+    <center><img src="{{ url_for('static', path='Loading.gif') }}" class="loading"/></center>
     <center><img src="{{ url_for('static', path='logo.png') }}" class="logo"></center>
+    
     <form action="/generate" method="POST" enctype="multipart/form-data">
         <div class="grid-container">
             <div id="testInfo">
