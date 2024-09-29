@@ -1,0 +1,62 @@
+2024-09-29 10:42:10,452 - INFO - Static files mounted
+2024-09-29 10:42:10,452 - INFO - toLetter filter added to Jinja2 environment
+2024-09-29 10:42:12,537 - INFO - GET request received for index page
+2024-09-29 10:42:27,656 - INFO - POST request received for /generate
+2024-09-29 10:42:27,657 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=2 number_of_TF_questions=2 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' url_1='https://en.wikipedia.org/wiki/Theory_of_computation' url_2='' subject_material=[UploadFile(filename='3a.pdf', size=195115, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="3a.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-29 10:42:27,657 - INFO - Form data accessed
+2024-09-29 10:42:27,657 - INFO - Form Title: f
+2024-09-29 10:42:27,657 - INFO - Form Course: f
+2024-09-29 10:42:27,657 - INFO - Form Professor: f
+2024-09-29 10:42:27,657 - INFO - Form Number of MCQ Questions: 2
+2024-09-29 10:42:27,657 - INFO - Form Number of TF Questions: 2
+2024-09-29 10:42:27,658 - INFO - Form Number of Written Questions: 1
+2024-09-29 10:42:27,658 - INFO - Form School Type: Undergraduate
+2024-09-29 10:42:27,658 - INFO - Form Difficulty: easy
+2024-09-29 10:42:27,658 - INFO - Form Testing Philosophy: f
+2024-09-29 10:42:27,658 - INFO - Moving to files...
+2024-09-29 10:42:27,658 - INFO - Processing file: 3a.pdf
+2024-09-29 10:42:27,664 - INFO - File extension: .pdf
+2024-09-29 10:42:27,664 - INFO - Processing PDF file: 3a.pdf
+2024-09-29 10:42:28,053 - INFO - Document 1 (3a.pdf) of 19
+2024-09-29 10:42:30,055 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:30,218 - INFO - Document 2 (3a.pdf) of 19
+2024-09-29 10:42:32,254 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:32,256 - INFO - Document 3 (3a.pdf) of 19
+2024-09-29 10:42:33,594 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:33,597 - INFO - Document 4 (3a.pdf) of 19
+2024-09-29 10:42:34,419 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:34,422 - INFO - Document 5 (3a.pdf) of 19
+2024-09-29 10:42:35,989 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:35,991 - INFO - Document 6 (3a.pdf) of 19
+2024-09-29 10:42:36,748 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:36,751 - INFO - Document 7 (3a.pdf) of 19
+2024-09-29 10:42:39,727 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:39,729 - INFO - Document 8 (3a.pdf) of 19
+2024-09-29 10:42:40,402 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:40,405 - INFO - Document 9 (3a.pdf) of 19
+2024-09-29 10:42:41,696 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:41,698 - INFO - Document 10 (3a.pdf) of 19
+2024-09-29 10:42:42,792 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:42,794 - INFO - Document 11 (3a.pdf) of 19
+2024-09-29 10:42:43,802 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:43,803 - INFO - Document 12 (3a.pdf) of 19
+2024-09-29 10:42:44,914 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:44,915 - INFO - Document 13 (3a.pdf) of 19
+2024-09-29 10:42:45,570 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:45,572 - INFO - Document 14 (3a.pdf) of 19
+2024-09-29 10:42:46,850 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:46,852 - INFO - Document 15 (3a.pdf) of 19
+2024-09-29 10:42:48,036 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:48,038 - INFO - Document 16 (3a.pdf) of 19
+2024-09-29 10:42:49,869 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:49,871 - INFO - Document 17 (3a.pdf) of 19
+2024-09-29 10:42:50,795 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:50,797 - INFO - Document 18 (3a.pdf) of 19
+2024-09-29 10:42:51,646 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:51,648 - INFO - Document 19 (3a.pdf) of 19
+2024-09-29 10:42:52,864 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:42:59,570 - INFO - pikepdf C++ to Python logger bridge initialized
+2024-09-29 10:43:00,627 - INFO - Cleaned content written to file
+2024-09-29 10:43:00,628 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
+2024-09-29 10:43:04,945 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 10:43:04,949 - INFO - Test generated successfully

@@ -17,7 +17,8 @@ logging.basicConfig(
     filemode='w'
 )
 
-from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader, PyMuPDFLoader
+from langchain_community.document_loaders import PyPDFLoader, TextLoader, Docx2txtLoader, UnstructuredPowerPointLoader, PyMuPDFLoader, UnstructuredURLLoader
+
 
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import (
@@ -88,9 +89,15 @@ async def run(formData, file_path: str = None, key: str = None):
         tasks = []
         page_tasks = []
         pages = []
+        bool_website_loader = False
+        bool_online_pdf_loader = False
         for uploaded_file in formData.subject_material:
             logging.info(f"Processing file: {uploaded_file.filename}")
             loader = await get_loader(uploaded_file)
+            if type(loader) == UnstructuredURLLoader:
+                bool_website_loader = True
+            if type(loader) == OnlinePDFLoader:
+                bool_online_pdf_loader = True
             # docs = loader.l
             tasks.append(process_file(loader, uploaded_file.filename))
             page_tasks.append(process_file_2(loader, uploaded_file.filename))
@@ -108,17 +115,14 @@ async def run(formData, file_path: str = None, key: str = None):
         await write_response_to_file(full_response, "cleaned_content.json")
         logging.info("Cleaned content written to file")
         pydantic_test = None
-        if url_1 or url_2:
+        if bool_online_pdf_loader:
             url_list = []
             if url_1:
-                url_list.append(url_1)
+                    url_list.append(url_1)
             if url_2:
-                url_list.append(url_2)
+                    url_list.append(url_2)
             for url in url_list:    
-                loader_2 = OnlinePDFLoader(
-                    url,
-                )
-                pages.append(loader_2.load_and_split())
+                pages.append(loader.aload())
                 test_list = []
                 for page in pages:
                     test_list.append(await question_generate_chain(
@@ -209,12 +213,32 @@ def get_clean_files_chain(llm, prompt, system_prompt, human_prompt):
 async def write_response_to_file(response, file_path: str):
     async with aiofiles.open(file_path, "w") as f:
         await f.write(json.dumps(response, indent=4))
+        
+async def get_web_loader(url_1 = None, url_2 = None):
+    urls = []
+    if url_1:
+        urls.append(url_1)
+    if url_2:
+        urls.append(url_2)
+    loader = UnstructuredURLLoader(
+        urls=urls,
+    )
+    return loader
 
 async def get_loader(uploaded_file):  
     temp_file = tempfile.NamedTemporaryFile(delete=False)
     temp_file_path = temp_file.name
     temp_file.close()  # Close the file so aiofiles can open it
 
+    if temp_file_path.startswith('http') and not temp_file_path.endswith('.pdf'):
+        loader = get_web_loader(url_1=temp_file_path, url_2=temp_file_path)
+        return loader
+    if temp_file_path.startswith('http') and temp_file_path.endswith('.pdf'):
+        loader = OnlinePDFLoader(
+            temp_file_path,
+        )
+        return loader
+    
     async with aiofiles.open(temp_file_path, 'wb') as f:
         content = await uploaded_file.read()  # Read the file content asynchronously
         await f.write(content) 
