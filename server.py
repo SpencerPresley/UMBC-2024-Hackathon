@@ -73,7 +73,7 @@ def final(
             request=request, name="error.html", context={"error": str(e)}
         )
 
-    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"]), QAPair(question="What is 2+2?", answer="T", type="TF")] )
+    fake_response=GeneratedTest(questions=[QAPair(question="What is 2+2?", answer="4", type="written"),QAPair(question="What is 1+2?",answer="3" , type="written"),QAPair(question="What is 1+3?",answer="4" , type="multiple", choices=["1", "2", "3", "4"]), QAPair(question="Does 2+2=4?", answer="T", type="TF")] )
 
     return templates.TemplateResponse(
         request=request, name="finshed_test.html", context={"Settings": data,"Test":fake_response}
