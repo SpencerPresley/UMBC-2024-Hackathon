@@ -23,12 +23,17 @@
 
                 <textarea type="text" name="titleBox" rows="3" cols="45" class="h2">{{loop.index}}. {{ question.question }}</textarea>
 
+<<<<<<< HEAD
                 {% if question.type == 'written' %}
                     <textarea type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" rows="3" cols="45" name="titleBox" >{{ question.answer }}</textarea>
+=======
+                {% if question.q_type == 'written' %}
+                    <input type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" name="titleBox" value= "{{ question.answer }}">
+>>>>>>> 350deee (f)
                     <input type="text" id="" class="h4 noAnswer" name="titleBox" value= "">
                 {% endif %}
                 
-                {% if question.type == 'multiple_choice' %}
+                {% if question.q_type == 'multiple_choice' %}
 
                     {% for choice in (question.choices)%}
                         {% if choice == question.answer %}
@@ -40,7 +45,7 @@
 
                 {% endif %}
 
-                {% if question.type == 'TF' %}
+                {% if question.q_type == 'TF' %}
 
 
                         {% if question.answer == 'True' %}

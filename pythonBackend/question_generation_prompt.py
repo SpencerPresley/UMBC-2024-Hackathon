@@ -31,7 +31,7 @@ from langchain_core.output_parsers import JsonOutputParser, StrOutputParser, Pyd
 class QAPair(BaseModel):
     question:str
     answer: str
-    type: str
+    q_type: str
     choices: List[str] = ['T', 'F'] #Holds Choices in a multiple Choice question
     
 class GeneratedTest(BaseModel):
@@ -97,8 +97,8 @@ def question_generate_chain(*,
             "title": title,
         }
     )
-    print(pydantic_return_object)
-    input("Press Enter to continue...")
+    # print(pydantic_return_object)
+    # input("Press Enter to continue...")
     return pydantic_return_object    
     
 def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
@@ -163,8 +163,7 @@ def get_templates():
     - TF
     - written
     
-    An example for each:
-    
+    And as a reminder these go in as the value for the q_type key.
     
     If you include anything but the question, type, answer, and and choices within the json, you have failed.
     IMPORTANT: If you include anything but the question, type, answer, and and choices within the json, you have failed.
@@ -186,7 +185,7 @@ def get_json_format():
         "questions": [
             {
                 "question": "What is the capital of France?",
-                "type": "multiple_choice",
+                "q_type": "multiple_choice",
                 "answer": "Paris",
                 "choices": [
                     "London",
@@ -197,7 +196,7 @@ def get_json_format():
             },
             {
                 "question": "The Earth is flat.",
-                "type": "TF",
+                "q_type": "TF",
                 "answer": "False",
                 "choices": [
                     "True",
@@ -206,7 +205,7 @@ def get_json_format():
             },
             {
                 "question": "Explain the process of photosynthesis in plants.",
-                "type": "written",
+                "q_type": "written",
                 "answer": "Photosynthesis is the process by which plants use sunlight, water, and carbon dioxide to produce oxygen and energy in the form of sugar.",
                 "choices": []
             }

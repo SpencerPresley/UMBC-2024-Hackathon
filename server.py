@@ -36,7 +36,7 @@ class FormSettings(BaseModel):
 class QAPair(BaseModel):
     question:str
     answer: str
-    type: str
+    q_type: str
     choices: List[str] = ['T', 'F'] #Holds Choices in a multiple Choice question
     
 class GeneratedTest(BaseModel):
