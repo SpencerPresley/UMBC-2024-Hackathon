@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	const toggle_bar = document.getElementById('boundToggle')
 	const choiceAnswer = document.querySelectorAll('.choiceAnswer')
 	const writtenAnswer = document.querySelectorAll('.writtenAnswer')
-	const noAnswer = document.querySelectorAll('noAnswer')
+	const noAnswer = document.querySelectorAll('.noAnswer')
 
 	console.log(test);
 	console.log(downloadButton)

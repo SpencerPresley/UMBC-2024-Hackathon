@@ -23,13 +23,8 @@
 
                 <textarea type="text" name="titleBox" rows="3" cols="45" class="h2">{{loop.index}}. {{ question.question }}</textarea>
 
-<<<<<<< HEAD
-                {% if question.type == 'written' %}
-                    <textarea type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" rows="3" cols="45" name="titleBox" >{{ question.answer }}</textarea>
-=======
                 {% if question.q_type == 'written' %}
-                    <input type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" name="titleBox" value= "{{ question.answer }}">
->>>>>>> 350deee (f)
+                    <textarea type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" rows="3" cols="45" name="titleBox" >{{ question.answer }}</textarea>
                     <input type="text" id="" class="h4 noAnswer" name="titleBox" value= "">
                 {% endif %}
                 
