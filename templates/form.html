@@ -70,12 +70,19 @@
             
             <div id="Philosophy">
                 <h2>Testing Philosophy</h2>
-                <input type="text" class="testing" name="testing_philosophy" required>
+                <textarea type="text" class="testing" name="testing_philosophy" rows=9 cols=50 required></textarea>
             </div>
     
             <div id="Material">
                 <h2>Test Material</h2>
                 <input type="file" id="fileUpload" name="subject_material" accept=".pdf,.docx,.pptx,.txt,.doc,.png,.jpeg,.jpg" multiple required>
+                <div class="web-links">
+                    <input type="text" name="url_1" placeholder="Link to a relevant webpage">
+                </div>
+
+                <div class="web-links">
+                    <input type="text" name="url_2" placeholder="Link to another relevant webpage">
+                </div>
             </div>
             <div class="submit-button-container">
                 <button type="submitButton">Generate</button>

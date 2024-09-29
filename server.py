@@ -27,6 +27,8 @@ class FormSettings(BaseModel):
     level: str
     difficulty: str
     testing_philosophy: str
+    url_1: str | None
+    url_2: str | None
     subject_material:List[UploadFile]
 
 class QAPair(BaseModel):
