@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 				writtenAnswer[i].style.display = ''
 			}
 			for(let i = 0; i < choiceAnswer.length; i++){
-				choiceAnswer[i].style.display = ''
+				choiceAnswer[i].style.color = ''
 			}
 		}
 	}

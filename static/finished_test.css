@@ -90,3 +90,7 @@ a{
 .edit-notice{
     color: gray;
 }
+
+.correctAnswer{
+    color: #0000ff
+}
