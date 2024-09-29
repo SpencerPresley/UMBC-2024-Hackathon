@@ -1,9 +1,10 @@
-const downloadButton = document.getElementById('DownloadButton');
-const test = document.getElementById('test');
-const toggle_bar = document.getElementById
+
 
 document.addEventListener("DOMContentLoaded", function() {
-	
+	const downloadButton = document.getElementById('DownloadButton');
+	const test = document.getElementById('test');
+	const toggle_button = document.getElementById('toggle_button')
+	const toggle_bar = document.getElementById('boundToggle')
 	console.log(test);
 	console.log(downloadButton)
 
@@ -39,20 +40,24 @@ document.addEventListener("DOMContentLoaded", function() {
 	})})
 
 
-	toggle_bar.addEventListener(function(){
+	toggle_bar.addEventListener('click', function(){
 		borderToggleOption();
 	})
 
-	
+	function borderToggleOption() {
+		const currentTransform = window.getComputedStyle(toggle_button).transform;
+
+		if (currentTransform === "none") {
+			toggle_button.style.transform = "translateX(0px)"; // Move right
+		}
+		// Toggle the position of the button
+		if (toggle_button.style.transform === "translateX(0px)") {
+			toggle_button.style.transform = "translateX(25px)";
+		} 
+		else {
+			toggle_button.style.transform = "translateX(0px)";
+		}
+	}
 
 })
 
-function borderToggleOption() {
-	// Toggle the position of the button
-	if (borderToggle.style.transform === "translateX(0px)") {
-		borderToggle.style.transform = "translateX(25px)";
-	} 
-	else {
-		borderToggle.style.transform = "translateX(0px)";
-	}
-}
