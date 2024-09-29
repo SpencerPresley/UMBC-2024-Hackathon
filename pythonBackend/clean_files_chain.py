@@ -82,6 +82,9 @@ async def run(formData, file_path: str = None, key: str = None):
             logging.info(f"Processing file: {uploaded_file.filename}")
             loader = await get_loader(uploaded_file)
             # docs = loader.l
+            # If filetype is PDF and is entirely image-based, try again with OCR (less efficient)
+            if (os.path.splitext(uploaded_file.filename)[1].lower()=='pdf' and docs == []):
+                loader = PyPDFLoader(file_path=temp_file_path, extract_images=True)
             tasks.append(process_file(loader, uploaded_file.filename))
             # full_response = ""
             # for i, doc in enumerate(docs):
@@ -182,7 +185,8 @@ async def get_loader(uploaded_file):
     logging.info(f"File extension: {file_extension}")
     if file_extension == '.pdf':
         logging.info(f"Processing PDF file: {uploaded_file.filename}")
-        return PyPDFLoader(file_path=temp_file_path)
+        return PyMuPDFLoader(temp_file_path)
+        #return PyPDFLoader(file_path=temp_file_path, extract_images=True)
     elif file_extension == '.txt':
         logging.info(f"Processing TXT file: {uploaded_file.filename}")
         return TextLoader(temp_file_path)
