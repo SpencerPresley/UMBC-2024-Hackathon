@@ -69,7 +69,7 @@ def final(
     logger.info("POST request received for /generate")
     logger.info(f"Form data: {data}")
     try:
-        #test = run(data)
+        test = run(data)
         logger.info("Test generated successfully")
     except Exception as e:
         logger.error(f"Error generating test: {e}")

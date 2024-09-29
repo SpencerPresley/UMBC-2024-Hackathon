@@ -21,10 +21,10 @@
 
             {%- for question in Test.questions %}
 
-                <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
+                <textarea type="text" name="titleBox" rows="3" cols="45" class="h2">{{loop.index}}. {{ question.question }}</textarea>
 
                 {% if question.type == 'written' %}
-                    <input type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" name="titleBox" value= "{{ question.answer }}">
+                    <textarea type="text" id="writtenAnswer" class="writtenAnswer h4 correctAnswer" rows="3" cols="45" name="titleBox" >{{ question.answer }}</textarea>
                     <input type="text" id="" class="h4 noAnswer" name="titleBox" value= "">
                 {% endif %}
                 
