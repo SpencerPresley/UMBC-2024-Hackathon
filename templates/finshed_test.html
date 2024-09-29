@@ -24,16 +24,16 @@
                 <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
 
                 {% if question.type == 'written' %}
-                    <input type="text" id="writtenAnswer" name="titleBox" value= "{{ question.answer }}" class="h4">
+                    <input type="text" id="writtenAnswer" class="writtenAnswer h4" name="titleBox" value= "{{ question.answer }}">
                 {% endif %}
                 
                 {% if question.type == 'multiple' %}
 
                     {% for choice in (question.choices)%}
                         {% if choice == question.answer %}
-                        <input type="text" id="choiceAnswer" name="titleBox" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4" style="color: #0000ff";>
+                        <input type="text" id="choiceAnswer" class= "choiceAnswer h4 correctAnswer" name="titleBox" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4" style="color: #0000ff";>
                         {% else %}
-                        <input type="text"  id="choiceAnswer" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4">
+                        <input type="text"  id="choiceAnswer" class= "choiceAnswer h4" value= " {{loop.index | toLetter}}: {{ choice }}" class="h4">
                         {% endif %}    
                     {% endfor %}
 
@@ -43,11 +43,11 @@
 
 
                         {% if question.answer == 'T' %}
-                        <input type="text" id="choiceAnswer" name="titleBox" value= "A: True" class="h4" style="color: #0000ff" ;>
-                        <input type="text" id="choiceAnswer" name="titleBox" value= "B: False" class="h4">
+                        <input type="text" id="choiceAnswer" class= "choiceAnswer h4 correctAnswer" name="titleBox" value= "A: True" class="h4" style="color: #0000ff" ;>
+                        <input type="text" id="choiceAnswer" class= "choiceAnswer h4 " name="titleBox" value= "B: False" class="h4">
                         {% else %}
-                        <input type="text"  id="choiceAnswer" value= "A: True" class="h4">
-                        <input type="text"  id="choiceAnswer" value= " B: False" class="h4" style="color: #0000ff" ;>
+                        <input type="text"  id="choiceAnswer" class= "choiceAnswer h4"  value= "A: True" class="h4">
+                        <input type="text"  id="choiceAnswer" class= "choiceAnswer h4 correctAnswer" value= " B: False" class="h4" style="color: #0000ff" ;>
                         {% endif %}   
                     {% endif %} 
                 <br id="{{loop.index}}">

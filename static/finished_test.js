@@ -5,9 +5,12 @@ document.addEventListener("DOMContentLoaded", function() {
 	const test = document.getElementById('test');
 	const toggle_button = document.getElementById('toggle_button')
 	const toggle_bar = document.getElementById('boundToggle')
-	//const choiceAnswer = document.getElementById('choiceAnswer')
+	const choiceAnswer = document.querySelectorAll('.choiceAnswer')
+	const writtenAnswer = document.querySelectorAll('.writtenAnswer')
 	console.log(test);
 	console.log(downloadButton)
+
+	borderToggleOption();
 
 	downloadButton.addEventListener('click', function(){html2canvas(test).then(function(canvas){
 
@@ -54,10 +57,24 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Toggle the position of the button
 		if (toggle_button.style.transform === "translateX(0px)") {
 			toggle_button.style.transform = "translateX(25px)";
-			choiceAnswer.style.color = "#ffffff"
+			console.log("Written Answer: ",writtenAnswer)
+			for(let i = 0; i < writtenAnswer.length; i++){
+				writtenAnswer[i].style.display = 'none'
+			}
+			for(let i = 0; i < choiceAnswer.length; i++){
+				choiceAnswer[i].style.color = '#000000'
+			}
+			downloadButton.innerText = "Download Test"
 		} 
 		else {
 			toggle_button.style.transform = "translateX(0px)";
+			for(let i = 0; i < writtenAnswer.length; i++){
+				writtenAnswer[i].style.display = ''
+			}
+			for(let i = 0; i < choiceAnswer.length; i++){
+				choiceAnswer[i].style.color = ''
+			}
+			downloadButton.innerText = "Download Answer Key"
 		}
 	}
 
