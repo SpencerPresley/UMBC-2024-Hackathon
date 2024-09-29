@@ -2,10 +2,12 @@ import json
 import os
 from dotenv import load_dotenv
 import logging
+import tempfile
 
 from PIL import Image
 import pytesseract
 import re
+
 
 logging.basicConfig(
     level=logging.INFO,
@@ -31,7 +33,6 @@ from .custom_prompts import clean_files_system_prompt, clean_files_human_prompt,
 
 class CleanedFile(BaseModel):
     cleaned_content: str
-
 
 load_dotenv()
 llm = ChatOpenAI(
@@ -73,16 +74,17 @@ def run(formData, file_path: str = None, key: str = None):
     logging.info("Moving to files...")
     try:    
         for uploaded_file in formData.subject_material:
-            logging.info(f"File name: {uploaded_file.file.name}")
-            loader = get_loader(uploaded_file.file.name)
-            docs = load_data(loader)
+            logging.info(f"Processing file: {uploaded_file.filename}")
+            loader = get_loader(uploaded_file)
+            docs = loader.load()
             full_response = ""
             for i, doc in enumerate(docs):
-                logging.info(f"Document {i+1} ({uploaded_file.file.name}) of {len(docs)}")
+                logging.info(f"Document {i+1} ({uploaded_file.filename}) of {len(docs)}")
                 full_response += clean_files_chain(doc)
             write_response_to_file(full_response, "cleaned_content.json")
             logging.info("Cleaned content written to file")
     except Exception as e:
+        logging.error(f"Error processing file: {uploaded_file.filename}")
         logging.error(f"Error loading data: {e}")
         return
     
@@ -140,27 +142,35 @@ def write_response_to_file(response, file_path: str):
     with open(file_path, "w") as f:
         json.dump(response, f, indent=4)
         
-def get_loader(file_path: str):
-    if file_path.endswith('.pdf'):
-        logging.info("Loader set for type .pdf")
-        return PyPDFLoader(file_path=file_path, extract_images=True)
-    elif file_path.endswith('.txt'):
-        logging.info("Loader set for type .txt")
-        return TextLoader(file_path=file_path)
-    elif file_path.endswith('.docx') or file_path.endswith('.doc'):
-        logging.info("Loader set for type .docx or .doc")
-        return Docx2txtLoader(file_path=file_path)
-    elif file_path.endswith('.pptx'):
-        logging.info("Loader set for type .pptx")
-        return UnstructuredPowerPointLoader(file_path=file_path)
-    elif file_path.endswith('.png', '.jpeg', '.jpg'):
-        img = Image.open(file_path).convert("L")
+
+
+def get_loader(uploaded_file):  
+    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
+        temp_file_path = temp_file.name
+        temp_file.write(uploaded_file.file.read())
+    file_extension = os.path.splitext(uploaded_file.filename)[1].lower()
+    logging.info(f"File extension: {file_extension}")
+    if file_extension == '.pdf':
+        logging.info(f"Processing PDF file: {uploaded_file.filename}")
+        return PyPDFLoader(file_path=temp_file_path, extract_images=True)
+    elif file_extension == '.txt':
+        logging.info(f"Processing TXT file: {uploaded_file.filename}")
+        return TextLoader(temp_file_path)
+    elif file_extension in ['.docx', '.doc']:
+        logging.info(f"Processing DOCX/DOC file: {uploaded_file.filename}")
+        return Docx2txtLoader(temp_file_path)
+    elif file_extension == '.pptx':
+        logging.info(f"Processing PPTX file: {uploaded_file.filename}")
+        return UnstructuredPowerPointLoader(temp_file_path)
+    elif file_extension in ['.png', '.jpeg', '.jpg']:
+        logging.info(f"Processing image file: {uploaded_file.filename}")
+        img = Image.open(temp_file_path).convert("L")
         text = pytesseract.image_to_string(img, lang="eng")
-        logging.info("Loader set for type .png, .jpeg, or .jpg")
+        logging.info(f"Loader set for type .{file_extension}")
         logging.info(f"Text: {text}")
-        return text
+        return TextLoader(text.encode())
     else:
-        raise ValueError("Invalid file type")
+        raise ValueError(f"Unsupported file type: {file_extension}")
         
         
 if __name__ == "__main__":
