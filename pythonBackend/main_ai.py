@@ -1,7 +1,8 @@
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader, \
     UnstructuredPowerPointLoader, WebBaseLoader
+from langchain_community.document_loaders import PyMuPDFLoader
 from PIL import Image
-import pytesseract
+#import pytesseract
 import re
 import os
 import json
@@ -13,19 +14,17 @@ logging.basicConfig(
     filemode='w'
 )
 
-file_name = "Example2.txt"
+file_name = "Example2.pdf"
 current_directory = os.path.dirname(os.path.abspath(__file__))
 doc_file_path = os.path.join(current_directory, "files", file_name)
 logging.info(f'File: {file_name} loaded at path: {doc_file_path}')
 
 if doc_file_path.endswith('.pdf'):
-    loader = PyPDFLoader(
+    # Assume pdf has native text, load quickly with PyMuPDFLoader
+    loader = PyMuPDFLoader(
         file_path=doc_file_path,
-        extract_images=True,
     )
     logging.info("Loader set for type .PDF")
-    
-    
 elif doc_file_path.endswith('.docx'):
     loader = Docx2txtLoader(
         file_path = doc_file_path
@@ -53,12 +52,22 @@ else:
 
 
 docs = []
+#docs_lazy = loader.load_and_split()
 docs_lazy = loader.load_and_split()
 logging.info("Docs loaded using .load_and_split()")
 # for doc in docs_lazy:
 #     print(doc)
 #     input("Press Enter to continue...")
 #     # docs.append(doc.page_content)
+
+if doc_file_path.endswith('.pdf') and docs_lazy == []:
+        # File does not contain text, scan with OCR through PyPDFLoader
+        print("Now using PyPDFLoader")
+        loader = PyPDFLoader(
+            file_path=doc_file_path,
+            extract_images=True
+        )
+        docs_lazy = loader.load_and_split()
 
 
 dict_data = {}
@@ -75,6 +84,7 @@ metadata = []
 
 for doc in docs_lazy:
     pages.append(re.sub(r'\s+', ' ', doc.page_content).strip())  # Clean data output
+    print(doc)  # TESTING
     metadata.append(doc.metadata)
 logging.info(f"Pages, and metadata added.")
 logging.info(f"Pages: {pages}")

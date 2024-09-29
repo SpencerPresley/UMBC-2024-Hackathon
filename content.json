@@ -1,0 +1,21 @@
+{
+    "content": [
+        "CHAPTER4 Beyond Gradient Descent For several years, researchers resorted to layer-wise greedy pre-training in order to time-intensive strategies would try to find more accurate initializations for the mod- el's parameters one layer at a time before using mini-batch gradient descent to con- verge to the optimal parameter settings. More recently, however, breakthroughs in optimization methods have enabled us to directly train models in an end-to-end fash- ion. In this chapter, we will discuss several of these breakthroughs. The next couple of sec- tions will focus primarily on local minima and whether they pose hurdles for success- fully training deep models. In subsequent sections, we will further explore the nonconvex error surfaces induced by deep models, why vanilla mini-batch gradient cessing Systems 19 (2007): 153. 63",
+        "Local Minima in the Error Surfaces of Deep Networks and global structure. Take the following analogy as an example. convex) and we were smart about our learning rate, we could use the gradient descent algorithm to eventually find the bottom of the bowl. But the surface of the US is extremely complex, that is to say, is a nonconvex surface, which means that even if we find a valley (a local minimum), we have no idea if it's the lowest valley on the map (the global minimum). In Chapter 2, we talked about how a mini-batch version of gradient descent can help navigate a troublesome eror surface when there are spuri- ous regions of magnitude zero gradients. But as we can see in Figure 4-1, even a sto- chastic error surface won't save us from a deep local minimum. E bg nitgo6\u5c71o W, Figure 4-1. Mini-batch gradient descent may aid in escaping shallow local minirma, but often fails when dealing with deep local minima, as shown Now comes the critical question. Theoretically, local minima pose a significant issue. But in practice, how common are local minima in the error surfaces of deep networks? And in which scenarios are they actually problematic for training? In the following two sections, we'll pick apart common misconceptions about local minima. 64| Chapter 4:Beyond Gradient Descent",
+        "Model I dentifiability 2805 configurations. figurations due to symmetry Modelldentifiability 65"
+    ],
+    "metadata": [
+        {
+            "source": "c:\\Users\\jairi\\OneDrive\\Desktop\\Repos\\hackthon UMBC\\UMBC-2024-Hackathon\\pythonBackend\\files\\Example2.pdf",
+            "page": 0
+        },
+        {
+            "source": "c:\\Users\\jairi\\OneDrive\\Desktop\\Repos\\hackthon UMBC\\UMBC-2024-Hackathon\\pythonBackend\\files\\Example2.pdf",
+            "page": 1
+        },
+        {
+            "source": "c:\\Users\\jairi\\OneDrive\\Desktop\\Repos\\hackthon UMBC\\UMBC-2024-Hackathon\\pythonBackend\\files\\Example2.pdf",
+            "page": 2
+        }
+    ]
+}
