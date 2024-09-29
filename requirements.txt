@@ -10,9 +10,5 @@ langchain-core
 unstructured
 python-pptx
 docx2txt
-easyocr
-torch 
-torchvision 
-torchaudio
 aiofiles
 PyMuPDF

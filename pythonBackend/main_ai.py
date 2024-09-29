@@ -13,7 +13,7 @@ logging.basicConfig(
     filemode='w'
 )
 
-file_name = "Example2.png"
+file_name = "cosc350_7.pdf"
 current_directory = os.path.dirname(os.path.abspath(__file__))
 doc_file_path = os.path.join(current_directory, "files", file_name)
 logging.info(f'File: {file_name} loaded at path: {doc_file_path}')
