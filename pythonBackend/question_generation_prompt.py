@@ -43,7 +43,7 @@ class GeneratedTest(BaseModel):
 #     api_key=os.getenv("OPENAI_API_KEY"),
 # ) 
 
-def question_generate_chain(*, 
+async def question_generate_chain(*, 
                             clean_response: str, 
                             llm, 
                             title, 
@@ -68,7 +68,7 @@ def question_generate_chain(*,
     )
     
     total_number_of_questions = number_of_mcq_questions + number_of_TF_questions + number_of_written_questions
-    chain = get_question_generate_chain(
+    chain = await get_question_generate_chain(
         clean_response=clean_response,
         llm=llm,
         title=title,
@@ -87,7 +87,7 @@ def question_generate_chain(*,
         question_generation_system_prompt=question_generation_system_prompt,
         question_generation_human_prompt=question_generation_human_prompt
     )
-    pydantic_return_object = chain.invoke(
+    pydantic_return_object = await chain.ainvoke(
         {
             "QAPair_json_format": question_generation_json_format,
             "document": clean_response,
@@ -107,7 +107,7 @@ def question_generate_chain(*,
     # input("Press Enter to continue...")
     return pydantic_return_object    
     
-def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
+async def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
                             number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
                             school_type, difficulty, testing_philosophy, prompt,
                             question_generation_json_format, question_generation_system_prompt, question_generation_human_prompt,
@@ -138,6 +138,7 @@ def get_question_generate_chain(*, clean_response: str, llm, title, course, prof
         | llm
         | parser
     )
+    logging.info(f"Chain type: {type(chain)}")
     return chain
 
 def get_templates():

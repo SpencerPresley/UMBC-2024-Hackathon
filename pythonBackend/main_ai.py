@@ -1,8 +1,7 @@
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader, \
     UnstructuredPowerPointLoader, WebBaseLoader
 from langchain_community.document_loaders import PyMuPDFLoader
-from PIL import Image
-#import pytesseract
+import easyocr
 import re
 import os
 import json
@@ -14,7 +13,7 @@ logging.basicConfig(
     filemode='w'
 )
 
-file_name = "Example2.pdf"
+file_name = "Example2.png"
 current_directory = os.path.dirname(os.path.abspath(__file__))
 doc_file_path = os.path.join(current_directory, "files", file_name)
 logging.info(f'File: {file_name} loaded at path: {doc_file_path}')
@@ -42,9 +41,15 @@ elif doc_file_path.endswith('.pptx'):
     )
     logging.info("Loader set for type .pptx")
 
-elif doc_file_path.endswith('.png', '.jpeg', '.jpg'):
-    img = Image.open(doc_file_path).convert("L")  # Open and convert image to grayscale
-    text = pytesseract.image_to_string(img, lang="eng")  # Convert image to text
+# If we decide to use images, the easyocr is likely the best since it doesnt require any externel binaries.
+# However, it is extremely slow and very sloppy. May want to rethink
+elif doc_file_path.endswith('.png'): #Or png, jpeg
+    reader_ocr = easyocr.Reader(['en'])  # Only useful for english text
+    text_result = reader_ocr.readtext(doc_file_path)  # Very computationally expensive
+    print(text_result)
+    loader = TextLoader(  # Use this text in an image loader
+        file_path = text_result
+    )
     logging.info("Loader set for type .png, .jpeg, or .jpg")
     
 else:
@@ -52,8 +57,8 @@ else:
 
 
 docs = []
-#docs_lazy = loader.load_and_split()
 docs_lazy = loader.load_and_split()
+#docs_lazy = loader.load()
 logging.info("Docs loaded using .load_and_split()")
 # for doc in docs_lazy:
 #     print(doc)
