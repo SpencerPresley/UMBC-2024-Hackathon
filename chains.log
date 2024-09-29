@@ -1,2 +1,485 @@
-2024-09-28 20:43:49,238 - INFO - Static files mounted
-2024-09-28 20:43:49,239 - INFO - toLetter filter added to Jinja2 environment
+2024-09-28 20:55:55,635 - INFO - Static files mounted
+2024-09-28 20:55:55,635 - INFO - toLetter filter added to Jinja2 environment
+2024-09-28 20:55:56,071 - INFO - POST request received for /generate
+2024-09-28 20:55:56,072 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='411Report.pdf', size=561306, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="411Report.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:55:56,072 - INFO - Form data accessed
+2024-09-28 20:55:56,072 - INFO - Form Title: 1
+2024-09-28 20:55:56,072 - INFO - Form Course: 1
+2024-09-28 20:55:56,072 - INFO - Form Professor: 1
+2024-09-28 20:55:56,072 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:55:56,073 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:55:56,073 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:55:56,073 - INFO - Form School Type: Undergraduate
+2024-09-28 20:55:56,073 - INFO - Form Difficulty: easy
+2024-09-28 20:55:56,073 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:55:56,073 - INFO - Moving to files...
+2024-09-28 20:55:56,073 - INFO - Processing file: 411Report.pdf
+2024-09-28 20:55:56,075 - INFO - File extension: .pdf
+2024-09-28 20:55:56,075 - INFO - Processing PDF file: 411Report.pdf
+2024-09-28 20:56:03,411 - INFO - GET request received for index page
+2024-09-28 20:56:18,235 - INFO - POST request received for /generate
+2024-09-28 20:56:18,235 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:56:18,235 - INFO - Form data accessed
+2024-09-28 20:56:18,235 - INFO - Form Title: 1
+2024-09-28 20:56:18,235 - INFO - Form Course: 1
+2024-09-28 20:56:18,235 - INFO - Form Professor: 1
+2024-09-28 20:56:18,235 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:56:18,235 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:56:18,235 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:56:18,235 - INFO - Form School Type: Undergraduate
+2024-09-28 20:56:18,235 - INFO - Form Difficulty: easy
+2024-09-28 20:56:18,235 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:56:18,235 - INFO - Moving to files...
+2024-09-28 20:56:18,235 - INFO - Processing file: Document.pdf
+2024-09-28 20:56:18,236 - INFO - File extension: .pdf
+2024-09-28 20:56:18,236 - INFO - Processing PDF file: Document.pdf
+2024-09-28 20:56:18,250 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 20:56:20,475 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:56:20,491 - INFO - Cleaned content written to file
+2024-09-28 20:56:20,492 - INFO - Test generated successfully
+2024-09-28 20:57:17,088 - INFO - Document 1 (411Report.pdf) of 12
+2024-09-28 20:57:26,284 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:26,288 - INFO - Document 2 (411Report.pdf) of 12
+2024-09-28 20:57:34,578 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:34,582 - INFO - Document 3 (411Report.pdf) of 12
+2024-09-28 20:57:41,022 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:41,025 - INFO - Document 4 (411Report.pdf) of 12
+2024-09-28 20:57:46,369 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:46,372 - INFO - Document 5 (411Report.pdf) of 12
+2024-09-28 20:57:50,564 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:50,567 - INFO - Document 6 (411Report.pdf) of 12
+2024-09-28 20:57:55,163 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:55,165 - INFO - Document 7 (411Report.pdf) of 12
+2024-09-28 20:57:59,675 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:57:59,678 - INFO - Document 8 (411Report.pdf) of 12
+2024-09-28 20:58:08,589 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:58:08,593 - INFO - Document 9 (411Report.pdf) of 12
+2024-09-28 20:58:18,623 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:58:18,626 - INFO - Document 10 (411Report.pdf) of 12
+2024-09-28 20:58:26,402 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:58:26,405 - INFO - Document 11 (411Report.pdf) of 12
+2024-09-28 20:58:35,948 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:58:35,951 - INFO - Document 12 (411Report.pdf) of 12
+2024-09-28 20:58:45,420 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:58:45,425 - INFO - Cleaned content written to file
+2024-09-28 20:58:45,425 - INFO - Test generated successfully
+2024-09-28 20:59:09,299 - INFO - POST request received for /generate
+2024-09-28 20:59:09,300 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:59:09,300 - INFO - Form data accessed
+2024-09-28 20:59:09,300 - INFO - Form Title: 1
+2024-09-28 20:59:09,300 - INFO - Form Course: 1
+2024-09-28 20:59:09,300 - INFO - Form Professor: 1
+2024-09-28 20:59:09,301 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:59:09,301 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:59:09,301 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:59:09,301 - INFO - Form School Type: Undergraduate
+2024-09-28 20:59:09,301 - INFO - Form Difficulty: easy
+2024-09-28 20:59:09,301 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:59:09,301 - INFO - Moving to files...
+2024-09-28 20:59:09,301 - INFO - Processing file: Document.pdf
+2024-09-28 20:59:09,302 - INFO - File extension: .pdf
+2024-09-28 20:59:09,302 - INFO - Processing PDF file: Document.pdf
+2024-09-28 20:59:09,328 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 20:59:11,046 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:59:11,050 - INFO - Cleaned content written to file
+2024-09-28 20:59:11,050 - INFO - Test generated successfully
+2024-09-28 20:59:23,230 - INFO - POST request received for /generate
+2024-09-28 20:59:23,231 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 20:59:23,231 - INFO - Form data accessed
+2024-09-28 20:59:23,231 - INFO - Form Title: 1
+2024-09-28 20:59:23,231 - INFO - Form Course: 1
+2024-09-28 20:59:23,231 - INFO - Form Professor: 1
+2024-09-28 20:59:23,231 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 20:59:23,231 - INFO - Form Number of TF Questions: 1
+2024-09-28 20:59:23,231 - INFO - Form Number of Written Questions: 1
+2024-09-28 20:59:23,231 - INFO - Form School Type: Undergraduate
+2024-09-28 20:59:23,231 - INFO - Form Difficulty: easy
+2024-09-28 20:59:23,231 - INFO - Form Testing Philosophy: 1
+2024-09-28 20:59:23,231 - INFO - Moving to files...
+2024-09-28 20:59:23,231 - INFO - Processing file: Document.pdf
+2024-09-28 20:59:23,232 - INFO - File extension: .pdf
+2024-09-28 20:59:23,232 - INFO - Processing PDF file: Document.pdf
+2024-09-28 20:59:23,241 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 20:59:24,950 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 20:59:24,953 - INFO - Cleaned content written to file
+2024-09-28 20:59:24,954 - INFO - Test generated successfully
+2024-09-28 21:00:16,402 - INFO - POST request received for /generate
+2024-09-28 21:00:16,402 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:00:16,403 - INFO - Form data accessed
+2024-09-28 21:00:16,403 - INFO - Form Title: f
+2024-09-28 21:00:16,403 - INFO - Form Course: f
+2024-09-28 21:00:16,403 - INFO - Form Professor: f
+2024-09-28 21:00:16,403 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:00:16,403 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:00:16,403 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:00:16,403 - INFO - Form School Type: Undergraduate
+2024-09-28 21:00:16,403 - INFO - Form Difficulty: easy
+2024-09-28 21:00:16,403 - INFO - Form Testing Philosophy: f
+2024-09-28 21:00:16,403 - INFO - Moving to files...
+2024-09-28 21:00:16,403 - INFO - Processing file: Document.pdf
+2024-09-28 21:00:16,404 - INFO - File extension: .pdf
+2024-09-28 21:00:16,404 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:00:16,416 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:00:18,117 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:00:18,121 - INFO - Cleaned content written to file
+2024-09-28 21:00:18,121 - INFO - Test generated successfully
+2024-09-28 21:00:42,742 - INFO - POST request received for /generate
+2024-09-28 21:00:42,743 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:00:42,743 - INFO - Form data accessed
+2024-09-28 21:00:42,743 - INFO - Form Title: f
+2024-09-28 21:00:42,743 - INFO - Form Course: f
+2024-09-28 21:00:42,743 - INFO - Form Professor: f
+2024-09-28 21:00:42,743 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:00:42,743 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:00:42,743 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:00:42,743 - INFO - Form School Type: Undergraduate
+2024-09-28 21:00:42,743 - INFO - Form Difficulty: easy
+2024-09-28 21:00:42,743 - INFO - Form Testing Philosophy: f
+2024-09-28 21:00:42,743 - INFO - Moving to files...
+2024-09-28 21:00:42,743 - INFO - Processing file: Document.pdf
+2024-09-28 21:00:42,744 - INFO - File extension: .pdf
+2024-09-28 21:00:42,744 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:00:42,756 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:00:47,061 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:00:47,064 - INFO - Cleaned content written to file
+2024-09-28 21:00:47,064 - INFO - Test generated successfully
+2024-09-28 21:01:03,094 - INFO - POST request received for /generate
+2024-09-28 21:01:03,094 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:01:03,095 - INFO - Form data accessed
+2024-09-28 21:01:03,095 - INFO - Form Title: f
+2024-09-28 21:01:03,095 - INFO - Form Course: f
+2024-09-28 21:01:03,095 - INFO - Form Professor: f
+2024-09-28 21:01:03,095 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:01:03,095 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:01:03,095 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:01:03,095 - INFO - Form School Type: Undergraduate
+2024-09-28 21:01:03,095 - INFO - Form Difficulty: easy
+2024-09-28 21:01:03,095 - INFO - Form Testing Philosophy: f
+2024-09-28 21:01:03,095 - INFO - Moving to files...
+2024-09-28 21:01:03,095 - INFO - Processing file: Document.pdf
+2024-09-28 21:01:03,096 - INFO - File extension: .pdf
+2024-09-28 21:01:03,096 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:01:03,109 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:01:06,047 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:01:06,050 - INFO - Cleaned content written to file
+2024-09-28 21:01:06,050 - INFO - Test generated successfully
+2024-09-28 21:01:19,717 - INFO - POST request received for /generate
+2024-09-28 21:01:19,717 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:01:19,718 - INFO - Form data accessed
+2024-09-28 21:01:19,718 - INFO - Form Title: f
+2024-09-28 21:01:19,718 - INFO - Form Course: f
+2024-09-28 21:01:19,718 - INFO - Form Professor: f
+2024-09-28 21:01:19,718 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:01:19,718 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:01:19,718 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:01:19,718 - INFO - Form School Type: Undergraduate
+2024-09-28 21:01:19,718 - INFO - Form Difficulty: easy
+2024-09-28 21:01:19,718 - INFO - Form Testing Philosophy: f
+2024-09-28 21:01:19,718 - INFO - Moving to files...
+2024-09-28 21:01:19,718 - INFO - Processing file: Document.pdf
+2024-09-28 21:01:19,718 - INFO - File extension: .pdf
+2024-09-28 21:01:19,718 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:01:19,730 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:01:21,612 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:01:21,615 - INFO - Cleaned content written to file
+2024-09-28 21:01:21,615 - INFO - Test generated successfully
+2024-09-28 21:02:28,362 - INFO - POST request received for /generate
+2024-09-28 21:02:28,362 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:02:28,363 - INFO - Form data accessed
+2024-09-28 21:02:28,363 - INFO - Form Title: 1
+2024-09-28 21:02:28,363 - INFO - Form Course: 1
+2024-09-28 21:02:28,363 - INFO - Form Professor: 1
+2024-09-28 21:02:28,363 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:02:28,363 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:02:28,363 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:02:28,363 - INFO - Form School Type: Undergraduate
+2024-09-28 21:02:28,363 - INFO - Form Difficulty: easy
+2024-09-28 21:02:28,363 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:02:28,363 - INFO - Moving to files...
+2024-09-28 21:02:28,363 - INFO - Processing file: Document.pdf
+2024-09-28 21:02:28,363 - INFO - File extension: .pdf
+2024-09-28 21:02:28,364 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:02:28,376 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:02:29,800 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:02:29,804 - INFO - Cleaned content written to file
+2024-09-28 21:02:29,804 - INFO - Test generated successfully
+2024-09-28 21:03:27,451 - INFO - POST request received for /generate
+2024-09-28 21:03:27,451 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:03:27,452 - INFO - Form data accessed
+2024-09-28 21:03:27,452 - INFO - Form Title: 1
+2024-09-28 21:03:27,452 - INFO - Form Course: 1
+2024-09-28 21:03:27,452 - INFO - Form Professor: 1
+2024-09-28 21:03:27,452 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:03:27,452 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:03:27,452 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:03:27,452 - INFO - Form School Type: Undergraduate
+2024-09-28 21:03:27,452 - INFO - Form Difficulty: easy
+2024-09-28 21:03:27,452 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:03:27,452 - INFO - Moving to files...
+2024-09-28 21:03:27,452 - INFO - Processing file: Document.pdf
+2024-09-28 21:03:27,453 - INFO - File extension: .pdf
+2024-09-28 21:03:27,453 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:03:27,468 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:03:29,197 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:03:29,201 - INFO - Cleaned content written to file
+2024-09-28 21:03:29,202 - INFO - Test generated successfully
+2024-09-28 21:05:12,566 - INFO - POST request received for /generate
+2024-09-28 21:05:12,567 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:05:12,567 - INFO - Form data accessed
+2024-09-28 21:05:12,567 - INFO - Form Title: 1
+2024-09-28 21:05:12,567 - INFO - Form Course: 1
+2024-09-28 21:05:12,567 - INFO - Form Professor: 1
+2024-09-28 21:05:12,567 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:05:12,567 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:05:12,567 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:05:12,567 - INFO - Form School Type: Undergraduate
+2024-09-28 21:05:12,567 - INFO - Form Difficulty: easy
+2024-09-28 21:05:12,567 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:05:12,568 - INFO - Moving to files...
+2024-09-28 21:05:12,568 - INFO - Processing file: Document.pdf
+2024-09-28 21:05:12,568 - INFO - File extension: .pdf
+2024-09-28 21:05:12,568 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:05:12,586 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:05:14,264 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:05:14,268 - INFO - Cleaned content written to file
+2024-09-28 21:05:14,268 - INFO - Test generated successfully
+2024-09-28 21:06:28,171 - INFO - POST request received for /generate
+2024-09-28 21:06:28,171 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:06:28,171 - INFO - Form data accessed
+2024-09-28 21:06:28,171 - INFO - Form Title: 1
+2024-09-28 21:06:28,172 - INFO - Form Course: 1
+2024-09-28 21:06:28,172 - INFO - Form Professor: 1
+2024-09-28 21:06:28,172 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:06:28,172 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:06:28,172 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:06:28,172 - INFO - Form School Type: Undergraduate
+2024-09-28 21:06:28,172 - INFO - Form Difficulty: easy
+2024-09-28 21:06:28,172 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:06:28,172 - INFO - Moving to files...
+2024-09-28 21:06:28,172 - INFO - Processing file: Document.pdf
+2024-09-28 21:06:28,173 - INFO - File extension: .pdf
+2024-09-28 21:06:28,173 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:06:28,185 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:06:34,847 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:06:34,850 - INFO - Cleaned content written to file
+2024-09-28 21:06:34,850 - INFO - Test generated successfully
+2024-09-28 21:07:58,853 - INFO - POST request received for /generate
+2024-09-28 21:07:58,853 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:07:58,854 - INFO - Form data accessed
+2024-09-28 21:07:58,854 - INFO - Form Title: f
+2024-09-28 21:07:58,854 - INFO - Form Course: f
+2024-09-28 21:07:58,854 - INFO - Form Professor: f
+2024-09-28 21:07:58,854 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:07:58,854 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:07:58,854 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:07:58,854 - INFO - Form School Type: Undergraduate
+2024-09-28 21:07:58,854 - INFO - Form Difficulty: easy
+2024-09-28 21:07:58,854 - INFO - Form Testing Philosophy: f
+2024-09-28 21:07:58,855 - INFO - Moving to files...
+2024-09-28 21:07:58,855 - INFO - Processing file: Document.pdf
+2024-09-28 21:07:58,855 - INFO - File extension: .pdf
+2024-09-28 21:07:58,855 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:07:58,867 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:08:00,966 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:08:00,969 - INFO - Cleaned content written to file
+2024-09-28 21:08:00,969 - INFO - Test generated successfully
+2024-09-28 21:09:30,367 - INFO - POST request received for /generate
+2024-09-28 21:09:30,368 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:09:30,368 - INFO - Form data accessed
+2024-09-28 21:09:30,368 - INFO - Form Title: f
+2024-09-28 21:09:30,368 - INFO - Form Course: f
+2024-09-28 21:09:30,368 - INFO - Form Professor: f
+2024-09-28 21:09:30,368 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:09:30,368 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:09:30,369 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:09:30,369 - INFO - Form School Type: Undergraduate
+2024-09-28 21:09:30,369 - INFO - Form Difficulty: easy
+2024-09-28 21:09:30,369 - INFO - Form Testing Philosophy: f
+2024-09-28 21:09:30,369 - INFO - Moving to files...
+2024-09-28 21:09:30,369 - INFO - Processing file: Document.pdf
+2024-09-28 21:09:30,370 - INFO - File extension: .pdf
+2024-09-28 21:09:30,370 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:09:30,388 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:09:32,317 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:09:32,320 - INFO - Cleaned content written to file
+2024-09-28 21:09:32,320 - INFO - Test generated successfully
+2024-09-28 21:10:39,037 - INFO - POST request received for /generate
+2024-09-28 21:10:39,037 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:10:39,037 - INFO - Form data accessed
+2024-09-28 21:10:39,037 - INFO - Form Title: f
+2024-09-28 21:10:39,037 - INFO - Form Course: f
+2024-09-28 21:10:39,037 - INFO - Form Professor: f
+2024-09-28 21:10:39,037 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:10:39,037 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:10:39,037 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:10:39,037 - INFO - Form School Type: Undergraduate
+2024-09-28 21:10:39,037 - INFO - Form Difficulty: easy
+2024-09-28 21:10:39,037 - INFO - Form Testing Philosophy: f
+2024-09-28 21:10:39,037 - INFO - Moving to files...
+2024-09-28 21:10:39,037 - INFO - Processing file: Document.pdf
+2024-09-28 21:10:39,038 - INFO - File extension: .pdf
+2024-09-28 21:10:39,038 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:10:39,052 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:10:40,711 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:10:40,714 - INFO - Cleaned content written to file
+2024-09-28 21:10:40,714 - INFO - Test generated successfully
+2024-09-28 21:11:00,005 - INFO - POST request received for /generate
+2024-09-28 21:11:00,006 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:11:00,006 - INFO - Form data accessed
+2024-09-28 21:11:00,006 - INFO - Form Title: f
+2024-09-28 21:11:00,006 - INFO - Form Course: f
+2024-09-28 21:11:00,006 - INFO - Form Professor: f
+2024-09-28 21:11:00,006 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:11:00,007 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:11:00,007 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:11:00,007 - INFO - Form School Type: Undergraduate
+2024-09-28 21:11:00,007 - INFO - Form Difficulty: easy
+2024-09-28 21:11:00,007 - INFO - Form Testing Philosophy: f
+2024-09-28 21:11:00,007 - INFO - Moving to files...
+2024-09-28 21:11:00,007 - INFO - Processing file: Document.pdf
+2024-09-28 21:11:00,008 - INFO - File extension: .pdf
+2024-09-28 21:11:00,008 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:11:00,021 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:11:02,065 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:11:02,068 - INFO - Cleaned content written to file
+2024-09-28 21:11:02,068 - INFO - Test generated successfully
+2024-09-28 21:12:26,894 - INFO - POST request received for /generate
+2024-09-28 21:12:26,895 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:12:26,895 - INFO - Form data accessed
+2024-09-28 21:12:26,895 - INFO - Form Title: f
+2024-09-28 21:12:26,895 - INFO - Form Course: f
+2024-09-28 21:12:26,896 - INFO - Form Professor: f
+2024-09-28 21:12:26,896 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:12:26,896 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:12:26,896 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:12:26,896 - INFO - Form School Type: Undergraduate
+2024-09-28 21:12:26,896 - INFO - Form Difficulty: easy
+2024-09-28 21:12:26,896 - INFO - Form Testing Philosophy: f
+2024-09-28 21:12:26,896 - INFO - Moving to files...
+2024-09-28 21:12:26,896 - INFO - Processing file: Document.pdf
+2024-09-28 21:12:26,897 - INFO - File extension: .pdf
+2024-09-28 21:12:26,897 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:12:26,907 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:12:28,652 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:12:28,656 - INFO - Cleaned content written to file
+2024-09-28 21:12:28,656 - INFO - Test generated successfully
+2024-09-28 21:12:54,443 - INFO - POST request received for /generate
+2024-09-28 21:12:54,443 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:12:54,443 - INFO - Form data accessed
+2024-09-28 21:12:54,443 - INFO - Form Title: f
+2024-09-28 21:12:54,443 - INFO - Form Course: f
+2024-09-28 21:12:54,443 - INFO - Form Professor: f
+2024-09-28 21:12:54,444 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:12:54,444 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:12:54,444 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:12:54,444 - INFO - Form School Type: Undergraduate
+2024-09-28 21:12:54,444 - INFO - Form Difficulty: easy
+2024-09-28 21:12:54,444 - INFO - Form Testing Philosophy: f
+2024-09-28 21:12:54,444 - INFO - Moving to files...
+2024-09-28 21:12:54,444 - INFO - Processing file: Document.pdf
+2024-09-28 21:12:54,445 - INFO - File extension: .pdf
+2024-09-28 21:12:54,445 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:12:54,468 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:12:56,286 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:12:56,290 - INFO - Cleaned content written to file
+2024-09-28 21:12:56,290 - INFO - Test generated successfully
+2024-09-28 21:14:01,266 - INFO - POST request received for /generate
+2024-09-28 21:14:01,266 - INFO - Form data: title='f' course='f' professor='f' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='f' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:14:01,266 - INFO - Form data accessed
+2024-09-28 21:14:01,267 - INFO - Form Title: f
+2024-09-28 21:14:01,267 - INFO - Form Course: f
+2024-09-28 21:14:01,267 - INFO - Form Professor: f
+2024-09-28 21:14:01,267 - INFO - Form Number of MCQ Questions: 5
+2024-09-28 21:14:01,267 - INFO - Form Number of TF Questions: 5
+2024-09-28 21:14:01,267 - INFO - Form Number of Written Questions: 5
+2024-09-28 21:14:01,267 - INFO - Form School Type: Undergraduate
+2024-09-28 21:14:01,267 - INFO - Form Difficulty: easy
+2024-09-28 21:14:01,267 - INFO - Form Testing Philosophy: f
+2024-09-28 21:14:01,267 - INFO - Moving to files...
+2024-09-28 21:14:01,267 - INFO - Processing file: Document.pdf
+2024-09-28 21:14:01,267 - INFO - File extension: .pdf
+2024-09-28 21:14:01,267 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:14:01,278 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:14:02,953 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:14:02,957 - INFO - Cleaned content written to file
+2024-09-28 21:14:02,957 - INFO - Test generated successfully
+2024-09-28 21:18:35,736 - INFO - POST request received for /generate
+2024-09-28 21:18:35,736 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:18:35,736 - INFO - Form data accessed
+2024-09-28 21:18:35,736 - INFO - Form Title: 1
+2024-09-28 21:18:35,736 - INFO - Form Course: 1
+2024-09-28 21:18:35,736 - INFO - Form Professor: 1
+2024-09-28 21:18:35,737 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:18:35,737 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:18:35,737 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:18:35,737 - INFO - Form School Type: Undergraduate
+2024-09-28 21:18:35,737 - INFO - Form Difficulty: easy
+2024-09-28 21:18:35,737 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:18:35,737 - INFO - Moving to files...
+2024-09-28 21:18:35,737 - INFO - Processing file: Document.pdf
+2024-09-28 21:18:35,738 - INFO - File extension: .pdf
+2024-09-28 21:18:35,738 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:18:35,750 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:18:38,610 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:18:38,614 - INFO - Cleaned content written to file
+2024-09-28 21:18:38,614 - INFO - Test generated successfully
+2024-09-28 21:19:32,173 - INFO - POST request received for /generate
+2024-09-28 21:19:32,174 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:19:32,174 - INFO - Form data accessed
+2024-09-28 21:19:32,174 - INFO - Form Title: 1
+2024-09-28 21:19:32,174 - INFO - Form Course: 1
+2024-09-28 21:19:32,174 - INFO - Form Professor: 1
+2024-09-28 21:19:32,174 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:19:32,174 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:19:32,174 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:19:32,174 - INFO - Form School Type: Undergraduate
+2024-09-28 21:19:32,174 - INFO - Form Difficulty: easy
+2024-09-28 21:19:32,174 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:19:32,174 - INFO - Moving to files...
+2024-09-28 21:19:32,174 - INFO - Processing file: Document.pdf
+2024-09-28 21:19:32,175 - INFO - File extension: .pdf
+2024-09-28 21:19:32,175 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:19:32,189 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:19:33,929 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:19:33,933 - INFO - Cleaned content written to file
+2024-09-28 21:19:33,933 - INFO - Test generated successfully
+2024-09-28 21:21:55,479 - INFO - POST request received for /generate
+2024-09-28 21:21:55,480 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:21:55,480 - INFO - Form data accessed
+2024-09-28 21:21:55,480 - INFO - Form Title: 1
+2024-09-28 21:21:55,480 - INFO - Form Course: 1
+2024-09-28 21:21:55,480 - INFO - Form Professor: 1
+2024-09-28 21:21:55,480 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:21:55,480 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:21:55,480 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:21:55,480 - INFO - Form School Type: Undergraduate
+2024-09-28 21:21:55,480 - INFO - Form Difficulty: easy
+2024-09-28 21:21:55,481 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:21:55,481 - INFO - Moving to files...
+2024-09-28 21:21:55,481 - INFO - Processing file: Document.pdf
+2024-09-28 21:21:55,481 - INFO - File extension: .pdf
+2024-09-28 21:21:55,481 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:21:55,498 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:21:57,189 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:21:57,193 - INFO - Cleaned content written to file
+2024-09-28 21:21:57,193 - INFO - Test generated successfully
+2024-09-28 21:23:31,490 - INFO - POST request received for /generate
+2024-09-28 21:23:31,491 - INFO - Form data: title='1' course='1' professor='1' number_of_mcq_questions=1 number_of_TF_questions=1 number_of_written_questions=1 school_type='Undergraduate' level='Normal' difficulty='easy' testing_philosophy='1' subject_material=[UploadFile(filename='Document.pdf', size=13671, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="Document.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-28 21:23:31,491 - INFO - Form data accessed
+2024-09-28 21:23:31,491 - INFO - Form Title: 1
+2024-09-28 21:23:31,491 - INFO - Form Course: 1
+2024-09-28 21:23:31,491 - INFO - Form Professor: 1
+2024-09-28 21:23:31,491 - INFO - Form Number of MCQ Questions: 1
+2024-09-28 21:23:31,491 - INFO - Form Number of TF Questions: 1
+2024-09-28 21:23:31,491 - INFO - Form Number of Written Questions: 1
+2024-09-28 21:23:31,491 - INFO - Form School Type: Undergraduate
+2024-09-28 21:23:31,491 - INFO - Form Difficulty: easy
+2024-09-28 21:23:31,491 - INFO - Form Testing Philosophy: 1
+2024-09-28 21:23:31,492 - INFO - Moving to files...
+2024-09-28 21:23:31,492 - INFO - Processing file: Document.pdf
+2024-09-28 21:23:31,492 - INFO - File extension: .pdf
+2024-09-28 21:23:31,492 - INFO - Processing PDF file: Document.pdf
+2024-09-28 21:23:31,504 - INFO - Document 1 (Document.pdf) of 1
+2024-09-28 21:23:33,031 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-28 21:23:33,034 - INFO - Cleaned content written to file
+2024-09-28 21:23:33,035 - INFO - Test generated successfully

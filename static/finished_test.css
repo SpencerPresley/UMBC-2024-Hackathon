@@ -59,7 +59,6 @@ input {
     transition: transform 0.4s ease;
   }
 
-
   .button-container{
     display: flex;
     justify-content: center;
