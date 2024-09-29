@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	console.log(test);
 	console.log(downloadButton)
 
+	borderToggleOption();
+
 	downloadButton.addEventListener('click', function(){html2canvas(test).then(function(canvas){
 
 		console.log(canvas)
@@ -62,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			for(let i = 0; i < choiceAnswer.length; i++){
 				choiceAnswer[i].style.color = '#000000'
 			}
+			downloadButton.innerText = "Download Test"
 		} 
 		else {
 			toggle_button.style.transform = "translateX(0px)";
@@ -71,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			for(let i = 0; i < choiceAnswer.length; i++){
 				choiceAnswer[i].style.color = ''
 			}
+			downloadButton.innerText = "Download Answer Key"
 		}
 	}
 
