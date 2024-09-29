@@ -18,7 +18,6 @@
         <br>
 
             {%- for question in Test.questions %}
-                        <!-- <div class="question-container"> -->
 
                 <input type="text" name="titleBox" value= "{{loop.index}}. {{ question.question }}" class="h2">
 
@@ -51,7 +50,6 @@
                     {% endif %} 
                 <br id="{{loop.index}}">
             {% endfor %}
-        <!-- </div> -->
     </div>
     <div class="button-container">
         <a href="/" class="noPrint"> <Button>Back to Settings</Button></a>
