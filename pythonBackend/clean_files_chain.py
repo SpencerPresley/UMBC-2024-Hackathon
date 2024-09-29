@@ -7,8 +7,8 @@ import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from PIL import Image
 import pytesseract
-import re
-
+import asyncio
+import aiofiles
 
 logging.basicConfig(
     level=logging.INFO,
@@ -26,7 +26,7 @@ from langchain_core.prompts import (
     SystemMessagePromptTemplate,
 )
 from pydantic import BaseModel
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.runnables import RunnablePassthrough, RunnableParallel
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
 from .custom_prompts import clean_files_system_prompt, clean_files_human_prompt, clean_files_json_format
@@ -46,7 +46,7 @@ llm = ChatOpenAI(
 
 parser = JsonOutputParser(pydantic_object=CleanedFile)
 
-def run(formData, file_path: str = None, key: str = None):
+async def run(formData, file_path: str = None, key: str = None):
     # from ..server import FormSettings, GeneratedTest
     # for spencer
     from server import FormSettings, GeneratedTest
@@ -76,37 +76,52 @@ def run(formData, file_path: str = None, key: str = None):
     logging.info(f"Form Difficulty: {difficulty}")
     logging.info(f"Form Testing Philosophy: {testing_philosophy}")
     logging.info("Moving to files...")
-    try:    
+    try:  
+        tasks = []
         for uploaded_file in formData.subject_material:
             logging.info(f"Processing file: {uploaded_file.filename}")
-            loader = get_loader(uploaded_file)
-            docs = loader.load()
-            full_response = ""
-            for i, doc in enumerate(docs):
-                logging.info(f"Document {i+1} ({uploaded_file.filename}) of {len(docs)}")
-                full_response += clean_files_chain(doc)
-            write_response_to_file(full_response, "cleaned_content.json")
-            logging.info("Cleaned content written to file")
-            pydantic_test = question_generate_chain(
-                clean_response=full_response, llm=llm, title=title, course=course, professor=professor,
-                number_of_mcq_questions=number_of_mcq_questions, number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions,
-                school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy
-            )
-            print(pydantic_test)
-            return pydantic_test
-        
-    except Exception as e:
-        logging.error(f"Error processing file: {uploaded_file.filename}")
-        logging.error(f"Error loading data: {e}")
-        return
+            loader = await get_loader(uploaded_file)
+            # docs = loader.l
+            tasks.append(process_file(loader, uploaded_file.filename))
+            # full_response = ""
+            # for i, doc in enumerate(docs):
+            #     logging.info(f"Document {i+1} ({uploaded_file.filename}) of {len(docs)}")
+            #     full_response += clean_files_chain(doc)
+                
+        results = await asyncio.gather(*tasks)
+        full_response = "".join(results)
+            
+        await write_response_to_file(full_response, "cleaned_content.json")
+        logging.info("Cleaned content written to file")
+        pydantic_test = await question_generate_chain(
+            clean_response=full_response, llm=llm, title=title, course=course, professor=professor,
+            number_of_mcq_questions=number_of_mcq_questions, number_of_TF_questions=number_of_TF_questions, number_of_written_questions=number_of_written_questions,
+            school_type=school_type, difficulty=difficulty, testing_philosophy=testing_philosophy
+        )
+        print(pydantic_test)
+        return pydantic_test
     
-def load_data(loader):
-    raw_docs = loader.load_and_split()
-    logging.info("Docs loaded using .load_and_split()")
-    docs = [doc.page_content for doc in raw_docs]
-    return docs
+    except Exception as e:
+        logging.error(f"Error processing files: {str(e)}")
+        for i, uploaded_file in enumerate(formData.subject_material):
+            logging.error(f"File {i+1}: {uploaded_file.filename}")
+        return None
 
-def clean_files_chain(doc: str, key: str = None):
+async def process_file(loader, filename):
+    docs = await loader.aload()
+    full_response = ""
+    for i, doc in enumerate(docs):
+        logging.info(f"Document {i+1} ({filename}) of {len(docs)}")
+        full_response += await clean_files_chain(doc)
+    return full_response
+
+# def load_data(loader):
+#     raw_docs = loader.load_and_split()
+#     logging.info("Docs loaded using .load_and_split()")
+#     docs = [doc.page_content for doc in raw_docs]
+#     return docs
+
+async def clean_files_chain(doc: str, key: str = None):
     print(f"Document: {doc}")
     # print(f"Key: {key}")
     system_prompt, human_prompt = get_clean_files_prompts()
@@ -117,7 +132,7 @@ def clean_files_chain(doc: str, key: str = None):
         ]
     )
     chain = get_clean_files_chain(llm, prompt, system_prompt, human_prompt)
-    response = chain.invoke({
+    response = await chain.ainvoke({
         "document": doc,
         "clean_files_json_format": clean_files_json_format
     })
@@ -150,19 +165,24 @@ def get_clean_files_chain(llm, prompt, system_prompt, human_prompt):
     )
     return chain
 
-def write_response_to_file(response, file_path: str):
-    with open(file_path, "w") as f:
-        json.dump(response, f, indent=4)
+async def write_response_to_file(response, file_path: str):
+    async with aiofiles.open(file_path, "w") as f:
+        await f.write(json.dumps(response, indent=4))
 
-def get_loader(uploaded_file):  
-    with tempfile.NamedTemporaryFile(delete=False) as temp_file:
-        temp_file_path = temp_file.name
-        temp_file.write(uploaded_file.file.read())
+async def get_loader(uploaded_file):  
+    temp_file = tempfile.NamedTemporaryFile(delete=False)
+    temp_file_path = temp_file.name
+    temp_file.close()  # Close the file so aiofiles can open it
+
+    async with aiofiles.open(temp_file_path, 'wb') as f:
+        content = await uploaded_file.read()  # Read the file content asynchronously
+        await f.write(content) 
+        
     file_extension = os.path.splitext(uploaded_file.filename)[1].lower()
     logging.info(f"File extension: {file_extension}")
     if file_extension == '.pdf':
         logging.info(f"Processing PDF file: {uploaded_file.filename}")
-        return PyPDFLoader(file_path=temp_file_path, extract_images=True)
+        return PyPDFLoader(file_path=temp_file_path)
     elif file_extension == '.txt':
         logging.info(f"Processing TXT file: {uploaded_file.filename}")
         return TextLoader(temp_file_path)
@@ -186,5 +206,5 @@ def get_loader(uploaded_file):
 if __name__ == "__main__":
     current_directory = os.path.dirname(os.path.abspath(__file__))
     pdf_file_path = os.path.join(current_directory, "files", "ExampleFileForDev.pdf")
-    run(pdf_file_path, "content")
+    asyncio.run(run(None, pdf_file_path))
     

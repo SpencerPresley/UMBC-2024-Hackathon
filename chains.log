@@ -1,64 +1,121 @@
-2024-09-29 01:00:12,260 - INFO - Static files mounted
-2024-09-29 01:00:12,260 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 01:24:48,102 - INFO - Static files mounted
-2024-09-29 01:24:48,102 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 01:24:49,117 - INFO - GET request received for index page
-2024-09-29 01:25:30,017 - INFO - POST request received for /generate
-2024-09-29 01:25:30,017 - INFO - Form data: title='Midterm 2' course='COSC362: Theory of Computation' professor='Dr. Tu' number_of_mcq_questions=1 number_of_TF_questions=2 number_of_written_questions=4 school_type='Undergraduate' level='Normal' difficulty='hard selected' testing_philosophy='My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.' url_1='' url_2='' subject_material=[UploadFile(filename='6a.pdf', size=123964, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="6a.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-29 01:25:30,018 - INFO - Form data accessed
-2024-09-29 01:25:30,018 - INFO - Form Title: Midterm 2
-2024-09-29 01:25:30,018 - INFO - Form Course: COSC362: Theory of Computation
-2024-09-29 01:25:30,018 - INFO - Form Professor: Dr. Tu
-2024-09-29 01:25:30,018 - INFO - Form Number of MCQ Questions: 1
-2024-09-29 01:25:30,018 - INFO - Form Number of TF Questions: 2
-2024-09-29 01:25:30,018 - INFO - Form Number of Written Questions: 4
-2024-09-29 01:25:30,018 - INFO - Form School Type: Undergraduate
-2024-09-29 01:25:30,018 - INFO - Form Difficulty: hard selected
-2024-09-29 01:25:30,018 - INFO - Form Testing Philosophy: My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.
-2024-09-29 01:25:30,018 - INFO - Moving to files...
-2024-09-29 01:25:30,018 - INFO - Processing file: 6a.pdf
-2024-09-29 01:25:30,019 - INFO - File extension: .pdf
-2024-09-29 01:25:30,019 - INFO - Processing PDF file: 6a.pdf
-2024-09-29 01:25:30,642 - INFO - Document 1 (6a.pdf) of 20
-2024-09-29 01:25:31,462 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:31,481 - INFO - Document 2 (6a.pdf) of 20
-2024-09-29 01:25:32,895 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:32,899 - INFO - Document 3 (6a.pdf) of 20
-2024-09-29 01:25:34,181 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:34,184 - INFO - Document 4 (6a.pdf) of 20
-2024-09-29 01:25:36,048 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:36,051 - INFO - Document 5 (6a.pdf) of 20
-2024-09-29 01:25:37,726 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:37,730 - INFO - Document 6 (6a.pdf) of 20
-2024-09-29 01:25:40,760 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:40,764 - INFO - Document 7 (6a.pdf) of 20
-2024-09-29 01:25:42,330 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:42,333 - INFO - Document 8 (6a.pdf) of 20
-2024-09-29 01:25:44,013 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:44,017 - INFO - Document 9 (6a.pdf) of 20
-2024-09-29 01:25:45,115 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:45,118 - INFO - Document 10 (6a.pdf) of 20
-2024-09-29 01:25:46,424 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:46,429 - INFO - Document 11 (6a.pdf) of 20
-2024-09-29 01:25:47,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:47,390 - INFO - Document 12 (6a.pdf) of 20
-2024-09-29 01:25:48,786 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:48,787 - INFO - Document 13 (6a.pdf) of 20
-2024-09-29 01:25:51,769 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:51,771 - INFO - Document 14 (6a.pdf) of 20
-2024-09-29 01:25:52,985 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:52,989 - INFO - Document 15 (6a.pdf) of 20
-2024-09-29 01:25:55,014 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:55,018 - INFO - Document 16 (6a.pdf) of 20
-2024-09-29 01:25:58,061 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:25:58,065 - INFO - Document 17 (6a.pdf) of 20
-2024-09-29 01:26:00,490 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:00,495 - INFO - Document 18 (6a.pdf) of 20
-2024-09-29 01:26:01,884 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:01,886 - INFO - Document 19 (6a.pdf) of 20
-2024-09-29 01:26:04,042 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:04,046 - INFO - Document 20 (6a.pdf) of 20
-2024-09-29 01:26:05,302 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:05,308 - INFO - Cleaned content written to file
-2024-09-29 01:26:12,414 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-29 01:26:12,423 - INFO - Test generated successfully
+2024-09-29 06:53:59,304 - INFO - Static files mounted
+2024-09-29 06:53:59,304 - INFO - toLetter filter added to Jinja2 environment
+2024-09-29 06:54:03,540 - INFO - GET request received for index page
+2024-09-29 06:54:38,941 - INFO - POST request received for /generate
+2024-09-29 06:54:38,942 - INFO - Form data: title='midterm 1' course='cosc362: theory of computation' professor='dr. tu' number_of_mcq_questions=10 number_of_TF_questions=10 number_of_written_questions=10 school_type='Undergraduate' level='Normal' difficulty='Extreme' testing_philosophy='My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.' url_1='' url_2='' subject_material=[UploadFile(filename='3a.pdf', size=195115, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="3a.pdf"', 'content-type': 'application/pdf'})), UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'})), UploadFile(filename='4b.pdf', size=116591, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4b.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-29 06:54:38,942 - INFO - Form data accessed
+2024-09-29 06:54:38,942 - INFO - Form Title: midterm 1
+2024-09-29 06:54:38,942 - INFO - Form Course: cosc362: theory of computation
+2024-09-29 06:54:38,942 - INFO - Form Professor: dr. tu
+2024-09-29 06:54:38,942 - INFO - Form Number of MCQ Questions: 10
+2024-09-29 06:54:38,942 - INFO - Form Number of TF Questions: 10
+2024-09-29 06:54:38,942 - INFO - Form Number of Written Questions: 10
+2024-09-29 06:54:38,942 - INFO - Form School Type: Undergraduate
+2024-09-29 06:54:38,942 - INFO - Form Difficulty: Extreme
+2024-09-29 06:54:38,942 - INFO - Form Testing Philosophy: My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.
+2024-09-29 06:54:38,942 - INFO - Moving to files...
+2024-09-29 06:54:38,942 - INFO - Processing file: 3a.pdf
+2024-09-29 06:54:38,944 - INFO - File extension: .pdf
+2024-09-29 06:54:38,944 - INFO - Processing PDF file: 3a.pdf
+2024-09-29 06:54:39,115 - INFO - Processing file: 4a.pdf
+2024-09-29 06:54:39,116 - INFO - File extension: .pdf
+2024-09-29 06:54:39,116 - INFO - Processing PDF file: 4a.pdf
+2024-09-29 06:54:39,116 - INFO - Processing file: 4b.pdf
+2024-09-29 06:54:39,117 - INFO - File extension: .pdf
+2024-09-29 06:54:39,117 - INFO - Processing PDF file: 4b.pdf
+2024-09-29 06:54:39,311 - INFO - Document 1 (4a.pdf) of 10
+2024-09-29 06:54:39,331 - INFO - Document 1 (4b.pdf) of 17
+2024-09-29 06:54:39,346 - INFO - Document 1 (3a.pdf) of 19
+2024-09-29 06:54:40,135 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:40,149 - INFO - Document 2 (4a.pdf) of 10
+2024-09-29 06:54:40,254 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:40,306 - INFO - Document 2 (3a.pdf) of 19
+2024-09-29 06:54:40,514 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:40,664 - INFO - Document 2 (4b.pdf) of 17
+2024-09-29 06:54:41,092 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:41,094 - INFO - Document 3 (4a.pdf) of 10
+2024-09-29 06:54:41,685 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:41,691 - INFO - Document 3 (3a.pdf) of 19
+2024-09-29 06:54:42,340 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:42,342 - INFO - Document 4 (4a.pdf) of 10
+2024-09-29 06:54:43,209 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:43,211 - INFO - Document 4 (3a.pdf) of 19
+2024-09-29 06:54:43,532 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:43,536 - INFO - Document 5 (4a.pdf) of 10
+2024-09-29 06:54:43,704 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:43,707 - INFO - Document 3 (4b.pdf) of 17
+2024-09-29 06:54:43,982 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:43,989 - INFO - Document 5 (3a.pdf) of 19
+2024-09-29 06:54:44,823 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:44,826 - INFO - Document 6 (4a.pdf) of 10
+2024-09-29 06:54:45,230 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:45,236 - INFO - Document 6 (3a.pdf) of 19
+2024-09-29 06:54:45,386 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:45,387 - INFO - Document 4 (4b.pdf) of 17
+2024-09-29 06:54:46,027 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:46,031 - INFO - Document 7 (3a.pdf) of 19
+2024-09-29 06:54:46,095 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:46,099 - INFO - Document 7 (4a.pdf) of 10
+2024-09-29 06:54:47,051 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:47,057 - INFO - Document 5 (4b.pdf) of 17
+2024-09-29 06:54:48,146 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:48,155 - INFO - Document 6 (4b.pdf) of 17
+2024-09-29 06:54:48,395 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:48,402 - INFO - Document 8 (4a.pdf) of 10
+2024-09-29 06:54:48,406 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:48,412 - INFO - Document 8 (3a.pdf) of 19
+2024-09-29 06:54:49,475 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:49,480 - INFO - Document 9 (3a.pdf) of 19
+2024-09-29 06:54:50,014 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:50,018 - INFO - Document 7 (4b.pdf) of 17
+2024-09-29 06:54:50,245 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:50,251 - INFO - Document 9 (4a.pdf) of 10
+2024-09-29 06:54:51,354 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:51,360 - INFO - Document 10 (4a.pdf) of 10
+2024-09-29 06:54:51,639 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:51,646 - INFO - Document 8 (4b.pdf) of 17
+2024-09-29 06:54:52,147 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:52,153 - INFO - Document 10 (3a.pdf) of 19
+2024-09-29 06:54:52,583 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:52,784 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:52,788 - INFO - Document 9 (4b.pdf) of 17
+2024-09-29 06:54:53,709 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:53,715 - INFO - Document 11 (3a.pdf) of 19
+2024-09-29 06:54:54,257 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:54,260 - INFO - Document 10 (4b.pdf) of 17
+2024-09-29 06:54:55,032 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:55,037 - INFO - Document 12 (3a.pdf) of 19
+2024-09-29 06:54:55,970 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:55,976 - INFO - Document 13 (3a.pdf) of 19
+2024-09-29 06:54:56,590 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:56,593 - INFO - Document 11 (4b.pdf) of 17
+2024-09-29 06:54:56,927 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:56,933 - INFO - Document 14 (3a.pdf) of 19
+2024-09-29 06:54:57,943 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:57,949 - INFO - Document 15 (3a.pdf) of 19
+2024-09-29 06:54:58,171 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:58,177 - INFO - Document 12 (4b.pdf) of 17
+2024-09-29 06:54:58,919 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:58,923 - INFO - Document 16 (3a.pdf) of 19
+2024-09-29 06:54:59,068 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:54:59,073 - INFO - Document 13 (4b.pdf) of 17
+2024-09-29 06:55:00,790 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:00,796 - INFO - Document 17 (3a.pdf) of 19
+2024-09-29 06:55:01,026 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:01,029 - INFO - Document 14 (4b.pdf) of 17
+2024-09-29 06:55:01,841 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:01,844 - INFO - Document 18 (3a.pdf) of 19
+2024-09-29 06:55:02,758 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:02,762 - INFO - Document 19 (3a.pdf) of 19
+2024-09-29 06:55:02,936 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:02,941 - INFO - Document 15 (4b.pdf) of 17
+2024-09-29 06:55:03,968 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:03,970 - INFO - Document 16 (4b.pdf) of 17
+2024-09-29 06:55:04,636 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:05,198 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:05,204 - INFO - Document 17 (4b.pdf) of 17
+2024-09-29 06:55:06,268 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:06,277 - INFO - Cleaned content written to file
+2024-09-29 06:55:06,278 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
+2024-09-29 06:55:28,640 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-29 06:55:28,775 - INFO - Test generated successfully

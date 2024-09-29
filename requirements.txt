@@ -11,3 +11,6 @@ pytesseract
 unstructured
 python-pptx
 docx2txt
+pdfminer.six
+pi_heif
+unstructured_inference

@@ -2,6 +2,7 @@ from typing import Annotated
 from typing import List
 import logging
 import sys
+from typing import List, Optional
 
 sys.path.append('.')
 # from .pythonBackend import run
@@ -29,8 +30,8 @@ class FormSettings(BaseModel):
     level: str
     difficulty: str
     testing_philosophy: str
-    url_1: str | None
-    url_2: str | None
+    url_1: Optional[str] = None
+    url_2: Optional[str] = None
     subject_material:List[UploadFile]
 
 class QAPair(BaseModel):
@@ -62,14 +63,14 @@ def read_index(request: Request):
         request=request, name="form.html")
 
 @app.post("/generate")
-def final(
+async def final(
     data: Annotated[FormSettings, Form()],request: Request
     
 ):
     logger.info("POST request received for /generate")
     logger.info(f"Form data: {data}")
     try:
-        test = run(data)
+        test = await run(data)
         logger.info("Test generated successfully")
     except Exception as e:
         logger.error(f"Error generating test: {e}")
