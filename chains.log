@@ -1,3 +1,173 @@
-2024-09-29 11:53:39,727 - INFO - Static files mounted
-2024-09-29 11:53:39,727 - INFO - toLetter filter added to Jinja2 environment
-2024-09-29 11:53:41,318 - INFO - GET request received for index page
+2024-09-30 15:40:25,738 - INFO - Static files mounted
+2024-09-30 15:40:25,738 - INFO - toLetter filter added to Jinja2 environment
+2024-09-30 15:40:26,066 - INFO - GET request received for index page
+2024-09-30 15:41:05,890 - INFO - POST request received for /generate
+2024-09-30 15:41:05,890 - INFO - Form data: title='Midterm 1' course='COSC450: Operating Systems' professor='Dr. Park' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='hard selected' testing_philosophy='My exams focus on testing your deep understanding of operating systems concepts and their real-world applications. Expect to solve problems that require you to apply principles like process management, memory allocation, and concurrency in scenarios you may not have directly seen in class. The tests are challenging but fair, designed to reward consistent engagement and a solid grasp of the material rather than last-minute cramming or surface-level knowledge.' url_1='http://faculty.salisbury.edu/~sxpark/cosc450_6.pdf' url_2='https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/' subject_material=[UploadFile(filename='cosc450_review1.pdf', size=114275, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="cosc450_review1.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-30 15:41:05,890 - INFO - Form data accessed
+2024-09-30 15:41:05,890 - INFO - Form Title: Midterm 1
+2024-09-30 15:41:05,890 - INFO - Form Course: COSC450: Operating Systems
+2024-09-30 15:41:05,890 - INFO - Form Professor: Dr. Park
+2024-09-30 15:41:05,890 - INFO - Form Number of MCQ Questions: 5
+2024-09-30 15:41:05,890 - INFO - Form Number of TF Questions: 5
+2024-09-30 15:41:05,890 - INFO - Form Number of Written Questions: 5
+2024-09-30 15:41:05,890 - INFO - Form School Type: Undergraduate
+2024-09-30 15:41:05,890 - INFO - Form Difficulty: hard selected
+2024-09-30 15:41:05,890 - INFO - Form Testing Philosophy: My exams focus on testing your deep understanding of operating systems concepts and their real-world applications. Expect to solve problems that require you to apply principles like process management, memory allocation, and concurrency in scenarios you may not have directly seen in class. The tests are challenging but fair, designed to reward consistent engagement and a solid grasp of the material rather than last-minute cramming or surface-level knowledge.
+2024-09-30 15:41:05,890 - INFO - Moving to files...
+2024-09-30 15:41:05,890 - INFO - Processing file: cosc450_review1.pdf
+2024-09-30 15:41:05,892 - INFO - File extension: .pdf
+2024-09-30 15:41:05,892 - INFO - Processing PDF file: cosc450_review1.pdf
+2024-09-30 15:41:05,984 - INFO - URLs: ['http://faculty.salisbury.edu/~sxpark/cosc450_6.pdf', 'https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/']
+2024-09-30 15:41:05,984 - INFO - Processing URL: http://faculty.salisbury.edu/~sxpark/cosc450_6.pdf
+2024-09-30 15:41:06,057 - INFO - Processing URL: https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/
+2024-09-30 15:41:06,087 - INFO - Document 1 (cosc450_review1.pdf) of 2
+2024-09-30 15:41:08,766 - INFO - Document 1 (https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/) of 1
+2024-09-30 15:41:10,301 - INFO - pikepdf C++ to Python logger bridge initialized
+2024-09-30 15:41:15,784 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 15:41:17,431 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 15:41:17,436 - INFO - Document 2 (cosc450_review1.pdf) of 2
+2024-09-30 15:41:21,029 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 15:41:21,035 - INFO - Pages: [[Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpu34o_e3s/tmp.pdf'}, page_content='Preview\n\n\uf070 Thread Implementation ◼ User level thread ◼ Kernel level thread \uf070 Multithreading Model\n\n◼ Many-to-one ◼ One-to-One ◼ Many-to-Many \uf070 The Thread Library \uf070 The Threading Issues\n\n◼ Issues with fork(), exec() ◼ Signal handling ◼ Thread termination ◼ Thread local storage ◼ Scheduler Activations\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (User Level Thread)\n\n\uf070 User level thread\n\n◼ kernel is not aware of the existence of threads. ◼ Runtime system (thread library) control thread with\n\n\uf070 Creation \uf070 Destroying \uf070 Scheduling\n\n◼ The application starts with a single thread. Runtime\n\nsystem create threads as needed.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (Kernel Level Thread)\n\n\uf070 Kernel level thread\n\n◼ The thread management is done by the operating system. ◼ The Kernel maintains context information for the process as a\n\nwhole and for individuals threads within the process.\n\n◼ Scheduling by the Kernel is done on a thread basis. ◼ The Kernel performs thread creation, scheduling and\n\nmanagement in Kernel space.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n1\n\n3\n\n5\n\nThread Implementation\n\n\uf070 Threads may be provided either at user level or kernel\n\nlevel. ◼ User level thread – thread are managed by runtime system ◼ Kernel level thread– threads are manage by operating system\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (User Level Thread)\n\n\uf070 User level thread Cont.\n\n◼ Advantage\n\n\uf070 Thread switching does not require Kernel mode privileges. \uf070 User level thread can run on any operating system. \uf070 Scheduling can be application specific in the user level thread. \uf070 User level threads are fast to create and manage.\n\n◼ Disadvantage\n\n\uf070 In a typical operating system, most system calls are blocking. \uf070 Multithreaded application cannot take advantage of multiprocessing.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (Kernel Level Thread)\n\n\uf070 Kernel level thread cont.\n\n◼ Advantages\n\n\uf070 Kernel can simultaneously schedule multiple threads from the same\n\nprocess on multiple processes.\n\n\uf070 If one thread in a process is blocked, the Kernel can schedule another\n\nthread of the same process.\n\n\uf070 Kernel routines themselves can be multithreaded.\n\n◼ Disadvantages\n\n\uf070 Kernel threads are generally slower to create and manage than the user\n\nthreads.\n\n\uf070 Transfer of control from one thread to another within the same process\n\nrequires a mode switch to the Kernel.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n1\n\nMultithreading Models\n\n\uf070 Some operating system provide a combined user level\n\nand Kernel level thread facility.\n\n\uf070 In a combined system, multiple threads within the same application can run in parallel on multiple processors and a blocking system call need not block the entire process.\n\n\uf070 Multithreading models are three types:\n\n◼ Many to one relationship. ◼ One to one relationship. ◼ Many to many relationship.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (Many-to-One Model)\n\nUser threads\n\nP1\n\nP2\n\nP3\n\nUser space\n\nKernel space\n\nkernel threads\n\nMany-to-One Model\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (One-to-One Model)\n\nUser threads\n\nP1\n\nP2\n\nP3\n\nUser space\n\nKernel space\n\nkernel threads\n\nOne-to-One Model\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n7\n\n9\n\n11\n\nMultithreading Models (Many-to-One Model)\n\n\uf070 The many-to-one model maps many user-level threads to\n\none kernel thread.\n\n\uf070 Thread management is done by the thread library in user\n\nspace (run time system), so it is efficient.\n\n\uf070 When thread makes a blocking system call, the entire\n\nprocess will be blocked.\n\n\uf070 Only one thread can access the Kernel at a time, so multiple threads are unable to run in parallel on multiprocessors.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (One-to-One Model)\n\n\uf070 The one-to-one model maps each user thread to a kernel thread. \uf070 It provides more concurrency than the many-to-one model by\n\nallowing another thread to run when a thread makes a blocking system call.\n\n\uf070 It also allows multiple threads to run in parallel on multiprocessors. \uf070 Drawback\n\n◼ Since creating a user thread requires creating the corresponding kernel\n\nthread, a large number of kernel threads may burden the performance of a system.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (Many-to-Many Model)\n\n\uf070 The many-to-many model multiplexes any number of user threads\n\nonto an equal or smaller number of kernel threads.\n\n\uf070 The number of kernel threads may be specific to either a particular\n\napplication or a particular machine.\n\n\uf070 Developers can create as many user threads as necessary and the\n\ncorresponding Kernel threads can run in parallel on a multiprocessor machine.\n\n\uf070 This model provides the best accuracy on concurrency and when a thread performs a blocking system call, the kernel can schedule another thread for execution.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n10\n\n12\n\n2\n\nMultithreading Models (Many-to-Many Model)\n\nUser threads\n\nP1\n\nP2\n\nP3\n\nUser space\n\nKernel space\n\nkernel threads\n\nMany-to-Many Model\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Libraries\n\n\uf070 There are two primary ways of implementing a thread library.\n\n◼ User-level Library entirely in user space with no kernel support - All code and\n\ndata structures for the library exist in user space.\n\n◼ Kernel-level library supported directly by the operating system - code and\n\ndata structures for the library exist in kernel space. Invoking a function in the API for the library results in a system call to the kernel.\n\n\uf070 Three Main thread libraries in use today\n\n◼ Pthread – user level ◼ Windows – kernel-level ◼ Java - generally implemented using a thread library available on the host\n\nsystem.–Windows API, Linux, typically pthread.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nImplicit Threading\n\n\uf070 Five methods in text book\n\n◼ Thread Pools ◼ Fork-Join ◼ OpenMP ◼ Grand Central Dispatch ◼ Intel Threading Building Blocks\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n13\n\n15\n\n17\n\nMultithreading Models (Summary )\n\n\uf070 The many-to-one model allows the developer to create as many user threads as she wishes, it does not result in parallelism, because the kernel can schedule only one kernel thread at a time.\n\n\uf070 The one-to-one model allows greater concurrency, but the\n\ndeveloper has to be careful not to create too many threads within an application.\n\n\uf070 The many-to-many model suffers from neither of these\n\nshortcomings: ◼ Developers can create as many user threads as necessary, and the corresponding\n\nkernel threads can run in parallel on a multiprocessor.\n\n◼ When a thread performs a blocking system call, the kernel can schedule another\n\nthread for execution.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nImplicit Threading (optional)\n\n\uf070 Implicit Threading?\n\n◼ Growing in popularity as numbers of threads increase, program correctness more difficult with explicit threads. (programmer need take care of race condition between threads)\n\n◼ Creation and management of threading is done by compilers and run-time\n\nlibraries\n\n◼ Application developers need identify tasks—not threads—that can run in\n\nparallel. A task is usually written as a function, which the run-time library then maps to a separate thread, typically using the many-to-many model\n\n◼ Developers only need to identify parallel tasks. ◼ Libraries determine the specific details of thread creation and management.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (The fork() and exec() system calls)\n\n\uf070 When a thread calls fork() system call, there is two possible\n\noptions ◼ Duplicates all threads inside the process ◼ Duplicate only the thread that invoked the fork()\n\n\uf070 When a thread invokes the exec() system call (simply tries to run different program), the program specified in the parameter to exec() will replace the entire process.\n\n\uf070 If exec() is called immediately after forking (child is created for\n\nrunning different program with exec), the program specified in the parameters to exec() will replace the process.\n\n\uf070 If the separate process does not call exec() after forking, the\n\nseparate process should duplicate all threads.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n14\n\n16\n\n18\n\n3\n\nThreading Issues (Signal Handling)\n\n\uf070 A signal may be received either synchronously or asynchronously, depending on the source of and the reason for the event being signaled.\n\n\uf070 Every signal has a default signal handler that the kernel runs when handling that signal. This default action can be overridden by a user-define signal handler that is called to handle the signal.\n\n\uf070 Handling signals in single-threaded programs is straightforward: signals are always delivered to a process. However, delivering signals is more complicated in multithreaded programs, where a process may have several threads.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Signal Handling)\n\n\uf070 Pthreads provides the following function, which allows a\n\nsignal to be delivered to a specified thread (tid)\n\n#include <signal.h>\n\nint pthread_kill(pthread_t thread, int sig);\n\nreturns 0 on Ok, returns an error number on error\n\n\uf070 pthread_kill sends the signal sig to thread, a thread in the same\n\nprocess as the caller. The signal is asynchronously directed to thread.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n\uf070 The pthread_cancel() function requests cancellation of\n\nthe target thread.\n\n\uf070 The target thread is cancelled, based on it’s ability to be\n\ncancelled.\n\n\uf070 When cancel ability is deferred, all cancels are held\n\npending in the target thread until the thread changes the cancel ability, calls a function that is a cancellation point.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n19\n\n21\n\n23\n\nThreading Issues (Signal Handling)\n\n\uf070 Where should a signal be delivered? In general, the following\n\noptions exist: 1. Deliver the signal to the thread to which the signal applies. 2. Deliver the signal to every thread in the process. 3. Deliver the signal to certain threads in the process. 4. Assign a specific thread to receive all signals for the process. \uf070 What if a thread call kill(pid t pid, int signal) to a\n\nmultithreaded process? ◼ Because signals need to be handled only once, a signal is typically delivered\n\nonly to the first thread found that is not blocking it.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n\uf070 Thread cancellation involves terminating a thread before it has\n\ncompleted. ◼ Ex) if multiple threads are concurrently searching through a database and one\n\nthread returns the result, the remaining threads might be canceled.\n\n◼ Ex) A web browser load a web page by several threads. When a user presses\n\na top button on the browser, all threads must be cancelled. \uf070 Cancellation of a target thread may occur in two different\n\nscenarios. ◼ Asynchronous cancellation – One thread immediately terminates the target\n\nthread.\n\n◼ Deferred cancellation. The target thread periodically checks whether it should terminate, allowing it an opportunity to terminate itself in an orderly fashion.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n\uf070 Cancellation points:\n\n◼ pthread_cond_timedwait() ◼ pthread_cond_wait() ◼ pthread_delay_np() ◼ pthread_join() ◼ pthread_join_np() ◼ pthread_extendedjoin_np() ◼ pthread_testcancel()\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n20\n\n22\n\n24\n\n4\n\n/* thcancel.c demonstrate pthread_cancel() function */ #include <pthread.h> #include <stdio.h>\n\nvoid *threadfunc(void *); void err_sys(char *, int );\n\nint main(int argc, char **argv) {\n\npthread_t tid; int rc=0;\n\nprintf("Entering testcase\\n"); /* create a thread */ if ((rc = pthread_create(&tid, NULL, threadfunc, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_create() is", rc);\n\nsleep(2); printf("Now Canceling the thread\\n"); /* try to calcel the thread created */ if ((rc = pthread_cancel(tid)) != 0)\n\nerr_sys("ERROR; return code from pthread_cancel() is", rc);\n\nif ((rc = pthread_join( tid, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_join() is", rc);\n\nsleep(3); printf("Main completed\\n"); return 0;\n\nvoid err_sys(char *str, int msg) {\n\nprintf ("%s %d\\n",str, msg); exit (1);\n\n} void *threadfunc(void *parm) {\n\nprintf("Entered secondary thread\\n"); while (1)\n\n{\n\nprintf("Secondary thread is looping\\n"); pthread_testcancel(); /* cancel point */ sleep(1);\n\n}\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n#include <pthread.h> void pthread_cleanup_pop(int execute);\n\n\uf070 The pthread_cleanup_pop() function pops the last cleanup\n\nhandler from the cancellation cleanup stack.\n\n\uf070 If the execute parameter is nonzero, the handler is called with the argument specified by the pthread_cleanup_push() call with which the handler was registered.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\nvoid err_sys(char *str, int msg) {\n\nprintf ("%s %d\\n",str, msg); exit (1);\n\n} void cleanupHandler(void *arg) {\n\nprintf("Master ask me terminate myself\\n"); sleep(2); printf("I will be back!\\n");\n\n} void *threadfunc(void *parm) {\n\nprintf("Entered secondary thread\\n"); /* push clearnup function after cancell */ pthread_cleanup_push(cleanupHandler, NULL); while (1) {\n\nprintf("Master! Don’t terminate me! I want live forever!\\n"); pthread_testcancel(); /* cancel point */ sleep(1);\n\n} pthread_cleanup_pop(0); return NULL;\n\n}\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n25\n\n27\n\n29\n\nThreading Issues (Thread Cancellation)\n\n#include <pthread.h> void pthread_cleanup_push(void (*routine)(void *), void *arg);\n\n\uf070 The pthread_cleanup_push() function pushes a clean up\n\nfunction routine, to be called with the single argument, arg, when the thread performs one of the following actions. ◼ pthread_exit() ◼ pthread_cancel()\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n/*thpushpop.c: demonstrate\n\npthread_cleanup_push() and pthread_cleanup_pop() */\n\n#include <pthread.h> #include <stdio.h> void err_sys(char *, int ); void cleanupHandler(void *); void *threadfunc(void *);\n\nint main() {\n\npthread_t tid; int rc=0;\n\nprintf("Entering testcase\\n"); /* now creating a thread */ if ((rc = pthread_create(&tid, NULL, threadfunc, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_create() is", rc);\n\nsleep(2);\n\nprintf("Now Canceling the thread\\n"); /* now cancelling the created thread */ if ((rc = pthread_cancel(tid)) != 0)\n\nerr_sys("ERROR; return code from pthread_cancel() is", rc);\n\nsleep(3); if ((rc = pthread_join( tid, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_join() is", rc);\n\nprintf("Main completed\\n"); return 0;\n\n}\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread-Local Storage (TLS))\n\n\uf070 Since threads belonging to a process , threads could share the data of the process which is one of the benefits of multithreaded programming.\n\n\uf070 In some cases, each thread might need its own copy of certain data\n\n(Thread-local storage). ◼ For example, in a transaction process system, separate thread are assigned on different transaction service. Each transaction might be assigned a unique ID.\n\n◼ To associate each thread with its unique transaction ID, we could use TLS. ◼ Local variables are visible only during a single function invocation, whereas\n\nTLS data are visible across function invocations.\n\n◼ Most thread libraries and compilers provide support for TLS.\n\n\uf070 In pthread : pthread_key_t can be used to declare TLS \uf070 In Java : ThreadLocal<T> objects with get() and set() method\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n26\n\n28\n\n30\n\n5\n\nThreading Issues (Scheduler Activations)\n\n\uf070 Threads Implementation in a process\n\n◼ Option A: user-level library (runtime system), within a single‐threaded\n\nprocess\n\n\uf070 Runtime system manage whole threads. \uf070 Library (runtime system) does thread switch\n\n◼ Option B: use kernel threads\n\n\uf070 Kernel manage processes and threads \uf070 Kernel does thread context switching. \uf070 Simple, but huge transitions between user and kernel mode\n\n◼ Option C: Scheduler activations (Hybrid)\n\n\uf070 Kernel allocates lightweight process to user-level runtime system for thread \uf070 The thread library (runtime system) implements context switch \uf070 System call I/O that blocks thread and triggers upcall.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Scheduler Activations)\n\n\uf070 An application may require any number of LWPs to run efficiently. \uf070 Consider a CPU-bound application running on a single processor. \uf070 In this scenario, only one thread can run at a time, so one LWP is\n\nsufficient.\n\n\uf070 However, an application that is I/O intensive may require multiple LWPs to execute. Typically, an LWP is required for each concurrent blocking system call.\n\n\uf070 Suppose that five different file-read requests occur simultaneously.\n\nFive LWPs are needed, because all could be waiting for I/O completion in the kernel. If a process has only four LWPs, then the fifth request must wait for one of the LWPs to return from the kernel.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n31\n\n33\n\nThreading Issues (Scheduler Activations)\n\n\uf070 One scheme for communication between the user-thread library(runtime system) and the kernel is known as scheduler activation which is required in many-to- many and two-level models.\n\n\uf070 Many system place an intermediate data structure called lightweight\n\nprocess(LWP) between the user and kernel threads.\n\n\uf070 To the user-thread library, the LWP appears to be a virtual processor on which\n\nthe application can schedule a user thread to run\n\n\uf070 Each LWP is attached to a kernel thread, and it is kernel threads that the\n\noperating system schedules to run on physical processors.\n\n\uf070 If a kernel thread blocks (such as while waiting for an I/O operation to\n\ncomplete), the LWP blocks as well. Up the chain, the user-level thread attached to the LWP also block\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Scheduler Activations)\n\n\uf070 It works following way:\n\n◼ The kernel provides an application with a set of virtual processors (LWPs), and the\n\napplication can schedule user threads onto an available virtual processor.\n\n◼ The kernel must inform an application about certain events. This procedure is known as an upcall. Upcalls are handled by the thread library with an upcall handler, and upcall handlers must run on a virtual processor.\n\n◼ One event that triggers an upcall occurs when an application thread is about to block. ◼ The kernel makes an upcall to the application informing it that a thread is about to\n\nblock and identifying the specific thread.\n\n◼ The kernel then allocates a new virtual processor to the application. The application runs an upcall handler on this new virtual processor, which saves the state of the blocking thread and relinquishes the virtual processor on which the blocking thread is running.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n32\n\n34\n\n6')]]
+2024-09-30 15:41:21,036 - INFO - Full response: 3/26/2024
+
+Review for Midterm #1
+
+- Instruction Cycle: Fetch, Decode, Execute
+- Von Neumann Bottleneck
+- History of Operating System:
+  - The First Generation – Vacuum Tubes
+  - The Second Generation – Transistors
+  - The Third Generation – Integrated Circuits (IC)
+  - The Fourth Generation – Very Large Scale Integration (VLSI)
+  - The Fifth Generation – Mobile Devices
+
+- Batch System
+- Time Sharing
+- Multiprogramming
+- Spooling
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park
+
+Review for Midterm #1
+
+- System Call
+- Operating System Structure:
+  - Monolithic
+  - Layered System
+  - Virtual Machine
+- Process Management:
+  - Process Models
+  - Process Creation
+  - Process Termination
+  - Process State
+  - Process Implementation
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park
+
+Review for Midterm #1
+
+- Concept of Threads
+- Thread Implementation:
+  - User Level Thread
+  - Kernel Level Thread
+- Multithreading Model:
+  - Many-to-One
+  - One-to-One
+  - Many-to-Many
+- The Threading Issues:
+  - Issues with fork(), exec()
+  - Signal Handling
+  - Thread Termination
+  - Thread Local Storage
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park
+
+Review for Midterm #1
+
+- Inter-Process Communication:
+  - Race Condition
+  - Mutual Exclusion Solutions with Busy Waiting:
+    - Disabling Interrupt
+    - Lock Variable
+    - Strict Alternation
+    - Peterson’s Solution
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park
+
+Review for Midterm #1
+
+- Mutual Exclusion with Busy Waiting:
+  - Test and Set Lock
+  - Priority Inversion Problem with Busy Waiting
+- Mutual Exclusion with Sleep and Wakeup:
+  - The Producer-Consumer Problem
+  - Race Condition in Producer-Consumer Problem
+  - Semaphore
+  - The Producer-Consumer Problem with Semaphore
+  - Mutexes
+  - Monitor
+  - Message Passing
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park
+
+Review for Midterm #1
+
+- Process Scheduling:
+  - Schedulers:
+    - Long Term
+    - Short Term
+    - Memory
+  - Scheduling Algorithms:
+    - Shortest Job First
+    - Shortest Remaining Time: Preemptive, Non-Preemptive
+    - Round Robin
+    - Priority Queue: Preemptive, Non-Preemptive
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park3/26/2024
+
+Review for Midterm #1
+
+Memory Management
+- With Mono-Process
+- With Multi-Processes
+  - Multi-process with Fixed partition
+  - Multi-process with Variable partition
+- Modeling Multiprogramming: Probabilistic model
+- Swapping
+- Memory Management with Bitmap
+- Memory Management with Free-List
+  - Memory allocation with Free-List
+    - First fit
+    - Next fit
+    - Best fit
+    - Worst fit
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon Park
+
+Review for Midterm #1
+
+Virtual Memory with Paging
+- Page tables
+- Page Table with Hardware Support
+  - Translation Look-Aside Buffer
+- Page Table Structure
+  - Multilevel Page Table
+  - Hashed Page Table
+  - Inverted Page Table
+
+COSC450 Operating System, Spring 2024
+Dr. Sang-Eon ParkThe document discusses the differences between user-level threads and kernel-level threads. User-level threads are managed by a user-level library, while kernel-level threads are managed by the operating system. User-level threads are generally faster and require less overhead, but they may not take full advantage of multi-core processors. In contrast, kernel-level threads can utilize multiple processors, but they incur more overhead due to system calls. Understanding these differences is important for optimizing performance in concurrent programming.
+2024-09-30 15:41:21,036 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
+2024-09-30 15:41:21,039 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
+2024-09-30 15:41:34,656 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 15:41:39,174 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 15:42:09,381 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 15:42:09,654 - INFO - Deleted temp file: /var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpu9r0cs92
+2024-09-30 15:42:09,654 - INFO - Test generated successfully

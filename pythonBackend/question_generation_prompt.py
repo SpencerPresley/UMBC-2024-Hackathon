@@ -34,12 +34,6 @@ class QAPair(BaseModel):
 class GeneratedTest(BaseModel):
     questions:List[QAPair]
 
-# llm = ChatOpenAI(
-#     model="gpt-4o-mini",
-#     temperature=0.6,
-#     api_key=os.getenv("OPENAI_API_KEY"),
-# ) 
-
 async def question_generate_chain(*, 
                             clean_response: str, 
                             llm, 
@@ -100,9 +94,7 @@ async def question_generate_chain(*,
             "json_structure": json_structure
         }
     )
-    # print(pydantic_return_object)
-    # input("Press Enter to continue...")
-    return pydantic_return_object    
+    return pydantic_return_object
     
 async def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
                             number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
