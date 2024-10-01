@@ -1,6 +1,6 @@
 ![Testif.AI](./static/logo.png)
 
-### **We're pleased to announce that Testif.AI won best Educational HackUMBC 2024!!**
+## **We're pleased to announce that Testif.AI won best Educational Hack at HackUMBC 2024!!**
 
 Making a test can take a long time. You have to review the material you want to test, select the most important topics, write out questions and create an answer key. This can take hours especially for complex subjects.
 
