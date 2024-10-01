@@ -1,5 +1,7 @@
 ![Testif.AI](./static/logo.png)
 
+### **We're pleased to announce that Testif.AI won best Educational HackUMBC 2024!!**
+
 Making a test can take a long time. You have to review the material you want to test, select the most important topics, write out questions and create an answer key. This can take hours especially for complex subjects.
 
 In order to address this issue, we created Testif.AI, an AI powered test creation assistant. The teacher can start by setting information about the test - the test name, the course name and the professors name. Then, they will select the number and style of questions the test should include. After that, the teacher will be able to select the difficulty and grade level so the test is an appropriate difficulty. The teacher will then have the chance to give information about their testing philosophy to make sure the generated test reflects the teachers desires and teaching style. Lastly, the teacher can upload any .pdf, .pptx, .txt, .doc, .docx, .png, .jpeg, or .jpg file and generate a test. Once the test generation is complete, the teacher can edit the answer key and test before exporting them as pdfs.
