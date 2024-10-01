@@ -47,6 +47,7 @@ async def question_generate_chain(*,
                             difficulty, 
                             testing_philosophy,
                             ):
+    logging.info("Starting question_generate_chain")
     question_generation_json_format, json_structure = get_json_format()
     question_generation_system_prompt, question_generation_human_prompt = get_templates()
     system_prompt = SystemMessagePromptTemplate.from_template(question_generation_system_prompt.template)
@@ -94,6 +95,8 @@ async def question_generate_chain(*,
             "json_structure": json_structure
         }
     )
+    logging.info(f"Generated {len(pydantic_return_object.questions)} questions for {course} with the following questions: {pydantic_return_object.questions}")
+    logging.info("Finished question_generate_chain")
     return pydantic_return_object
     
 async def get_question_generate_chain(*, clean_response: str, llm, title, course, professor,
@@ -102,6 +105,7 @@ async def get_question_generate_chain(*, clean_response: str, llm, title, course
                             question_generation_json_format, question_generation_system_prompt, question_generation_human_prompt,
                             total_number_of_questions, json_structure
                             ):
+    logging.info("Setting up question generation chain")
     parser = PydanticOutputParser(pydantic_object=GeneratedTest)
     chain = (
         RunnablePassthrough.assign(
@@ -128,6 +132,7 @@ async def get_question_generate_chain(*, clean_response: str, llm, title, course
         | parser
     )
     logging.info(f"Chain type: {type(chain)}")
+    logging.info(f"Question generation chain setup complete")
     return chain
 
 def get_templates():
@@ -189,8 +194,9 @@ def get_templates():
 
 async def judge_chain(*, test_str: str, course, professor,
                             number_of_mcq_questions, number_of_TF_questions, number_of_written_questions,
-                            school_type, difficulty, testing_philosophy
+                            school_type, difficulty, testing_philosophy, raw_tests_objects
                             ):
+    logging.info(f"Starting judge chain for course: {course}")
     total_number_of_questions = number_of_mcq_questions + number_of_TF_questions + number_of_written_questions
     QAPair_json_format, json_structure = get_json_format()
     llm = ChatOpenAI(
@@ -277,6 +283,15 @@ async def judge_chain(*, test_str: str, course, professor,
         "difficulty": difficulty,
         "testing_philosophy": testing_philosophy
     })
+    # Parse the original tests
+    question_source_map = {}
+    for selected_question in chain_result.questions:
+        for i, raw_test in enumerate(raw_tests_objects, 1):
+            if any(q.question == selected_question.question for q in raw_test.questions):
+                question_source_map[selected_question.question] = f"Test {i}"
+                break
+    logging.info(f"Judge chain completed. Selected {len(chain_result.questions)} questions")
+    logging.info(f"Selected questions map:\n{question_source_map}")
     return chain_result
 
 def get_json_format():

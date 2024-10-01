@@ -1,173 +1,1552 @@
-2024-09-30 15:40:25,738 - INFO - Static files mounted
-2024-09-30 15:40:25,738 - INFO - toLetter filter added to Jinja2 environment
-2024-09-30 15:40:26,066 - INFO - GET request received for index page
-2024-09-30 15:41:05,890 - INFO - POST request received for /generate
-2024-09-30 15:41:05,890 - INFO - Form data: title='Midterm 1' course='COSC450: Operating Systems' professor='Dr. Park' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='hard selected' testing_philosophy='My exams focus on testing your deep understanding of operating systems concepts and their real-world applications. Expect to solve problems that require you to apply principles like process management, memory allocation, and concurrency in scenarios you may not have directly seen in class. The tests are challenging but fair, designed to reward consistent engagement and a solid grasp of the material rather than last-minute cramming or surface-level knowledge.' url_1='http://faculty.salisbury.edu/~sxpark/cosc450_6.pdf' url_2='https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/' subject_material=[UploadFile(filename='cosc450_review1.pdf', size=114275, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="cosc450_review1.pdf"', 'content-type': 'application/pdf'}))]
-2024-09-30 15:41:05,890 - INFO - Form data accessed
-2024-09-30 15:41:05,890 - INFO - Form Title: Midterm 1
-2024-09-30 15:41:05,890 - INFO - Form Course: COSC450: Operating Systems
-2024-09-30 15:41:05,890 - INFO - Form Professor: Dr. Park
-2024-09-30 15:41:05,890 - INFO - Form Number of MCQ Questions: 5
-2024-09-30 15:41:05,890 - INFO - Form Number of TF Questions: 5
-2024-09-30 15:41:05,890 - INFO - Form Number of Written Questions: 5
-2024-09-30 15:41:05,890 - INFO - Form School Type: Undergraduate
-2024-09-30 15:41:05,890 - INFO - Form Difficulty: hard selected
-2024-09-30 15:41:05,890 - INFO - Form Testing Philosophy: My exams focus on testing your deep understanding of operating systems concepts and their real-world applications. Expect to solve problems that require you to apply principles like process management, memory allocation, and concurrency in scenarios you may not have directly seen in class. The tests are challenging but fair, designed to reward consistent engagement and a solid grasp of the material rather than last-minute cramming or surface-level knowledge.
-2024-09-30 15:41:05,890 - INFO - Moving to files...
-2024-09-30 15:41:05,890 - INFO - Processing file: cosc450_review1.pdf
-2024-09-30 15:41:05,892 - INFO - File extension: .pdf
-2024-09-30 15:41:05,892 - INFO - Processing PDF file: cosc450_review1.pdf
-2024-09-30 15:41:05,984 - INFO - URLs: ['http://faculty.salisbury.edu/~sxpark/cosc450_6.pdf', 'https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/']
-2024-09-30 15:41:05,984 - INFO - Processing URL: http://faculty.salisbury.edu/~sxpark/cosc450_6.pdf
-2024-09-30 15:41:06,057 - INFO - Processing URL: https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/
-2024-09-30 15:41:06,087 - INFO - Document 1 (cosc450_review1.pdf) of 2
-2024-09-30 15:41:08,766 - INFO - Document 1 (https://www.geeksforgeeks.org/difference-between-user-level-thread-and-kernel-level-thread/) of 1
-2024-09-30 15:41:10,301 - INFO - pikepdf C++ to Python logger bridge initialized
-2024-09-30 15:41:15,784 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-30 15:41:17,431 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-30 15:41:17,436 - INFO - Document 2 (cosc450_review1.pdf) of 2
-2024-09-30 15:41:21,029 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-30 15:41:21,035 - INFO - Pages: [[Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpu34o_e3s/tmp.pdf'}, page_content='Preview\n\n\uf070 Thread Implementation ◼ User level thread ◼ Kernel level thread \uf070 Multithreading Model\n\n◼ Many-to-one ◼ One-to-One ◼ Many-to-Many \uf070 The Thread Library \uf070 The Threading Issues\n\n◼ Issues with fork(), exec() ◼ Signal handling ◼ Thread termination ◼ Thread local storage ◼ Scheduler Activations\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (User Level Thread)\n\n\uf070 User level thread\n\n◼ kernel is not aware of the existence of threads. ◼ Runtime system (thread library) control thread with\n\n\uf070 Creation \uf070 Destroying \uf070 Scheduling\n\n◼ The application starts with a single thread. Runtime\n\nsystem create threads as needed.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (Kernel Level Thread)\n\n\uf070 Kernel level thread\n\n◼ The thread management is done by the operating system. ◼ The Kernel maintains context information for the process as a\n\nwhole and for individuals threads within the process.\n\n◼ Scheduling by the Kernel is done on a thread basis. ◼ The Kernel performs thread creation, scheduling and\n\nmanagement in Kernel space.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n1\n\n3\n\n5\n\nThread Implementation\n\n\uf070 Threads may be provided either at user level or kernel\n\nlevel. ◼ User level thread – thread are managed by runtime system ◼ Kernel level thread– threads are manage by operating system\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (User Level Thread)\n\n\uf070 User level thread Cont.\n\n◼ Advantage\n\n\uf070 Thread switching does not require Kernel mode privileges. \uf070 User level thread can run on any operating system. \uf070 Scheduling can be application specific in the user level thread. \uf070 User level threads are fast to create and manage.\n\n◼ Disadvantage\n\n\uf070 In a typical operating system, most system calls are blocking. \uf070 Multithreaded application cannot take advantage of multiprocessing.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Implementation (Kernel Level Thread)\n\n\uf070 Kernel level thread cont.\n\n◼ Advantages\n\n\uf070 Kernel can simultaneously schedule multiple threads from the same\n\nprocess on multiple processes.\n\n\uf070 If one thread in a process is blocked, the Kernel can schedule another\n\nthread of the same process.\n\n\uf070 Kernel routines themselves can be multithreaded.\n\n◼ Disadvantages\n\n\uf070 Kernel threads are generally slower to create and manage than the user\n\nthreads.\n\n\uf070 Transfer of control from one thread to another within the same process\n\nrequires a mode switch to the Kernel.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n1\n\nMultithreading Models\n\n\uf070 Some operating system provide a combined user level\n\nand Kernel level thread facility.\n\n\uf070 In a combined system, multiple threads within the same application can run in parallel on multiple processors and a blocking system call need not block the entire process.\n\n\uf070 Multithreading models are three types:\n\n◼ Many to one relationship. ◼ One to one relationship. ◼ Many to many relationship.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (Many-to-One Model)\n\nUser threads\n\nP1\n\nP2\n\nP3\n\nUser space\n\nKernel space\n\nkernel threads\n\nMany-to-One Model\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (One-to-One Model)\n\nUser threads\n\nP1\n\nP2\n\nP3\n\nUser space\n\nKernel space\n\nkernel threads\n\nOne-to-One Model\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n7\n\n9\n\n11\n\nMultithreading Models (Many-to-One Model)\n\n\uf070 The many-to-one model maps many user-level threads to\n\none kernel thread.\n\n\uf070 Thread management is done by the thread library in user\n\nspace (run time system), so it is efficient.\n\n\uf070 When thread makes a blocking system call, the entire\n\nprocess will be blocked.\n\n\uf070 Only one thread can access the Kernel at a time, so multiple threads are unable to run in parallel on multiprocessors.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (One-to-One Model)\n\n\uf070 The one-to-one model maps each user thread to a kernel thread. \uf070 It provides more concurrency than the many-to-one model by\n\nallowing another thread to run when a thread makes a blocking system call.\n\n\uf070 It also allows multiple threads to run in parallel on multiprocessors. \uf070 Drawback\n\n◼ Since creating a user thread requires creating the corresponding kernel\n\nthread, a large number of kernel threads may burden the performance of a system.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nMultithreading Models (Many-to-Many Model)\n\n\uf070 The many-to-many model multiplexes any number of user threads\n\nonto an equal or smaller number of kernel threads.\n\n\uf070 The number of kernel threads may be specific to either a particular\n\napplication or a particular machine.\n\n\uf070 Developers can create as many user threads as necessary and the\n\ncorresponding Kernel threads can run in parallel on a multiprocessor machine.\n\n\uf070 This model provides the best accuracy on concurrency and when a thread performs a blocking system call, the kernel can schedule another thread for execution.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n10\n\n12\n\n2\n\nMultithreading Models (Many-to-Many Model)\n\nUser threads\n\nP1\n\nP2\n\nP3\n\nUser space\n\nKernel space\n\nkernel threads\n\nMany-to-Many Model\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThread Libraries\n\n\uf070 There are two primary ways of implementing a thread library.\n\n◼ User-level Library entirely in user space with no kernel support - All code and\n\ndata structures for the library exist in user space.\n\n◼ Kernel-level library supported directly by the operating system - code and\n\ndata structures for the library exist in kernel space. Invoking a function in the API for the library results in a system call to the kernel.\n\n\uf070 Three Main thread libraries in use today\n\n◼ Pthread – user level ◼ Windows – kernel-level ◼ Java - generally implemented using a thread library available on the host\n\nsystem.–Windows API, Linux, typically pthread.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nImplicit Threading\n\n\uf070 Five methods in text book\n\n◼ Thread Pools ◼ Fork-Join ◼ OpenMP ◼ Grand Central Dispatch ◼ Intel Threading Building Blocks\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n13\n\n15\n\n17\n\nMultithreading Models (Summary )\n\n\uf070 The many-to-one model allows the developer to create as many user threads as she wishes, it does not result in parallelism, because the kernel can schedule only one kernel thread at a time.\n\n\uf070 The one-to-one model allows greater concurrency, but the\n\ndeveloper has to be careful not to create too many threads within an application.\n\n\uf070 The many-to-many model suffers from neither of these\n\nshortcomings: ◼ Developers can create as many user threads as necessary, and the corresponding\n\nkernel threads can run in parallel on a multiprocessor.\n\n◼ When a thread performs a blocking system call, the kernel can schedule another\n\nthread for execution.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nImplicit Threading (optional)\n\n\uf070 Implicit Threading?\n\n◼ Growing in popularity as numbers of threads increase, program correctness more difficult with explicit threads. (programmer need take care of race condition between threads)\n\n◼ Creation and management of threading is done by compilers and run-time\n\nlibraries\n\n◼ Application developers need identify tasks—not threads—that can run in\n\nparallel. A task is usually written as a function, which the run-time library then maps to a separate thread, typically using the many-to-many model\n\n◼ Developers only need to identify parallel tasks. ◼ Libraries determine the specific details of thread creation and management.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (The fork() and exec() system calls)\n\n\uf070 When a thread calls fork() system call, there is two possible\n\noptions ◼ Duplicates all threads inside the process ◼ Duplicate only the thread that invoked the fork()\n\n\uf070 When a thread invokes the exec() system call (simply tries to run different program), the program specified in the parameter to exec() will replace the entire process.\n\n\uf070 If exec() is called immediately after forking (child is created for\n\nrunning different program with exec), the program specified in the parameters to exec() will replace the process.\n\n\uf070 If the separate process does not call exec() after forking, the\n\nseparate process should duplicate all threads.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n14\n\n16\n\n18\n\n3\n\nThreading Issues (Signal Handling)\n\n\uf070 A signal may be received either synchronously or asynchronously, depending on the source of and the reason for the event being signaled.\n\n\uf070 Every signal has a default signal handler that the kernel runs when handling that signal. This default action can be overridden by a user-define signal handler that is called to handle the signal.\n\n\uf070 Handling signals in single-threaded programs is straightforward: signals are always delivered to a process. However, delivering signals is more complicated in multithreaded programs, where a process may have several threads.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Signal Handling)\n\n\uf070 Pthreads provides the following function, which allows a\n\nsignal to be delivered to a specified thread (tid)\n\n#include <signal.h>\n\nint pthread_kill(pthread_t thread, int sig);\n\nreturns 0 on Ok, returns an error number on error\n\n\uf070 pthread_kill sends the signal sig to thread, a thread in the same\n\nprocess as the caller. The signal is asynchronously directed to thread.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n\uf070 The pthread_cancel() function requests cancellation of\n\nthe target thread.\n\n\uf070 The target thread is cancelled, based on it’s ability to be\n\ncancelled.\n\n\uf070 When cancel ability is deferred, all cancels are held\n\npending in the target thread until the thread changes the cancel ability, calls a function that is a cancellation point.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n19\n\n21\n\n23\n\nThreading Issues (Signal Handling)\n\n\uf070 Where should a signal be delivered? In general, the following\n\noptions exist: 1. Deliver the signal to the thread to which the signal applies. 2. Deliver the signal to every thread in the process. 3. Deliver the signal to certain threads in the process. 4. Assign a specific thread to receive all signals for the process. \uf070 What if a thread call kill(pid t pid, int signal) to a\n\nmultithreaded process? ◼ Because signals need to be handled only once, a signal is typically delivered\n\nonly to the first thread found that is not blocking it.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n\uf070 Thread cancellation involves terminating a thread before it has\n\ncompleted. ◼ Ex) if multiple threads are concurrently searching through a database and one\n\nthread returns the result, the remaining threads might be canceled.\n\n◼ Ex) A web browser load a web page by several threads. When a user presses\n\na top button on the browser, all threads must be cancelled. \uf070 Cancellation of a target thread may occur in two different\n\nscenarios. ◼ Asynchronous cancellation – One thread immediately terminates the target\n\nthread.\n\n◼ Deferred cancellation. The target thread periodically checks whether it should terminate, allowing it an opportunity to terminate itself in an orderly fashion.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n\uf070 Cancellation points:\n\n◼ pthread_cond_timedwait() ◼ pthread_cond_wait() ◼ pthread_delay_np() ◼ pthread_join() ◼ pthread_join_np() ◼ pthread_extendedjoin_np() ◼ pthread_testcancel()\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n20\n\n22\n\n24\n\n4\n\n/* thcancel.c demonstrate pthread_cancel() function */ #include <pthread.h> #include <stdio.h>\n\nvoid *threadfunc(void *); void err_sys(char *, int );\n\nint main(int argc, char **argv) {\n\npthread_t tid; int rc=0;\n\nprintf("Entering testcase\\n"); /* create a thread */ if ((rc = pthread_create(&tid, NULL, threadfunc, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_create() is", rc);\n\nsleep(2); printf("Now Canceling the thread\\n"); /* try to calcel the thread created */ if ((rc = pthread_cancel(tid)) != 0)\n\nerr_sys("ERROR; return code from pthread_cancel() is", rc);\n\nif ((rc = pthread_join( tid, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_join() is", rc);\n\nsleep(3); printf("Main completed\\n"); return 0;\n\nvoid err_sys(char *str, int msg) {\n\nprintf ("%s %d\\n",str, msg); exit (1);\n\n} void *threadfunc(void *parm) {\n\nprintf("Entered secondary thread\\n"); while (1)\n\n{\n\nprintf("Secondary thread is looping\\n"); pthread_testcancel(); /* cancel point */ sleep(1);\n\n}\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\n#include <pthread.h> void pthread_cleanup_pop(int execute);\n\n\uf070 The pthread_cleanup_pop() function pops the last cleanup\n\nhandler from the cancellation cleanup stack.\n\n\uf070 If the execute parameter is nonzero, the handler is called with the argument specified by the pthread_cleanup_push() call with which the handler was registered.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread Cancellation)\n\nvoid err_sys(char *str, int msg) {\n\nprintf ("%s %d\\n",str, msg); exit (1);\n\n} void cleanupHandler(void *arg) {\n\nprintf("Master ask me terminate myself\\n"); sleep(2); printf("I will be back!\\n");\n\n} void *threadfunc(void *parm) {\n\nprintf("Entered secondary thread\\n"); /* push clearnup function after cancell */ pthread_cleanup_push(cleanupHandler, NULL); while (1) {\n\nprintf("Master! Don’t terminate me! I want live forever!\\n"); pthread_testcancel(); /* cancel point */ sleep(1);\n\n} pthread_cleanup_pop(0); return NULL;\n\n}\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n25\n\n27\n\n29\n\nThreading Issues (Thread Cancellation)\n\n#include <pthread.h> void pthread_cleanup_push(void (*routine)(void *), void *arg);\n\n\uf070 The pthread_cleanup_push() function pushes a clean up\n\nfunction routine, to be called with the single argument, arg, when the thread performs one of the following actions. ◼ pthread_exit() ◼ pthread_cancel()\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n/*thpushpop.c: demonstrate\n\npthread_cleanup_push() and pthread_cleanup_pop() */\n\n#include <pthread.h> #include <stdio.h> void err_sys(char *, int ); void cleanupHandler(void *); void *threadfunc(void *);\n\nint main() {\n\npthread_t tid; int rc=0;\n\nprintf("Entering testcase\\n"); /* now creating a thread */ if ((rc = pthread_create(&tid, NULL, threadfunc, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_create() is", rc);\n\nsleep(2);\n\nprintf("Now Canceling the thread\\n"); /* now cancelling the created thread */ if ((rc = pthread_cancel(tid)) != 0)\n\nerr_sys("ERROR; return code from pthread_cancel() is", rc);\n\nsleep(3); if ((rc = pthread_join( tid, NULL)) != 0)\n\nerr_sys("ERROR; return code from pthread_join() is", rc);\n\nprintf("Main completed\\n"); return 0;\n\n}\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Thread-Local Storage (TLS))\n\n\uf070 Since threads belonging to a process , threads could share the data of the process which is one of the benefits of multithreaded programming.\n\n\uf070 In some cases, each thread might need its own copy of certain data\n\n(Thread-local storage). ◼ For example, in a transaction process system, separate thread are assigned on different transaction service. Each transaction might be assigned a unique ID.\n\n◼ To associate each thread with its unique transaction ID, we could use TLS. ◼ Local variables are visible only during a single function invocation, whereas\n\nTLS data are visible across function invocations.\n\n◼ Most thread libraries and compilers provide support for TLS.\n\n\uf070 In pthread : pthread_key_t can be used to declare TLS \uf070 In Java : ThreadLocal<T> objects with get() and set() method\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n26\n\n28\n\n30\n\n5\n\nThreading Issues (Scheduler Activations)\n\n\uf070 Threads Implementation in a process\n\n◼ Option A: user-level library (runtime system), within a single‐threaded\n\nprocess\n\n\uf070 Runtime system manage whole threads. \uf070 Library (runtime system) does thread switch\n\n◼ Option B: use kernel threads\n\n\uf070 Kernel manage processes and threads \uf070 Kernel does thread context switching. \uf070 Simple, but huge transitions between user and kernel mode\n\n◼ Option C: Scheduler activations (Hybrid)\n\n\uf070 Kernel allocates lightweight process to user-level runtime system for thread \uf070 The thread library (runtime system) implements context switch \uf070 System call I/O that blocks thread and triggers upcall.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Scheduler Activations)\n\n\uf070 An application may require any number of LWPs to run efficiently. \uf070 Consider a CPU-bound application running on a single processor. \uf070 In this scenario, only one thread can run at a time, so one LWP is\n\nsufficient.\n\n\uf070 However, an application that is I/O intensive may require multiple LWPs to execute. Typically, an LWP is required for each concurrent blocking system call.\n\n\uf070 Suppose that five different file-read requests occur simultaneously.\n\nFive LWPs are needed, because all could be waiting for I/O completion in the kernel. If a process has only four LWPs, then the fifth request must wait for one of the LWPs to return from the kernel.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n31\n\n33\n\nThreading Issues (Scheduler Activations)\n\n\uf070 One scheme for communication between the user-thread library(runtime system) and the kernel is known as scheduler activation which is required in many-to- many and two-level models.\n\n\uf070 Many system place an intermediate data structure called lightweight\n\nprocess(LWP) between the user and kernel threads.\n\n\uf070 To the user-thread library, the LWP appears to be a virtual processor on which\n\nthe application can schedule a user thread to run\n\n\uf070 Each LWP is attached to a kernel thread, and it is kernel threads that the\n\noperating system schedules to run on physical processors.\n\n\uf070 If a kernel thread blocks (such as while waiting for an I/O operation to\n\ncomplete), the LWP blocks as well. Up the chain, the user-level thread attached to the LWP also block\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\nThreading Issues (Scheduler Activations)\n\n\uf070 It works following way:\n\n◼ The kernel provides an application with a set of virtual processors (LWPs), and the\n\napplication can schedule user threads onto an available virtual processor.\n\n◼ The kernel must inform an application about certain events. This procedure is known as an upcall. Upcalls are handled by the thread library with an upcall handler, and upcall handlers must run on a virtual processor.\n\n◼ One event that triggers an upcall occurs when an application thread is about to block. ◼ The kernel makes an upcall to the application informing it that a thread is about to\n\nblock and identifying the specific thread.\n\n◼ The kernel then allocates a new virtual processor to the application. The application runs an upcall handler on this new virtual processor, which saves the state of the blocking thread and relinquishes the virtual processor on which the blocking thread is running.\n\nCOSC450 Operating System, Fall 2024\n\nDr. Sang-Eon Park\n\n9/5/2024\n\n32\n\n34\n\n6')]]
-2024-09-30 15:41:21,036 - INFO - Full response: 3/26/2024
+2024-09-30 22:31:28 - INFO - Static files mounted
+2024-09-30 22:31:28 - INFO - toLetter filter added to Jinja2 environment
+2024-09-30 22:31:28 - INFO - GET request received for index page
+2024-09-30 22:31:59 - INFO - POST request received for /generate
+2024-09-30 22:31:59 - INFO - Form data: title='test 1' course='theory of computation' professor='dr tu' number_of_mcq_questions=5 number_of_TF_questions=5 number_of_written_questions=5 school_type='Undergraduate' level='Normal' difficulty='medium' testing_philosophy='My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.' url_1='https://www.geeksforgeeks.org/closure-properties-of-regular-languages/' url_2='' subject_material=[UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'}))]
+2024-09-30 22:31:59 - INFO - Starting run function
+2024-09-30 22:31:59 - INFO - Form data accessed
+2024-09-30 22:31:59 - INFO - Form Title: test 1
+2024-09-30 22:31:59 - INFO - Form Course: theory of computation
+2024-09-30 22:31:59 - INFO - Form Professor: dr tu
+2024-09-30 22:31:59 - INFO - Form Number of MCQ Questions: 5
+2024-09-30 22:31:59 - INFO - Form Number of TF Questions: 5
+2024-09-30 22:31:59 - INFO - Form Number of Written Questions: 5
+2024-09-30 22:31:59 - INFO - Form School Type: Undergraduate
+2024-09-30 22:31:59 - INFO - Form Difficulty: medium
+2024-09-30 22:31:59 - INFO - Form Testing Philosophy: My tests are designed to challenge students to deeply understand and apply the core principles of Theory of Computation, beyond simple memorization. You’ll encounter problems that require you to apply familiar concepts to new contexts, pushing your critical thinking and problem-solving skills. While difficult, the tests are fair and aligned with the material covered in class, so students who stay engaged and study consistently will be well-prepared to succeed.
+2024-09-30 22:31:59 - INFO - Moving to files...
+2024-09-30 22:31:59 - INFO - Starting to process files
+2024-09-30 22:31:59 - INFO - Processing file: 4a.pdf
+2024-09-30 22:31:59 - INFO - Getting loader for file: UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'}))
+2024-09-30 22:31:59 - INFO - File extension: .pdf
+2024-09-30 22:31:59 - INFO - Processing PDF file: 4a.pdf
+2024-09-30 22:31:59 - INFO - Using loader type: PyMuPDFLoader for UploadFile(filename='4a.pdf', size=134278, headers=Headers({'content-disposition': 'form-data; name="subject_material"; filename="4a.pdf"', 'content-type': 'application/pdf'}))
+2024-09-30 22:31:59 - INFO - URLs: ['https://www.geeksforgeeks.org/closure-properties-of-regular-languages/']
+2024-09-30 22:31:59 - INFO - Processing 1 files and 1 URLs
+2024-09-30 22:31:59 - INFO - Processing URL: https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:31:59 - INFO - Getting loader for URL: https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:31:59 - INFO - Using loader type: WebBaseLoader for https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:31:59 - INFO - Processing 4a.pdf
+2024-09-30 22:31:59 - INFO - Using loader type: PyMuPDFLoader for 4a.pdf
+2024-09-30 22:31:59 - INFO - Processing 4a.pdf as a regular document using PyMuPDFLoader
+2024-09-30 22:31:59 - INFO - Processing https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:31:59 - INFO - Using loader type: WebBaseLoader for https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:31:59 - INFO - Processing https://www.geeksforgeeks.org/closure-properties-of-regular-languages/ as a regular document using WebBaseLoader
+2024-09-30 22:31:59 - INFO - Successfully loaded 10 documents from: 4a.pdf
+2024-09-30 22:31:59 - INFO - Docs: [Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 0, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Closure Properties of Regular\nLanguages\nWe show how to combine regular languages.\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 1, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Closure Properties\nA set is closed under an operation if applying\nthat operation to any members of the set always\nyields a member of the set.\nFor example, the positive integers are closed un-\nder addition and multiplication, but not divi-\nsion.\nGoddard 4a: 2\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 2, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Closure under Kleene\nFact.\nThe set of regular languages is closed\nunder each Kleene operation.\nThat is, if L1 and L2 are regular languages, then\neach of L1 ∪L2, L1L2 and L1∗is regular.\nGoddard 4a: 3\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 3, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Proving Closure under Kleene\nThe easiest approach is to show that the REs for\nL1 and L2 can be combined or adjusted to form\nthe RE for the combination language.\nExample: The RE for L1L2 is obtained by writing\ndown the RE for L1 followed by the RE for L2.\nGoddard 4a: 4\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 4, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Closure under Complementation\nFact.\nThe set of regular languages is closed\nunder complementation.\nThe complement of language L, written L, is all\nstrings not in L but with the same alphabet.\nThe statement says that if L is a regular lan-\nguage, then so is L.\nTo see this fact, take deterministic FA for L\nand interchange the accept and reject states.\nGoddard 4a: 5\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 5, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Closure under Intersection\nFact.\nThe set of regular languages is closed\nunder intersection.\nOne approach: Use de Morgan’s law:\nL1 ∩L2 = (L1 ∪L2)\nand that regular languages are closed under union\nand complementation.\nGoddard 4a: 6\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 6, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Product Construction for Intersection\nEach state in the product is pair of states from\nthe original machines.\nFormally, if L1 is accepted by DFA M1 with 5-\ntuple (Q1, Σ, q1, T1, δ1) and L2 is accepted by DFA\nM2 with 5-tuple (Q2, Σ, q2, T2, δ2). Then L1 ∩L2 is\naccepted by the DFA (Q1 × Q2, Σ, (q1, q2), T1 × T2, δ)\nwhere δ((r, s), x) = (δ1(r, x), δ2(s, x)).\nGoddard 4a: 7\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 7, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Example: Even 0’s and 1’s\nSuppose L1 is the binary strings with an even\nnumber of 0’s, and L2 the binary strings with\nan even number of 1’s. Then the FAs for these\nlanguages both have two states:\nA\nB\n1\n0\n0\n1\nX\nY\n0\n1\n1\n0\nAnd so the FA for L1 ∩L2 has four states:\nGoddard 4a: 8\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 8, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Product Construction for Even 0’s and 1’s\nA,X\nA,Y\nB,Y\nB,X\n1\n1\n1\n1\n0\n0\n0\n0\nGoddard 4a: 9\n'), Document(metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 9, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}, page_content='Overview\nA regular language is one which has an FA or an\nRE. Regular languages are closed under union,\nconcatenation, star, and complementation.\nGoddard 4a: 10\n')] for 4a.pdf using PyMuPDFLoader
+2024-09-30 22:31:59 - INFO - Document 1 (4a.pdf) of 10
+2024-09-30 22:31:59 - INFO - Starting clean_files_chain
+2024-09-30 22:31:59 - INFO - Document: page_content='Closure Properties of Regular
+Languages
+We show how to combine regular languages.
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 0, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:31:59 - INFO - Invoking chain
+2024-09-30 22:32:00 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:00 - INFO - Response: {'cleaned_content': 'Closure Properties of Regular Languages\n\nWe show how to combine regular languages.'}
+2024-09-30 22:32:00 - INFO - Finished clean_files_chain
+2024-09-30 22:32:00 - INFO - Successfully cleaned document 1 from 4a.pdf
+2024-09-30 22:32:00 - INFO - Document 2 (4a.pdf) of 10
+2024-09-30 22:32:00 - INFO - Starting clean_files_chain
+2024-09-30 22:32:00 - INFO - Document: page_content='Closure Properties
+A set is closed under an operation if applying
+that operation to any members of the set always
+yields a member of the set.
+For example, the positive integers are closed un-
+der addition and multiplication, but not divi-
+sion.
+Goddard 4a: 2
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 1, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:00 - INFO - Invoking chain
+2024-09-30 22:32:01 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:01 - INFO - Response: {'cleaned_content': 'Closure Properties\n\nA set is closed under an operation if applying that operation to any members of the set always yields a member of the set.\n\nFor example, the positive integers are closed under addition and multiplication, but not division.'}
+2024-09-30 22:32:01 - INFO - Finished clean_files_chain
+2024-09-30 22:32:01 - INFO - Successfully cleaned document 2 from 4a.pdf
+2024-09-30 22:32:01 - INFO - Document 3 (4a.pdf) of 10
+2024-09-30 22:32:01 - INFO - Starting clean_files_chain
+2024-09-30 22:32:01 - INFO - Document: page_content='Closure under Kleene
+Fact.
+The set of regular languages is closed
+under each Kleene operation.
+That is, if L1 and L2 are regular languages, then
+each of L1 ∪L2, L1L2 and L1∗is regular.
+Goddard 4a: 3
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 2, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:01 - INFO - Invoking chain
+2024-09-30 22:32:04 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:04 - INFO - Response: {'cleaned_content': 'Closure under Kleene\n\nFact: The set of regular languages is closed under each Kleene operation. That is, if L1 and L2 are regular languages, then each of the following is also regular: \n1. L1 ∪ L2 (union)\n2. L1 L2 (concatenation)\n3. L1* (Kleene star)\n\nGoddard 4a: 3'}
+2024-09-30 22:32:04 - INFO - Finished clean_files_chain
+2024-09-30 22:32:04 - INFO - Successfully cleaned document 3 from 4a.pdf
+2024-09-30 22:32:04 - INFO - Document 4 (4a.pdf) of 10
+2024-09-30 22:32:04 - INFO - Starting clean_files_chain
+2024-09-30 22:32:04 - INFO - Document: page_content='Proving Closure under Kleene
+The easiest approach is to show that the REs for
+L1 and L2 can be combined or adjusted to form
+the RE for the combination language.
+Example: The RE for L1L2 is obtained by writing
+down the RE for L1 followed by the RE for L2.
+Goddard 4a: 4
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 3, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:04 - INFO - Invoking chain
+2024-09-30 22:32:06 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:06 - INFO - Response: {'cleaned_content': 'Proving Closure under Kleene\n\nThe easiest approach is to show that the regular expressions (REs) for languages L1 and L2 can be combined or adjusted to form the RE for the combination language.\n\nExample: The RE for the concatenation of L1 and L2 (denoted as L1L2) is obtained by writing down the RE for L1 followed by the RE for L2.'}
+2024-09-30 22:32:06 - INFO - Finished clean_files_chain
+2024-09-30 22:32:06 - INFO - Successfully cleaned document 4 from 4a.pdf
+2024-09-30 22:32:06 - INFO - Document 5 (4a.pdf) of 10
+2024-09-30 22:32:06 - INFO - Starting clean_files_chain
+2024-09-30 22:32:06 - INFO - Document: page_content='Closure under Complementation
+Fact.
+The set of regular languages is closed
+under complementation.
+The complement of language L, written L, is all
+strings not in L but with the same alphabet.
+The statement says that if L is a regular lan-
+guage, then so is L.
+To see this fact, take deterministic FA for L
+and interchange the accept and reject states.
+Goddard 4a: 5
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 4, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:06 - INFO - Invoking chain
+2024-09-30 22:32:07 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:07 - INFO - Response: {'cleaned_content': "Closure under Complementation\n\nFact:\nThe set of regular languages is closed under complementation. The complement of a language L, written as L', consists of all strings not in L but using the same alphabet. This means that if L is a regular language, then L' is also a regular language.\n\nTo understand this fact, consider a deterministic finite automaton (FA) for L and interchange the accept and reject states."}
+2024-09-30 22:32:07 - INFO - Finished clean_files_chain
+2024-09-30 22:32:07 - INFO - Successfully cleaned document 5 from 4a.pdf
+2024-09-30 22:32:07 - INFO - Document 6 (4a.pdf) of 10
+2024-09-30 22:32:07 - INFO - Starting clean_files_chain
+2024-09-30 22:32:07 - INFO - Document: page_content='Closure under Intersection
+Fact.
+The set of regular languages is closed
+under intersection.
+One approach: Use de Morgan’s law:
+L1 ∩L2 = (L1 ∪L2)
+and that regular languages are closed under union
+and complementation.
+Goddard 4a: 6
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 5, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:07 - INFO - Invoking chain
+2024-09-30 22:32:09 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:09 - INFO - Response: {'cleaned_content': "Closure under Intersection\n\nFact:\nThe set of regular languages is closed under intersection.\n\nOne approach: Use de Morgan’s law:\nL1 ∩ L2 = (L1 ∪ L2)'\n\nIt follows that regular languages are closed under union and complementation."}
+2024-09-30 22:32:09 - INFO - Finished clean_files_chain
+2024-09-30 22:32:09 - INFO - Successfully cleaned document 6 from 4a.pdf
+2024-09-30 22:32:09 - INFO - Document 7 (4a.pdf) of 10
+2024-09-30 22:32:09 - INFO - Starting clean_files_chain
+2024-09-30 22:32:09 - INFO - Document: page_content='Product Construction for Intersection
+Each state in the product is pair of states from
+the original machines.
+Formally, if L1 is accepted by DFA M1 with 5-
+tuple (Q1, Σ, q1, T1, δ1) and L2 is accepted by DFA
+M2 with 5-tuple (Q2, Σ, q2, T2, δ2). Then L1 ∩L2 is
+accepted by the DFA (Q1 × Q2, Σ, (q1, q2), T1 × T2, δ)
+where δ((r, s), x) = (δ1(r, x), δ2(s, x)).
+Goddard 4a: 7
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 6, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:09 - INFO - Invoking chain
+2024-09-30 22:32:10 - INFO - Successfully loaded 1 documents from: https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:32:10 - INFO - Docs: [Document(metadata={'source': 'https://www.geeksforgeeks.org/closure-properties-of-regular-languages/', 'title': 'Closure properties of Regular languages - GeeksforGeeks', 'description': 'A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.', 'language': 'en-US'}, page_content="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClosure properties of Regular languages - GeeksforGeeks\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSkip to content\n\n\n\n\n\n\n\n\n\nTutorialsPython TutorialTaking Input in PythonPython OperatorsPython Data TypesPython NumbersPython StringPython ListsPython TuplesSets in PythonPython DictionaryPython Loops and Control FlowPython Conditional StatementsPython LoopsPython FunctionsPython OOPS ConceptPython Data StructuresPython DSALinked ListStackQueueTreeHeapHashingGraphSetsMapAdvance Data StructureSorting AlgorithmsSearching AlgorithmsPython Exception HandlingPython File HandlingPython ExercisesPython List ExercisePython String ExercisePython Tuple ExercisePython Dictionary ExercisePython Set ExercisePython Design PatternsPython Programming ExamplesPython Practice QuestionsJavaJava Programming LanguageJava TutorialData TypesVariablesOperatorsFlow Control in JavaLoops in JavaMethodsStringsArraysOOPs ConceptsOOPs ConceptsClasses and ObjectsAccess ModifiersInheritanceAbstractionEncapsulationPolymorphismInterfacePackagesMultithreadingFile HandlingRegular ExpressionJava CollectionsJava CollectionsCollection ClassList InterfaceArrayListLinkedList ClassQueue InterfaceSet InterfaceHashSet ClassMap InterfaceHashMap ClassHashTable ClassIteratorComparatorCollection Interview QuestionsJava 8 TutorialJava ProgramsJava Programming ExamplesJava Array ProgramsJava String ProgramsJava Date-Time ProgramsJava File Handling ProgramsJava Collection ProgramsJava JDBC ProgramsJava Apache POI ProgramsJava OpenCV ProgramsJava Interview QuestionsJava Interview QuestionsCore Java Interview Questions-FreshersJava Multithreading Interview QuestionsOOPs Interview Questions and AnswersJava ExercisesJava QuizJava QuizCore Java MCQJava ProjectsAdvance JavaSpring TutorialSpring Boot TutorialSpring Boot Interview QuestionsSpring MVC TutorialSpring MVC Interview QuestionsHibernate TutorialHibernate Interview QuestionsProgramming LanguagesCC++JavaScriptPHPR TutorialC#SQLScalaPerlGo LanguageKotlinSystem DesignSystem Design TutorialWhat is System DesignKey Terminologies in System DesignAnalysis and Architecture of SystemsScalability in System DesignDatabases in System DesignHigh Level Design or HLDLow Level Design or LLDCase Studies in Designing SystemsComplete System Design TutorialSoftware Design PatternsSystem Design RoadmapTop 10 System Design Interview Questions and AnswersInterview CornerCompany PreparationTop TopicsPractice Company QuestionsInterview ExperiencesExperienced InterviewsInternship InterviewsCompetitive ProgrammingMultiple Choice QuizzesAptitude for PlacementsComputer Science SubjectsOperating SystemDBMSComputer NetworksEngineering MathematicsComputer Organization and ArchitectureTheory of ComputationCompiler DesignDigital LogicSoftware EngineeringDevOpsGITAWSDockerKubernetesMicrosoft Azure TutorialGoogle Cloud PlatformLinuxLinux TutorialLinux Commands A-ZLinux Commands CheatsheetFile Permission CommandsLinux System AdministrationLinux File SystemLinux Shell ScriptingLinux NetworkingLinux Interview QuestionsSoftware TestingSoftware Testing TutorialSoftware Engineering TutorialTesting Interview QuestionsJiraDatabasesDBMS TutorialSQL TutorialPostgreSQL TutorialMongoDB TutorialSQL Interview QuestionsMySQL Interview QuestionsPL/SQL Interview QuestionsAndroidAndroid TutorialAndroid Studio TutorialKotlin For AndroidAndroid ProjectsAndroid Interview Questions6 Weeks of Android App DevelopmentExcelMS Excel TutorialIntroduction to MS ExcelData Analysis in ExcelBasic Excel Formulas & FunctionsData Analysis in Advanced ExcelWorkbooksStatistical FunctionsData Visualization in ExcelPivot Tables in ExcelExcel Spreadsheets in PythonBasic Excel ShortcutsMathematicsNumber SystemAlgebraLinear AlgebraTrigonometrySet TheoryStatisticsProbabilityGeometryMensurationLogarithmsCalculusDSAData StructuresArraysMatrixStringsLinked ListSingly Linked ListDoubly Linked ListCircular Linked ListDoubly Circular Linked ListLinked List TutorialStackQueueTreeGeneric TreeBinary TreeBinary Search TreeAVL TreeB TreeB+ TreeRed Black TreeTree Data Structure TutorialHeapHashingGraphSet Data StructureMap Data StructureAdvanced Data StructureData Structures TutorialAlgorithmsAnalysis of AlgorithmsDesign and Analysis of AlgorithmsAsymptotic AnalysisAsymptotic NotationsWorst, Average and Best CasesSearching AlgorithmsLinear SearchBinary SearchSearching Algorithms TutorialSorting AlgorithmsSelection SortBubble SortInsertion SortMerge SortQuick SortHeap SortCounting SortRadix SortBucket SortSorting Algorithms TutorialGreedy AlgorithmsDynamic ProgrammingGraph AlgorithmsPattern SearchingRecursionBacktrackingDivide and ConquerMathematical AlgorithmsGeometric AlgorithmsBitwise AlgorithmsRandomized AlgorithmsBranch and BoundAlgorithms TutorialDSA TutorialPracticeAll DSA ProblemsProblem of the DayCompany Wise Coding PracticeAmazonMicrosoftFlipkartExplore AllGfG SDE SheetPractice Problems Difficulty WiseSchoolBasicEasyMediumHardLanguage Wise Coding PracticeCPPJavaPythonCurated DSA ListsBeginner's DSA SheetTop 50 Array ProblemsTop 50 String ProblemsTop 50 DP ProblemsTop 50 Graph ProblemsTop 50 Tree ProblemsCompetitive ProgrammingCompany Wise SDE SheetsFacebook SDE SheetAmazon SDE SheetApple SDE SheetNetflix SDE SheetGoogle SDE SheetDSA Cheat SheetsSDE SheetDSA Sheet for BeginnersFAANG Coding SheetProduct-Based Coding SheetCompany-Wise Preparation SheetTop Interview QuestionsPuzzlesAll PuzzlesTop 100 Puzzles Asked In InterviewsTop 20 Puzzles Commonly Asked During SDE InterviewsData SciencePython TutorialR TutorialMachine LearningData Science using PythonData Science using RData Science PackagesPandas TutorialNumPy TutorialData VisualizationPython Data Visualization TutorialData Visualization with RData AnalysisData Analysis with PythonData Analysis with RDeep LearningNLP TutorialWeb TechHTML TutorialCSS TutorialJavaScript TutorialPHP TutorialReactJS TutorialNodeJS TutorialAngularJS TutorialBootstrap TutorialTypescriptWeb Development Using PythonDjangoDjango TutorialDjango ProjectsDjango Interview QuestionsFlaskFlask TutorialFlask ProjectsFlask Interview QuestionsPostmanGithubWordpress TutorialWeb DesignCheat SheetsHTML Cheat SheetCSS Cheat SheetJavaScript Cheat SheetReact Cheat SheetAngular Cheat SheetjQuery Cheat SheetBootstrap Cheat SheetLearn Complete Web DevelopmentCoursesCoding for EveryoneDSA to DevelopmentMachine Learning & Data ScienceGenerative AI & ChatGPTBecome AWS CertifiedDSA CoursesData Structure & Algorithm(C++/JAVA)Data Structure & Algorithm(Python)Data Structure & Algorithm(JavaScript)Programming LanguagesCPPJavaPythonJavaScriptC\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAptitudeEngineering MathematicsDiscrete MathematicsOperating SystemDBMSComputer NetworksDigital Logic and DesignC ProgrammingData StructuresAlgorithmsTheory of ComputationCompiler DesignComputer Org and Architecture \n\n\n\n\n▲\n\n\n\n\n\n\n\n\n\n\n\n\nOpen In App\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClosure properties of Regular languages\n\n\nLast Updated : \n24 Nov, 2023\n\n\n\n \n\n\nSummarize\n\n\n\n\n\n\nComments\n\n\n\n\n\n\n\nImprove\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuggest changes\n\n\n \n\n\nLike Article\n\n\n\nLike\n\n\n\n\n\n\n\n\nSave\n\n\n\n\n\n\n\n\nShare\n\n\n\n\n\n\n\nReport\n\n\n\n\n\n\n\nFollow\n\n\n\n\n\nClosure properties on regular languages are defined as certain operations on regular language that are guaranteed to produce regular language. Closure refers to some operation on a language, resulting in a new language that is of the same “type” as originally operated on i.e., regular. Regular languages are closed under the following operations:\nConsider that L and M are regular languagesKleen Closure: RS is a regular expression whose language is L, M. R* is a regular expression whose language is L*.Positive closure: RS is a regular expression whose language is L, M.\xa0is a regular expression whose language is\xa0.Complement: The complement of a language L (with respect to an alphabet\xa0such that\xa0contains L) is\xa0–L. Since\xa0is surely regular, the complement of a regular language is always regular.Reverse Operator: Given language L,\xa0is the set of strings whose reversal is in L. Example: L = {0, 01, 100};\xa0={0, 10, 001}. Proof: Let E be a regular expression for L. We show how to reverse E, to provide a regular expression\xa0for\xa0.Union: Let L and M be the languages of regular expressions R and S, respectively.Then R+S is a regular expression whose language is(L U M).Intersection: Let L and M be the languages of regular expressions R and S, respectively then it a regular expression whose language is L intersection M. proof: Let A and B be DFA’s whose languages are L and M, respectively. Construct C, the product automaton of A and B make the final states of C be the pairs consisting of final states of both A and B.Set Difference operator: If L and M are regular languages, then so is L – M = strings in L but not M. Proof: Let A and B be DFA’s whose languages are L and M, respectively. Construct C, the product automaton of A and B make the final states of C be the pairs, where A-state is final but B-state is not.Homomorphism: A homomorphism on an alphabet is a function that gives a string for each symbol in that alphabet. Example: h(0) = ab; h(1) =\xa0. Extend to strings by h(a1…an) =h(a1)…h(an). Example: h(01010) = ababab. If L is a regular language, and h is a homomorphism on its alphabet, then h(L)= {h(w) | w is in L} is also a regular language. Proof: Let E be a regular expression for L. Apply h to each symbol in E. Language of resulting R, E is h(L).Inverse Homomorphism : Let h be a homomorphism and L a language whose alphabet is the output language of h.\xa0(L) = {w | h(w) is in L}.Note: There are few more properties like symmetric difference operator, prefix operator, substitution which are closed under closure properties of regular language. Decision Properties: Approximately all the properties are decidable in case of finite automaton.\n(i) Emptiness (ii) Non-emptiness (iii) Finiteness (iv) Infiniteness (v) Membership (vi) Equality  These are explained as following below. (i) Emptiness and Non-emptiness:\nStep-1: select the state that cannot be reached from the initial states & delete them (remove unreachable states).Step 2: if the resulting machine contains at least one final states, so then the finite automata accepts the non-empty language.Step 3: if the resulting machine is free from final state, then finite automata accepts empty language.Step-1: select the state that cannot be reached from the initial state & delete them (remove unreachable states).Step-2: select the state from which we cannot reach the final state & delete them (remove dead states).Step-3: if the resulting machine contains loops or cycles then the finite automata accepts infinite language.Step-4: if the resulting machine do not contain loops or cycles then the finite automata accepts finite language.Frequently Asked QuestionQ1. Are regular languages closed under difference?Answer:\nNo, regular languages are not closed under difference. If L1,L2 and L1-L2 may not necessarily be a regular language.\nQ2. How can closure properties be proven for regular languages?Answer:\nClosure properties for regular languages are often proven using constructions and properties of finite automata, regular expressions, or other equivalent representations. Mathematical proofs and induction are commonly employed in these demonstrations.\nQ3. Can closure properties be extended to non-regular languages?Answer:\nNo, closure properties like union, concatenation, and Kleene star are specific to regular languages. These properties do not necessarily hold for languages outside the class of regular languages.\n\n\n\n\n\n\n\n\n\nA\n\n\n\n\n \n\nanupriyasingh317 \n\n\n\n\n\n Follow \n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\nImprove\n\n\n\n\n\n  \n\nNext Article\n\n\n\n\nClosure Properties of Context Free Languages\n\n\n\n\n\n\nSimilar Reads\n\n\n\nRegular Expressions, Regular Grammar and Regular Languages\nAs discussed in Chomsky Hierarchy, Regular Languages are the most restricted types of languages and are accepted by finite automata. Regular Expressions Regular Expressions are used to denote regular languages. An expression is regular if: ? is a regular expression for regular language ?. ? is a regular expression for regular language {?}. If a ? ?\n\n\n\n7 min read\n\n\n\n\nClosure Properties of Context Free Languages\nContext Free Languages (CFLs) are accepted by pushdown automata. Context free languages can be generated by context free grammars, which have productions (substitution rules) of the form : A -> ? (where A ? N and ? ? (T ? N)* and N is a non-terminal and T is a terminal) Properties of Context Free Languages Union : If L1 and L2 are two context fr\n\n\n\n9 min read\n\n\n\n\nClosure properties Table in TOC\nThe Below Table shows the Closure Properties of Formal Languages : REG = Regular LanguageDCFL = deterministic context-free languages, CFL = context-free languages,CSL = context-sensitive languages,RC = Recursive.RE = Recursive Enumerable Consider L and M are regular languages : The Kleene star - ∑*, is a unary operator on a set of symbols or string\n\n\n\n3 min read\n\n\n\n\n\nTheory of Computation | Regular languages and finite automata | Question 2\nWhat is the complement of the language accepted by the NFA shown below? (A) A (B) B (C) C (D) D Answer: (B) Explanation: Quiz of this QuestionPlease comment below if you find anything wrong in the above post\n\n\n\n1 min read\n\n\n\n\nMathematical Proof that Regular Languages are Closed under Reversal\nA language is regular if it can be expressed in terms of regular expressions. The article focuses on discussing the mathematical proof of the fact that Regular Languages are closed under reversal. Regular Languages generally have three basic definitions: Regular Languages are those Languages that have a Regular Expression to represent them.Regular\n\n\n\n1 min read\n\n\n\n\nUnion and Intersection of Regular languages with CFL\nPrerequisite - Chomsky Hierarchy, Regular Languages As we all are aware that languages accepted by finite automata are called regular languages and those which are accepted by push down automata are called context free languages But, when it comes to the union or intersection of these two languages some people find it difficult to analyse whether t\n\n\n\n3 min read\n\n\n\n\nStar Height of Regular Expression and Regular Language\nThe star height relates to the field of theoretical of computation (TOC). It is used to indicate the structural complexity of regular expressions and regular languages. Here complexity, relates to the maximum nesting depth of Kleene stars present in a regular expression. It may be noted here that a regular language may be represented by regular exp\n\n\n\n6 min read\n\n\n\n\n\nRegular grammar (Model regular grammars )\nPrerequisites: Chomsky hierarchy Type-3 grammar/regular grammar: Regular grammar generates regular language. They have a single non-terminal on the left-hand side and a right-hand side consisting of a single terminal or single terminal followed by a non-terminal. The productions must be in the form: A ⇢ xB A ⇢ x A ⇢ Bx where A, B ∈ Variable(V) and\n\n\n\n5 min read\n\n\n\n\nVarious Properties of context free languages (CFL)\nContext-Free Language (CFL) is a language which is generated by a context-free grammar or Type 2 grammar(according to Chomsky classification) and gets accepted by a Pushdown Automata. Some very much important properties of a context-free language is: Regularity- context-free languages are Non-Regular PDA language. Closure properties : The context-f\n\n\n\n2 min read\n\n\n\n\nAttribute Closure Algorithm and its Utilization\nClosure of a set F of FDs is the set F+ of all FDs that can be inferred from F. It is also known as complete set of Functional Dependency. It is denoted by F+. Algorithm : Attribute Closure set Algorithm to compute a+, the closure of a under F Result:= a; while (changes to Result) do for each B → Y in F do Begin if B ⊆ Result then Result := Result\n\n\n\n4 min read\n\n\n\n\nEasiest way to find the closure set of attribute\nSet of all those attributes which can be functionally determined from an attribute set is called closure of the attribute set and the closure of the attribute set {X} is denoted as {X}+. We can only find candidate key and primary keys only with help of closure set of an attribute. So let see the easiest way to calculate the closure set of attribute\n\n\n\n2 min read\n\n\n\n\nFunctional Dependency and Attribute Closure\nFundamental ideas in database management and design are functional dependency and attribute closure. They are essential to maintaining data integrity and building effective, organized, and normalized databases. Functional DependencyA functional dependency A->B in a relation holds if two tuples having the same value of attribute A also have the s\n\n\n\n6 min read\n\n\n\n\nClosure of Relations\nClosure of Relations: In mathematics, especially in the context of set theory and algebra, the closure of relations is a crucial concept. It involves extending a given relation to include additional elements based on specific properties, such as reflexivity, symmetry, and transitivity. Understanding the closure of relations is essential in fields l\n\n\n\n7 min read\n\n\n\n\n\nProperties of Regular Expressions\nRegular expressions, often called regex or regexp, are a powerful tool used to search, match, and manipulate text. They are essentially patterns made up of characters and symbols that allow you to define a search pattern for text. In this article, we going to uncover the basic properties of regular expressions and their work character and how they\n\n\n\n7 min read\n\n\n\n\nPrinciple of programming languages | Set 1\nFollowing questions have been asked in GATE CS exam. 1.The most appropriate matching for the following pairs X: Indirect addressing 1: Loops Y: Immediate addressing 2: Pointers Z: Auto decrement addressing 3. Constants is (GATE CS 2000) (a) X—3 Y—2 Z—1 (b) X—1 Y—3 Z—2 (c) X—2 Y—3 Z—1 (d) X—3 Y—1 Z—2 Answer (c) Reference: http://en.wikipedia.org/wik\n\n\n\n4 min read\n\n\n\n\nConstruct Pushdown Automata for given languages\nPrerequisite - Pushdown Automata, Pushdown Automata Acceptance by Final State A push down automata is similar to deterministic finite automata except that it has a few more properties than a DFA.The data structure used for implementing a PDA is stack. A PDA has an output associated with every input. All the inputs are either pushed into a stack or\n\n\n\n4 min read\n\n\n\n\nRecursive and Recursive Enumerable Languages in TOC\nRecursive Enumerable (RE) or Type -0 Language RE languages or type-0 languages are generated by type-0 grammars. An RE language can be accepted or recognized by Turing machine which means it will enter into final state for the strings of language and may or may not enter into rejecting state for the strings which are not part of the language. It me\n\n\n\n5 min read\n\n\n\n\n\nAmbiguity in Context free Grammar and Context free Languages\nBefore reading this article, we recommend you to first read about Pushdown Automata and Context Free Languages. Suppose we have a context free grammar G with production rules : S -> aSb | bSa | SS | e Left Most Derivation (LMD) and Derivation Tree : Leftmost derivation of a string from starting symbol S is done by replacing leftmost non-terminal\n\n\n\n5 min read\n\n\n\n\nAmbiguity in Context free Grammar and Context free Languages\nPrerequisite - Pushdown Automata and Context Free Languages . Suppose we have a context free grammar G with production rules: S->aSb|bSa|SS|? Left most derivation (LMD) and Derivation Tree: Leftmost derivation of a string from starting symbol S is done by replacing leftmost non-terminal symbol by RHS of corresponding production rule. For example\n\n\n\n4 min read\n\n\n\n\nGenerating regular expression from Finite Automata\nPrerequisite - Introduction of FA, Regular expressions, grammar and language, Designing FA from Regular Expression There are two methods to convert FA to the regular expression: 1. State Elimination Method:Step 1 - If the start state is an accepting state or has transitions in, add a new non-accepting start state and add an €-transition between the\n\n\n\n3 min read\n\n\n\n\nHow to identify if a language is regular or not\nPrerequisite - Regular Expressions, Regular Grammar and Regular Languages, Pumping Lemma There is a well established theorem to identify if a language is regular or not, based on Pigeon Hole Principle, called as Pumping Lemma. But pumping lemma is a negativity test, i.e. if a language doesn't satisfy pumping lemma, then we can definitely say that i\n\n\n\n8 min read\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 6)\nPrerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 5) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = a(a+b)* The language of the given RE is, {aaa, aba, baa, bba} Strings\n\n\n\n3 min read\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 2)\nPrerequisite: Finite automata, Regular expressions, grammar and language. Designing finite automata from Regular expression In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Φ (Phi). The language of the given RE is L1 = {} i.e, empty string. Its finite automata will be\n\n\n\n3 min read\n\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 3)\nPrerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 2) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression. Regular Expression 1: 'ab*' ('a' followed by any number of 'b'). The language of the given RE is, L1 = {a, ab, abb\n\n\n\n3 min read\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 4)\nPrerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 3) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = (a+b)(a+b) The language of the given RE is, {aa, ab, ba, bb} Length o\n\n\n\n3 min read\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 5)\nPrerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 4) In the below article, we shall see some Designing of Non-deterministic Finite Automata form the given Regular Expression- As NFA can be changed to corresponding DFA. Regular Expression 1: Regular language, L1 = ((a+b)(\n\n\n\n3 min read\n\n\n\n\nRegular expression to ∈-NFA\nPrerequisite - Finite Automata Introduction, Designing Finite Automata from Regular Expression (Set 1) ∈-NFA is similar to the NFA but have minor difference by epsilon move. This automaton replaces the transition function with the one that allows the empty string ∈ as a possible input. The transitions without consuming an input symbol are called ∈-\n\n\n\n2 min read\n\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 7)\nPrerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 6) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = b*aa(a+b)*+b*ab*aa(a+b*) The language of the given RE is- {aaa, baa,\n\n\n\n3 min read\n\n\n\n\nDesigning Finite Automata from Regular Expression (Set 8)\nPrerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 7) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = {an | n≥ 1} The language of the given RE is- {a, aa, aaa, ........\n\n\n\n2 min read\n\n\n\n\nRegular Expression Vs Context Free Grammar\nRegular Expressions are capable of describing the syntax of Tokens. Any syntactic construct that can be described by Regular Expression can also be described by the Context free grammar. Regular Expression: (a|b)(a|b|01) Context-free grammar: S --> aA|bA A --> aA|bA|0A|1A|e *e denotes epsilon. The Context-free grammar form NFA for the Regular\n\n\n\n2 min read\n\n\n\n\n\n\nArticle Tags : \n\n\nComputer Subject\n\n\nGATE CS\n\n\nTheory of Computation\n \n\n\n\n\n\n\nLike\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  Please Login to comment...\n\n\n\n\n\n\n\n\n\n\n\nTrending in News\nView More\n\n\nTop 10 Google AdWords Agencies in 2024: Best for Google PPC ManagementTop Digital Marketing Agency in India for 2024: Best Picks for SEO, PPC, and eCommerceTop 20 Digital Marketing Agency in USABest Email Marketing Platforms in the USA for 2024: Top Picks for Small Businesses and Enterprises  GeeksforGeeks Practice - Leading Online Coding Platform\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\nExplore More\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n                     Corporate & Communications Address:- A-143, 9th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305) | Registered Address:- K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305                      \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCompanyAbout UsLegalIn MediaContact UsAdvertise with usGFG Corporate SolutionPlacement Training ProgramGeeksforGeeks CommunityLanguagesPythonJavaC++PHPGoLangSQLR LanguageAndroid TutorialTutorials ArchiveDSAData StructuresAlgorithmsDSA for BeginnersBasic DSA ProblemsDSA RoadmapTop 100 DSA Interview ProblemsDSA Roadmap by Sandeep JainAll Cheat SheetsData Science & MLData Science With PythonData Science For BeginnerMachine LearningML MathsData VisualisationPandasNumPyNLPDeep LearningWeb TechnologiesHTMLCSSJavaScriptTypeScriptReactJSNextJSBootstrapWeb DesignPython TutorialPython Programming ExamplesPython ProjectsPython TkinterWeb ScrapingOpenCV TutorialPython Interview QuestionDjangoComputer ScienceOperating SystemsComputer NetworkDatabase Management SystemSoftware EngineeringDigital Logic DesignEngineering MathsSoftware DevelopmentSoftware TestingDevOpsGitLinuxAWSDockerKubernetesAzureGCPDevOps RoadmapSystem DesignHigh Level DesignLow Level DesignUML DiagramsInterview GuideDesign PatternsOOADSystem Design BootcampInterview QuestionsInteview PreparationCompetitive ProgrammingTop DS or Algo for CPCompany-Wise Recruitment ProcessCompany-Wise PreparationAptitude PreparationPuzzlesSchool SubjectsMathematicsPhysicsChemistryBiologySocial ScienceEnglish GrammarCommerceWorld GKGeeksforGeeks VideosDSAPythonJavaC++Web DevelopmentData ScienceCS Subjects \n\n\n\n\n\n\n@GeeksforGeeks, Sanchhaya Education Private Limited, All rights reserved\n\n\n\n\n\n\n\n\n\n\r\n        We use cookies to ensure you have the best browsing experience on our website. By using our site, you\r\n        acknowledge that you have read and understood our\r\n        Cookie Policy &\r\n        Privacy Policy\n\n\r\n        Got It !\r\n    \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImprovement\n\n\n\n\n\nPlease go through our recently updated Improvement Guidelines before submitting any improvements.\nThis improvement is locked by another user right now. You can suggest the changes for now and it will be under 'My Suggestions' Tab on Write.\nYou will be notified via email once the article is available for improvement.\r\n                        Thank you for your valuable feedback!\r\n                    \n\nSuggest changes\n\n\n\nPlease go through our recently updated Improvement Guidelines before submitting any improvements.\n\n\nSuggest Changes\nHelp us improve. Share your suggestions to enhance the article. Contribute your expertise and make a difference in the GeeksforGeeks portal.\n\n\n\n\n\n\n\nCreate Improvement\nEnhance the article with your expertise. Contribute to the GeeksforGeeks community and help create better learning resources for all.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSuggest Changes\n\n\n\n\n\n\n\nmin 4 words, max CharLimit:2000\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCreate Improvement\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWhat kind of Experience do you want to share?\n\n\n\n\n\n\n\n\n\nInterview Experiences\n\n\n\n\n\n\n\nAdmission Experiences\n\n\n\n\n\n\n\nCareer Journeys\n\n\n\n\n\n\n\nWork Experiences\n\n\n\n\n\n\n\nCampus Experiences\n\n\n\n\n\n\n\nCompetitive Exam Experiences\n\n\n\n\n\n\n                        Can't choose a topic to write? click here for suggested topics\n                    \n\n\n\n                       Write and publish your own Article\n                    \n\n\n\n\n\n\n\n\n\n\n\n\n\n")] for https://www.geeksforgeeks.org/closure-properties-of-regular-languages/ using WebBaseLoader
+2024-09-30 22:32:10 - INFO - Document 1 (https://www.geeksforgeeks.org/closure-properties-of-regular-languages/) of 1
+2024-09-30 22:32:10 - INFO - Starting clean_files_chain
+2024-09-30 22:32:10 - INFO - Document: page_content='
 
-Review for Midterm #1
 
-- Instruction Cycle: Fetch, Decode, Execute
-- Von Neumann Bottleneck
-- History of Operating System:
-  - The First Generation – Vacuum Tubes
-  - The Second Generation – Transistors
-  - The Third Generation – Integrated Circuits (IC)
-  - The Fourth Generation – Very Large Scale Integration (VLSI)
-  - The Fifth Generation – Mobile Devices
 
-- Batch System
-- Time Sharing
-- Multiprogramming
-- Spooling
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park
 
-Review for Midterm #1
 
-- System Call
-- Operating System Structure:
-  - Monolithic
-  - Layered System
-  - Virtual Machine
-- Process Management:
-  - Process Models
-  - Process Creation
-  - Process Termination
-  - Process State
-  - Process Implementation
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park
 
-Review for Midterm #1
 
-- Concept of Threads
-- Thread Implementation:
-  - User Level Thread
-  - Kernel Level Thread
-- Multithreading Model:
-  - Many-to-One
-  - One-to-One
-  - Many-to-Many
-- The Threading Issues:
-  - Issues with fork(), exec()
-  - Signal Handling
-  - Thread Termination
-  - Thread Local Storage
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park
 
-Review for Midterm #1
 
-- Inter-Process Communication:
-  - Race Condition
-  - Mutual Exclusion Solutions with Busy Waiting:
-    - Disabling Interrupt
-    - Lock Variable
-    - Strict Alternation
-    - Peterson’s Solution
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park
 
-Review for Midterm #1
 
-- Mutual Exclusion with Busy Waiting:
-  - Test and Set Lock
-  - Priority Inversion Problem with Busy Waiting
-- Mutual Exclusion with Sleep and Wakeup:
-  - The Producer-Consumer Problem
-  - Race Condition in Producer-Consumer Problem
-  - Semaphore
-  - The Producer-Consumer Problem with Semaphore
-  - Mutexes
-  - Monitor
-  - Message Passing
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park
 
-Review for Midterm #1
 
-- Process Scheduling:
-  - Schedulers:
-    - Long Term
-    - Short Term
-    - Memory
-  - Scheduling Algorithms:
-    - Shortest Job First
-    - Shortest Remaining Time: Preemptive, Non-Preemptive
-    - Round Robin
-    - Priority Queue: Preemptive, Non-Preemptive
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park3/26/2024
 
-Review for Midterm #1
 
-Memory Management
-- With Mono-Process
-- With Multi-Processes
-  - Multi-process with Fixed partition
-  - Multi-process with Variable partition
-- Modeling Multiprogramming: Probabilistic model
-- Swapping
-- Memory Management with Bitmap
-- Memory Management with Free-List
-  - Memory allocation with Free-List
-    - First fit
-    - Next fit
-    - Best fit
-    - Worst fit
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon Park
 
-Review for Midterm #1
 
-Virtual Memory with Paging
-- Page tables
-- Page Table with Hardware Support
-  - Translation Look-Aside Buffer
-- Page Table Structure
-  - Multilevel Page Table
-  - Hashed Page Table
-  - Inverted Page Table
 
-COSC450 Operating System, Spring 2024
-Dr. Sang-Eon ParkThe document discusses the differences between user-level threads and kernel-level threads. User-level threads are managed by a user-level library, while kernel-level threads are managed by the operating system. User-level threads are generally faster and require less overhead, but they may not take full advantage of multi-core processors. In contrast, kernel-level threads can utilize multiple processors, but they incur more overhead due to system calls. Understanding these differences is important for optimizing performance in concurrent programming.
-2024-09-30 15:41:21,036 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
-2024-09-30 15:41:21,039 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
-2024-09-30 15:41:34,656 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-30 15:41:39,174 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-30 15:42:09,381 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
-2024-09-30 15:42:09,654 - INFO - Deleted temp file: /var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpu9r0cs92
-2024-09-30 15:42:09,654 - INFO - Test generated successfully
+
+
+
+
+
+
+Closure properties of Regular languages - GeeksforGeeks
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Skip to content
+
+
+
+
+
+
+
+
+
+TutorialsPython TutorialTaking Input in PythonPython OperatorsPython Data TypesPython NumbersPython StringPython ListsPython TuplesSets in PythonPython DictionaryPython Loops and Control FlowPython Conditional StatementsPython LoopsPython FunctionsPython OOPS ConceptPython Data StructuresPython DSALinked ListStackQueueTreeHeapHashingGraphSetsMapAdvance Data StructureSorting AlgorithmsSearching AlgorithmsPython Exception HandlingPython File HandlingPython ExercisesPython List ExercisePython String ExercisePython Tuple ExercisePython Dictionary ExercisePython Set ExercisePython Design PatternsPython Programming ExamplesPython Practice QuestionsJavaJava Programming LanguageJava TutorialData TypesVariablesOperatorsFlow Control in JavaLoops in JavaMethodsStringsArraysOOPs ConceptsOOPs ConceptsClasses and ObjectsAccess ModifiersInheritanceAbstractionEncapsulationPolymorphismInterfacePackagesMultithreadingFile HandlingRegular ExpressionJava CollectionsJava CollectionsCollection ClassList InterfaceArrayListLinkedList ClassQueue InterfaceSet InterfaceHashSet ClassMap InterfaceHashMap ClassHashTable ClassIteratorComparatorCollection Interview QuestionsJava 8 TutorialJava ProgramsJava Programming ExamplesJava Array ProgramsJava String ProgramsJava Date-Time ProgramsJava File Handling ProgramsJava Collection ProgramsJava JDBC ProgramsJava Apache POI ProgramsJava OpenCV ProgramsJava Interview QuestionsJava Interview QuestionsCore Java Interview Questions-FreshersJava Multithreading Interview QuestionsOOPs Interview Questions and AnswersJava ExercisesJava QuizJava QuizCore Java MCQJava ProjectsAdvance JavaSpring TutorialSpring Boot TutorialSpring Boot Interview QuestionsSpring MVC TutorialSpring MVC Interview QuestionsHibernate TutorialHibernate Interview QuestionsProgramming LanguagesCC++JavaScriptPHPR TutorialC#SQLScalaPerlGo LanguageKotlinSystem DesignSystem Design TutorialWhat is System DesignKey Terminologies in System DesignAnalysis and Architecture of SystemsScalability in System DesignDatabases in System DesignHigh Level Design or HLDLow Level Design or LLDCase Studies in Designing SystemsComplete System Design TutorialSoftware Design PatternsSystem Design RoadmapTop 10 System Design Interview Questions and AnswersInterview CornerCompany PreparationTop TopicsPractice Company QuestionsInterview ExperiencesExperienced InterviewsInternship InterviewsCompetitive ProgrammingMultiple Choice QuizzesAptitude for PlacementsComputer Science SubjectsOperating SystemDBMSComputer NetworksEngineering MathematicsComputer Organization and ArchitectureTheory of ComputationCompiler DesignDigital LogicSoftware EngineeringDevOpsGITAWSDockerKubernetesMicrosoft Azure TutorialGoogle Cloud PlatformLinuxLinux TutorialLinux Commands A-ZLinux Commands CheatsheetFile Permission CommandsLinux System AdministrationLinux File SystemLinux Shell ScriptingLinux NetworkingLinux Interview QuestionsSoftware TestingSoftware Testing TutorialSoftware Engineering TutorialTesting Interview QuestionsJiraDatabasesDBMS TutorialSQL TutorialPostgreSQL TutorialMongoDB TutorialSQL Interview QuestionsMySQL Interview QuestionsPL/SQL Interview QuestionsAndroidAndroid TutorialAndroid Studio TutorialKotlin For AndroidAndroid ProjectsAndroid Interview Questions6 Weeks of Android App DevelopmentExcelMS Excel TutorialIntroduction to MS ExcelData Analysis in ExcelBasic Excel Formulas & FunctionsData Analysis in Advanced ExcelWorkbooksStatistical FunctionsData Visualization in ExcelPivot Tables in ExcelExcel Spreadsheets in PythonBasic Excel ShortcutsMathematicsNumber SystemAlgebraLinear AlgebraTrigonometrySet TheoryStatisticsProbabilityGeometryMensurationLogarithmsCalculusDSAData StructuresArraysMatrixStringsLinked ListSingly Linked ListDoubly Linked ListCircular Linked ListDoubly Circular Linked ListLinked List TutorialStackQueueTreeGeneric TreeBinary TreeBinary Search TreeAVL TreeB TreeB+ TreeRed Black TreeTree Data Structure TutorialHeapHashingGraphSet Data StructureMap Data StructureAdvanced Data StructureData Structures TutorialAlgorithmsAnalysis of AlgorithmsDesign and Analysis of AlgorithmsAsymptotic AnalysisAsymptotic NotationsWorst, Average and Best CasesSearching AlgorithmsLinear SearchBinary SearchSearching Algorithms TutorialSorting AlgorithmsSelection SortBubble SortInsertion SortMerge SortQuick SortHeap SortCounting SortRadix SortBucket SortSorting Algorithms TutorialGreedy AlgorithmsDynamic ProgrammingGraph AlgorithmsPattern SearchingRecursionBacktrackingDivide and ConquerMathematical AlgorithmsGeometric AlgorithmsBitwise AlgorithmsRandomized AlgorithmsBranch and BoundAlgorithms TutorialDSA TutorialPracticeAll DSA ProblemsProblem of the DayCompany Wise Coding PracticeAmazonMicrosoftFlipkartExplore AllGfG SDE SheetPractice Problems Difficulty WiseSchoolBasicEasyMediumHardLanguage Wise Coding PracticeCPPJavaPythonCurated DSA ListsBeginner's DSA SheetTop 50 Array ProblemsTop 50 String ProblemsTop 50 DP ProblemsTop 50 Graph ProblemsTop 50 Tree ProblemsCompetitive ProgrammingCompany Wise SDE SheetsFacebook SDE SheetAmazon SDE SheetApple SDE SheetNetflix SDE SheetGoogle SDE SheetDSA Cheat SheetsSDE SheetDSA Sheet for BeginnersFAANG Coding SheetProduct-Based Coding SheetCompany-Wise Preparation SheetTop Interview QuestionsPuzzlesAll PuzzlesTop 100 Puzzles Asked In InterviewsTop 20 Puzzles Commonly Asked During SDE InterviewsData SciencePython TutorialR TutorialMachine LearningData Science using PythonData Science using RData Science PackagesPandas TutorialNumPy TutorialData VisualizationPython Data Visualization TutorialData Visualization with RData AnalysisData Analysis with PythonData Analysis with RDeep LearningNLP TutorialWeb TechHTML TutorialCSS TutorialJavaScript TutorialPHP TutorialReactJS TutorialNodeJS TutorialAngularJS TutorialBootstrap TutorialTypescriptWeb Development Using PythonDjangoDjango TutorialDjango ProjectsDjango Interview QuestionsFlaskFlask TutorialFlask ProjectsFlask Interview QuestionsPostmanGithubWordpress TutorialWeb DesignCheat SheetsHTML Cheat SheetCSS Cheat SheetJavaScript Cheat SheetReact Cheat SheetAngular Cheat SheetjQuery Cheat SheetBootstrap Cheat SheetLearn Complete Web DevelopmentCoursesCoding for EveryoneDSA to DevelopmentMachine Learning & Data ScienceGenerative AI & ChatGPTBecome AWS CertifiedDSA CoursesData Structure & Algorithm(C++/JAVA)Data Structure & Algorithm(Python)Data Structure & Algorithm(JavaScript)Programming LanguagesCPPJavaPythonJavaScriptC
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AptitudeEngineering MathematicsDiscrete MathematicsOperating SystemDBMSComputer NetworksDigital Logic and DesignC ProgrammingData StructuresAlgorithmsTheory of ComputationCompiler DesignComputer Org and Architecture 
+
+
+
+
+▲
+
+
+
+
+
+
+
+
+
+
+
+
+Open In App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Closure properties of Regular languages
+
+
+Last Updated : 
+24 Nov, 2023
+
+
+
+ 
+
+
+Summarize
+
+
+
+
+
+
+Comments
+
+
+
+
+
+
+
+Improve
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Suggest changes
+
+
+ 
+
+
+Like Article
+
+
+
+Like
+
+
+
+
+
+
+
+
+Save
+
+
+
+
+
+
+
+
+Share
+
+
+
+
+
+
+
+Report
+
+
+
+
+
+
+
+Follow
+
+
+
+
+
+Closure properties on regular languages are defined as certain operations on regular language that are guaranteed to produce regular language. Closure refers to some operation on a language, resulting in a new language that is of the same “type” as originally operated on i.e., regular. Regular languages are closed under the following operations:
+Consider that L and M are regular languagesKleen Closure: RS is a regular expression whose language is L, M. R* is a regular expression whose language is L*.Positive closure: RS is a regular expression whose language is L, M. is a regular expression whose language is .Complement: The complement of a language L (with respect to an alphabet such that contains L) is –L. Since is surely regular, the complement of a regular language is always regular.Reverse Operator: Given language L, is the set of strings whose reversal is in L. Example: L = {0, 01, 100}; ={0, 10, 001}. Proof: Let E be a regular expression for L. We show how to reverse E, to provide a regular expression for .Union: Let L and M be the languages of regular expressions R and S, respectively.Then R+S is a regular expression whose language is(L U M).Intersection: Let L and M be the languages of regular expressions R and S, respectively then it a regular expression whose language is L intersection M. proof: Let A and B be DFA’s whose languages are L and M, respectively. Construct C, the product automaton of A and B make the final states of C be the pairs consisting of final states of both A and B.Set Difference operator: If L and M are regular languages, then so is L – M = strings in L but not M. Proof: Let A and B be DFA’s whose languages are L and M, respectively. Construct C, the product automaton of A and B make the final states of C be the pairs, where A-state is final but B-state is not.Homomorphism: A homomorphism on an alphabet is a function that gives a string for each symbol in that alphabet. Example: h(0) = ab; h(1) = . Extend to strings by h(a1…an) =h(a1)…h(an). Example: h(01010) = ababab. If L is a regular language, and h is a homomorphism on its alphabet, then h(L)= {h(w) | w is in L} is also a regular language. Proof: Let E be a regular expression for L. Apply h to each symbol in E. Language of resulting R, E is h(L).Inverse Homomorphism : Let h be a homomorphism and L a language whose alphabet is the output language of h. (L) = {w | h(w) is in L}.Note: There are few more properties like symmetric difference operator, prefix operator, substitution which are closed under closure properties of regular language. Decision Properties: Approximately all the properties are decidable in case of finite automaton.
+(i) Emptiness (ii) Non-emptiness (iii) Finiteness (iv) Infiniteness (v) Membership (vi) Equality  These are explained as following below. (i) Emptiness and Non-emptiness:
+Step-1: select the state that cannot be reached from the initial states & delete them (remove unreachable states).Step 2: if the resulting machine contains at least one final states, so then the finite automata accepts the non-empty language.Step 3: if the resulting machine is free from final state, then finite automata accepts empty language.Step-1: select the state that cannot be reached from the initial state & delete them (remove unreachable states).Step-2: select the state from which we cannot reach the final state & delete them (remove dead states).Step-3: if the resulting machine contains loops or cycles then the finite automata accepts infinite language.Step-4: if the resulting machine do not contain loops or cycles then the finite automata accepts finite language.Frequently Asked QuestionQ1. Are regular languages closed under difference?Answer:
+No, regular languages are not closed under difference. If L1,L2 and L1-L2 may not necessarily be a regular language.
+Q2. How can closure properties be proven for regular languages?Answer:
+Closure properties for regular languages are often proven using constructions and properties of finite automata, regular expressions, or other equivalent representations. Mathematical proofs and induction are commonly employed in these demonstrations.
+Q3. Can closure properties be extended to non-regular languages?Answer:
+No, closure properties like union, concatenation, and Kleene star are specific to regular languages. These properties do not necessarily hold for languages outside the class of regular languages.
+
+
+
+
+
+
+
+
+
+A
+
+
+
+
+ 
+
+anupriyasingh317 
+
+
+
+
+
+ Follow 
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+Improve
+
+
+
+
+
+  
+
+Next Article
+
+
+
+
+Closure Properties of Context Free Languages
+
+
+
+
+
+
+Similar Reads
+
+
+
+Regular Expressions, Regular Grammar and Regular Languages
+As discussed in Chomsky Hierarchy, Regular Languages are the most restricted types of languages and are accepted by finite automata. Regular Expressions Regular Expressions are used to denote regular languages. An expression is regular if: ? is a regular expression for regular language ?. ? is a regular expression for regular language {?}. If a ? ?
+
+
+
+7 min read
+
+
+
+
+Closure Properties of Context Free Languages
+Context Free Languages (CFLs) are accepted by pushdown automata. Context free languages can be generated by context free grammars, which have productions (substitution rules) of the form : A -> ? (where A ? N and ? ? (T ? N)* and N is a non-terminal and T is a terminal) Properties of Context Free Languages Union : If L1 and L2 are two context fr
+
+
+
+9 min read
+
+
+
+
+Closure properties Table in TOC
+The Below Table shows the Closure Properties of Formal Languages : REG = Regular LanguageDCFL = deterministic context-free languages, CFL = context-free languages,CSL = context-sensitive languages,RC = Recursive.RE = Recursive Enumerable Consider L and M are regular languages : The Kleene star - ∑*, is a unary operator on a set of symbols or string
+
+
+
+3 min read
+
+
+
+
+
+Theory of Computation | Regular languages and finite automata | Question 2
+What is the complement of the language accepted by the NFA shown below? (A) A (B) B (C) C (D) D Answer: (B) Explanation: Quiz of this QuestionPlease comment below if you find anything wrong in the above post
+
+
+
+1 min read
+
+
+
+
+Mathematical Proof that Regular Languages are Closed under Reversal
+A language is regular if it can be expressed in terms of regular expressions. The article focuses on discussing the mathematical proof of the fact that Regular Languages are closed under reversal. Regular Languages generally have three basic definitions: Regular Languages are those Languages that have a Regular Expression to represent them.Regular
+
+
+
+1 min read
+
+
+
+
+Union and Intersection of Regular languages with CFL
+Prerequisite - Chomsky Hierarchy, Regular Languages As we all are aware that languages accepted by finite automata are called regular languages and those which are accepted by push down automata are called context free languages But, when it comes to the union or intersection of these two languages some people find it difficult to analyse whether t
+
+
+
+3 min read
+
+
+
+
+Star Height of Regular Expression and Regular Language
+The star height relates to the field of theoretical of computation (TOC). It is used to indicate the structural complexity of regular expressions and regular languages. Here complexity, relates to the maximum nesting depth of Kleene stars present in a regular expression. It may be noted here that a regular language may be represented by regular exp
+
+
+
+6 min read
+
+
+
+
+
+Regular grammar (Model regular grammars )
+Prerequisites: Chomsky hierarchy Type-3 grammar/regular grammar: Regular grammar generates regular language. They have a single non-terminal on the left-hand side and a right-hand side consisting of a single terminal or single terminal followed by a non-terminal. The productions must be in the form: A ⇢ xB A ⇢ x A ⇢ Bx where A, B ∈ Variable(V) and
+
+
+
+5 min read
+
+
+
+
+Various Properties of context free languages (CFL)
+Context-Free Language (CFL) is a language which is generated by a context-free grammar or Type 2 grammar(according to Chomsky classification) and gets accepted by a Pushdown Automata. Some very much important properties of a context-free language is: Regularity- context-free languages are Non-Regular PDA language. Closure properties : The context-f
+
+
+
+2 min read
+
+
+
+
+Attribute Closure Algorithm and its Utilization
+Closure of a set F of FDs is the set F+ of all FDs that can be inferred from F. It is also known as complete set of Functional Dependency. It is denoted by F+. Algorithm : Attribute Closure set Algorithm to compute a+, the closure of a under F Result:= a; while (changes to Result) do for each B → Y in F do Begin if B ⊆ Result then Result := Result
+
+
+
+4 min read
+
+
+
+
+Easiest way to find the closure set of attribute
+Set of all those attributes which can be functionally determined from an attribute set is called closure of the attribute set and the closure of the attribute set {X} is denoted as {X}+. We can only find candidate key and primary keys only with help of closure set of an attribute. So let see the easiest way to calculate the closure set of attribute
+
+
+
+2 min read
+
+
+
+
+Functional Dependency and Attribute Closure
+Fundamental ideas in database management and design are functional dependency and attribute closure. They are essential to maintaining data integrity and building effective, organized, and normalized databases. Functional DependencyA functional dependency A->B in a relation holds if two tuples having the same value of attribute A also have the s
+
+
+
+6 min read
+
+
+
+
+Closure of Relations
+Closure of Relations: In mathematics, especially in the context of set theory and algebra, the closure of relations is a crucial concept. It involves extending a given relation to include additional elements based on specific properties, such as reflexivity, symmetry, and transitivity. Understanding the closure of relations is essential in fields l
+
+
+
+7 min read
+
+
+
+
+
+Properties of Regular Expressions
+Regular expressions, often called regex or regexp, are a powerful tool used to search, match, and manipulate text. They are essentially patterns made up of characters and symbols that allow you to define a search pattern for text. In this article, we going to uncover the basic properties of regular expressions and their work character and how they
+
+
+
+7 min read
+
+
+
+
+Principle of programming languages | Set 1
+Following questions have been asked in GATE CS exam. 1.The most appropriate matching for the following pairs X: Indirect addressing 1: Loops Y: Immediate addressing 2: Pointers Z: Auto decrement addressing 3. Constants is (GATE CS 2000) (a) X—3 Y—2 Z—1 (b) X—1 Y—3 Z—2 (c) X—2 Y—3 Z—1 (d) X—3 Y—1 Z—2 Answer (c) Reference: http://en.wikipedia.org/wik
+
+
+
+4 min read
+
+
+
+
+Construct Pushdown Automata for given languages
+Prerequisite - Pushdown Automata, Pushdown Automata Acceptance by Final State A push down automata is similar to deterministic finite automata except that it has a few more properties than a DFA.The data structure used for implementing a PDA is stack. A PDA has an output associated with every input. All the inputs are either pushed into a stack or
+
+
+
+4 min read
+
+
+
+
+Recursive and Recursive Enumerable Languages in TOC
+Recursive Enumerable (RE) or Type -0 Language RE languages or type-0 languages are generated by type-0 grammars. An RE language can be accepted or recognized by Turing machine which means it will enter into final state for the strings of language and may or may not enter into rejecting state for the strings which are not part of the language. It me
+
+
+
+5 min read
+
+
+
+
+
+Ambiguity in Context free Grammar and Context free Languages
+Before reading this article, we recommend you to first read about Pushdown Automata and Context Free Languages. Suppose we have a context free grammar G with production rules : S -> aSb | bSa | SS | e Left Most Derivation (LMD) and Derivation Tree : Leftmost derivation of a string from starting symbol S is done by replacing leftmost non-terminal
+
+
+
+5 min read
+
+
+
+
+Ambiguity in Context free Grammar and Context free Languages
+Prerequisite - Pushdown Automata and Context Free Languages . Suppose we have a context free grammar G with production rules: S->aSb|bSa|SS|? Left most derivation (LMD) and Derivation Tree: Leftmost derivation of a string from starting symbol S is done by replacing leftmost non-terminal symbol by RHS of corresponding production rule. For example
+
+
+
+4 min read
+
+
+
+
+Generating regular expression from Finite Automata
+Prerequisite - Introduction of FA, Regular expressions, grammar and language, Designing FA from Regular Expression There are two methods to convert FA to the regular expression: 1. State Elimination Method:Step 1 - If the start state is an accepting state or has transitions in, add a new non-accepting start state and add an €-transition between the
+
+
+
+3 min read
+
+
+
+
+How to identify if a language is regular or not
+Prerequisite - Regular Expressions, Regular Grammar and Regular Languages, Pumping Lemma There is a well established theorem to identify if a language is regular or not, based on Pigeon Hole Principle, called as Pumping Lemma. But pumping lemma is a negativity test, i.e. if a language doesn't satisfy pumping lemma, then we can definitely say that i
+
+
+
+8 min read
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 6)
+Prerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 5) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = a(a+b)* The language of the given RE is, {aaa, aba, baa, bba} Strings
+
+
+
+3 min read
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 2)
+Prerequisite: Finite automata, Regular expressions, grammar and language. Designing finite automata from Regular expression In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Φ (Phi). The language of the given RE is L1 = {} i.e, empty string. Its finite automata will be
+
+
+
+3 min read
+
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 3)
+Prerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 2) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression. Regular Expression 1: 'ab*' ('a' followed by any number of 'b'). The language of the given RE is, L1 = {a, ab, abb
+
+
+
+3 min read
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 4)
+Prerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 3) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = (a+b)(a+b) The language of the given RE is, {aa, ab, ba, bb} Length o
+
+
+
+3 min read
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 5)
+Prerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 4) In the below article, we shall see some Designing of Non-deterministic Finite Automata form the given Regular Expression- As NFA can be changed to corresponding DFA. Regular Expression 1: Regular language, L1 = ((a+b)(
+
+
+
+3 min read
+
+
+
+
+Regular expression to ∈-NFA
+Prerequisite - Finite Automata Introduction, Designing Finite Automata from Regular Expression (Set 1) ∈-NFA is similar to the NFA but have minor difference by epsilon move. This automaton replaces the transition function with the one that allows the empty string ∈ as a possible input. The transitions without consuming an input symbol are called ∈-
+
+
+
+2 min read
+
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 7)
+Prerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 6) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = b*aa(a+b)*+b*ab*aa(a+b*) The language of the given RE is- {aaa, baa,
+
+
+
+3 min read
+
+
+
+
+Designing Finite Automata from Regular Expression (Set 8)
+Prerequisite: Finite automata, Regular expressions, grammar and language, Designing finite automata from Regular expression (Set 7) In the below article, we shall see some Designing of Finite Automata form the given Regular Expression- Regular Expression 1: Regular language, L1 = {an | n≥ 1} The language of the given RE is- {a, aa, aaa, ........
+
+
+
+2 min read
+
+
+
+
+Regular Expression Vs Context Free Grammar
+Regular Expressions are capable of describing the syntax of Tokens. Any syntactic construct that can be described by Regular Expression can also be described by the Context free grammar. Regular Expression: (a|b)(a|b|01) Context-free grammar: S --> aA|bA A --> aA|bA|0A|1A|e *e denotes epsilon. The Context-free grammar form NFA for the Regular
+
+
+
+2 min read
+
+
+
+
+
+
+Article Tags : 
+
+
+Computer Subject
+
+
+GATE CS
+
+
+Theory of Computation
+ 
+
+
+
+
+
+
+Like
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  Please Login to comment...
+
+
+
+
+
+
+
+
+
+
+
+Trending in News
+View More
+
+
+Top 10 Google AdWords Agencies in 2024: Best for Google PPC ManagementTop Digital Marketing Agency in India for 2024: Best Picks for SEO, PPC, and eCommerceTop 20 Digital Marketing Agency in USABest Email Marketing Platforms in the USA for 2024: Top Picks for Small Businesses and Enterprises  GeeksforGeeks Practice - Leading Online Coding Platform
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+Explore More
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                     Corporate & Communications Address:- A-143, 9th Floor, Sovereign Corporate Tower, Sector- 136, Noida, Uttar Pradesh (201305) | Registered Address:- K 061, Tower K, Gulshan Vivante Apartment, Sector 137, Noida, Gautam Buddh Nagar, Uttar Pradesh, 201305                      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CompanyAbout UsLegalIn MediaContact UsAdvertise with usGFG Corporate SolutionPlacement Training ProgramGeeksforGeeks CommunityLanguagesPythonJavaC++PHPGoLangSQLR LanguageAndroid TutorialTutorials ArchiveDSAData StructuresAlgorithmsDSA for BeginnersBasic DSA ProblemsDSA RoadmapTop 100 DSA Interview ProblemsDSA Roadmap by Sandeep JainAll Cheat SheetsData Science & MLData Science With PythonData Science For BeginnerMachine LearningML MathsData VisualisationPandasNumPyNLPDeep LearningWeb TechnologiesHTMLCSSJavaScriptTypeScriptReactJSNextJSBootstrapWeb DesignPython TutorialPython Programming ExamplesPython ProjectsPython TkinterWeb ScrapingOpenCV TutorialPython Interview QuestionDjangoComputer ScienceOperating SystemsComputer NetworkDatabase Management SystemSoftware EngineeringDigital Logic DesignEngineering MathsSoftware DevelopmentSoftware TestingDevOpsGitLinuxAWSDockerKubernetesAzureGCPDevOps RoadmapSystem DesignHigh Level DesignLow Level DesignUML DiagramsInterview GuideDesign PatternsOOADSystem Design BootcampInterview QuestionsInteview PreparationCompetitive ProgrammingTop DS or Algo for CPCompany-Wise Recruitment ProcessCompany-Wise PreparationAptitude PreparationPuzzlesSchool SubjectsMathematicsPhysicsChemistryBiologySocial ScienceEnglish GrammarCommerceWorld GKGeeksforGeeks VideosDSAPythonJavaC++Web DevelopmentData ScienceCS Subjects 
+
+
+
+
+
+
+@GeeksforGeeks, Sanchhaya Education Private Limited, All rights reserved
+
+
+
+
+
+
+
+
+
+
+        We use cookies to ensure you have the best browsing experience on our website. By using our site, you
+        acknowledge that you have read and understood our
+        Cookie Policy &
+        Privacy Policy
+
+
+        Got It !
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Improvement
+
+
+
+
+
+Please go through our recently updated Improvement Guidelines before submitting any improvements.
+This improvement is locked by another user right now. You can suggest the changes for now and it will be under 'My Suggestions' Tab on Write.
+You will be notified via email once the article is available for improvement.
+                        Thank you for your valuable feedback!
+                    
+
+Suggest changes
+
+
+
+Please go through our recently updated Improvement Guidelines before submitting any improvements.
+
+
+Suggest Changes
+Help us improve. Share your suggestions to enhance the article. Contribute your expertise and make a difference in the GeeksforGeeks portal.
+
+
+
+
+
+
+
+Create Improvement
+Enhance the article with your expertise. Contribute to the GeeksforGeeks community and help create better learning resources for all.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Suggest Changes
+
+
+
+
+
+
+
+min 4 words, max CharLimit:2000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create Improvement
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+What kind of Experience do you want to share?
+
+
+
+
+
+
+
+
+
+Interview Experiences
+
+
+
+
+
+
+
+Admission Experiences
+
+
+
+
+
+
+
+Career Journeys
+
+
+
+
+
+
+
+Work Experiences
+
+
+
+
+
+
+
+Campus Experiences
+
+
+
+
+
+
+
+Competitive Exam Experiences
+
+
+
+
+
+
+                        Can't choose a topic to write? click here for suggested topics
+                    
+
+
+
+                       Write and publish your own Article
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+' metadata={'source': 'https://www.geeksforgeeks.org/closure-properties-of-regular-languages/', 'title': 'Closure properties of Regular languages - GeeksforGeeks', 'description': 'A Computer Science portal for geeks. It contains well written, well thought and well explained computer science and programming articles, quizzes and practice/competitive programming/company interview Questions.', 'language': 'en-US'}
+2024-09-30 22:32:10 - INFO - Invoking chain
+2024-09-30 22:32:12 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:12 - INFO - Response: {'cleaned_content': 'Product Construction for Intersection\nEach state in the product is a pair of states from the original machines.\nFormally, if L1 is accepted by DFA M1 with 5-tuple (Q1, Σ, q1, T1, δ1) and L2 is accepted by DFA M2 with 5-tuple (Q2, Σ, q2, T2, δ2), then L1 ∩ L2 is accepted by the DFA (Q1 × Q2, Σ, (q1, q2), T1 × T2, δ) where δ((r, s), x) = (δ1(r, x), δ2(s, x)).'}
+2024-09-30 22:32:12 - INFO - Finished clean_files_chain
+2024-09-30 22:32:12 - INFO - Successfully cleaned document 7 from 4a.pdf
+2024-09-30 22:32:12 - INFO - Document 8 (4a.pdf) of 10
+2024-09-30 22:32:12 - INFO - Starting clean_files_chain
+2024-09-30 22:32:12 - INFO - Document: page_content='Example: Even 0’s and 1’s
+Suppose L1 is the binary strings with an even
+number of 0’s, and L2 the binary strings with
+an even number of 1’s. Then the FAs for these
+languages both have two states:
+A
+B
+1
+0
+0
+1
+X
+Y
+0
+1
+1
+0
+And so the FA for L1 ∩L2 has four states:
+Goddard 4a: 8
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 7, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:12 - INFO - Invoking chain
+2024-09-30 22:32:15 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:15 - INFO - Response: {'cleaned_content': 'Example: Even 0’s and 1’s\nSuppose L1 is the set of binary strings with an even number of 0’s, and L2 is the set of binary strings with an even number of 1’s. The finite automata (FAs) for these languages both have two states:\n\nStates: A, B\nTransitions:\n- From A:\n  - On input 1, stay in A\n  - On input 0, go to B\n- From B:\n  - On input 1, go to A\n  - On input 0, stay in B\n\nThus, the finite automata for the intersection L1 ∩ L2 has four states.'}
+2024-09-30 22:32:15 - INFO - Finished clean_files_chain
+2024-09-30 22:32:15 - INFO - Successfully cleaned document 8 from 4a.pdf
+2024-09-30 22:32:15 - INFO - Document 9 (4a.pdf) of 10
+2024-09-30 22:32:15 - INFO - Starting clean_files_chain
+2024-09-30 22:32:15 - INFO - Document: page_content='Product Construction for Even 0’s and 1’s
+A,X
+A,Y
+B,Y
+B,X
+1
+1
+1
+1
+0
+0
+0
+0
+Goddard 4a: 9
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 8, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:15 - INFO - Invoking chain
+2024-09-30 22:32:16 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:16 - INFO - Response: {'cleaned_content': 'Product Construction for Even 0’s and 1’s\n\nA, X\nA, Y\nB, Y\nB, X\n1\n1\n1\n1\n0\n0\n0\n0\n\nGoddard 4a: 9'}
+2024-09-30 22:32:16 - INFO - Finished clean_files_chain
+2024-09-30 22:32:16 - INFO - Successfully cleaned document 9 from 4a.pdf
+2024-09-30 22:32:16 - INFO - Document 10 (4a.pdf) of 10
+2024-09-30 22:32:16 - INFO - Starting clean_files_chain
+2024-09-30 22:32:16 - INFO - Document: page_content='Overview
+A regular language is one which has an FA or an
+RE. Regular languages are closed under union,
+concatenation, star, and complementation.
+Goddard 4a: 10
+' metadata={'source': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'file_path': '/var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq', 'page': 9, 'total_pages': 10, 'format': 'PDF 1.5', 'title': '', 'author': '', 'subject': '', 'keywords': '', 'creator': 'TeX', 'producer': 'pdfTeX-1.40.16', 'creationDate': "D:20170425124522-04'00'", 'modDate': "D:20170425124522-04'00'", 'trapped': ''}
+2024-09-30 22:32:16 - INFO - Invoking chain
+2024-09-30 22:32:17 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:17 - INFO - Response: {'cleaned_content': 'Overview\nA regular language is one which has a finite automaton (FA) or a regular expression (RE). Regular languages are closed under the following operations: union, concatenation, star (Kleene star), and complementation.'}
+2024-09-30 22:32:17 - INFO - Finished clean_files_chain
+2024-09-30 22:32:17 - INFO - Successfully cleaned document 10 from 4a.pdf
+2024-09-30 22:32:24 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:24 - INFO - Response: {'cleaned_content': 'Closure Properties of Regular Languages\n\nClosure properties of regular languages are defined as operations on regular languages that guarantee the production of another regular language. Closure refers to an operation on a language resulting in a new language that is of the same type, specifically regular.\n\nRegular languages are closed under the following operations:\n\n1. **Kleen Closure**: If L is a regular language, then L* (Kleen star) is also a regular language. \n\n2. **Positive Closure**: If L is a regular language, then L+ (positive closure) is also a regular language. \n\n3. **Complement**: The complement of a language L (with respect to an alphabet that contains L) is denoted as -L. Since the complement of a regular language is always regular, this closure property holds. \n\n4. **Reverse Operator**: Given a language L, the reverse of L, denoted as L^R, is the set of strings whose reversal is in L. For example, if L = {0, 01, 100}, then L^R = {0, 10, 001}. Proof: Let E be a regular expression for L. We can reverse E to provide a regular expression for L^R.\n\n5. **Union**: Let L and M be the languages of regular expressions R and S, respectively. Then R + S is a regular expression whose language is (L ∪ M).\n\n6. **Intersection**: Let L and M be the languages of regular expressions R and S, respectively. Then the intersection L ∩ M is a regular language. Proof: Let A and B be DFAs (Deterministic Finite Automata) whose languages are L and M, respectively. Construct C, the product automaton of A and B, and make the final states of C be the pairs consisting of final states of both A and B.\n\n7. **Set Difference**: If L and M are regular languages, then L - M (the set of strings in L but not in M) is also a regular language. Proof: Let A and B be DFAs whose languages are L and M, respectively. Construct C, the product automaton of A and B, and make the final states of C be the pairs where A-state is final but B-state is not.\n\n8. **Homomorphism**: A homomorphism on an alphabet is a function that maps each symbol in that alphabet to a string. For example, h(0) = ab; h(1) = ε (empty string). It can be extended to strings by h(a1...an) = h(a1)...h(an). If L is a regular language, and h is a homomorphism on its alphabet, then h(L) = {h(w) | w is in L} is also a regular language. Proof: Let E be a regular expression for L. Apply h to each symbol in E to obtain regular expression R, where the language of R is h(L).\n\n9. **Inverse Homomorphism**: Let h be a homomorphism and L a language whose alphabet is the output language of h. The inverse homomorphism h^(-1)(L) = {w | h(w) is in L}.\n\nNote: There are additional properties such as symmetric difference operator, prefix operator, and substitution that are also closed under the closure properties of regular languages.\n\n**Decision Properties**: Most properties concerning regular languages are decidable in the case of finite automata, including:\n1. Emptiness\n2. Non-emptiness\n3. Finiteness\n4. Infiniteness\n5. Membership\n6. Equality\n\nThese are explained as follows:\n- **Emptiness and Non-emptiness**:\n  - Step 1: Select states that cannot be reached from the initial states and delete them (remove unreachable states).\n  - Step 2: If the resulting machine contains at least one final state, the finite automaton accepts a non-empty language.\n  - Step 3: If the resulting machine is free from final states, the finite automaton accepts an empty language.\n\n- **Finiteness and Infiniteness**:\n  - Step 1: Select states that cannot be reached from the initial state and delete them (remove unreachable states).\n  - Step 2: Select states from which we cannot reach the final state and delete them (remove dead states).\n  - Step 3: If the resulting machine contains loops or cycles, the finite automaton accepts an infinite language.\n  - Step 4: If the resulting machine does not contain loops or cycles, the finite automaton accepts a finite language.\n\n**Frequently Asked Questions**\n1. **Are regular languages closed under difference?**\n   Answer: No, regular languages are not closed under difference. If L1 and L2 are regular languages, L1 - L2 may not necessarily be a regular language.\n\n2. **How can closure properties be proven for regular languages?**\n   Answer: Closure properties for regular languages are often proven using constructions and properties of finite automata, regular expressions, or other equivalent representations. Mathematical proofs and induction are commonly employed in these demonstrations.\n\n3. **Can closure properties be extended to non-regular languages?**\n   Answer: No, closure properties such as union, concatenation, and Kleene star are specific to regular languages. These properties do not necessarily hold for languages outside the class of regular languages.'}
+2024-09-30 22:32:24 - INFO - Finished clean_files_chain
+2024-09-30 22:32:24 - INFO - Successfully cleaned document 1 from https://www.geeksforgeeks.org/closure-properties-of-regular-languages/
+2024-09-30 22:32:24 - INFO - Pages: []
+2024-09-30 22:32:24 - INFO - Full response: Closure Properties of Regular Languages
+
+We show how to combine regular languages.Closure Properties
+
+A set is closed under an operation if applying that operation to any members of the set always yields a member of the set.
+
+For example, the positive integers are closed under addition and multiplication, but not division.Closure under Kleene
+
+Fact: The set of regular languages is closed under each Kleene operation. That is, if L1 and L2 are regular languages, then each of the following is also regular: 
+1. L1 ∪ L2 (union)
+2. L1 L2 (concatenation)
+3. L1* (Kleene star)
+
+Goddard 4a: 3Proving Closure under Kleene
+
+The easiest approach is to show that the regular expressions (REs) for languages L1 and L2 can be combined or adjusted to form the RE for the combination language.
+
+Example: The RE for the concatenation of L1 and L2 (denoted as L1L2) is obtained by writing down the RE for L1 followed by the RE for L2.Closure under Complementation
+
+Fact:
+The set of regular languages is closed under complementation. The complement of a language L, written as L', consists of all strings not in L but using the same alphabet. This means that if L is a regular language, then L' is also a regular language.
+
+To understand this fact, consider a deterministic finite automaton (FA) for L and interchange the accept and reject states.Closure under Intersection
+
+Fact:
+The set of regular languages is closed under intersection.
+
+One approach: Use de Morgan’s law:
+L1 ∩ L2 = (L1 ∪ L2)'
+
+It follows that regular languages are closed under union and complementation.Product Construction for Intersection
+Each state in the product is a pair of states from the original machines.
+Formally, if L1 is accepted by DFA M1 with 5-tuple (Q1, Σ, q1, T1, δ1) and L2 is accepted by DFA M2 with 5-tuple (Q2, Σ, q2, T2, δ2), then L1 ∩ L2 is accepted by the DFA (Q1 × Q2, Σ, (q1, q2), T1 × T2, δ) where δ((r, s), x) = (δ1(r, x), δ2(s, x)).Example: Even 0’s and 1’s
+Suppose L1 is the set of binary strings with an even number of 0’s, and L2 is the set of binary strings with an even number of 1’s. The finite automata (FAs) for these languages both have two states:
+
+States: A, B
+Transitions:
+- From A:
+  - On input 1, stay in A
+  - On input 0, go to B
+- From B:
+  - On input 1, go to A
+  - On input 0, stay in B
+
+Thus, the finite automata for the intersection L1 ∩ L2 has four states.Product Construction for Even 0’s and 1’s
+
+A, X
+A, Y
+B, Y
+B, X
+1
+1
+1
+1
+0
+0
+0
+0
+
+Goddard 4a: 9Overview
+A regular language is one which has a finite automaton (FA) or a regular expression (RE). Regular languages are closed under the following operations: union, concatenation, star (Kleene star), and complementation.Closure Properties of Regular Languages
+
+Closure properties of regular languages are defined as operations on regular languages that guarantee the production of another regular language. Closure refers to an operation on a language resulting in a new language that is of the same type, specifically regular.
+
+Regular languages are closed under the following operations:
+
+1. **Kleen Closure**: If L is a regular language, then L* (Kleen star) is also a regular language. 
+
+2. **Positive Closure**: If L is a regular language, then L+ (positive closure) is also a regular language. 
+
+3. **Complement**: The complement of a language L (with respect to an alphabet that contains L) is denoted as -L. Since the complement of a regular language is always regular, this closure property holds. 
+
+4. **Reverse Operator**: Given a language L, the reverse of L, denoted as L^R, is the set of strings whose reversal is in L. For example, if L = {0, 01, 100}, then L^R = {0, 10, 001}. Proof: Let E be a regular expression for L. We can reverse E to provide a regular expression for L^R.
+
+5. **Union**: Let L and M be the languages of regular expressions R and S, respectively. Then R + S is a regular expression whose language is (L ∪ M).
+
+6. **Intersection**: Let L and M be the languages of regular expressions R and S, respectively. Then the intersection L ∩ M is a regular language. Proof: Let A and B be DFAs (Deterministic Finite Automata) whose languages are L and M, respectively. Construct C, the product automaton of A and B, and make the final states of C be the pairs consisting of final states of both A and B.
+
+7. **Set Difference**: If L and M are regular languages, then L - M (the set of strings in L but not in M) is also a regular language. Proof: Let A and B be DFAs whose languages are L and M, respectively. Construct C, the product automaton of A and B, and make the final states of C be the pairs where A-state is final but B-state is not.
+
+8. **Homomorphism**: A homomorphism on an alphabet is a function that maps each symbol in that alphabet to a string. For example, h(0) = ab; h(1) = ε (empty string). It can be extended to strings by h(a1...an) = h(a1)...h(an). If L is a regular language, and h is a homomorphism on its alphabet, then h(L) = {h(w) | w is in L} is also a regular language. Proof: Let E be a regular expression for L. Apply h to each symbol in E to obtain regular expression R, where the language of R is h(L).
+
+9. **Inverse Homomorphism**: Let h be a homomorphism and L a language whose alphabet is the output language of h. The inverse homomorphism h^(-1)(L) = {w | h(w) is in L}.
+
+Note: There are additional properties such as symmetric difference operator, prefix operator, and substitution that are also closed under the closure properties of regular languages.
+
+**Decision Properties**: Most properties concerning regular languages are decidable in the case of finite automata, including:
+1. Emptiness
+2. Non-emptiness
+3. Finiteness
+4. Infiniteness
+5. Membership
+6. Equality
+
+These are explained as follows:
+- **Emptiness and Non-emptiness**:
+  - Step 1: Select states that cannot be reached from the initial states and delete them (remove unreachable states).
+  - Step 2: If the resulting machine contains at least one final state, the finite automaton accepts a non-empty language.
+  - Step 3: If the resulting machine is free from final states, the finite automaton accepts an empty language.
+
+- **Finiteness and Infiniteness**:
+  - Step 1: Select states that cannot be reached from the initial state and delete them (remove unreachable states).
+  - Step 2: Select states from which we cannot reach the final state and delete them (remove dead states).
+  - Step 3: If the resulting machine contains loops or cycles, the finite automaton accepts an infinite language.
+  - Step 4: If the resulting machine does not contain loops or cycles, the finite automaton accepts a finite language.
+
+**Frequently Asked Questions**
+1. **Are regular languages closed under difference?**
+   Answer: No, regular languages are not closed under difference. If L1 and L2 are regular languages, L1 - L2 may not necessarily be a regular language.
+
+2. **How can closure properties be proven for regular languages?**
+   Answer: Closure properties for regular languages are often proven using constructions and properties of finite automata, regular expressions, or other equivalent representations. Mathematical proofs and induction are commonly employed in these demonstrations.
+
+3. **Can closure properties be extended to non-regular languages?**
+   Answer: No, closure properties such as union, concatenation, and Kleene star are specific to regular languages. These properties do not necessarily hold for languages outside the class of regular languages.
+2024-09-30 22:32:24 - INFO - Processing pages: 0, full_response: Yes
+2024-09-30 22:32:24 - INFO - Created 1 tasks for question generation
+2024-09-30 22:32:24 - INFO - Starting question_generate_chain
+2024-09-30 22:32:24 - INFO - Setting up question generation chain
+2024-09-30 22:32:24 - INFO - Chain type: <class 'langchain_core.runnables.base.RunnableSequence'>
+2024-09-30 22:32:24 - INFO - Question generation chain setup complete
+2024-09-30 22:32:37 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:37 - INFO - Generated 15 questions for theory of computation with the following questions: [QAPair(question='Which of the following operations is NOT a closure property of regular languages?', answer='Set Difference', q_type='multiple_choice', choices=['Union', 'Set Difference', 'Kleene Star', 'Concatenation']), QAPair(question='What is the result of applying the Kleene star operation to a regular language?', answer='A regular language', q_type='multiple_choice', choices=['A context-free language', 'A regular language', 'A non-regular language', 'An infinite language']), QAPair(question='The complement of a regular language is always a regular language.', answer='True', q_type='multiple_choice', choices=['True', 'False', 'Only if the language is finite', 'Only if the language is infinite']), QAPair(question='What is the closure property that guarantees the result of the intersection of two regular languages is also regular?', answer='Intersection', q_type='multiple_choice', choices=['Union', 'Intersection', 'Kleene Star', 'Concatenation']), QAPair(question='If L is a regular language, what is L^R?', answer='The set of strings whose reversal is in L', q_type='multiple_choice', choices=['The set of strings with the same length as L', 'The set of strings whose reversal is in L', 'The set of strings that can be obtained by removing characters from L', 'The set of strings that are prefixes of L']), QAPair(question='The intersection of two regular languages is not guaranteed to be regular.', answer='False', q_type='TF', choices=['True', 'False']), QAPair(question='Regular languages are closed under the operation of taking the reverse of a language.', answer='True', q_type='TF', choices=['True', 'False']), QAPair(question='If L1 and L2 are regular languages, then the set difference L1 - L2 is always regular.', answer='False', q_type='TF', choices=['True', 'False']), QAPair(question='The product construction for intersection requires that both languages are accepted by DFAs.', answer='True', q_type='TF', choices=['True', 'False']), QAPair(question='The closure properties of regular languages can be extended to non-regular languages.', answer='False', q_type='TF', choices=['True', 'False']), QAPair(question='Explain the closure property of regular languages under intersection and how it can be proven.', answer='Regular languages are closed under intersection, which means that the intersection of two regular languages results in another regular language. This can be proven using product construction where states from the two DFAs are combined to create a new DFA that accepts the intersection of the two languages.', q_type='written', choices=[]), QAPair(question='Describe the steps to determine if a finite automaton accepts an empty language.', answer='To determine if a finite automaton accepts an empty language, first remove unreachable states from the automaton. Then check the remaining states; if there are no final states left, the automaton accepts an empty language.', q_type='written', choices=[]), QAPair(question='What is the significance of the Kleene star in the context of regular languages?', answer="The Kleene star allows for the generation of a language that includes all possible strings (including the empty string) that can be formed by concatenating zero or more strings from a given regular language. This operation is crucial as it extends the language's expressiveness.", q_type='written', choices=[]), QAPair(question='How can you prove that the complement of a regular language is regular?', answer='To prove that the complement of a regular language is regular, take a DFA that recognizes the regular language. By interchanging its accept and reject states, we can construct another DFA that recognizes the complement of the original language, thus showing that the complement is also regular.', q_type='written', choices=[]), QAPair(question='What role does homomorphism play in regular languages?', answer='Homomorphism allows for the mapping of symbols in a regular language to strings, thereby producing a new language. If the original language is regular, applying a homomorphism will yield another regular language, preserving closure properties.', q_type='written', choices=[])]
+2024-09-30 22:32:37 - INFO - Finished question_generate_chain
+2024-09-30 22:32:37 - INFO - Completed question generation. Number of results: 1
+2024-09-30 22:32:37 - INFO - Generated test list with 1 tests
+2024-09-30 22:32:37 - INFO - Preparing judge_kwargs with 9 parameters
+2024-09-30 22:32:37 - INFO - Starting judge chain for course: theory of computation
+2024-09-30 22:32:53 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+2024-09-30 22:32:53 - INFO - Judge chain completed. Selected 15 questions
+2024-09-30 22:32:53 - INFO - Selected questions map:
+{'Which of the following operations is NOT a closure property of regular languages?': 'Test 1', 'What is the result of applying the Kleene star operation to a regular language?': 'Test 1', 'If L is a regular language, what is L^R?': 'Test 1', 'The complement of a regular language is always a regular language.': 'Test 1', 'What is the closure property that guarantees the result of the intersection of two regular languages is also regular?': 'Test 1', 'The intersection of two regular languages is not guaranteed to be regular.': 'Test 1', 'Regular languages are closed under the operation of taking the reverse of a language.': 'Test 1', 'If L1 and L2 are regular languages, then the set difference L1 - L2 is always regular.': 'Test 1', 'The product construction for intersection requires that both languages are accepted by DFAs.': 'Test 1', 'The closure properties of regular languages can be extended to non-regular languages.': 'Test 1', 'Explain the closure property of regular languages under intersection and how it can be proven.': 'Test 1', 'Describe the steps to determine if a finite automaton accepts an empty language.': 'Test 1', 'What is the significance of the Kleene star in the context of regular languages?': 'Test 1', 'How can you prove that the complement of a regular language is regular?': 'Test 1', 'What role does homomorphism play in regular languages?': 'Test 1'}
+2024-09-30 22:32:53 - INFO - FINAL TEST:
+{
+    "questions": [
+        {
+            "question": "Which of the following operations is NOT a closure property of regular languages?",
+            "answer": "Set Difference",
+            "q_type": "multiple_choice",
+            "choices": [
+                "Union",
+                "Set Difference",
+                "Kleene Star",
+                "Concatenation"
+            ]
+        },
+        {
+            "question": "What is the result of applying the Kleene star operation to a regular language?",
+            "answer": "A regular language",
+            "q_type": "multiple_choice",
+            "choices": [
+                "A context-free language",
+                "A regular language",
+                "A non-regular language",
+                "An infinite language"
+            ]
+        },
+        {
+            "question": "If L is a regular language, what is L^R?",
+            "answer": "The set of strings whose reversal is in L",
+            "q_type": "multiple_choice",
+            "choices": [
+                "The set of strings with the same length as L",
+                "The set of strings whose reversal is in L",
+                "The set of strings that can be obtained by removing characters from L",
+                "The set of strings that are prefixes of L"
+            ]
+        },
+        {
+            "question": "The complement of a regular language is always a regular language.",
+            "answer": "True",
+            "q_type": "multiple_choice",
+            "choices": [
+                "True",
+                "False",
+                "Only if the language is finite",
+                "Only if the language is infinite"
+            ]
+        },
+        {
+            "question": "What is the closure property that guarantees the result of the intersection of two regular languages is also regular?",
+            "answer": "Intersection",
+            "q_type": "multiple_choice",
+            "choices": [
+                "Union",
+                "Intersection",
+                "Kleene Star",
+                "Concatenation"
+            ]
+        },
+        {
+            "question": "The intersection of two regular languages is not guaranteed to be regular.",
+            "answer": "False",
+            "q_type": "TF",
+            "choices": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "question": "Regular languages are closed under the operation of taking the reverse of a language.",
+            "answer": "True",
+            "q_type": "TF",
+            "choices": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "question": "If L1 and L2 are regular languages, then the set difference L1 - L2 is always regular.",
+            "answer": "False",
+            "q_type": "TF",
+            "choices": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "question": "The product construction for intersection requires that both languages are accepted by DFAs.",
+            "answer": "True",
+            "q_type": "TF",
+            "choices": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "question": "The closure properties of regular languages can be extended to non-regular languages.",
+            "answer": "False",
+            "q_type": "TF",
+            "choices": [
+                "True",
+                "False"
+            ]
+        },
+        {
+            "question": "Explain the closure property of regular languages under intersection and how it can be proven.",
+            "answer": "Regular languages are closed under intersection, which means that the intersection of two regular languages results in another regular language. This can be proven using product construction where states from the two DFAs are combined to create a new DFA that accepts the intersection of the two languages.",
+            "q_type": "written",
+            "choices": []
+        },
+        {
+            "question": "Describe the steps to determine if a finite automaton accepts an empty language.",
+            "answer": "To determine if a finite automaton accepts an empty language, first remove unreachable states from the automaton. Then check the remaining states; if there are no final states left, the automaton accepts an empty language.",
+            "q_type": "written",
+            "choices": []
+        },
+        {
+            "question": "What is the significance of the Kleene star in the context of regular languages?",
+            "answer": "The Kleene star allows for the generation of a language that includes all possible strings (including the empty string) that can be formed by concatenating zero or more strings from a given regular language. This operation is crucial as it extends the language's expressiveness.",
+            "q_type": "written",
+            "choices": []
+        },
+        {
+            "question": "How can you prove that the complement of a regular language is regular?",
+            "answer": "To prove that the complement of a regular language is regular, take a DFA that recognizes the regular language. By interchanging its accept and reject states, we can construct another DFA that recognizes the complement of the original language, thus showing that the complement is also regular.",
+            "q_type": "written",
+            "choices": []
+        },
+        {
+            "question": "What role does homomorphism play in regular languages?",
+            "answer": "Homomorphism allows for the mapping of symbols in a regular language to strings, thereby producing a new language. If the original language is regular, applying a homomorphism will yield another regular language, preserving closure properties.",
+            "q_type": "written",
+            "choices": []
+        }
+    ]
+}
+2024-09-30 22:32:53 - INFO - All tasks completed. Number of results: 2
+2024-09-30 22:32:53 - INFO - Generated 1 tests
+2024-09-30 22:32:53 - INFO - Cleaning up temp files
+2024-09-30 22:32:53 - INFO - Deleted temp file: /var/folders/26/rjyqk2q90k7d1hhd17vwmbyh0000gn/T/tmpe2l3brqq
+2024-09-30 22:32:53 - INFO - Temp files cleaned
+2024-09-30 22:32:53 - INFO - Run function completed
+2024-09-30 22:32:53 - INFO - Test generated successfully
